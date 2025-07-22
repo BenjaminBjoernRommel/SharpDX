@@ -1,4 +1,4 @@
-# Subject: Suggestion to Collaborate on DXNet – A .NET Core Update of SharpDX  
+# Suggestion to Collaborate on DXNet – A .NET Core Update of SharpDX  
 Hello,
 I'm a developer who has been using the SharpDX library, but as you know, it has been discontinued.
 
