@@ -1,3 +1,15 @@
+# Subject: Suggestion to Collaborate on DXNet – A .NET Core Update of SharpDX  
+Hello,
+I'm a developer who has been using the SharpDX library, but as you know, it has been discontinued.
+
+I noticed that you are one of the few developers actively maintaining it. Currently, I’ve switched to using this library: https://github.com/lepoco/dxnet — which is a .NET Core update of SharpDX.
+
+Since I saw that your updates to SharpDX for .NET Core are quite similar to those in DXNet, I wanted to introduce you to the project and invite you to take a look: https://github.com/lepoco/dxnet.
+(because our fork can not open new issue, so i send a mesage to you here)
+Hopefully, you might consider contributing to this project instead of having efforts become fragmented.
+
+Best regards,
+
 # SharpDX
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/sharpdx/SharpDX/blob/master/LICENSE)
