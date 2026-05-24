@@ -31,12 +31,17 @@ namespace SharpDX.Direct3D11
         public DomainShader(Device device, byte[] shaderBytecode, ClassLinkage linkage = null)
             : base(IntPtr.Zero)
         {
-            if (shaderBytecode == null) throw new ArgumentNullException("shaderBytecode", "ShaderBytecode cannot be null");
+            if (shaderBytecode == null)
+            {
+                throw new ArgumentNullException("shaderBytecode", "ShaderBytecode cannot be null");
+            }
 
             unsafe
             {
                 fixed (void* pBuffer = shaderBytecode)
+                {
                     device.CreateDomainShader((IntPtr)pBuffer, shaderBytecode.Length, linkage, this);
+                }
             }
         }
     

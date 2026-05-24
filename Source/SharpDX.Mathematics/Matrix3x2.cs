@@ -104,9 +104,14 @@ namespace SharpDX
         public Matrix3x2(float[] values)
         {
             if (values == null)
+            {
                 throw new ArgumentNullException("values");
+            }
+
             if (values.Length != 6)
+            {
                 throw new ArgumentOutOfRangeException("values", "There must be six input values for Matrix3x2.");
+            }
 
             M11 = values[0];
             M12 = values[1];
@@ -244,9 +249,14 @@ namespace SharpDX
             get
             {
                 if (row < 0 || row > 2)
+                {
                     throw new ArgumentOutOfRangeException("row", "Rows and columns for matrices run from 0 to 2, inclusive.");
+                }
+
                 if (column < 0 || column > 1)
+                {
                     throw new ArgumentOutOfRangeException("column", "Rows and columns for matrices run from 0 to 1, inclusive.");
+                }
 
                 return this[(row * 2) + column];
             }
@@ -254,9 +264,14 @@ namespace SharpDX
             set
             {
                 if (row < 0 || row > 2)
+                {
                     throw new ArgumentOutOfRangeException("row", "Rows and columns for matrices run from 0 to 2, inclusive.");
+                }
+
                 if (column < 0 || column > 1)
+                {
                     throw new ArgumentOutOfRangeException("column", "Rows and columns for matrices run from 0 to 1, inclusive.");
+                }
 
                 this[(row * 2) + column] = value;
             }
@@ -1027,7 +1042,9 @@ namespace SharpDX
         public string ToString(string format)
         {
             if (format == null)
+            {
                 return ToString();
+            }
 
             return string.Format(format, CultureInfo.CurrentCulture, "[M11:{0} M12:{1}] [M21:{2} M22:{3}] [M31:{4} M32:{5}]",
                 M11.ToString(format, CultureInfo.CurrentCulture), M12.ToString(format, CultureInfo.CurrentCulture),
@@ -1061,7 +1078,9 @@ namespace SharpDX
         public string ToString(string format, IFormatProvider formatProvider)
         {
             if (format == null)
+            {
                 return ToString(formatProvider);
+            }
 
             return string.Format(format, formatProvider, "[M11:{0} M12:{1}] [M21:{2} M22:{3}] [M31:{4} M32:{5}]",
                 M11.ToString(format, formatProvider), M12.ToString(format, formatProvider),
@@ -1128,7 +1147,9 @@ namespace SharpDX
         public override bool Equals(object value)
         {
             if (!(value is Matrix3x2))
+            {
                 return false;
+            }
 
             var strongValue = (Matrix3x2)value;
             return Equals(ref strongValue);

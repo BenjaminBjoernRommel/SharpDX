@@ -273,19 +273,34 @@ namespace SharpDX
             float distance = 0f;
 
             if (point.X < box.Minimum.X)
+            {
                 distance += (box.Minimum.X - point.X) * (box.Minimum.X - point.X);
+            }
+
             if (point.X > box.Maximum.X)
+            {
                 distance += (point.X - box.Maximum.X) * (point.X - box.Maximum.X);
+            }
 
             if (point.Y < box.Minimum.Y)
+            {
                 distance += (box.Minimum.Y - point.Y) * (box.Minimum.Y - point.Y);
+            }
+
             if (point.Y > box.Maximum.Y)
+            {
                 distance += (point.Y - box.Maximum.Y) * (point.Y - box.Maximum.Y);
+            }
 
             if (point.Z < box.Minimum.Z)
+            {
                 distance += (box.Minimum.Z - point.Z) * (box.Minimum.Z - point.Z);
+            }
+
             if (point.Z > box.Maximum.Z)
+            {
                 distance += (point.Z - box.Maximum.Z) * (point.Z - box.Maximum.Z);
+            }
 
             return (float)Math.Sqrt(distance);
         }
@@ -398,12 +413,16 @@ namespace SharpDX
             float c = Vector3.Dot(m, m) - MathUtil.ZeroTolerance;
 
             if (c > 0f && b > 0f)
+            {
                 return false;
+            }
 
             float discriminant = b * b - c;
 
             if (discriminant < 0f)
+            {
                 return false;
+            }
 
             return true;
         }
@@ -967,7 +986,9 @@ namespace SharpDX
             distance = -b - (float)Math.Sqrt(discriminant);
 
             if (distance < 0f)
+            {
                 distance = 0f;
+            }
 
             return true;
         }
@@ -1006,10 +1027,14 @@ namespace SharpDX
             distance += plane.D;
 
             if (distance > 0f)
+            {
                 return PlaneIntersectionType.Front;
+            }
 
             if (distance < 0f)
+            {
                 return PlaneIntersectionType.Back;
+            }
 
             return PlaneIntersectionType.Intersecting;
         }
@@ -1031,7 +1056,9 @@ namespace SharpDX
             Vector3.Dot(ref direction, ref direction, out denominator);
 
             if (MathUtil.IsZero(denominator))
+            {
                 return false;
+            }
 
             return true;
         }
@@ -1100,10 +1127,14 @@ namespace SharpDX
             PlaneIntersectionType test3 = PlaneIntersectsPoint(ref plane, ref vertex3);
 
             if (test1 == PlaneIntersectionType.Front && test2 == PlaneIntersectionType.Front && test3 == PlaneIntersectionType.Front)
+            {
                 return PlaneIntersectionType.Front;
+            }
 
             if (test1 == PlaneIntersectionType.Back && test2 == PlaneIntersectionType.Back && test3 == PlaneIntersectionType.Back)
+            {
                 return PlaneIntersectionType.Back;
+            }
 
             return PlaneIntersectionType.Intersecting;
         }
@@ -1133,12 +1164,16 @@ namespace SharpDX
             Vector3.Dot(ref plane.Normal, ref max, out distance);
 
             if (distance + plane.D > 0.0f)
+            {
                 return PlaneIntersectionType.Front;
+            }
 
             distance = Vector3.Dot(plane.Normal, min);
 
             if (distance + plane.D < 0.0f)
+            {
                 return PlaneIntersectionType.Back;
+            }
 
             return PlaneIntersectionType.Intersecting;
         }
@@ -1159,10 +1194,14 @@ namespace SharpDX
             distance += plane.D;
 
             if (distance > sphere.Radius)
+            {
                 return PlaneIntersectionType.Front;
+            }
 
             if (distance < -sphere.Radius)
+            {
                 return PlaneIntersectionType.Back;
+            }
 
             return PlaneIntersectionType.Intersecting;
         }
@@ -1200,13 +1239,19 @@ namespace SharpDX
         public static bool BoxIntersectsBox(ref BoundingBox box1, ref BoundingBox box2)
         {
             if (box1.Minimum.X > box2.Maximum.X || box2.Minimum.X > box1.Maximum.X)
+            {
                 return false;
+            }
 
             if (box1.Minimum.Y > box2.Maximum.Y || box2.Minimum.Y > box1.Maximum.Y)
+            {
                 return false;
+            }
 
             if (box1.Minimum.Z > box2.Maximum.Z || box2.Minimum.Z > box1.Maximum.Z)
+            {
                 return false;
+            }
 
             return true;
         }
@@ -1316,13 +1361,19 @@ namespace SharpDX
         public static ContainmentType BoxContainsBox(ref BoundingBox box1, ref BoundingBox box2)
         {
             if (box1.Maximum.X < box2.Minimum.X || box1.Minimum.X > box2.Maximum.X)
+            {
                 return ContainmentType.Disjoint;
+            }
 
             if (box1.Maximum.Y < box2.Minimum.Y || box1.Minimum.Y > box2.Maximum.Y)
+            {
                 return ContainmentType.Disjoint;
+            }
 
             if (box1.Maximum.Z < box2.Minimum.Z || box1.Minimum.Z > box2.Maximum.Z)
+            {
                 return ContainmentType.Disjoint;
+            }
 
             if (box1.Minimum.X <= box2.Minimum.X && (box2.Maximum.X <= box1.Maximum.X &&
                 box1.Minimum.Y <= box2.Minimum.Y && box2.Maximum.Y <= box1.Maximum.Y) &&
@@ -1347,7 +1398,9 @@ namespace SharpDX
             float distance = Vector3.DistanceSquared(sphere.Center, vector);
 
             if (distance > sphere.Radius * sphere.Radius)
+            {
                 return ContainmentType.Disjoint;
+            }
 
             if ((((box.Minimum.X + sphere.Radius <= sphere.Center.X) && (sphere.Center.X <= box.Maximum.X - sphere.Radius)) && ((box.Maximum.X - box.Minimum.X > sphere.Radius) &&
                 (box.Minimum.Y + sphere.Radius <= sphere.Center.Y))) && (((sphere.Center.Y <= box.Maximum.Y - sphere.Radius) && (box.Maximum.Y - box.Minimum.Y > sphere.Radius)) &&
@@ -1368,7 +1421,9 @@ namespace SharpDX
         public static ContainmentType SphereContainsPoint(ref BoundingSphere sphere, ref Vector3 point)
         {
             if (Vector3.DistanceSquared(point, sphere.Center) <= sphere.Radius * sphere.Radius)
+            {
                 return ContainmentType.Contains;
+            }
 
             return ContainmentType.Disjoint;
         }
@@ -1391,10 +1446,14 @@ namespace SharpDX
             ContainmentType test3 = SphereContainsPoint(ref sphere, ref vertex3);
 
             if (test1 == ContainmentType.Contains && test2 == ContainmentType.Contains && test3 == ContainmentType.Contains)
+            {
                 return ContainmentType.Contains;
+            }
 
             if (SphereIntersectsTriangle(ref sphere, ref vertex1, ref vertex2, ref vertex3))
+            {
                 return ContainmentType.Intersects;
+            }
 
             return ContainmentType.Disjoint;
         }
@@ -1410,7 +1469,9 @@ namespace SharpDX
             Vector3 vector;
 
             if (!BoxIntersectsSphere(ref box, ref sphere))
+            {
                 return ContainmentType.Disjoint;
+            }
 
             float radiussquared = sphere.Radius * sphere.Radius;
             vector.X = sphere.Center.X - box.Minimum.X;
@@ -1418,56 +1479,72 @@ namespace SharpDX
             vector.Z = sphere.Center.Z - box.Maximum.Z;
 
             if (vector.LengthSquared() > radiussquared)
+            {
                 return ContainmentType.Intersects;
+            }
 
             vector.X = sphere.Center.X - box.Maximum.X;
             vector.Y = sphere.Center.Y - box.Maximum.Y;
             vector.Z = sphere.Center.Z - box.Maximum.Z;
 
             if (vector.LengthSquared() > radiussquared)
+            {
                 return ContainmentType.Intersects;
+            }
 
             vector.X = sphere.Center.X - box.Maximum.X;
             vector.Y = sphere.Center.Y - box.Minimum.Y;
             vector.Z = sphere.Center.Z - box.Maximum.Z;
 
             if (vector.LengthSquared() > radiussquared)
+            {
                 return ContainmentType.Intersects;
+            }
 
             vector.X = sphere.Center.X - box.Minimum.X;
             vector.Y = sphere.Center.Y - box.Minimum.Y;
             vector.Z = sphere.Center.Z - box.Maximum.Z;
 
             if (vector.LengthSquared() > radiussquared)
+            {
                 return ContainmentType.Intersects;
+            }
 
             vector.X = sphere.Center.X - box.Minimum.X;
             vector.Y = sphere.Center.Y - box.Maximum.Y;
             vector.Z = sphere.Center.Z - box.Minimum.Z;
 
             if (vector.LengthSquared() > radiussquared)
+            {
                 return ContainmentType.Intersects;
+            }
 
             vector.X = sphere.Center.X - box.Maximum.X;
             vector.Y = sphere.Center.Y - box.Maximum.Y;
             vector.Z = sphere.Center.Z - box.Minimum.Z;
 
             if (vector.LengthSquared() > radiussquared)
+            {
                 return ContainmentType.Intersects;
+            }
 
             vector.X = sphere.Center.X - box.Maximum.X;
             vector.Y = sphere.Center.Y - box.Minimum.Y;
             vector.Z = sphere.Center.Z - box.Minimum.Z;
 
             if (vector.LengthSquared() > radiussquared)
+            {
                 return ContainmentType.Intersects;
+            }
 
             vector.X = sphere.Center.X - box.Minimum.X;
             vector.Y = sphere.Center.Y - box.Minimum.Y;
             vector.Z = sphere.Center.Z - box.Minimum.Z;
 
             if (vector.LengthSquared() > radiussquared)
+            {
                 return ContainmentType.Intersects;
+            }
 
             return ContainmentType.Contains;
         }
@@ -1483,10 +1560,14 @@ namespace SharpDX
             float distance = Vector3.Distance(sphere1.Center, sphere2.Center);
 
             if (sphere1.Radius + sphere2.Radius < distance)
+            {
                 return ContainmentType.Disjoint;
+            }
 
             if (sphere1.Radius - sphere2.Radius < distance)
+            {
                 return ContainmentType.Intersects;
+            }
 
             return ContainmentType.Contains;
         }

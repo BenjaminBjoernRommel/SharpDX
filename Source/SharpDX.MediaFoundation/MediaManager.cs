@@ -40,7 +40,10 @@ namespace SharpDX.MediaFoundation
         public static void Startup(bool useLightVersion = false)
         {
             if (isStartup)
+            {
                 return;
+            }
+
             MediaFactory.Startup(MediaFactory.Version, useLightVersion ? 1 : 0);
             isStartup = true;
         }

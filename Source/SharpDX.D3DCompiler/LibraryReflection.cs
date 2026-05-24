@@ -32,7 +32,10 @@ namespace SharpDX.D3DCompiler
         {
             IntPtr temp;
             fixed (void* ptr = libraryBytecode)
+            {
                 D3D.ReflectLibrary((IntPtr)ptr, libraryBytecode.Length, Utilities.GetGuidFromType(GetType()), out temp);
+            }
+
             NativePointer = temp;
         }
 

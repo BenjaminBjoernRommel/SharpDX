@@ -54,7 +54,10 @@ namespace SharpDX.Direct3D11
             DepthStencilView depthStencilView;
             GetRenderTargets(numViews, renderTargets, out depthStencilView);
             if (depthStencilView != null)
+            {
                 depthStencilView.Dispose();
+            }
+
             return renderTargets;
         }
 
@@ -323,7 +326,9 @@ namespace SharpDX.Direct3D11
         {
             int[] lengths = new int[unorderedAccessViews.Length];
             for (int i = 0; i < unorderedAccessViews.Length; i++)
+            {
                 lengths[i] = -1;
+            }
 
             SetTargets(depthStencilView, startSlot, unorderedAccessViews, lengths, renderTargetViews);
         }
@@ -426,7 +431,9 @@ namespace SharpDX.Direct3D11
                     IntPtr* tempPtr = stackalloc IntPtr[numViews];
                     renderTargetViewsPtr = tempPtr;
                     for (int i = 0; i < numViews; i++)
+                    {
                         renderTargetViewsPtr[i] = (renderTargetViews[i] == null) ? IntPtr.Zero : renderTargetViews[i].NativePointer;
+                    }
                 }
                 SetRenderTargets(numViews, (IntPtr)renderTargetViewsPtr, depthStencilViewRef);
             }
@@ -481,7 +488,9 @@ namespace SharpDX.Direct3D11
                 IntPtr* tempPtr = stackalloc IntPtr[renderTargetViews.Length];
                 renderTargetViewsPtr = tempPtr;
                 for (int i = 0; i < renderTargetViews.Length; i++)
+                {
                     renderTargetViewsPtr[i] = (renderTargetViews[i] == null) ? IntPtr.Zero : renderTargetViews[i].NativePointer;
+                }
             }
             SetRenderTargetsAndKeepUAV(count, new IntPtr(renderTargetViewsPtr), depthStencilView);
         }
@@ -531,7 +540,10 @@ namespace SharpDX.Direct3D11
         {
             var uavInitialCounts = new int[unorderedAccessViews.Length];
             for (int i = 0; i < unorderedAccessViews.Length; i++)
+            {
                 uavInitialCounts[i] = -1;
+            }
+
             SetUnorderedAccessViews(startSlot, unorderedAccessViews, uavInitialCounts);
         }
 
@@ -554,10 +566,14 @@ namespace SharpDX.Direct3D11
                 IntPtr* unorderedAccessViewsOut__ = stackalloc IntPtr[unorderedAccessViews.Length];
                 unorderedAccessViewsOut_ = unorderedAccessViewsOut__;
                 for (int i = 0; i < unorderedAccessViews.Length; i++)
+                {
                     unorderedAccessViewsOut_[i] = (unorderedAccessViews[i] == null) ? IntPtr.Zero : unorderedAccessViews[i].NativePointer;
+                }
             }
             fixed (void* puav = uavInitialCounts)
-            SetUnorderedAccessViewsKeepRTV(startSlot, unorderedAccessViews != null ? unorderedAccessViews.Length : 0, (IntPtr)unorderedAccessViewsOut_, (IntPtr)puav);
+            {
+                SetUnorderedAccessViewsKeepRTV(startSlot, unorderedAccessViews != null ? unorderedAccessViews.Length : 0, (IntPtr)unorderedAccessViewsOut_, (IntPtr)puav);
+            }
         }
 
         /// <summary>	
@@ -586,7 +602,9 @@ namespace SharpDX.Direct3D11
                     IntPtr* renderTargetViewsOut__ = stackalloc IntPtr[renderTargetViewsOut.Length];
                     renderTargetViewsOut_ = renderTargetViewsOut__;
                     for (int i = 0; i < renderTargetViewsOut.Length; i++)
+                    {
                         renderTargetViewsOut_[i] = (renderTargetViewsOut[i] == null) ? IntPtr.Zero : renderTargetViewsOut[i].NativePointer;
+                    }
                 }
                 IntPtr* unorderedAccessViewsOut_ = (IntPtr*)0;
                 if (unorderedAccessViewsOut != null)
@@ -594,11 +612,15 @@ namespace SharpDX.Direct3D11
                     IntPtr* unorderedAccessViewsOut__ = stackalloc IntPtr[unorderedAccessViewsOut.Length];
                     unorderedAccessViewsOut_ = unorderedAccessViewsOut__;
                     for (int i = 0; i < unorderedAccessViewsOut.Length; i++)
+                    {
                         unorderedAccessViewsOut_[i] = (unorderedAccessViewsOut[i] == null) ? IntPtr.Zero : unorderedAccessViewsOut[i].NativePointer;
+                    }
                 }
 
                 fixed (void* puav = uAVInitialCountsRef)
-                SetRenderTargetsAndUnorderedAccessViews(numRTVs, (IntPtr) renderTargetViewsOut_, depthStencilViewRef, uAVStartSlot, numUAVs, (IntPtr) unorderedAccessViewsOut_, (IntPtr)puav);
+                {
+                    SetRenderTargetsAndUnorderedAccessViews(numRTVs, (IntPtr) renderTargetViewsOut_, depthStencilViewRef, uAVStartSlot, numUAVs, (IntPtr) unorderedAccessViewsOut_, (IntPtr)puav);
+                }
             }
         }
 
@@ -621,7 +643,9 @@ namespace SharpDX.Direct3D11
         internal unsafe void SetRenderTargetsAndUnorderedAccessViews(int numRTVs, SharpDX.ComArray<SharpDX.Direct3D11.RenderTargetView> renderTargetViewsOut, SharpDX.Direct3D11.DepthStencilView depthStencilViewRef, int uAVStartSlot, int numUAVs, SharpDX.ComArray<SharpDX.Direct3D11.UnorderedAccessView> unorderedAccessViewsOut, int[] uAVInitialCountsRef)
         {
             fixed (void* puav = uAVInitialCountsRef)
+            {
                 SetRenderTargetsAndUnorderedAccessViews(numRTVs, ((renderTargetViewsOut == null) ? IntPtr.Zero : renderTargetViewsOut.NativePointer), depthStencilViewRef, uAVStartSlot, numUAVs, ((unorderedAccessViewsOut == null) ? IntPtr.Zero : unorderedAccessViewsOut.NativePointer), (IntPtr)puav);
+            }
         }
 
         internal void SetRenderTargetsAndKeepUAV(int numRTVs, IntPtr rtvs, SharpDX.Direct3D11.DepthStencilView depthStencilViewRef)
@@ -664,7 +688,10 @@ namespace SharpDX.Direct3D11
                 int sampleMaskRef;
                 GetBlendState(out state, out blendFactor, out sampleMaskRef);
                 if (state != null)
+                {
                     state.Dispose();
+                }
+
                 return blendFactor;
 
             }
@@ -676,7 +703,9 @@ namespace SharpDX.Direct3D11
                 GetBlendState(out state, out blendFactor, out sampleMaskRef);
                 SetBlendState(state, value, sampleMaskRef);
                 if (state != null)
+                {
                     state.Dispose();
+                }
             }
         }
 
@@ -693,7 +722,10 @@ namespace SharpDX.Direct3D11
                 int sampleMaskRef;
                 GetBlendState(out state, out blendFactor, out sampleMaskRef);
                 if (state != null)
+                {
                     state.Dispose();
+                }
+
                 return sampleMaskRef;
             }
             set
@@ -704,7 +736,9 @@ namespace SharpDX.Direct3D11
                 GetBlendState(out state, out blendFactor, out sampleMaskRef);
                 SetBlendState(state, blendFactor, value);
                 if (state != null)
+                {
                     state.Dispose();
+                }
             }
         }
 
@@ -729,7 +763,10 @@ namespace SharpDX.Direct3D11
                 int sampleMaskRef;
                 GetBlendState(out state, out blendFactor, out sampleMaskRef);
                 if (state != null)
+                {
                     state.Dispose();
+                }
+
                 SetBlendState(value, blendFactor, sampleMaskRef);
             }
         }
@@ -746,7 +783,10 @@ namespace SharpDX.Direct3D11
                 int reference;
                 GetDepthStencilState(out state, out reference);
                 if (state != null)
+                {
                     state.Dispose();
+                }
+
                 return reference;
             }
             set
@@ -756,7 +796,9 @@ namespace SharpDX.Direct3D11
                 GetDepthStencilState(out state, out reference);
                 SetDepthStencilState(state, value);
                 if (state != null)
+                {
                     state.Dispose();
+                }
             }
         }
 
@@ -779,7 +821,10 @@ namespace SharpDX.Direct3D11
                 int reference;
                 GetDepthStencilState(out state, out reference);
                 if (state != null)
+                {
                     state.Dispose();
+                }
+
                 SetDepthStencilState(value, reference);
             }
         }

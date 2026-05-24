@@ -128,7 +128,10 @@ namespace SharpDX
             // Make a copy of the filters in order to support a lightweight threadsafe
             var filters = new List<IMessageFilter>(this.currentFilters);
             if (!filters.Contains(filter))
+            {
                 filters.Add(filter);
+            }
+
             this.currentFilters = filters;
         }
 
@@ -160,14 +163,18 @@ namespace SharpDX
         private IntPtr WndProc(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam)
         {
             if (this.isDisposed)
+            {
                 this.RestoreWndProc();
+            }
             else
             {
                 var message = new Message() { HWnd = hwnd, LParam = lParam, Msg = msg, WParam = wParam };
                 foreach (var messageFilter in this.currentFilters)
                 {
                     if (messageFilter.PreFilterMessage(ref message))
+                    {
                         return message.Result;
+                    }
                 }
             }
 

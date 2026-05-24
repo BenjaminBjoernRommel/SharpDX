@@ -50,7 +50,9 @@ namespace SharpDX
         public void DisposeAndClear(bool disposeManagedResources = true)
         {
             if (disposables == null)
+            {
                 return;
+            }
 
             for (int i = disposables.Count - 1; i >= 0; i--)
             {
@@ -91,20 +93,26 @@ namespace SharpDX
         public T Collect<T>(T toDispose)
         {
             if (!(toDispose is IDisposable || toDispose is IntPtr))
+            {
                 throw new ArgumentException("Argument must be IDisposable or IntPtr");
+            }
 
             // Check memory alignment
             if (toDispose is IntPtr)
             {
                 var memoryPtr = (IntPtr)(object)toDispose;
                 if (!Utilities.IsMemoryAligned(memoryPtr))
+                {
                     throw new ArgumentException("Memory pointer is invalid. Memory must have been allocated with Utilties.AllocateMemory");
+                }
             }
 
             if (!Equals(toDispose, default(T)))
             {
                 if (disposables == null)
+                {
                     disposables = new List<object>();
+                }
 
                 if (!disposables.Contains(toDispose))
                 {

@@ -99,7 +99,9 @@ namespace SharpDX
 
             // Normal case
             for (i = 1024; i < 2048; i++)
+            {
                 HalfToFloatMantissaTable[i] = 0x38000000 + (((uint)(i - 1024)) << 13);
+            }
 
             // Exponent table
 
@@ -109,9 +111,13 @@ namespace SharpDX
             for (i = 1; i < 63; i++)
             {
                 if (i < 31) // Positive Numbers
+                {
                     HalfToFloatExponentTable[i] = ((uint)i) << 23;
+                }
                 else // Negative Numbers
+                {
                     HalfToFloatExponentTable[i] = 0x80000000 + (((uint)(i - 32)) << 23);
+                }
             }
             HalfToFloatExponentTable[31] = 0x47800000;
             HalfToFloatExponentTable[32] = 0x80000000;
@@ -120,7 +126,10 @@ namespace SharpDX
             // Offset table
             HalfToFloatOffsetTable[0] = 0;
             for (i = 1; i < 64; i++)
+            {
                 HalfToFloatOffsetTable[i] = 1024;
+            }
+
             HalfToFloatOffsetTable[32] = 0;
 
             // -------------------------------------------------------------------

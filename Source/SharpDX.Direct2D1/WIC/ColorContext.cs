@@ -56,7 +56,10 @@ namespace SharpDX.WIC
                 int actualSize;
                 GetProfileBytes(0, IntPtr.Zero, out actualSize);
                 if (actualSize == 0)
+                {
                     return null;
+                }
+
                 var buffer = new DataStream(actualSize, true, true);
                 GetProfileBytes(actualSize, buffer.DataPointer, out actualSize);
                 return buffer;

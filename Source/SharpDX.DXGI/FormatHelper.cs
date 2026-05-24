@@ -371,13 +371,17 @@ namespace SharpDX.DXGI
         private static void InitFormat(IEnumerable<Format> formats, int bitCount)
         {
             foreach (var format in formats)
+            {
                 sizeOfInBits[(int)format] = bitCount;
+            }
         }
 
         private static void InitDefaults(IEnumerable<Format> formats, bool[] outputArray)
         {
             foreach (var format in formats)
+            {
                 outputArray[(int)format] = true;
+            }
         }
     }
 }

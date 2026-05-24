@@ -105,7 +105,10 @@ namespace SharpDX
             while (numberOf > 0)
             {
                 if (*(long*)pSrc != *(long*)pDst)
+                {
                     return false;
+                }
+
                 pSrc += 8;
                 pDst += 8;
                 numberOf--;
@@ -116,7 +119,10 @@ namespace SharpDX
             while (numberOf > 0)
             {
                 if (*pSrc != *pDst)
+                {
                     return false;
+                }
+
                 pSrc++;
                 pDst++;
                 numberOf--;
@@ -196,17 +202,24 @@ namespace SharpDX
         /// <returns>Converted byte array.</returns>
         public static byte[] ToByteArray<T>(T[] source) where T : struct
         {
-            if (source == null) return null;
+            if (source == null)
+            {
+                return null;
+            }
 
             var buffer = new byte[SizeOf<T>() * source.Length];
 
             if (source.Length == 0)
+            {
                 return buffer;
+            }
 
             unsafe
             {
                 fixed (void* pBuffer = buffer)
+                {
                     Interop.Write(pBuffer, source, 0, source.Length);
+                }
             }
             return buffer;
         }
@@ -355,7 +368,9 @@ namespace SharpDX
         public unsafe static void ConvertToIntArray(bool[] array, int* dest)
         {
             for (int i = 0; i < array.Length; i++)
+            {
                 dest[i] = array[i] ? 1 : 0;
+            }
         }
  
         /// <summary>
@@ -367,7 +382,10 @@ namespace SharpDX
         {
             var temp = new RawBool[array.Length];
             for (int i = 0; i < temp.Length; i++)
+            {
                 temp[i] = array[i];
+            }
+
             return temp;
         }
 
@@ -381,7 +399,10 @@ namespace SharpDX
         {
             var temp = new bool[length];
             for(int i = 0; i < temp.Length; i++)
+            {
                 temp[i] = array[i] != 0;
+            }
+
             return temp;
         }
 
@@ -394,7 +415,10 @@ namespace SharpDX
         {
             var temp = new bool[array.Length];
             for(int i = 0; i < temp.Length; i++)
+            {
                 temp[i] = array[i];
+            }
+
             return temp;
         }
 
@@ -426,14 +450,21 @@ namespace SharpDX
             foreach (var it in interfaceTypes)
             {
                 if (it.GetTypeInfo().IsGenericType && it.GetGenericTypeDefinition() == genericType)
+                {
                     return true;
+                }
             }
 
             if (givenType.GetTypeInfo().IsGenericType && givenType.GetGenericTypeDefinition() == genericType)
+            {
                 return true;
+            }
 
             Type baseType = givenType.GetTypeInfo().BaseType;
-            if (baseType == null) return false;
+            if (baseType == null)
+            {
+                return false;
+            }
 
             return IsAssignableToGenericType(baseType, genericType);
         }
@@ -493,7 +524,11 @@ namespace SharpDX
         /// </remarks>
         public unsafe static void FreeMemory(IntPtr alignedBuffer)
         {
-            if (alignedBuffer == IntPtr.Zero) return;
+            if (alignedBuffer == IntPtr.Zero)
+            {
+                return;
+            }
+
             Marshal.FreeHGlobal(((IntPtr*) alignedBuffer)[-1]);
         }
 
@@ -507,7 +542,9 @@ namespace SharpDX
         {
             string managedString = Marshal.PtrToStringAnsi(pointer); // copy null-terminating unmanaged text from pointer to a managed string
             if (managedString != null && managedString.Length > maxLength)
+            {
                 managedString = managedString.Substring(0, maxLength);
+            }
 
             return managedString;
         }
@@ -522,7 +559,9 @@ namespace SharpDX
         {
             string managedString = Marshal.PtrToStringUni(pointer); // copy null-terminating unmanaged text from pointer to a managed string
             if (managedString != null && managedString.Length > maxLength)
+            {
                 managedString = managedString.Substring(0, maxLength);
+            }
 
             return managedString;
         }
@@ -618,7 +657,11 @@ namespace SharpDX
             {
                 for (int i = 0; i < array.Length; i++)
                 {
-                    if (i > 0) text.Append(separator);
+                    if (i > 0)
+                    {
+                        text.Append(separator);
+                    }
+
                     text.Append(array[i]);
                 }
             }
@@ -635,13 +678,19 @@ namespace SharpDX
         {
             var elementList = new List<string>();
             foreach (var element in elements)
+            {
                 elementList.Add(element.ToString());
+            }
 
             var text = new StringBuilder();
             for (int i = 0; i < elementList.Count; i++)
             {
                 var element = elementList[i];
-                if (i > 0) text.Append(separator);
+                if (i > 0)
+                {
+                    text.Append(separator);
+                }
+
                 text.Append(element);
             }
             return text.ToString();
@@ -657,13 +706,19 @@ namespace SharpDX
         {
             var elementList = new List<string>();
             while (elements.MoveNext())
+            {
                 elementList.Add(elements.Current.ToString());
+            }
 
             var text = new StringBuilder();
             for (int i = 0; i < elementList.Count; i++)
             {
                 var element = elementList[i];
-                if (i > 0) text.Append(separator);
+                if (i > 0)
+                {
+                    text.Append(separator);
+                }
+
                 text.Append(element);
             }
             return text.ToString();
@@ -676,7 +731,11 @@ namespace SharpDX
         /// <returns>A string extracted from a blob.</returns>
         public static string BlobToString(Blob blob)
         {
-            if (blob == null) return null;
+            if (blob == null)
+            {
+                return null;
+            }
+
             string output;
             output = Marshal.PtrToStringAnsi(blob.BufferPointer);
             blob.Dispose();
@@ -719,12 +778,17 @@ namespace SharpDX
             int num = readLength;
             Debug.Assert(num <= (stream.Length - stream.Position));
             if (num == 0)
+            {
                 readLength = (int) (stream.Length - stream.Position);
+            }
+
             num = readLength;
 
             Debug.Assert(num >= 0);
             if (num == 0)
+            {
                 return new byte[0];
+            }
 
             byte[] buffer = new byte[num];
             int bytesRead = 0;
@@ -747,9 +811,14 @@ namespace SharpDX
         public static bool Compare(IEnumerable left, IEnumerable right)
         {
             if (ReferenceEquals(left, right))
+            {
                 return true;
+            }
+
             if (ReferenceEquals(left, null) || ReferenceEquals(right, null))
+            {
                 return false;
+            }
 
             return Compare(left.GetEnumerator(), right.GetEnumerator());
         }
@@ -763,9 +832,14 @@ namespace SharpDX
         public static bool Compare(IEnumerator leftIt, IEnumerator rightIt)
         {
             if (ReferenceEquals(leftIt, rightIt))
+            {
                 return true;
+            }
+
             if (ReferenceEquals(leftIt, null) || ReferenceEquals(rightIt, null))
+            {
                 return false;
+            }
 
             bool hasLeftNext;
             bool hasRightNext;
@@ -774,15 +848,21 @@ namespace SharpDX
                 hasLeftNext = leftIt.MoveNext();
                 hasRightNext = rightIt.MoveNext();
                 if (!hasLeftNext || !hasRightNext)
+                {
                     break;
+                }
 
                 if (!Equals(leftIt.Current, rightIt.Current))
+                {
                     return false;
+                }
             }
 
             // If there is any left element
             if (hasLeftNext != hasRightNext)
+            {
                 return false;
+            }
 
             return true;
         }
@@ -796,12 +876,19 @@ namespace SharpDX
         public static bool Compare(ICollection left, ICollection right)
         {
             if (ReferenceEquals(left, right))
+            {
                 return true;
+            }
+
             if (ReferenceEquals(left, null) || ReferenceEquals(right, null))
+            {
                 return false;
+            }
 
             if (left.Count != right.Count)
+            {
                 return false;
+            }
 
             int count = 0;
             var leftIt = left.GetEnumerator();
@@ -809,14 +896,19 @@ namespace SharpDX
             while (leftIt.MoveNext() && rightIt.MoveNext())
             {
                 if (!Equals(leftIt.Current, rightIt.Current))
+                {
                     return false;
+                }
+
                 count++;
             }
 
             // Just double check to make sure that the iterator actually returns
             // the exact number of elements
             if (count != left.Count)
+            {
                 return false;
+            }
 
             return true;
         }
@@ -976,7 +1068,9 @@ namespace SharpDX
         {
             // No need for cast for similar source and target type
             if (sourceType == targetType)
+            {
                 return null;
+            }
 
             var methods = new List<MethodInfo>();
 
@@ -1005,9 +1099,15 @@ namespace SharpDX
             foreach (MethodInfo mi in methods)
             {
                 if (mi.Name == "op_Explicit") //will return target and take one parameter
+                {
                     if (mi.ReturnType == targetType)
+                    {
                         if (IsAssignableFrom(mi.GetParameters()[0].ParameterType, sourceType))
+                        {
                             return mi;
+                        }
+                    }
+                }
             }
 
             return null;
@@ -1150,7 +1250,10 @@ namespace SharpDX
         {
             IntPtr result = GetProcAddress_(handle, dllFunctionToImport);
             if (result == IntPtr.Zero)
+            {
                 throw new SharpDXException(dllFunctionToImport);
+            }
+
             return result;
         }
 
@@ -1174,7 +1277,10 @@ namespace SharpDX
             const uint p = 16777619;
             uint hash = 2166136261;
             foreach (byte b in data)
+            {
                 hash = (hash ^ b) * p;
+            }
+
             hash += hash << 13;
             hash ^= hash >> 7;
             hash += hash << 3;
@@ -1235,7 +1341,9 @@ namespace SharpDX
             foreach (TSource sourceItem in source)
             {
                 foreach (TResult result in selector(sourceItem))
+                {
                     yield return result;
+                }
             }
         }
 
@@ -1249,8 +1357,10 @@ namespace SharpDX
         public static IEnumerable<TSource> Distinct<TSource>(IEnumerable<TSource> source, IEqualityComparer<TSource> comparer = null)
         {
             if (comparer == null)
+            {
                 comparer = EqualityComparer<TSource>.Default;
-            
+            }
+
             // using Dictionary is not really efficient but easy to implement
             var values = new Dictionary<TSource, object>(comparer);
             foreach (TSource sourceItem in source)
@@ -1287,7 +1397,9 @@ namespace SharpDX
                     foreach (TElement element in source)
                     {
                         if (array == null)
+                        {
                             array = new TElement[4];
+                        }
                         else if (array.Length == length)
                         {
                             var elementArray = new TElement[checked(length * 2)];
@@ -1305,9 +1417,15 @@ namespace SharpDX
             internal TElement[] ToArray()
             {
                 if (count == 0)
+                {
                     return new TElement[0];
+                }
+
                 if (items.Length == count)
+                {
                     return items;
+                }
+
                 var elementArray = new TElement[count];
                 Array.Copy(items, 0, elementArray, 0, count);
                 return elementArray;

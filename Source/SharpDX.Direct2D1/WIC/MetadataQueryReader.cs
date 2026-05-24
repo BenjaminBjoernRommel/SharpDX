@@ -58,7 +58,9 @@ namespace SharpDX.WIC
                         else
                         {
                             foreach (var subPath in subReader.QueryPaths)
+                            {
                                 yield return name + subPath;
+                            }
                         }
                     }
                     else
@@ -83,7 +85,9 @@ namespace SharpDX.WIC
                     int count = 0;
                     GetLocation(0, IntPtr.Zero, out count);
                     if (count == 0)
+                    {
                         return null;
+                    }
 
                     var temp = stackalloc char[count];
                     GetLocation(count, (IntPtr)temp, out count);
@@ -117,7 +121,9 @@ namespace SharpDX.WIC
                     // If object is a ComObject, try to instantiate a MetaDataQueryReader
                     var comObject = value as ComObject;
                     if (comObject != null)
+                    {
                         value = comObject.QueryInterfaceOrNull<MetadataQueryReader>();
+                    }
                 }
 
                 return result;
@@ -137,7 +143,9 @@ namespace SharpDX.WIC
 
             if (ResultCode.Propertynotfound != result &&
                 ResultCode.Propertynotsupported != result)
+            {
                 result.CheckError();
+            }
 
             return value;
         }
@@ -173,13 +181,18 @@ namespace SharpDX.WIC
             {
                 var value = GetMetadataByName(name);
                 for (int i = 0; i < level; i++)
+                {
                     writer.Write("    ");
+                }
+
                 var valueStr = value is MetadataQueryReader ? "..." : "" + (value is Array ? Utilities.Join(",", ((Array)value).GetEnumerator()) : value is IntPtr ? string.Format("0x{0:X}", value) : value);
 
                 writer.WriteLine("{0} = {1}", name, valueStr);
 
                 if (value is MetadataQueryReader)
+                {
                     ((MetadataQueryReader)value).Dump(writer, level + 1);
+                }
             }
         }            
     }

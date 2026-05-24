@@ -121,7 +121,9 @@ namespace SharpDX.Multimedia
         {
             int sizeOfT = Utilities.SizeOf<T>();
             if ((Size % sizeOfT) != 0)
+            {
                 throw new ArgumentException("Size of T is incompatible with size of chunk");
+            }
 
             var values = new T[Size/sizeOfT];
             var data = GetData();

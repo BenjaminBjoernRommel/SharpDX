@@ -47,7 +47,10 @@ namespace SharpDX.D3DCompiler
         /// <param name="module"><p>The address of a reference to an <strong><see cref="SharpDX.D3DCompiler.ModuleInstance"/></strong> interface to initialize.</p></param>
         public ModuleInstance(string namespaceRef, Module module)
         {
-            if (module == null) throw new ArgumentNullException("module");
+            if (module == null)
+            {
+                throw new ArgumentNullException("module");
+            }
 
             module.CreateInstance(namespaceRef, this);
         }

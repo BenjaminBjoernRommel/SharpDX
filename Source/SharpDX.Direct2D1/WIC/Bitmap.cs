@@ -59,7 +59,10 @@ namespace SharpDX.WIC
             : base(IntPtr.Zero)
         {
             if (totalSizeInBytes == 0)
+            {
                 totalSizeInBytes = height*dataRectangle.Pitch;
+            }
+
             factory.CreateBitmapFromMemory(width, height, pixelFormat, dataRectangle.Pitch, totalSizeInBytes, dataRectangle.DataPointer, this);
         }
 
@@ -108,7 +111,9 @@ namespace SharpDX.WIC
         public unsafe static Bitmap New<T>(ImagingFactory factory, int width, int height, System.Guid pixelFormat, T[] pixelDatas, int stride = 0) where T : struct
         {
             if (stride == 0)
+            {
                 stride = width * Utilities.SizeOf<T>();
+            }
 
             return new Bitmap(factory, width, height, pixelFormat, new DataRectangle((IntPtr)Interop.Fixed(pixelDatas), stride));
         }

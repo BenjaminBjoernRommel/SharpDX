@@ -106,7 +106,10 @@ namespace SharpDX.MediaFoundation
         private void OnPlaybackEvent(MediaEngineEvent mediaevent, long param1, int param2)
         {
             MediaEngineNotifyDelegate handler = PlaybackEvent;
-            if (handler != null) handler(mediaevent, param1, param2);
+            if (handler != null)
+            {
+                handler(mediaevent, param1, param2);
+            }
         }
 
         private class MediaEngineNotifyImpl : CallbackBase, MediaEngineNotify

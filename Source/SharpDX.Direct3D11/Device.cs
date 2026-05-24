@@ -275,7 +275,10 @@ namespace SharpDX.Direct3D11
                 FeatureDataFormatSupport2 support = default(FeatureDataFormatSupport2);
                 support.InFormat = format;
                 if (CheckFeatureSupport(Feature.ComputeShaders, new IntPtr(&support), Utilities.SizeOf<FeatureDataFormatSupport2>()).Failure)
+                {
                     return ComputeShaderFormatSupport.None;
+                }
+
                 return support.OutFormatSupport2;
             }
         }
@@ -293,7 +296,10 @@ namespace SharpDX.Direct3D11
             {
                 var support = default(FeatureDataD3D11Options);
                 if (CheckFeatureSupport(Feature.D3D11Options, new IntPtr(&support), Utilities.SizeOf<FeatureDataD3D11Options>()).Failure)
+                {
                     return default(FeatureDataD3D11Options);
+                }
+
                 return support;
             }
         }
@@ -311,7 +317,10 @@ namespace SharpDX.Direct3D11
             {
                 var support = default(FeatureDataShaderMinimumPrecisionSupport);
                 if (CheckFeatureSupport(Feature.ShaderMinimumPrecisionSupport, new IntPtr(&support), Utilities.SizeOf<FeatureDataShaderMinimumPrecisionSupport>()).Failure)
+                {
                     return default(FeatureDataShaderMinimumPrecisionSupport);
+                }
+
                 return support;
             }
         }
@@ -334,7 +343,10 @@ namespace SharpDX.Direct3D11
                     return result.Failure;
                 }
                 if (result.Failure)
+                {
                     return false;
+                }
+
                 return support.FullNonPow2TextureSupport;
             }
         }
@@ -352,7 +364,10 @@ namespace SharpDX.Direct3D11
             {
                 var support = default(FeatureDataArchitectureInformation);
                 if (CheckFeatureSupport(Feature.ArchitectureInformation, new IntPtr(&support), Utilities.SizeOf<FeatureDataArchitectureInformation>()).Failure)
+                {
                     return false;
+                }
+
                 return support.TileBasedDeferredRenderer;
             }
         }
@@ -363,7 +378,10 @@ namespace SharpDX.Direct3D11
             {
                 var support = default(FeatureDataD3D11Options1);
                 if (CheckFeatureSupport(Feature.D3D11Options1, new IntPtr(&support), Utilities.SizeOf<FeatureDataD3D11Options1>()).Failure)
+                {
                     return default(FeatureDataD3D11Options1);
+                }
+
                 return support;
             }
         }
@@ -379,7 +397,10 @@ namespace SharpDX.Direct3D11
             {
                 var support = default(FeatureDataD3D11Options2);
                 if (CheckFeatureSupport(Feature.D3D11Options2, new IntPtr(&support), Utilities.SizeOf<FeatureDataD3D11Options2>()).Failure)
+                {
                     return default(FeatureDataD3D11Options2);
+                }
+
                 return support;
             }
         }
@@ -395,7 +416,10 @@ namespace SharpDX.Direct3D11
             {
                 var support = default(FeatureDataD3D11Options3);
                 if (CheckFeatureSupport(Feature.D3D11Options3, new IntPtr(&support), Utilities.SizeOf<FeatureDataD3D11Options3>()).Failure)
+                {
                     return default(FeatureDataD3D11Options3);
+                }
+
                 return support;
             }
         }
@@ -411,7 +435,10 @@ namespace SharpDX.Direct3D11
             {
                 var support = default(FeatureDataD3D11Options4);
                 if (CheckFeatureSupport(Feature.D3D11Options4, new IntPtr(&support), Utilities.SizeOf<FeatureDataD3D11Options4>()).Failure)
+                {
                     return default(FeatureDataD3D11Options4);
+                }
+
                 return support;
             }
         }
@@ -427,7 +454,10 @@ namespace SharpDX.Direct3D11
             {
                 var support = default(FeatureDataD3D11Options5);
                 if (CheckFeatureSupport(Feature.D3D11Options5, new IntPtr(&support), Utilities.SizeOf<FeatureDataD3D11Options5>()).Failure)
+                {
                     return default(FeatureDataD3D11Options5);
+                }
+
                 return support;
             }
         }
@@ -450,7 +480,10 @@ namespace SharpDX.Direct3D11
                             FeatureDataDoubles support;
 
                             if (CheckFeatureSupport(Feature.ShaderDoubles, new IntPtr(&support), Utilities.SizeOf<FeatureDataDoubles>()).Failure)
+                            {
                                 return false;
+                            }
+
                             return support.DoublePrecisionFloatShaderOps;
                         }
                     case Feature.ComputeShaders:
@@ -458,7 +491,10 @@ namespace SharpDX.Direct3D11
                         {
                             FeatureDataD3D10XHardwareOptions support;
                             if (CheckFeatureSupport(Feature.D3D10XHardwareOptions, new IntPtr(&support), Utilities.SizeOf<FeatureDataD3D10XHardwareOptions>()).Failure)
+                            {
                                 return false;
+                            }
+
                             return support.ComputeShadersPlusRawAndStructuredBuffersViaShader4X;
                         }
                     default:
@@ -633,7 +669,10 @@ namespace SharpDX.Direct3D11
                     byte* pname = stackalloc byte[1024];
                     int size = 1024 - 1;
                     if (GetPrivateData(CommonGuid.DebugObjectName, ref size, new IntPtr(pname)).Failure)
+                    {
                         return string.Empty;
+                    }
+
                     pname[size] = 0;
                     return Marshal.PtrToStringAnsi(new IntPtr(pname));
                 }
@@ -706,7 +745,11 @@ namespace SharpDX.Direct3D11
         /// <unmanaged-short>D3D11On12CreateDevice</unmanaged-short>	
         public static Device CreateFromDirect3D12(ComObject d3D12Device, Direct3D11.DeviceCreationFlags flags, Direct3D.FeatureLevel[] featureLevels, DXGI.Adapter adapter, params ComObject[] commandQueues)
         {
-            if(d3D12Device == null) throw new ArgumentNullException("d3D12Device");
+            if(d3D12Device == null)
+            {
+                throw new ArgumentNullException("d3D12Device");
+            }
+
             Device devOut;
             DeviceContext contextOut;
             FeatureLevel featurelevelOut;

@@ -38,7 +38,11 @@ namespace SharpDX.Multimedia
         /// <param name="stream">The sound stream.</param>
         public SoundStream(Stream stream)
         {
-            if (stream == null) throw new ArgumentNullException("stream");
+            if (stream == null)
+            {
+                throw new ArgumentNullException("stream");
+            }
+
             input = stream;
             Initialize(stream);
         }
@@ -63,7 +67,9 @@ namespace SharpDX.Multimedia
             // Check that WAVE or XWMA header is present
             FileFormatName = parser.Current.Type;
             if (FileFormatName != "WAVE" && FileFormatName != "XWMA")
+            {
                 throw new InvalidOperationException("Unsupported " + FileFormatName + " file format. Only WAVE or XWMA");
+            }
 
             // Parse inside the first chunk
             parser.Descend();
@@ -74,7 +80,9 @@ namespace SharpDX.Multimedia
             // Get "fmt" chunk
             var fmtChunk = Chunk(chunks, "fmt ");
             if (fmtChunk.Size < sizeof(WaveFormat.__PcmNative))
+            {
                 ThrowInvalidFileFormat();
+            }
 
             try
             {
@@ -90,7 +98,9 @@ namespace SharpDX.Multimedia
             {
                 // Check that format is Wma
                 if (Format.Encoding != WaveFormatEncoding.Wmaudio2 && Format.Encoding != WaveFormatEncoding.Wmaudio3)
+                {
                     ThrowInvalidFileFormat();
+                }
 
                 // Check for "dpds" chunk
                 // Get the dpds decoded packed cumulative bytes
@@ -144,7 +154,9 @@ namespace SharpDX.Multimedia
         {
             var buffer = new byte[Length];
             if ( Read(buffer, 0, (int)Length) != Length)
+            {
                 throw new InvalidOperationException("Unable to get a valid DataStream");
+            }
 
             return DataStream.Create(buffer, true, true);
         }
@@ -243,7 +255,10 @@ namespace SharpDX.Multimedia
                 }
             }
             if (chunk == null || chunk.Type != id)
+            {
                 throw new InvalidOperationException("Invalid " + FileFormatName + " file format");
+            }
+
             return chunk;
         }
 
@@ -296,7 +311,9 @@ namespace SharpDX.Multimedia
             }
 
             if (newPosition < startPositionOfData || newPosition > (startPositionOfData+length))
+            {
                 throw new InvalidOperationException("Cannot seek outside the range of this stream");
+            }
 
             return input.Seek(newPosition, SeekOrigin.Begin);
         }

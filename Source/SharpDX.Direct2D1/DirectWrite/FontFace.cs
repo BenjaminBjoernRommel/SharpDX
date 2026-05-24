@@ -138,7 +138,10 @@ namespace SharpDX.DirectWrite
                 RawBool exists;
                 TryGetFontTable(openTypeTableTag, new IntPtr(&tableDataPtr), out tableDataSize, out tableContext, out exists);
                 if (tableDataPtr != IntPtr.Zero)
+                {
                     tableData = new DataPointer(tableDataPtr, tableDataSize);
+                }
+
                 return exists;
             }
         }

@@ -92,10 +92,15 @@ namespace SharpDX.Direct3D11
             {
                 IntPtr* pVertexBuffers = stackalloc IntPtr[vertexBuffers.Length];
                 for (int i = 0; i < vertexBuffers.Length; i++)
+                {
                     pVertexBuffers[i] = (vertexBuffers[i] == null) ? IntPtr.Zero : vertexBuffers[i].NativePointer;
+                }
+
                 fixed (void* stridesRef_ = stridesRef)
                 fixed (void* offsetsRef_ = offsetsRef)
+                {
                     SetVertexBuffers(slot, vertexBuffers.Length, new IntPtr(pVertexBuffers), (IntPtr)stridesRef_, (IntPtr)offsetsRef_);
+                }
             }
         }
     }

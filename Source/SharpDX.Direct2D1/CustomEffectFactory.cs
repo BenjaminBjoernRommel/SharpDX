@@ -94,8 +94,10 @@ namespace SharpDX.Direct2D1
 #endif
             {
                 var binding = PropertyBinding.Get(customEffectType, propertyInfo);
-                if (binding != null) 
+                if (binding != null)
+                {
                     bindings.Add(binding);
+                }
             }
 
             // Sort property bindings by property order
@@ -111,7 +113,9 @@ namespace SharpDX.Direct2D1
             property.SetAttributeValue("name", name);
             property.SetAttributeValue("type", type);
             if (value != null)
+            {
                 property.SetAttributeValue("value", value);
+            }
 
             return property;
         }

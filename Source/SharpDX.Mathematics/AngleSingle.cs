@@ -148,9 +148,13 @@ namespace SharpDX
             float newangle = (float)Math.IEEERemainder(radians, MathUtil.TwoPi);
 
             if (newangle <= -MathUtil.Pi)
+            {
                 newangle += MathUtil.TwoPi;
+            }
             else if (newangle > MathUtil.Pi)
+            {
                 newangle -= MathUtil.TwoPi;
+            }
 
             radians = newangle;
         }
@@ -163,7 +167,9 @@ namespace SharpDX
             float newangle = radians % MathUtil.TwoPi;
 
             if (newangle < 0.0)
+            {
                 newangle += MathUtil.TwoPi;
+            }
 
             radians = newangle;
         }
@@ -402,7 +408,9 @@ namespace SharpDX
         public static AngleSingle Min(AngleSingle left, AngleSingle right)
         {
             if (left.radians < right.radians)
+            {
                 return left;
+            }
 
             return right;
         }
@@ -416,7 +424,9 @@ namespace SharpDX
         public static AngleSingle Max(AngleSingle left, AngleSingle right)
         {
             if (left.radians > right.radians)
+            {
                 return left;
+            }
 
             return right;
         }
@@ -650,18 +660,26 @@ namespace SharpDX
         public int CompareTo(object other)
         {
             if (other == null)
+            {
                 return 1;
+            }
 
             if (!(other is AngleSingle))
+            {
                 throw new ArgumentException("Argument must be of type Angle.", "other");
+            }
 
             float radians = ((AngleSingle)other).radians;
 
             if (this.radians > radians)
+            {
                 return 1;
+            }
 
             if (this.radians < radians)
+            {
                 return -1;
+            }
 
             return 0;
         }
@@ -682,10 +700,14 @@ namespace SharpDX
         public int CompareTo(AngleSingle other)
         {
             if (this.radians > other.radians)
+            {
                 return 1;
+            }
 
             if (this.radians < other.radians)
+            {
                 return -1;
+            }
 
             return 0;
         }
@@ -725,7 +747,9 @@ namespace SharpDX
         public string ToString(string format)
         {
             if (format == null)
+            {
                 return ToString();
+            }
 
             return string.Format(CultureInfo.CurrentCulture, "{0}°", MathUtil.RadiansToDegrees(radians).ToString(format, CultureInfo.CurrentCulture));
         }
@@ -753,7 +777,9 @@ namespace SharpDX
         public string ToString(string format, IFormatProvider formatProvider)
         {
             if (format == null)
+            {
                 return ToString(formatProvider);
+            }
 
             return string.Format(formatProvider, "{0}°", MathUtil.RadiansToDegrees(radians).ToString(format, CultureInfo.CurrentCulture));
         }

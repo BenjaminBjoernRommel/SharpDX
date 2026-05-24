@@ -47,7 +47,9 @@ namespace SharpDX.WIC
                     int count = 0;
                     GetAuthor(0, IntPtr.Zero, out count);
                     if (count == 0)
+                    {
                         return null;
+                    }
 
                     var temp = stackalloc char[count];
                     GetAuthor(count, (IntPtr) temp, out count);
@@ -70,7 +72,9 @@ namespace SharpDX.WIC
                     int count = 0;
                     GetVersion(0, IntPtr.Zero, out count);
                     if (count == 0)
+                    {
                         return null;
+                    }
 
                     var temp = stackalloc char[count];
                     GetVersion(count, (IntPtr) temp, out count);
@@ -93,7 +97,9 @@ namespace SharpDX.WIC
                     int count = 0;
                     GetSpecVersion(0, IntPtr.Zero, out count);
                     if (count == 0)
+                    {
                         return null;
+                    }
 
                     var temp = stackalloc char[count];
                     GetSpecVersion(count, (IntPtr) temp, out count);
@@ -119,7 +125,9 @@ namespace SharpDX.WIC
                     int count = 0;
                     GetFriendlyName(0, IntPtr.Zero, out count);
                     if (count == 0)
+                    {
                         return null;
+                    }
 
                     var temp = stackalloc char[count];
                     GetFriendlyName(count, (IntPtr) temp, out count);

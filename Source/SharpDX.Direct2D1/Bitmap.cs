@@ -185,7 +185,9 @@ namespace SharpDX.Direct2D1
             var sizeOfBitmap = pixelDatas.Length*Utilities.SizeOf<T>();
             var expectedSize = size.Width*size.Height* FormatHelper.SizeOfInBytes(bitmapProperties.PixelFormat.Format);
             if (sizeOfBitmap != expectedSize)
+            {
                 throw new ArgumentException("Invalid size of pixelDatas. Must be equal to sizeof(T) == sizeof(PixelFormat.Format) and  Width * Height elements");
+            }
 
             return new Bitmap(renderTarget, size, new DataPointer((IntPtr)Interop.Fixed(pixelDatas), sizeOfBitmap), size.Width * FormatHelper.SizeOfInBytes(bitmapProperties.PixelFormat.Format), bitmapProperties);
         }
@@ -308,7 +310,10 @@ namespace SharpDX.Direct2D1
         {
             unsafe
             {
-                fixed (void* pMemory = &memory[0]) CopyFromMemory(null, new IntPtr(pMemory), pitch);
+                fixed (void* pMemory = &memory[0])
+                {
+                    CopyFromMemory(null, new IntPtr(pMemory), pitch);
+                }
             }
         }
 
@@ -330,7 +335,9 @@ namespace SharpDX.Direct2D1
             {
                 
                 if (pitch == 0)
+                {
                     pitch = (int)(Size.Width * Utilities.SizeOf<T>() / this.DotsPerInch.Width);
+                }
 
                 CopyFromMemory(null, (IntPtr)Interop.Fixed(memory), pitch);
             }
@@ -371,7 +378,10 @@ namespace SharpDX.Direct2D1
         {
             unsafe
             {
-                fixed (void* pMemory = &memory[0]) CopyFromMemory(destinationArea, new IntPtr(pMemory), pitch);
+                fixed (void* pMemory = &memory[0])
+                {
+                    CopyFromMemory(destinationArea, new IntPtr(pMemory), pitch);
+                }
             }
         }
 

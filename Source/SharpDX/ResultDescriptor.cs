@@ -98,9 +98,15 @@ namespace SharpDX
         public bool Equals(ResultDescriptor other)
         {
             if (ReferenceEquals(null, other))
+            {
                 return false;
+            }
+
             if (ReferenceEquals(this, other))
+            {
                 return true;
+            }
+
             return other.Result.Equals(this.Result);
         }
 
@@ -114,11 +120,20 @@ namespace SharpDX
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
+            {
                 return false;
+            }
+
             if (ReferenceEquals(this, obj))
+            {
                 return true;
+            }
+
             if (obj.GetType() != typeof(ResultDescriptor))
+            {
                 return false;
+            }
+
             return Equals((ResultDescriptor)obj);
         }
 
@@ -175,7 +190,10 @@ namespace SharpDX
         public static bool operator ==(ResultDescriptor left, Result right)
         {
             if (left == null)
+            {
                 return false;
+            }
+
             return left.Result.Code == right.Code;
         }
 
@@ -188,7 +206,10 @@ namespace SharpDX
         public static bool operator !=(ResultDescriptor left, Result right)
         {
             if (left == null)
+            {
                 return false;
+            }
+
             return left.Result.Code != right.Code;
         }
 
@@ -204,7 +225,9 @@ namespace SharpDX
             lock (LockDescriptor)
             {
                 if (!RegisteredDescriptorProvider.Contains(descriptorsProviderType))
+                {
                     RegisteredDescriptorProvider.Add(descriptorsProviderType);
+                }
             }
         }
 

@@ -93,7 +93,10 @@ namespace SharpDX.XAudio2
                     var tempSendDescriptor = new EffectChain();
                     var effectDescriptorNatives = new EffectDescriptor.__Native[effectDescriptors.Length];
                     for (int i = 0; i < effectDescriptorNatives.Length; i++)
+                    {
                         effectDescriptors[i].__MarshalTo(ref effectDescriptorNatives[i]);
+                    }
+
                     tempSendDescriptor.EffectCount = effectDescriptorNatives.Length;
                     fixed (void* pEffectDescriptors = &effectDescriptorNatives[0])
                     {

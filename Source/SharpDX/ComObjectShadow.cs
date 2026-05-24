@@ -95,7 +95,10 @@ namespace SharpDX
                 // The shadow could be null if it is released explicitly
                 // But we are callbacked by a C++ that want to release it.
                 if (shadow == null)
+                {
                     return 0;
+                }
+
                 return shadow.AddRefImpl();
             }
 
@@ -105,7 +108,10 @@ namespace SharpDX
                 // The shadow could be null if it is released explicitly
                 // But we are callbacked by a C++ that want to release it.
                 if (shadow == null)
+                {
                     return 0;
+                }
+
                 return shadow.ReleaseImpl();
             }
         }

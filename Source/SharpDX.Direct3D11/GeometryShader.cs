@@ -32,12 +32,17 @@ namespace SharpDX.Direct3D11
         public GeometryShader(Device device, byte[] shaderBytecode, ClassLinkage linkage = null)
             : base(IntPtr.Zero)
         {
-            if (shaderBytecode == null) throw new ArgumentNullException("shaderBytecode", "ShaderBytecode cannot be null");
+            if (shaderBytecode == null)
+            {
+                throw new ArgumentNullException("shaderBytecode", "ShaderBytecode cannot be null");
+            }
 
             unsafe
             {
                 fixed (void* pBuffer = shaderBytecode)
+                {
                     device.CreateGeometryShader((IntPtr)pBuffer, shaderBytecode.Length, linkage, this);
+                }
             }
         }
 
@@ -57,9 +62,11 @@ namespace SharpDX.Direct3D11
             unsafe
             {
                 fixed (void* pBuffer = shaderBytecode)
+                {
                     device.CreateGeometryShaderWithStreamOutput((IntPtr)pBuffer, shaderBytecode.Length, elements, elements.Length,
                                                                 bufferedStrides, bufferedStrides.Length, rasterizedStream,
                                                                 linkage, this);
+                }
             }
         }
     }

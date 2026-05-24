@@ -184,11 +184,16 @@ namespace SharpDX
         public Bool4(bool[] values)
         {
             if (values == null)
+            {
                 throw new ArgumentNullException("values");
+            }
+
             if (values.Length != 4)
+            {
                 throw new ArgumentOutOfRangeException(
                     "values",
                     "There must be four and only four input values for Bool4.");
+            }
 
             iX = values[0] ? 1 : 0;
             iY = values[1] ? 1 : 0;
@@ -355,7 +360,9 @@ namespace SharpDX
         public override bool Equals(object value)
         {
             if (!(value is Bool4))
+            {
                 return false;
+            }
 
             var strongValue = (Bool4)value;
             return Equals(ref strongValue);

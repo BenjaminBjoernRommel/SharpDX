@@ -193,7 +193,10 @@ namespace SharpDX.MediaFoundation
         {
             int result;
             fixed (void* ptr = &bRef[offset])
+            {
                 Read_((System.IntPtr) ptr, count, out result);
+            }
+
             return result;
         }
 
@@ -215,7 +218,9 @@ namespace SharpDX.MediaFoundation
         public unsafe void BeginRead(byte[] bRef, int offset, int count, SharpDX.MediaFoundation.IAsyncCallback callbackRef, object context)
         {
             fixed (void* ptr = &bRef[offset])
+            {
                 BeginRead_((System.IntPtr) ptr, count, callbackRef, context != null ? Marshal.GetIUnknownForObject(context) : IntPtr.Zero);
+            }
         }
 
         /// <summary>	
@@ -253,7 +258,10 @@ namespace SharpDX.MediaFoundation
         {
             int result;
             fixed (void* ptr = &bRef[offset])
+            {
                 Write_((IntPtr) ptr, count, out result);
+            }
+
             return result;
         }
 
@@ -275,7 +283,9 @@ namespace SharpDX.MediaFoundation
         public unsafe void BeginWrite(byte[] bRef, int offset, int count, SharpDX.MediaFoundation.IAsyncCallback callbackRef, object context)
         {
             fixed (void* ptr = &bRef[offset])
+            {
                 BeginWrite_((System.IntPtr)ptr, count, callbackRef, context != null ? Marshal.GetIUnknownForObject(context) : IntPtr.Zero);
+            }
         }
 
         /// <summary>	

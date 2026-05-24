@@ -34,7 +34,9 @@ namespace SharpDX.WIC
                 int count = 0;
                 GetPixelFormats(0, null, out count);
                 if (count == 0)
+                {
                     return new Guid[0];
+                }
 
                 var pixelFormats = new Guid[count];
                 GetPixelFormats(count, pixelFormats, out count);
@@ -55,7 +57,9 @@ namespace SharpDX.WIC
                     int count = 0;
                     GetColorManagementVersion(0, IntPtr.Zero, out count);
                     if (count == 0)
+                    {
                         return null;
+                    }
 
                     var temp = stackalloc char[count];
                     GetColorManagementVersion(count, (IntPtr)temp, out count);
@@ -78,7 +82,9 @@ namespace SharpDX.WIC
                     int count = 0;
                     GetDeviceManufacturer(0, IntPtr.Zero, out count);
                     if (count == 0)
+                    {
                         return null;
+                    }
 
                     var temp = stackalloc char[count];
                     GetDeviceManufacturer(count, (IntPtr)temp, out count);
@@ -100,7 +106,9 @@ namespace SharpDX.WIC
                     int count = 0;
                     GetDeviceModels(0, IntPtr.Zero, out count);
                     if (count == 0)
+                    {
                         return null;
+                    }
 
                     var temp = stackalloc char[count];
                     GetDeviceModels(count, (IntPtr)temp, out count);
@@ -122,7 +130,9 @@ namespace SharpDX.WIC
                     int count = 0;
                     GetMimeTypes(0, IntPtr.Zero, out count);
                     if (count == 0)
+                    {
                         return null;
+                    }
 
                     var temp = stackalloc char[count];
                     GetMimeTypes(count, (IntPtr)temp, out count);
@@ -144,7 +154,9 @@ namespace SharpDX.WIC
                     int count = 0;
                     GetFileExtensions(0, IntPtr.Zero, out count);
                     if (count == 0)
+                    {
                         return null;
+                    }
 
                     var temp = stackalloc char[count];
                     GetFileExtensions(count, (IntPtr)temp, out count);

@@ -48,7 +48,9 @@ namespace SharpDX.D3DCompiler
             public void Close()
             {
                 if (Handle.IsAllocated)
+                {
                     Handle.Free();
+                }
             }
         }
 
@@ -99,11 +101,15 @@ namespace SharpDX.D3DCompiler
                         Stream parentStream = null;
 
                         if (shadow.frames.ContainsKey(pParentData))
+                        {
                             parentStream = shadow.frames[pParentData].Stream;
+                        }
 
                         stream = callback.Open(includeType, Marshal.PtrToStringAnsi(fileNameRef), parentStream);
                         if (stream == null)
+                        {
                             return Result.Fail;
+                        }
 
                         GCHandle handle;
 

@@ -36,7 +36,9 @@ namespace SharpDX.Direct3D11
         public T[] GetViewports<T>() where T : struct
         {
             if (Utilities.SizeOf<T>() != Utilities.SizeOf<RawViewportF>())
+            {
                 throw new ArgumentException("Type T must have same size and layout as RawViewPortF", "viewports");
+            }
 
             int numViewports = 0;
 
@@ -57,7 +59,9 @@ namespace SharpDX.Direct3D11
         public unsafe void GetViewports<T>(T[] viewports) where T : struct
         {
             if (Utilities.SizeOf<T>() != Utilities.SizeOf<RawViewportF>())
+            {
                 throw new ArgumentException("Type T must have same size and layout as RawViewPortF", "viewports");
+            }
 
             int numViewports = viewports.Length;
             void* pBuffer = Interop.Fixed(viewports);
@@ -94,7 +98,9 @@ namespace SharpDX.Direct3D11
         public unsafe void GetScissorRectangles<T>(T[] scissorRectangles) where T : struct
         {
             if (Utilities.SizeOf<T>() != Utilities.SizeOf<RawRectangle>())
+            {
                 throw new ArgumentException("Type T must have same size and layout as RawRectangle", "scissorRectangles");
+            }
 
             int numRects = scissorRectangles.Length;
             void* pBuffer = Interop.Fixed(scissorRectangles);
@@ -136,7 +142,9 @@ namespace SharpDX.Direct3D11
         public void SetScissorRectangles<T>(params T[] scissorRectangles) where T : struct
         {
             if (Utilities.SizeOf<T>() != Utilities.SizeOf<RawRectangle>())
+            {
                 throw new ArgumentException("Type T must have same size and layout as RawRectangle", "viewports");
+            }
 
             unsafe
             {

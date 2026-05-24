@@ -53,7 +53,10 @@ namespace SharpDX.Mathematics.Interop
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
+            {
                 return false;
+            }
+
             return obj is RawBool && Equals((RawBool)obj);
         }
 

@@ -55,8 +55,9 @@ namespace SharpDX.Direct3D11
             {
                 subResourceDatas = new DataBox[data.Length];
                 for (int i = 0; i < subResourceDatas.Length; i++)
+                {
                     subResourceDatas[i].DataPointer = data[i].DataPointer;
-
+                }
             }
             device.CreateTexture1D(ref description, subResourceDatas, this);
         }
@@ -78,8 +79,9 @@ namespace SharpDX.Direct3D11
             {
                 subResourceDatas = new DataBox[data.Length];
                 for (int i = 0; i < subResourceDatas.Length; i++)
+                {
                     subResourceDatas[i].DataPointer = data[i];
-
+                }
             }
             device.CreateTexture1D(ref description, subResourceDatas, this);
         }

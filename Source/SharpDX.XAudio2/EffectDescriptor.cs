@@ -61,9 +61,14 @@ namespace SharpDX.XAudio2
             set
             {
                 if (value == null)
+                {
                     throw new ArgumentNullException("value", "Effect cannot be set to null");
+                }
+
                 if (_effect != null)
+                {
                     throw new ArgumentException("Cannot set Effect twice on the same EffectDescriptor");
+                }
 
                 _effect = value;
                 EffectPointer = _effect;

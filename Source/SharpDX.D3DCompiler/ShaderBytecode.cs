@@ -164,7 +164,10 @@ namespace SharpDX.D3DCompiler
                     secondaryData);
             } finally
             {
-                if (shaderSourcePtr != IntPtr.Zero) Marshal.FreeHGlobal(shaderSourcePtr);
+                if (shaderSourcePtr != IntPtr.Zero)
+                {
+                    Marshal.FreeHGlobal(shaderSourcePtr);
+                }
             }
         }
 
@@ -197,7 +200,10 @@ namespace SharpDX.D3DCompiler
             }
             finally
             {
-                if (shaderSourcePtr != IntPtr.Zero) Marshal.FreeHGlobal(shaderSourcePtr);
+                if (shaderSourcePtr != IntPtr.Zero)
+                {
+                    Marshal.FreeHGlobal(shaderSourcePtr);
+                }
             }
         }
 
@@ -232,7 +238,10 @@ namespace SharpDX.D3DCompiler
             }
             finally
             {
-                if (shaderSourcePtr != IntPtr.Zero) Marshal.FreeHGlobal(shaderSourcePtr);
+                if (shaderSourcePtr != IntPtr.Zero)
+                {
+                    Marshal.FreeHGlobal(shaderSourcePtr);
+                }
             }
         }
 
@@ -292,7 +301,10 @@ namespace SharpDX.D3DCompiler
             }
             finally
             {
-                if (shaderSourcePtr != IntPtr.Zero) Marshal.FreeHGlobal(shaderSourcePtr);
+                if (shaderSourcePtr != IntPtr.Zero)
+                {
+                    Marshal.FreeHGlobal(shaderSourcePtr);
+                }
             }
         }
 
@@ -319,6 +331,7 @@ namespace SharpDX.D3DCompiler
             unsafe
             {
                 fixed (void* pData = &shaderSource[0])
+                {
                     return Compile(
                         (IntPtr)pData,
                         shaderSource.Length,
@@ -331,6 +344,7 @@ namespace SharpDX.D3DCompiler
                         sourceFileName,
                         secondaryDataFlags,
                         secondaryData);
+                }
             }
         }
 
@@ -358,10 +372,14 @@ namespace SharpDX.D3DCompiler
             unsafe
             {
                 if (string.IsNullOrWhiteSpace(profile))
+                {
                     throw new ArgumentNullException("profile");
+                }
 
                 if (!(profile.ToUpperInvariant().StartsWith("FX_") || profile.ToUpperInvariant().StartsWith("LIB_")) && string.IsNullOrWhiteSpace(entryPoint))
+                {
                     throw new ArgumentNullException("entryPoint");
+                }
 
                 Blob blobForCode = null;
                 Blob blobForErrors = null;
@@ -387,7 +405,9 @@ namespace SharpDX.D3DCompiler
                     if (blobForErrors != null)
                     {
                         if (Configuration.ThrowOnShaderCompileError)
+                        {
                             throw new CompilationException(resultCode, Utilities.BlobToString(blobForErrors));
+                        }
                     }
                     else
                     {
@@ -622,7 +642,10 @@ namespace SharpDX.D3DCompiler
         {
             Blob output;
             fixed (void* bufferPtr = Data)
+            {
                 D3D.Disassemble((IntPtr)bufferPtr, Data.Length, flags, comments, out output);
+            }
+
             return Utilities.BlobToString(output);
         }
 
@@ -641,7 +664,10 @@ namespace SharpDX.D3DCompiler
         {
             Blob output;
             fixed (void* bufferPtr = Data)
+            {
                 D3D.DisassembleRegion((IntPtr)bufferPtr, Data.Length, (int)flags, comments, startByteOffset, numberOfInstructions, out finishByteOffsetRef, out output);
+            }
+
             return Utilities.BlobToString(output);
         }
 
@@ -658,7 +684,9 @@ namespace SharpDX.D3DCompiler
         public unsafe PointerSize GetTraceInstructionOffsets(bool isIncludingNonExecutableCode, PointerSize startInstIndex, PointerSize numInsts, out SharpDX.PointerSize totalInstsRef)
         {
             fixed (void* bufferPtr = Data)
+            {
                 return D3D.GetTraceInstructionOffsets((IntPtr)bufferPtr, Data.Length, isIncludingNonExecutableCode ? 1 : 0, startInstIndex, numInsts, out totalInstsRef);
+            }
         }
 
         /// <summary>	
@@ -674,7 +702,10 @@ namespace SharpDX.D3DCompiler
         {
             Blob blob;
             fixed (void* bufferPtr = Data)
+            {
                 D3D.GetBlobPart((IntPtr)bufferPtr, Data.Length, part, 0, out blob);
+            }
+
             return new ShaderBytecode(blob);
         }
 
@@ -689,7 +720,10 @@ namespace SharpDX.D3DCompiler
         {
             Blob blob;
             fixed (void* bufferPtr = Data)
+            {
                 D3D.SetBlobPart((IntPtr)bufferPtr, Data.Length, part, 0, partData.DataPointer, (int)partData.Length, out blob);
+            }
+
             return new ShaderBytecode(blob);
         }
 
@@ -710,7 +744,10 @@ namespace SharpDX.D3DCompiler
         /// <param name="stream">The stream.</param>
         public void Save(Stream stream)
         {
-            if (Data.Length == 0) return;
+            if (Data.Length == 0)
+            {
+                return;
+            }
 
             stream.Write(Data, 0, Data.Length);
         }
@@ -738,7 +775,9 @@ namespace SharpDX.D3DCompiler
             finally
             {
                 if (shaderSourcePtr != IntPtr.Zero)
+                {
                     Marshal.FreeHGlobal(shaderSourcePtr);
+                }
             }
         }
 
@@ -770,7 +809,9 @@ namespace SharpDX.D3DCompiler
             unsafe
             {
                 fixed (void* pData = &shaderSource[0])
+                {
                     return Preprocess((IntPtr)pData, shaderSource.Length, defines, include, out compilationErrors, sourceFileName);
+                }
             }
         }
 
@@ -834,7 +875,9 @@ namespace SharpDX.D3DCompiler
             finally
             {
                 if (shaderSourcePtr != IntPtr.Zero)
+                {
                     Marshal.FreeHGlobal(shaderSourcePtr);
+                }
             }
         }
         /// <summary>
@@ -898,8 +941,13 @@ namespace SharpDX.D3DCompiler
         {
             Blob blob;
             fixed (void* bufferPtr = Data)
+            {
                 if (D3D.StripShader((IntPtr)bufferPtr, Data.Length, flags, out blob).Failure)
+                {
                     return null;
+                }
+            }
+
             return new ShaderBytecode(blob);
         }
 
@@ -936,13 +984,19 @@ namespace SharpDX.D3DCompiler
         internal static ShaderMacro[] PrepareMacros(ShaderMacro[] macros)
         {
             if (macros == null)
+            {
                 return null;
+            }
 
             if (macros.Length == 0)
+            {
                 return null;
+            }
 
             if (macros[macros.Length - 1].Name == null && macros[macros.Length - 1].Definition == null)
+            {
                 return macros;
+            }
 
             var macroArray = new ShaderMacro[macros.Length + 1];
 
@@ -990,15 +1044,21 @@ namespace SharpDX.D3DCompiler
                 var code = (FourCC)BitConverter.ToUInt32(data, offset);
                 // these chunks contain the shader version
                 if (code == "SHEX" || code == "SHDR")
+                {
                     chunkOffset = offset;
+                }
 
                 // this chunk is present only for d3d9-level hardware
                 if (code == "Aon9")
+                {
                     dx9ChunkOffset = offset;
+                }
             }
 
             if (chunkOffset == invalidOffset)
+            {
                 throw new ArgumentException("Cannot find the chunk with version in provided bytecode");
+            }
 
             // read the shader version
             var versionValue = BitConverter.ToInt32(data, chunkOffset + shaderCodeVersionOffset);
@@ -1059,7 +1119,9 @@ namespace SharpDX.D3DCompiler
             // create the mask to read the data
             var mask = 0;
             for (var i = start; i <= end; i++)
+            {
                 mask |= 1 << i;
+            }
 
             // read the needed bits and shift them accordingly
             return (token & mask) >> start;

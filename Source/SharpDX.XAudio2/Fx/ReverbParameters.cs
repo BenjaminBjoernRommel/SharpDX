@@ -58,7 +58,11 @@ namespace SharpDX.XAudio2.Fx
             if (I3DL2Parameters.DecayHFRatio >= 1.0f)
             {
                 int index = (int)(-4.0 * Math.Log10(I3DL2Parameters.DecayHFRatio));
-                if (index < -8) index = -8;
+                if (index < -8)
+                {
+                    index = -8;
+                }
+
                 native.LowEQGain = (byte)((index < 0) ? index + 8 : 8);
                 native.HighEQGain = 8;
                 native.DecayTime = I3DL2Parameters.DecayTime * I3DL2Parameters.DecayHFRatio;
@@ -66,7 +70,11 @@ namespace SharpDX.XAudio2.Fx
             else
             {
                 int index = (int)(4.0 * Math.Log10(I3DL2Parameters.DecayHFRatio));
-                if (index < -8) index = -8;
+                if (index < -8)
+                {
+                    index = -8;
+                }
+
                 native.LowEQGain = 8;
                 native.HighEQGain = (byte)((index < 0) ? index + 8 : 8);
                 native.DecayTime = I3DL2Parameters.DecayTime;

@@ -44,7 +44,10 @@ namespace SharpDX.DXGI
             GetDisplayModeList1(enumFormat, (int)flags, ref numberOfDisplayModes, null);
             var list = new ModeDescription1[numberOfDisplayModes];
             if (numberOfDisplayModes > 0)
+            {
                 GetDisplayModeList1(enumFormat, (int)flags, ref numberOfDisplayModes, list);
+            }
+
             return list;
         }
     }

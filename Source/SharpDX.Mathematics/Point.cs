@@ -87,7 +87,9 @@ namespace SharpDX
         public override bool Equals(object obj)
         {
             if(!(obj is Point))
+            {
                 return false;
+            }
 
             var strongValue = (Point)obj;
             return Equals(ref strongValue);

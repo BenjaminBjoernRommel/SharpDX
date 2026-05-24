@@ -187,7 +187,9 @@ namespace SharpDX
         public override bool Equals(object obj)
         {
             if (!(obj is Half2))
+            {
                 return false;
+            }
 
             return Equals((Half2)obj);
         }

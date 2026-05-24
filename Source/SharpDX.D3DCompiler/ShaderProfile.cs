@@ -107,16 +107,31 @@
         public FeatureLevel GetFeatureLevel()
         {
             if (Major == 5 && Minor == 0)
+            {
                 return FeatureLevel.Level_11_0;
+            }
 
             if (Major == 4 && Minor == 1)
+            {
                 return FeatureLevel.Level_10_1;
+            }
 
             if (Major == 4 && Minor == 0)
             {
-                if (ProfileMajor == 9 && ProfileMinor == 3) return FeatureLevel.Level_9_3;
-                if (ProfileMajor == 9 && ProfileMinor == 1) return FeatureLevel.Level_9_1;
-                if (ProfileMajor == 0 && ProfileMinor == 0) return FeatureLevel.Level_10_0;
+                if (ProfileMajor == 9 && ProfileMinor == 3)
+                {
+                    return FeatureLevel.Level_9_3;
+                }
+
+                if (ProfileMajor == 9 && ProfileMinor == 1)
+                {
+                    return FeatureLevel.Level_9_1;
+                }
+
+                if (ProfileMajor == 0 && ProfileMinor == 0)
+                {
+                    return FeatureLevel.Level_10_0;
+                }
             }
 
             throw new InvalidOperationException("Cannot convert profile to feature level.");

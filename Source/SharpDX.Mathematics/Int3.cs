@@ -111,10 +111,15 @@ namespace SharpDX
         public Int3(int[] values)
         {
             if (values == null)
+            {
                 throw new ArgumentNullException("values");
+            }
+
             if (values.Length != 3)
+            {
                 throw new ArgumentOutOfRangeException("values",
                                                       "There must be three and only three input values for Int3.");
+            }
 
             X = values[0];
             Y = values[1];
@@ -533,7 +538,9 @@ namespace SharpDX
         public string ToString(string format)
         {
             if (format == null)
+            {
                 return ToString();
+            }
 
             return string.Format(CultureInfo.CurrentCulture, "X:{0} Y:{1} Z:{2}",
                                  X.ToString(format, CultureInfo.CurrentCulture),
@@ -564,7 +571,9 @@ namespace SharpDX
         public string ToString(string format, IFormatProvider formatProvider)
         {
             if (format == null)
+            {
                 ToString(formatProvider);
+            }
 
             return string.Format(formatProvider, "X:{0} Y:{1} Z:{2}", X.ToString(format, formatProvider),
                                  Y.ToString(format, formatProvider), Z.ToString(format, formatProvider));
@@ -623,7 +632,9 @@ namespace SharpDX
         public override bool Equals(object value)
         {
             if (!(value is Int3))
+            {
                 return false;
+            }
 
             var strongValue = (Int3)value;
             return Equals(ref strongValue);

@@ -54,7 +54,9 @@ namespace SharpDX.Direct2D1
         {
             int length = GetPropertyNameLength(index);
             if (length == 0)
+            {
                 return null;
+            }
             // D2D runtime returns the property name as a null-terminated string, so we need an additional char at the end
             var bufferLength = length + 1;
             var pText = stackalloc char[bufferLength];
@@ -253,7 +255,10 @@ namespace SharpDX.Direct2D1
         public unsafe T GetEnumValue<T>(int index) where T : struct
         {
             if (Utilities.SizeOf<T>() != sizeof(int))
+            {
                 throw new ArgumentException("value", "enum must be sizeof(int)");
+            }
+
             T value = default(T);
             this.GetValue(index, PropertyType.Enum, (IntPtr)Interop.Cast<T>(ref value), sizeof(int));
             return value;
@@ -463,7 +468,10 @@ namespace SharpDX.Direct2D1
         public unsafe T GetEnumValueByName<T>(string name) where T : struct
         {
             if (Utilities.SizeOf<T>() != sizeof(int))
+            {
                 throw new ArgumentException("value", "enum must be sizeof(int)");
+            }
+
             T value = default(T);
             this.GetValueByName(name, PropertyType.Enum, (IntPtr)Interop.Cast<T>(ref value), sizeof(int));
             return value;
@@ -854,7 +862,10 @@ namespace SharpDX.Direct2D1
         public unsafe void SetEnumValue<T>(int index, T value) where T : struct
         {
             if (Utilities.SizeOf<T>() != sizeof(int))
+            {
                 throw new ArgumentException("value", "enum must be sizeof(int)");
+            }
+
             SetValue(index, PropertyType.Enum, (IntPtr)Interop.Cast<T>(ref value), sizeof(int));
         }
 

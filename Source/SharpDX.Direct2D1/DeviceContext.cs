@@ -74,7 +74,9 @@ namespace SharpDX.Direct2D1
         public void DrawImage(SharpDX.Direct2D1.Effect effect, RawVector2 targetOffset, SharpDX.Direct2D1.InterpolationMode interpolationMode = InterpolationMode.Linear, SharpDX.Direct2D1.CompositeMode compositeMode = CompositeMode.SourceOver)
         {
             using (var output = effect.Output)
+            {
                 DrawImage(output, targetOffset, null, interpolationMode, compositeMode);
+            }
         }
 
         /// <summary>
@@ -87,7 +89,9 @@ namespace SharpDX.Direct2D1
         public void DrawImage(SharpDX.Direct2D1.Effect effect, SharpDX.Direct2D1.InterpolationMode interpolationMode = InterpolationMode.Linear, SharpDX.Direct2D1.CompositeMode compositeMode = CompositeMode.SourceOver)
         {
             using (var output = effect.Output)
+            {
                 DrawImage(output, null, null, interpolationMode, compositeMode);
+            }
         }
         
         /// <summary>	
@@ -175,7 +179,10 @@ namespace SharpDX.Direct2D1
         {
             var invalidRects = new RawRectangleF[GetEffectInvalidRectangleCount(effect)];
             if (invalidRects.Length == 0)
+            {
                 return invalidRects;
+            }
+
             GetEffectInvalidRectangles(effect, invalidRects, invalidRects.Length);
             return invalidRects;
         }

@@ -63,11 +63,19 @@ namespace SharpDX.Direct3D11
             internal unsafe void __MarshalFree()
             {
                 if (PCategoryList != IntPtr.Zero)
+                {
                     Marshal.FreeHGlobal(PCategoryList);
+                }
+
                 if (PSeverityList != IntPtr.Zero)
+                {
                     Marshal.FreeHGlobal(PSeverityList);
+                }
+
                 if (PIDList != IntPtr.Zero)
+                {
                     Marshal.FreeHGlobal(PIDList);
+                }
             }
         }
 
@@ -80,15 +88,21 @@ namespace SharpDX.Direct3D11
         {
             this.Categories = new MessageCategory[@ref.CategorieCount];
             if (@ref.CategorieCount > 0)
+            {
                 Utilities.Read(@ref.PCategoryList, this.Categories, 0, @ref.CategorieCount);
+            }
 
             this.Severities = new MessageSeverity[@ref.SeveritieCount];
             if (@ref.SeveritieCount > 0)
+            {
                 Utilities.Read(@ref.PSeverityList, this.Severities, 0, @ref.SeveritieCount);
+            }
 
             this.Ids = new MessageId[@ref.IDCount];
             if (@ref.IDCount > 0)
+            {
                 Utilities.Read(@ref.PIDList, this.Ids, 0, @ref.IDCount);
+            }
         }
 
         internal unsafe void __MarshalTo(ref InfoQueueFilterDescription.__Native @ref)

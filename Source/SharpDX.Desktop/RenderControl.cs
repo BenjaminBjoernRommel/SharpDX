@@ -45,7 +45,9 @@ namespace SharpDX.Windows
         protected override void OnPaintBackground(PaintEventArgs e)
         {
             if (DesignMode)
+            {
                 base.OnPaintBackground(e);
+            }
         }
 
         /// <summary>
@@ -58,7 +60,9 @@ namespace SharpDX.Windows
             if (DesignMode)
             {
                 if (fontForDesignMode == null)
+                {
                     fontForDesignMode = new Font("Calibri", 24, FontStyle.Regular);
+                }
 
                 e.Graphics.Clear(System.Drawing.Color.WhiteSmoke);
                 string text = "SharpDX RenderControl";

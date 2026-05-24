@@ -37,7 +37,9 @@ namespace SharpDX.Direct3D11
             unsafe
             {
                 fixed (void* pBuffer = shaderBytecode)
+                {
                     device.CreateInputLayout(elements, elements.Length, (IntPtr)pBuffer, shaderBytecode.Length,  this);
+                }
             }
         }
     }

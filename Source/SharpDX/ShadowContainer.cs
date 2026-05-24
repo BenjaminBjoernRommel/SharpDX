@@ -115,7 +115,9 @@ namespace SharpDX
                 {
                     var inheritShadowAttribute = ShadowAttribute.Get(inheritInterface);
                     if (inheritShadowAttribute == null)
+                    {
                         continue;
+                    }
 
                     // Use same shadow as derived
                     guidToShadow.Add(Utilities.GetGuidFromType(inheritInterface), shadow);
@@ -128,7 +130,9 @@ namespace SharpDX
             foreach (var guidKey in guidToShadow.Keys)
             {
                 if (guidKey != Utilities.GetGuidFromType(typeof(IInspectable)) && guidKey != Utilities.GetGuidFromType(typeof(IUnknown)))
+                {
                     countGuids++;
+                }
             }
 
             guidPtr = Marshal.AllocHGlobal(Utilities.SizeOf<Guid>() * countGuids);
@@ -140,7 +144,9 @@ namespace SharpDX
                 foreach (var guidKey in guidToShadow.Keys)
                 {
                     if (guidKey == Utilities.GetGuidFromType(typeof(IInspectable)) || guidKey == Utilities.GetGuidFromType(typeof(IUnknown)))
+                    {
                         continue;
+                    }
 
                     pGuid[i] = guidKey;
                     // Store the pointer
@@ -174,7 +180,10 @@ namespace SharpDX
             if (disposing)
             {
                 foreach (var comObjectCallbackNative in guidToShadow.Values)
+                {
                     comObjectCallbackNative.Dispose();
+                }
+
                 guidToShadow.Clear();
 
                 if (guidPtr != IntPtr.Zero)

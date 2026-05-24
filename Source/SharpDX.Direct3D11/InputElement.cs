@@ -110,8 +110,16 @@ namespace SharpDX.Direct3D11
         /// <inheritdoc/>
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (obj.GetType() != typeof(InputElement)) return false;
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (obj.GetType() != typeof(InputElement))
+            {
+                return false;
+            }
+
             return Equals((InputElement)obj);
         }
 

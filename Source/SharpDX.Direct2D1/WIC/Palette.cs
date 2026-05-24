@@ -49,7 +49,9 @@ namespace SharpDX.WIC
         public unsafe void Initialize<T>(T[] colors) where T : struct
         {
             if (Utilities.SizeOf<T>() != 4)
+            {
                 throw new ArgumentException("Color type must be 4 bytes RGBA");
+            }
 
             void* pColors = Interop.Fixed(colors);
             Initialize((IntPtr)pColors, colors.Length);
@@ -64,7 +66,9 @@ namespace SharpDX.WIC
         public T[] GetColors<T>() where T : struct
         {
             if (Utilities.SizeOf<T>() != 4)
+            {
                 throw new ArgumentException("Color type must be 4 bytes RGBA");
+            }
 
             unsafe
             {
@@ -77,8 +81,10 @@ namespace SharpDX.WIC
                     GetColors(count, (IntPtr)pColors, out actualCount);
                 }
                 if (actualCount == 0)
+                {
                     return new T[0];
-                    
+                }
+
                 if (count != actualCount)
                 {
                     rawColors = new T[actualCount];

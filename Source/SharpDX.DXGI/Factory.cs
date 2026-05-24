@@ -54,7 +54,10 @@ namespace SharpDX.DXGI
                     Adapter adapter;
                     var result = GetAdapter(adapters.Count, out adapter);
                     if (result == ResultCode.NotFound)
+                    {
                         break;
+                    }
+
                     adapters.Add(adapter);
                 } while (true);
                 return adapters.ToArray();
@@ -74,9 +77,15 @@ namespace SharpDX.DXGI
                 Adapter adapter;
                 var result = GetAdapter(nbAdapters, out adapter);
                 if (adapter != null)
+                {
                     adapter.Dispose();
+                }
+
                 if (result == ResultCode.NotFound)
+                {
                     break;
+                }
+
                 nbAdapters++;
             } while (true);
             return nbAdapters;

@@ -18,7 +18,9 @@ namespace SharpDX.Direct2D1
             get
             {
                 if (!HasChildren())
+                {
                     return new SvgElement[0];
+                }
 
                 //We do not know the amount of children, and nothing in api does help us, count pass
                 SvgElement current = FirstChild;

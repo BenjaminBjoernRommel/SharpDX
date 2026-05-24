@@ -244,7 +244,9 @@ namespace SharpDX
         public override bool Equals(object obj)
         {
             if (!(obj is Half4))
+            {
                 return false;
+            }
 
             return this.Equals((Half4)obj);
         }

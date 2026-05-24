@@ -81,7 +81,9 @@ namespace SharpDX
         public OrientedBoundingBox(Vector3[] points)
         {
             if (points == null || points.Length == 0)
+            {
                 throw new ArgumentNullException("points");
+            }
 
             Vector3 minimum = new Vector3(float.MaxValue);
             Vector3 maximum = new Vector3(float.MinValue);
@@ -281,11 +283,18 @@ namespace SharpDX
 
             //Simple axes-aligned BB check
             if (MathUtil.NearEqual(locPoint.X, Extents.X) && MathUtil.NearEqual(locPoint.Y, Extents.Y) && MathUtil.NearEqual(locPoint.Z, Extents.Z))
+            {
                 return ContainmentType.Intersects;
+            }
+
             if (locPoint.X < Extents.X && locPoint.Y < Extents.Y && locPoint.Z < Extents.Z)
+            {
                 return ContainmentType.Contains;
+            }
             else
+            {
                 return ContainmentType.Disjoint;
+            }
         }
 
         /// <summary>
@@ -324,19 +333,32 @@ namespace SharpDX
                 if (MathUtil.NearEqual(locPoint.X, Extents.X) &&
                     MathUtil.NearEqual(locPoint.Y, Extents.Y) &&
                     MathUtil.NearEqual(locPoint.Z, Extents.Z))
+                {
                     containsAny = true;
+                }
+
                 if (locPoint.X < Extents.X && locPoint.Y < Extents.Y && locPoint.Z < Extents.Z)
+                {
                     containsAny = true;
+                }
                 else
+                {
                     containsAll = false;
+                }
             }
 
             if (containsAll)
+            {
                 return ContainmentType.Contains;
+            }
             else if (containsAny)
+            {
                 return ContainmentType.Intersects;
+            }
             else
+            {
                 return ContainmentType.Disjoint;
+            }
         }
 
         /// <summary>
@@ -360,7 +382,9 @@ namespace SharpDX
 
             float locRadius;
             if (IgnoreScale)
+            {
                 locRadius = sphere.Radius;
+            }
             else
             {
                 // Transform sphere radius into the obb coordinates
@@ -376,7 +400,9 @@ namespace SharpDX
             float distance = Vector3.DistanceSquared(locCenter, vector);
 
             if (distance > locRadius * locRadius)
+            {
                 return ContainmentType.Disjoint;
+            }
 
             if ((((minusExtens.X + locRadius <= locCenter.X) && (locCenter.X <= Extents.X - locRadius)) && ((Extents.X - minusExtens.X > locRadius) &&
                 (minusExtens.Y + locRadius <= locCenter.Y))) && (((locCenter.Y <= Extents.Y - locRadius) && (Extents.Y - minusExtens.Y > locRadius)) &&
@@ -410,7 +436,9 @@ namespace SharpDX
         {
             var cornersCheck = Contains(obb.GetCorners());
             if (cornersCheck != ContainmentType.Disjoint)
+            {
                 return cornersCheck;
+            }
 
             //http://www.3dkingdoms.com/weekly/bbox.cpp
             var SizeA = Extents;
@@ -426,11 +454,13 @@ namespace SharpDX
 
             // Calculate B to A rotation matrix
             for (i = 0; i < 3; i++)
+            {
                 for (k = 0; k < 3; k++)
                 {
                     R[i, k] = Vector3.Dot(RotA[i], RotB[k]);
                     AR[i, k] = Math.Abs(R[i, k]);
                 }
+            }
 
 
             // Vector separating the centers of Box B and of Box A	
@@ -446,7 +476,9 @@ namespace SharpDX
                 Separation = Math.Abs(vSepA[i]);
 
                 if (Separation > ExtentA + ExtentB)
+                {
                     return ContainmentType.Disjoint;
+                }
             }
 
             // Test if any of B's basis vectors separate the box
@@ -457,11 +489,14 @@ namespace SharpDX
                 Separation = Math.Abs(Vector3.Dot(vSepA, new Vector3(R[0, k], R[1, k], R[2, k])));
 
                 if (Separation > ExtentA + ExtentB)
+                {
                     return ContainmentType.Disjoint;
+                }
             }
 
             // Now test Cross Products of each basis vector combination ( A[i], B[k] )
             for (i = 0; i < 3; i++)
+            {
                 for (k = 0; k < 3; k++)
                 {
                     int i1 = (i + 1) % 3, i2 = (i + 2) % 3;
@@ -470,8 +505,11 @@ namespace SharpDX
                     ExtentB = SizeB[k1] * AR[i, k2] + SizeB[k2] * AR[i, k1];
                     Separation = Math.Abs(vSepA[i2] * R[i1, k] - vSepA[i1] * R[i2, k]);
                     if (Separation > ExtentA + ExtentB)
+                    {
                         return ContainmentType.Disjoint;
+                    }
                 }
+            }
 
             // No separating axis found, the boxes overlap	
             return ContainmentType.Intersects;
@@ -491,7 +529,9 @@ namespace SharpDX
         {
             var cornersCheck = Contains(new Vector3[] { L1, L2 });
             if (cornersCheck != ContainmentType.Disjoint)
+            {
                 return cornersCheck;
+            }
 
             //http://www.3dkingdoms.com/weekly/bbox.cpp
             // Put line in box space
@@ -510,13 +550,35 @@ namespace SharpDX
 
             // Use Separating Axis Test
             // Separation vector from box center to line center is LMid, since the line is in box space
-            if (Math.Abs(LMid.X) > Extents.X + LExt.X) return ContainmentType.Disjoint;
-            if (Math.Abs(LMid.Y) > Extents.Y + LExt.Y) return ContainmentType.Disjoint;
-            if (Math.Abs(LMid.Z) > Extents.Z + LExt.Z) return ContainmentType.Disjoint;
+            if (Math.Abs(LMid.X) > Extents.X + LExt.X)
+            {
+                return ContainmentType.Disjoint;
+            }
+
+            if (Math.Abs(LMid.Y) > Extents.Y + LExt.Y)
+            {
+                return ContainmentType.Disjoint;
+            }
+
+            if (Math.Abs(LMid.Z) > Extents.Z + LExt.Z)
+            {
+                return ContainmentType.Disjoint;
+            }
             // Cross products of line and each axis
-            if (Math.Abs(LMid.Y * L.Z - LMid.Z * L.Y) > (Extents.Y * LExt.Z + Extents.Z * LExt.Y)) return ContainmentType.Disjoint;
-            if (Math.Abs(LMid.X * L.Z - LMid.Z * L.X) > (Extents.X * LExt.Z + Extents.Z * LExt.X)) return ContainmentType.Disjoint;
-            if (Math.Abs(LMid.X * L.Y - LMid.Y * L.X) > (Extents.X * LExt.Y + Extents.Y * LExt.X)) return ContainmentType.Disjoint;
+            if (Math.Abs(LMid.Y * L.Z - LMid.Z * L.Y) > (Extents.Y * LExt.Z + Extents.Z * LExt.Y))
+            {
+                return ContainmentType.Disjoint;
+            }
+
+            if (Math.Abs(LMid.X * L.Z - LMid.Z * L.X) > (Extents.X * LExt.Z + Extents.Z * LExt.X))
+            {
+                return ContainmentType.Disjoint;
+            }
+
+            if (Math.Abs(LMid.X * L.Y - LMid.Y * L.X) > (Extents.X * LExt.Y + Extents.Y * LExt.X))
+            {
+                return ContainmentType.Disjoint;
+            }
             // No separating axis, the line intersects
             return ContainmentType.Intersects;
         }
@@ -534,7 +596,9 @@ namespace SharpDX
         {
             var cornersCheck = Contains(box.GetCorners());
             if (cornersCheck != ContainmentType.Disjoint)
+            {
                 return cornersCheck;
+            }
 
             var boxCenter = box.Minimum + (box.Maximum - box.Minimum) / 2f;
             var boxExtents = box.Maximum - boxCenter;
@@ -551,10 +615,12 @@ namespace SharpDX
             var AR = new Matrix();      // absolute values of R matrix, to use with box extents
 
             for (i = 0; i < 3; i++)
+            {
                 for (k = 0; k < 3; k++)
                 {
                     AR[i, k] = Math.Abs(R[i, k]);
                 }
+            }
 
 
             // Vector separating the centers of Box B and of Box A	
@@ -570,7 +636,9 @@ namespace SharpDX
                 Separation = Math.Abs(vSepA[i]);
 
                 if (Separation > ExtentA + ExtentB)
+                {
                     return ContainmentType.Disjoint;
+                }
             }
 
             // Test if any of B's basis vectors separate the box
@@ -581,11 +649,14 @@ namespace SharpDX
                 Separation = Math.Abs(Vector3.Dot(vSepA, new Vector3(R[0, k], R[1, k], R[2, k])));
 
                 if (Separation > ExtentA + ExtentB)
+                {
                     return ContainmentType.Disjoint;
+                }
             }
 
             // Now test Cross Products of each basis vector combination ( A[i], B[k] )
             for (i = 0; i < 3; i++)
+            {
                 for (k = 0; k < 3; k++)
                 {
                     int i1 = (i + 1) % 3, i2 = (i + 2) % 3;
@@ -594,8 +665,11 @@ namespace SharpDX
                     ExtentB = SizeB[k1] * AR[i, k2] + SizeB[k2] * AR[i, k1];
                     Separation = Math.Abs(vSepA[i2] * R[i1, k] - vSepA[i1] * R[i2, k]);
                     if (Separation > ExtentA + ExtentB)
+                    {
                         return ContainmentType.Disjoint;
+                    }
                 }
+            }
 
             // No separating axis found, the boxes overlap	
             return ContainmentType.Intersects;
@@ -624,7 +698,9 @@ namespace SharpDX
 
             //Put the result intersection back to world
             if (intersects)
+            {
                 Vector3.TransformCoordinate(ref point, ref Transformation, out point);
+            }
 
             return intersects;
         }
@@ -689,8 +765,13 @@ namespace SharpDX
                 AtoB_Matrix = new Matrix();
                 int i, k;
                 for (i = 0; i < 3; i++)
+                {
                     for (k = 0; k < 3; k++)
+                    {
                         AtoB_Matrix[i, k] = Vector3.Dot(RotB[i], RotA[k]);
+                    }
+                }
+
                 var v = B.Center - A.Center;
                 AtoB_Matrix.M41 = Vector3.Dot(v, RotA[0]);
                 AtoB_Matrix.M42 = Vector3.Dot(v, RotA[1]);
@@ -803,7 +884,9 @@ namespace SharpDX
         public override bool Equals(object value)
         {
             if (!(value is OrientedBoundingBox))
+            {
                 return false;
+            }
 
             var strongValue = (OrientedBoundingBox)value;
             return Equals(ref strongValue);
@@ -865,7 +948,9 @@ namespace SharpDX
         public string ToString(string format)
         {
             if (format == null)
+            {
                 return ToString();
+            }
 
             return string.Format(CultureInfo.CurrentCulture, "Center: {0}, Extents: {1}", Center.ToString(format, CultureInfo.CurrentCulture),
                 Extents.ToString(format, CultureInfo.CurrentCulture));
@@ -894,7 +979,9 @@ namespace SharpDX
         public string ToString(string format, IFormatProvider formatProvider)
         {
             if (format == null)
+            {
                 return ToString(formatProvider);
+            }
 
             return string.Format(formatProvider, "Center: {0}, Extents: {1}", Center.ToString(format, formatProvider),
                 Extents.ToString(format, formatProvider));

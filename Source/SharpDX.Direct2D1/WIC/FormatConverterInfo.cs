@@ -36,7 +36,9 @@ namespace SharpDX.WIC
                     int actualCount = 0;
                     GetPixelFormats(actualCount, null, out actualCount);
                     if (actualCount == 0)
+                    {
                         return new Guid[0];
+                    }
 
                     var temp = new Guid[actualCount];
                     GetPixelFormats(actualCount, temp, out actualCount);

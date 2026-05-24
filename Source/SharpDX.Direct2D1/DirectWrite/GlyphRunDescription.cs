@@ -37,9 +37,14 @@ namespace SharpDX.DirectWrite
             internal unsafe void __MarshalFree()
             {
                 if (this.LocaleName != IntPtr.Zero)
+                {
                     Marshal.FreeHGlobal(this.LocaleName);
+                }
+
                 if (this.Text != IntPtr.Zero)
+                {
                     Marshal.FreeHGlobal(this.Text);
+                }
             }
         }
 

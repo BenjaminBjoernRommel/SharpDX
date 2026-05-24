@@ -124,7 +124,10 @@ namespace SharpDX
         {            
             float[] results = new float[values.Length];
             for(int i = 0; i < results.Length; i++)
+            {
                 results[i] = HalfUtils.Unpack(values[i].RawValue);
+            }
+
             return results;
         }
 
@@ -137,7 +140,10 @@ namespace SharpDX
         {
             Half[] results = new Half[values.Length];
             for(int i = 0; i < results.Length; i++)
+            {
                 results[i] = new Half(values[i]);
+            }
+
             return results;
         }
 
@@ -239,7 +245,9 @@ namespace SharpDX
         public override bool Equals(object obj)
         {
             if (!(obj is Half))
+            {
                 return false;
+            }
 
             return Equals((Half)obj);
         }

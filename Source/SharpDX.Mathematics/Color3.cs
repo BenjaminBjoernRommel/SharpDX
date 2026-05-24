@@ -138,9 +138,14 @@ namespace SharpDX
         public Color3(float[] values)
         {
             if (values == null)
+            {
                 throw new ArgumentNullException("values");
+            }
+
             if (values.Length != 3)
+            {
                 throw new ArgumentOutOfRangeException("values", "There must be three and only three input values for Color3.");
+            }
 
             Red = values[0];
             Green = values[1];
@@ -776,7 +781,9 @@ namespace SharpDX
         public string ToString(string format, IFormatProvider formatProvider)
         {
             if (format == null)
+            {
                 return ToString(formatProvider);
+            }
 
             return string.Format(formatProvider,
                                  toStringFormat,
@@ -838,7 +845,9 @@ namespace SharpDX
         public override bool Equals(object value)
         {
             if (!(value is Color3))
+            {
                 return false;
+            }
 
             var strongValue = (Color3)value;
             return Equals(ref strongValue);

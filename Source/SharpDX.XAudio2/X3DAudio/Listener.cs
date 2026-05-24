@@ -65,7 +65,10 @@ namespace SharpDX.X3DAudio
             {
                 // We can marshal a pointer to inner Cone struct because Native is only allocated on the stack
                 fixed (void* pCone = &@ref.Cone)
+                {
                     @ref.ConePointer = (IntPtr)pCone;
+                }
+
                 this.Cone.__MarshalTo(ref @ref.Cone);
             }
         }

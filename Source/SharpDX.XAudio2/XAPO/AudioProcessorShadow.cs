@@ -221,11 +221,15 @@ namespace SharpDX.XAPO
 
                 var inputProcessParameters = new BufferParameters[inputProcessParameterCount];
                 for (int i = 0; i < inputProcessParameters.Length; i++)
+                {
                     inputProcessParameters[i] = pInputProcessParameters[i];
+                }
 
                 var outputProcessParameters = new BufferParameters[outputProcessParameterCount];
                 for (int i = 0; i < outputProcessParameters.Length; i++)
+                {
                     outputProcessParameters[i] = pOutputProcessParameters[i];
+                }
 
                 //// NOTE: because XAudio currently support only 1 input and 1 output buffer at a time, don't waste our time
                 //BufferParameters outputParameter = *pOutputProcessParameters;
@@ -235,7 +239,9 @@ namespace SharpDX.XAPO
                 //Update BufferParameters output (see doc for IXAPO::Process
                 //ValidFrameCount must be fill by the Process method. Most of the time ValidFrameCount in input == ValidFrameCount in output (effectively written)
                 for (int i = 0; i < outputProcessParameters.Length; i++)
+                {
                     pOutputProcessParameters[i].ValidFrameCount = outputProcessParameters[i].ValidFrameCount;
+                }
             }
 
             /// <summary>	

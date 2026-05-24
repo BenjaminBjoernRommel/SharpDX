@@ -82,7 +82,9 @@ namespace SharpDX
         public string ToString(string format)
         {
             if (format == null)
+            {
                 return ToString();
+            }
 
             return string.Format(CultureInfo.CurrentCulture, "{0}", Pointer.ToString(format));
         }
@@ -120,10 +122,14 @@ namespace SharpDX
         public override bool Equals(object value)
         {
             if (value == null)
+            {
                 return false;
+            }
 
             if (!ReferenceEquals(value.GetType(), typeof(FunctionCallback)))
+            {
                 return false;
+            }
 
             return Equals((FunctionCallback)value);
         }

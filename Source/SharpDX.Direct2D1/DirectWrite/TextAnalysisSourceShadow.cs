@@ -42,7 +42,10 @@ namespace SharpDX.DirectWrite
             if (allocatedStrings != null)
             {
                 foreach (var allocatedString in allocatedStrings)
+                {
                     Marshal.FreeHGlobal(allocatedString);
+                }
+
                 allocatedStrings = null;
             }
             base.Dispose(disposing);

@@ -46,11 +46,15 @@ namespace SharpDX.Direct3D11
                     IntPtr* sOTargetsOut__ = stackalloc IntPtr[sOTargetsOut.Length];
                     sOTargetsOut_ = sOTargetsOut__;
                     for (int i = 0; i < sOTargetsOut.Length; i++)
+                    {
                         sOTargetsOut_[i] = (sOTargetsOut[i] == null) ? IntPtr.Zero : sOTargetsOut[i].NativePointer;
+                    }
                 }
                 int[] offsetsRef__ = offsetsRef;
                 fixed (void* offsetsRef_ = offsetsRef__)
+                {
                     SetTargets(numBuffers, new IntPtr(sOTargetsOut_), new IntPtr(offsetsRef_));
+                }
             }
         }
 

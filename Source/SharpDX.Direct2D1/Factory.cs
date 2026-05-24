@@ -49,7 +49,9 @@ namespace SharpDX.Direct2D1
             FactoryOptions? options = null;
 
             if (debugLevel != DebugLevel.None)
+            {
                 options = new FactoryOptions() { DebugLevel = debugLevel };
+            }
 
             IntPtr temp;
             D2D1.CreateFactory(factoryType, Utilities.GetGuidFromType(GetType()), options, out temp);

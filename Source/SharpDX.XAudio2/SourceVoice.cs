@@ -172,7 +172,10 @@ namespace SharpDX.XAudio2
                         var tempSendDescriptor = new EffectChain();
                         var effectDescriptorNatives = new EffectDescriptor.__Native[effectDescriptors.Length];
                         for (int i = 0; i < effectDescriptorNatives.Length; i++)
+                        {
                             effectDescriptors[i].__MarshalTo(ref effectDescriptorNatives[i]);
+                        }
+
                         tempSendDescriptor.EffectCount = effectDescriptorNatives.Length;
                         fixed (void* pEffectDescriptors = &effectDescriptorNatives[0])
                         {
@@ -366,37 +369,58 @@ namespace SharpDX.XAudio2
 
             void VoiceCallback.OnVoiceProcessingPassStart(int bytesRequired)
             {
-                if (Voice.ProcessingPassStart != null) Voice.ProcessingPassStart(bytesRequired);
+                if (Voice.ProcessingPassStart != null)
+                {
+                    Voice.ProcessingPassStart(bytesRequired);
+                }
             }
 
             void VoiceCallback.OnVoiceProcessingPassEnd()
             {
-                if (Voice.ProcessingPassEnd != null) Voice.ProcessingPassEnd();
+                if (Voice.ProcessingPassEnd != null)
+                {
+                    Voice.ProcessingPassEnd();
+                }
             }
 
             void VoiceCallback.OnStreamEnd()
             {
-                if (Voice.StreamEnd != null) Voice.StreamEnd();
+                if (Voice.StreamEnd != null)
+                {
+                    Voice.StreamEnd();
+                }
             }
 
             void VoiceCallback.OnBufferStart(IntPtr context)
             {
-                if (Voice.BufferStart != null) Voice.BufferStart(context);
+                if (Voice.BufferStart != null)
+                {
+                    Voice.BufferStart(context);
+                }
             }
 
             void VoiceCallback.OnBufferEnd(IntPtr context)
             {
-                if (Voice.BufferEnd != null) Voice.BufferEnd(context);
+                if (Voice.BufferEnd != null)
+                {
+                    Voice.BufferEnd(context);
+                }
             }
 
             void VoiceCallback.OnLoopEnd(IntPtr context)
             {
-                if (Voice.LoopEnd != null) Voice.LoopEnd(context);
+                if (Voice.LoopEnd != null)
+                {
+                    Voice.LoopEnd(context);
+                }
             }
 
             void VoiceCallback.OnVoiceError(IntPtr context, Result error)
             {
-                if (Voice.VoiceError != null) Voice.VoiceError(new VoiceErrorArgs(context, error));
+                if (Voice.VoiceError != null)
+                {
+                    Voice.VoiceError(new VoiceErrorArgs(context, error));
+                }
             }
         }
     }

@@ -86,7 +86,9 @@ namespace SharpDX.Multimedia
                     nextOffset += current.Size;
                     // Pad DWORD
                     if ((nextOffset & 1) != 0)
+                    {
                         nextOffset++;
+                    }
                 }
                 input.Position = nextOffset;
 
@@ -95,7 +97,9 @@ namespace SharpDX.Multimedia
                 var currentChunkContainer = chunckStack.Peek();
                 long endOfOuterChunk = currentChunkContainer.DataPosition + currentChunkContainer.Size;
                 if (input.Position >= endOfOuterChunk)
+                {
                     chunckStack.Pop();
+                }
 
                 // If there are no more chunk in the 
                 if (chunckStack.Count == 0)
@@ -140,10 +144,14 @@ namespace SharpDX.Multimedia
         private void CheckState()
         {
             if (isEndOfRiff)
+            {
                 throw new InvalidOperationException("End of Riff. Cannot MoveNext");
+            }
 
             if (isErrorState)
+            {
                 throw new InvalidOperationException("The enumerator is in an error state");
+            }
         }
 
         /// <summary>
@@ -192,7 +200,10 @@ namespace SharpDX.Multimedia
         {
             var chunks = new List<RiffChunk>();
             foreach (var riffChunk in this)
+            {
                 chunks.Add(riffChunk);
+            }
+
             return chunks;
         }
 

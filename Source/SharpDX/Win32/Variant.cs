@@ -224,14 +224,20 @@ namespace SharpDX.Win32
                                 {
                                     var array = new string[size];
                                     for (int i = 0; i < size; i++)
+                                    {
                                         array[i] = Marshal.PtrToStringAnsi(((IntPtr*)variantValue.recordValue.RecordPointer)[i]);
+                                    }
+
                                     return array;
                                 }
                             case VariantElementType.WStringPointer:
                                 {
                                     var array = new string[size];
                                     for (int i = 0; i < size; i++)
+                                    {
                                         array[i] = Marshal.PtrToStringUni(((IntPtr*)variantValue.recordValue.RecordPointer)[i]);
+                                    }
+
                                     return array;
                                 }
                             case VariantElementType.ComUnknown:
@@ -239,7 +245,10 @@ namespace SharpDX.Win32
                                 {
                                     var comArray = new ComObject[size];
                                     for (int i = 0; i < size; i++)
+                                    {
                                         comArray[i] = new ComObject(((IntPtr*)variantValue.recordValue.RecordPointer)[i]);
+                                    }
+
                                     return comArray;
                                 }
                             case VariantElementType.IntPointer:
@@ -253,7 +262,10 @@ namespace SharpDX.Win32
                                 {
                                     var fileTimeArray = new DateTime[size];
                                     for (int i = 0; i < size; i++)
+                                    {
                                         fileTimeArray[i] = DateTime.FromFileTime(((long*)variantValue.recordValue.RecordPointer)[i]);
+                                    }
+
                                     return fileTimeArray;
                                 }
                             default:

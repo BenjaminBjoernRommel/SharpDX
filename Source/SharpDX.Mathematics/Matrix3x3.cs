@@ -158,9 +158,14 @@ namespace SharpDX
         public Matrix3x3(float[] values)
         {
             if (values == null)
+            {
                 throw new ArgumentNullException("values");
+            }
+
             if (values.Length != 9)
+            {
                 throw new ArgumentOutOfRangeException("values", "There must be sixteen and only sixteen input values for Matrix3x3.");
+            }
 
             M11 = values[0];
             M12 = values[1];
@@ -307,9 +312,14 @@ namespace SharpDX
             get
             {
                 if (row < 0 || row > 2)
+                {
                     throw new ArgumentOutOfRangeException("row", "Rows and columns for matrices run from 0 to 2, inclusive.");
+                }
+
                 if (column < 0 || column > 2)
+                {
                     throw new ArgumentOutOfRangeException("column", "Rows and columns for matrices run from 0 to 2, inclusive.");
+                }
 
                 return this[(row * 3) + column];
             }
@@ -317,9 +327,14 @@ namespace SharpDX
             set
             {
                 if (row < 0 || row > 2)
+                {
                     throw new ArgumentOutOfRangeException("row", "Rows and columns for matrices run from 0 to 2, inclusive.");
+                }
+
                 if (column < 0 || column > 2)
+                {
                     throw new ArgumentOutOfRangeException("column", "Rows and columns for matrices run from 0 to 2, inclusive.");
+                }
 
                 this[(row * 3) + column] = value;
             }
@@ -526,16 +541,29 @@ namespace SharpDX
         public void ExchangeRows(int firstRow, int secondRow)
         {
             if (firstRow < 0)
+            {
                 throw new ArgumentOutOfRangeException("firstRow", "The parameter firstRow must be greater than or equal to zero.");
+            }
+
             if (firstRow > 2)
+            {
                 throw new ArgumentOutOfRangeException("firstRow", "The parameter firstRow must be less than or equal to two.");
+            }
+
             if (secondRow < 0)
+            {
                 throw new ArgumentOutOfRangeException("secondRow", "The parameter secondRow must be greater than or equal to zero.");
+            }
+
             if (secondRow > 2)
+            {
                 throw new ArgumentOutOfRangeException("secondRow", "The parameter secondRow must be less than or equal to two.");
+            }
 
             if (firstRow == secondRow)
+            {
                 return;
+            }
 
             float temp0 = this[secondRow, 0];
             float temp1 = this[secondRow, 1];
@@ -558,16 +586,29 @@ namespace SharpDX
         public void ExchangeColumns(int firstColumn, int secondColumn)
         {
             if (firstColumn < 0)
+            {
                 throw new ArgumentOutOfRangeException("firstColumn", "The parameter firstColumn must be greater than or equal to zero.");
+            }
+
             if (firstColumn > 2)
+            {
                 throw new ArgumentOutOfRangeException("firstColumn", "The parameter firstColumn must be less than or equal to two.");
+            }
+
             if (secondColumn < 0)
+            {
                 throw new ArgumentOutOfRangeException("secondColumn", "The parameter secondColumn must be greater than or equal to zero.");
+            }
+
             if (secondColumn > 2)
+            {
                 throw new ArgumentOutOfRangeException("secondColumn", "The parameter secondColumn must be less than or equal to two.");
+            }
 
             if (firstColumn == secondColumn)
+            {
                 return;
+            }
 
             float temp0 = this[0, secondColumn];
             float temp1 = this[1, secondColumn];
@@ -800,7 +841,9 @@ namespace SharpDX
             //Reference: http://rosettacode.org/wiki/Matrix3x3-exponentiation_operator
 
             if (exponent < 0)
+            {
                 throw new ArgumentOutOfRangeException("exponent", "The exponent can not be negative.");
+            }
 
             if (exponent == 0)
             {
@@ -820,14 +863,20 @@ namespace SharpDX
             while (true)
             {
                 if ((exponent & 1) != 0)
+                {
                     identity = identity * temp;
+                }
 
                 exponent /= 2;
 
                 if (exponent > 0)
+                {
                     temp *= temp;
+                }
                 else
+                {
                     break;
+                }
             }
 
             result = identity;
@@ -1181,7 +1230,9 @@ namespace SharpDX
             for (int r = 0; r < rowcount; ++r)
             {
                 if (columncount <= lead)
+                {
                     return;
+                }
 
                 int i = r;
 
@@ -1195,7 +1246,9 @@ namespace SharpDX
                         lead++;
 
                         if (lead == columncount)
+                        {
                             return;
+                        }
                     }
                 }
 
@@ -1262,7 +1315,9 @@ namespace SharpDX
             for (int r = 0; r < rowcount; ++r)
             {
                 if (columncount <= lead)
+                {
                     return;
+                }
 
                 int i = r;
 
@@ -1276,7 +1331,9 @@ namespace SharpDX
                         lead++;
 
                         if (lead == columncount)
+                        {
                             return;
+                        }
                     }
                 }
 
@@ -1339,7 +1396,9 @@ namespace SharpDX
             for (int r = 0; r < rowcount; ++r)
             {
                 if (columncount <= lead)
+                {
                     return;
+                }
 
                 int i = r;
 
@@ -1353,7 +1412,9 @@ namespace SharpDX
                         lead++;
 
                         if (lead == columncount)
+                        {
                             return;
+                        }
                     }
                 }
 
@@ -1409,9 +1470,13 @@ namespace SharpDX
 
             float lengthSq = difference.LengthSquared();
             if (MathUtil.IsZero(lengthSq))
+            {
                 difference = -cameraForwardVector;
+            }
             else
+            {
                 difference *= (float)(1.0 / Math.Sqrt(lengthSq));
+            }
 
             Vector3.Cross(ref cameraUpVector, ref difference, out crossed);
             crossed.Normalize();
@@ -1459,9 +1524,13 @@ namespace SharpDX
 
             float lengthSq = difference.LengthSquared();
             if (MathUtil.IsZero(lengthSq))
+            {
                 difference = -cameraForwardVector;
+            }
             else
+            {
                 difference *= (float)(1.0 / Math.Sqrt(lengthSq));
+            }
 
             Vector3.Cross(ref cameraUpVector, ref difference, out crossed);
             crossed.Normalize();
@@ -2022,7 +2091,9 @@ namespace SharpDX
         public string ToString(string format)
         {
             if (format == null)
+            {
                 return ToString();
+            }
 
             return string.Format(format, CultureInfo.CurrentCulture, "[M11:{0} M12:{1} M13:{2}] [M21:{3} M22:{4} M23:{5}] [M31:{6} M32:{7} M33:{8}]",
                 M11.ToString(format, CultureInfo.CurrentCulture), M12.ToString(format, CultureInfo.CurrentCulture), M13.ToString(format, CultureInfo.CurrentCulture),
@@ -2056,7 +2127,9 @@ namespace SharpDX
         public string ToString(string format, IFormatProvider formatProvider)
         {
             if (format == null)
+            {
                 return ToString(formatProvider);
+            }
 
             return string.Format(format, formatProvider, "[M11:{0} M12:{1} M13:{2}] [M21:{3} M22:{4} M23:{5}] [M31:{6} M32:{7} M33:{8}]",
                 M11.ToString(format, formatProvider), M12.ToString(format, formatProvider), M13.ToString(format, formatProvider),
@@ -2150,7 +2223,9 @@ namespace SharpDX
         public override bool Equals(object value)
         {
             if (!(value is Matrix3x3))
+            {
                 return false;
+            }
 
             var strongValue = (Matrix3x3)value;
             return Equals(ref strongValue);

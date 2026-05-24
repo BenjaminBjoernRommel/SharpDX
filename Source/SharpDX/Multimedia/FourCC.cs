@@ -43,7 +43,10 @@ namespace SharpDX.Multimedia
         public FourCC(string fourCC)
         {
             if (fourCC.Length != 4)
+            {
                 throw new ArgumentException(string.Format(System.Globalization.CultureInfo.InvariantCulture, "Invalid length for FourCC(\"{0}\". Must be be 4 characters long ", fourCC), "fourCC");
+            }
+
             this.value = ((uint)fourCC[3]) << 24 | ((uint)fourCC[2]) << 16 | ((uint)fourCC[1]) << 8 | ((uint)fourCC[0]);
         }
 
@@ -167,7 +170,11 @@ namespace SharpDX.Multimedia
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
             return obj is FourCC && Equals((FourCC) obj);
         }
 

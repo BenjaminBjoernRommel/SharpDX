@@ -112,7 +112,9 @@ namespace SharpDX.WIC
         public unsafe void CopyPixels<T>(RawBox rectangle, T[] output) where T : struct
         {
             if ((rectangle.Width * rectangle.Height) != output.Length)
+            {
                 throw new ArgumentException("output.Length must be equal to Width * Height");
+            }
 
             CopyPixels(new IntPtr(&rectangle), rectangle.Width * Utilities.SizeOf<T>(), (int)output.Length * Utilities.SizeOf<T>(), (IntPtr)Interop.Fixed(output));
         }
@@ -134,7 +136,9 @@ namespace SharpDX.WIC
         {
             var size = Size;
             if ( (size.Width * size.Height) != output.Length)
+            {
                 throw new ArgumentException("output.Length must be equal to Width * Height");
+            }
 
             CopyPixels(IntPtr.Zero, Size.Width * Utilities.SizeOf<T>(), (int)output.Length * Utilities.SizeOf<T>(), (IntPtr)Interop.Fixed(output));
         }
@@ -153,10 +157,20 @@ namespace SharpDX.WIC
         ///   </p><p> The caller controls the memory management and must provide an output buffer (<em>pbBuffer</em>) for the results of the copy along with the buffer's bounds (<em>cbBufferSize</em>).  The cbStride parameter defines the count of bytes between two vertically adjacent pixels in the output buffer.  The caller must ensure that there is sufficient buffer to complete the call based on the width, height and pixel format of the bitmap and the sub-rectangle provided to the copy method. </p><p> If the caller needs to perform numerous copies of an expensive <strong><see cref="SharpDX.WIC.BitmapSource" /></strong> such as a JPEG, it is recommended to create an in-memory <strong><see cref="SharpDX.WIC.Bitmap" /></strong> first. </p>Codec Developer Remarks<p> The callee must only write to the first (prc-&gt;Width*bitsperpixel+7)/8 bytes of each line of the output buffer (in this case, a line is a consecutive string of <em>cbStride</em> bytes). </p></remarks>
         public unsafe void CopyPixels(RawRectangle rectangle, byte[] output, int stride)
         {
-            if (output == null) throw new ArgumentNullException("output");
-            if (stride <= 0) throw new ArgumentOutOfRangeException("stride", "Must be > 0");
+            if (output == null)
+            {
+                throw new ArgumentNullException("output");
+            }
+
+            if (stride <= 0)
+            {
+                throw new ArgumentOutOfRangeException("stride", "Must be > 0");
+            }
+
             if ((output.Length % stride) != 0)
+            {
                 throw new ArgumentException("output.Length must be a modulo of stride");
+            }
 
             CopyPixels(new IntPtr(&rectangle), stride, output.Length, (IntPtr)Interop.Fixed(output));
         }
@@ -175,10 +189,20 @@ namespace SharpDX.WIC
         ///   </p><p> The caller controls the memory management and must provide an output buffer (<em>pbBuffer</em>) for the results of the copy along with the buffer's bounds (<em>cbBufferSize</em>).  The cbStride parameter defines the count of bytes between two vertically adjacent pixels in the output buffer.  The caller must ensure that there is sufficient buffer to complete the call based on the width, height and pixel format of the bitmap and the sub-rectangle provided to the copy method. </p><p> If the caller needs to perform numerous copies of an expensive <strong><see cref="SharpDX.WIC.BitmapSource" /></strong> such as a JPEG, it is recommended to create an in-memory <strong><see cref="SharpDX.WIC.Bitmap" /></strong> first. </p>Codec Developer Remarks<p> The callee must only write to the first (prc-&gt;Width*bitsperpixel+7)/8 bytes of each line of the output buffer (in this case, a line is a consecutive string of <em>cbStride</em> bytes). </p></remarks>
         public unsafe void CopyPixels(byte[] output, int stride)
         {
-            if(output == null) throw new ArgumentNullException("output");
-            if (stride <= 0) throw new ArgumentOutOfRangeException("stride", "Must be > 0");
+            if(output == null)
+            {
+                throw new ArgumentNullException("output");
+            }
+
+            if (stride <= 0)
+            {
+                throw new ArgumentOutOfRangeException("stride", "Must be > 0");
+            }
+
             if ((output.Length % stride)!= 0)
+            {
                 throw new ArgumentException("output.Length must be a modulo of stride");
+            }
 
             CopyPixels(IntPtr.Zero, stride, output.Length, (IntPtr)Interop.Fixed(output));
         }

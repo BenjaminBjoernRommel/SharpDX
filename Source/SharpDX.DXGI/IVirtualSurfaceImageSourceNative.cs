@@ -69,7 +69,9 @@ namespace SharpDX.DXGI
         private void OnUpdatesNeeded()
         {
             if (updatesNeeded != null)
+            {
                 updatesNeeded(this, EventArgs.Empty);
+            }
         }
 
         private class VirtualSurfaceUpdatesCallbackNativeCallback : CallbackBase, IVirtualSurfaceUpdatesCallbackNative

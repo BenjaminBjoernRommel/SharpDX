@@ -168,7 +168,9 @@ namespace SharpDX
         public override bool Equals(object obj)
         {
             if(!(obj is Viewport))
+            {
                 return false;
+            }
 
             var strongValue = (Viewport)obj;
             return Equals(ref strongValue);

@@ -190,7 +190,10 @@ namespace SharpDX.WIC
         public void Initialize(IStream stream, SharpDX.WIC.DecodeOptions cacheOptions)
         {
             if (this.internalWICStream != null)
+            {
                 throw new InvalidOperationException("This instance is already initialized with an existing stream");
+            }
+
             Initialize_(stream, cacheOptions);
         }
 
@@ -201,7 +204,10 @@ namespace SharpDX.WIC
             if (disposing)
             {
                 if (this.internalWICStream != null)
+                {
                     internalWICStream.Dispose();
+                }
+
                 internalWICStream = null;
             }
         }

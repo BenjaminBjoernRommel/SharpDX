@@ -159,11 +159,15 @@ namespace SharpDX
         {
             // If callback is null, then return a null pointer
             if (callback == null)
+            {
                 return IntPtr.Zero;
+            }
 
             // If callback is CppObject
             if (callback is CppObject)
+            {
                 return ((CppObject)callback).NativePointer;
+            }
 
             // Setup the shadow container in order to support multiple inheritance
             var shadowContainer = callback.Shadow as ShadowContainer;

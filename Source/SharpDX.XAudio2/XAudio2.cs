@@ -282,7 +282,10 @@ namespace SharpDX.XAudio2
         public static float AmplitudeRatioToDecibels(float volume)
         {
             if (volume == 0f)
+            {
                 return float.MinValue;
+            }
+
             return (float)(Math.Log10(volume) * 20);
         }
 
@@ -295,7 +298,10 @@ namespace SharpDX.XAudio2
         public static float CutoffFrequencyToRadians(float cutoffFrequency, int sampleRate)
         {
             if (((int)cutoffFrequency * 6.0) >= sampleRate)
+            {
                 return 1f;
+            }
+
             return (float)(Math.Sin(cutoffFrequency*Math.PI/sampleRate)*2);
         }
 
@@ -353,12 +359,16 @@ namespace SharpDX.XAudio2
         protected override void Dispose(bool disposing)
         {
             if (engineCallbackImpl != null)
+            {
                 UnregisterForCallbacks(engineCallbackImpl);
+            }
 
             if (disposing)
             {
                 if (engineCallbackImpl != null)
+                {
                     engineCallbackImpl.Dispose();
+                }
             }
 
             Version = XAudio2Version.Default;
@@ -378,19 +388,28 @@ namespace SharpDX.XAudio2
             public void OnProcessingPassStart()
             {
                 EventHandler handler = XAudio2.ProcessingPassStart;
-                if (handler != null) handler(this, EventArgs.Empty);
+                if (handler != null)
+                {
+                    handler(this, EventArgs.Empty);
+                }
             }
 
             public void OnProcessingPassEnd()
             {
                 EventHandler handler = XAudio2.ProcessingPassEnd;
-                if (handler != null) handler(this, EventArgs.Empty);
+                if (handler != null)
+                {
+                    handler(this, EventArgs.Empty);
+                }
             }
 
             public void OnCriticalError(Result error)
             {
                 EventHandler<ErrorEventArgs> handler = XAudio2.CriticalError;
-                if (handler != null) handler(this, new ErrorEventArgs(error));
+                if (handler != null)
+                {
+                    handler(this, new ErrorEventArgs(error));
+                }
             }
 
             IDisposable ICallbackable.Shadow { get; set; }

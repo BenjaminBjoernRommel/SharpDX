@@ -84,7 +84,10 @@ namespace SharpDX.DirectWrite
                     out actualGlyphCount);
             } finally
             {
-                if (pFeatures != IntPtr.Zero) Marshal.FreeHGlobal(pFeatures);
+                if (pFeatures != IntPtr.Zero)
+                {
+                    Marshal.FreeHGlobal(pFeatures);
+                }
             }
         }
 
@@ -140,7 +143,10 @@ namespace SharpDX.DirectWrite
             }
             finally
             {
-                if (pFeatures != IntPtr.Zero) Marshal.FreeHGlobal(pFeatures);
+                if (pFeatures != IntPtr.Zero)
+                {
+                    Marshal.FreeHGlobal(pFeatures);
+                }
             }
         }
 
@@ -202,7 +208,10 @@ namespace SharpDX.DirectWrite
             }
             finally
             {
-                if (pFeatures != IntPtr.Zero) Marshal.FreeHGlobal(pFeatures);
+                if (pFeatures != IntPtr.Zero)
+                {
+                    Marshal.FreeHGlobal(pFeatures);
+                }
             }
         }
 
@@ -237,7 +246,9 @@ namespace SharpDX.DirectWrite
                     foreach (var fontFeature in features)
                     {
                         if (fontFeature == null)
+                        {
                             throw new ArgumentNullException("features", "FontFeature[] inside features array cannot be null.");
+                        }
 
                         // calcSize += typographicFeatures.Length * sizeof(FontFeature)
                         calcSize += sizeof(FontFeature) * fontFeature.Length;

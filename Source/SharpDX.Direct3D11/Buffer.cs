@@ -232,7 +232,9 @@ namespace SharpDX.Direct3D11
             unsafe
             {
                 if (description.SizeInBytes == 0)
+                {
                     description.SizeInBytes = Utilities.SizeOf<T>();
+                }
 
                 device.CreateBuffer(ref description, new DataBox((IntPtr)Interop.Fixed(ref data)), buffer);
             }
@@ -261,7 +263,10 @@ namespace SharpDX.Direct3D11
             unsafe
             {
                 if (description.SizeInBytes == 0)
+                {
                     description.SizeInBytes = Utilities.SizeOf<T>() * data.Length;
+                }
+
                 device.CreateBuffer(ref description, new DataBox((IntPtr)Interop.Fixed(data)), buffer);
             }
             return buffer;

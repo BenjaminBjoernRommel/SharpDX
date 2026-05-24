@@ -37,7 +37,10 @@ namespace SharpDX.Multimedia
             while (channelsMask != 0)
             {
                 if ((channelsMask & 1) != 0)
+                {
                     channelCount++;
+                }
+
                 channelsMask >>= 1;
             }
             return channelCount;

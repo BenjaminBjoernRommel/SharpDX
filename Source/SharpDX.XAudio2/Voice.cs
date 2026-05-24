@@ -125,7 +125,9 @@ namespace SharpDX.XAudio2
             unsafe
             {
                 fixed (void* pEffectParameter = &effectParameters[0])
+                {
                     GetEffectParameters(effectIndex, (IntPtr)pEffectParameter, effectParameters.Length);
+                }
             }
         }
 
@@ -154,7 +156,9 @@ namespace SharpDX.XAudio2
             unsafe
             {
                 fixed (void* pEffectParameter = &effectParameter[0])
+                {
                     SetEffectParameters(effectIndex, (IntPtr)pEffectParameter, effectParameter.Length, operationSet);
+                }
             }
         }
 
@@ -203,7 +207,10 @@ namespace SharpDX.XAudio2
                     var tempSendDescriptor = new EffectChain();
                     var effectDescriptorNatives = new EffectDescriptor.__Native[effectDescriptors.Length];
                     for (int i = 0; i < effectDescriptorNatives.Length; i++)
+                    {
                         effectDescriptors[i].__MarshalTo(ref effectDescriptorNatives[i]);
+                    }
+
                     tempSendDescriptor.EffectCount = effectDescriptorNatives.Length;
                     fixed (void* pEffectDescriptors = &effectDescriptorNatives[0])
                     {

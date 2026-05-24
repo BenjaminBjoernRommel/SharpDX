@@ -44,7 +44,10 @@ namespace SharpDX.WIC
                     // have been created using IWICImagingFactory::CreateColorContext.
 
                     for (int i = 0; i < count; i++)
+                    {
                         colorContexts[i] = new ColorContext(imagingFactory);
+                    }
+
                     int actualCount;
                     getColorContexts(count, colorContexts, out actualCount);
                     Debug.Assert(count == actualCount);
@@ -60,7 +63,9 @@ namespace SharpDX.WIC
             Result result = TryGetColorContexts(getColorContexts, imagingFactory, out colorContexts);
 
             if (ResultCode.UnsupportedOperation != result)
+            {
                 result.CheckError();
+            }
 
             return colorContexts;
         }

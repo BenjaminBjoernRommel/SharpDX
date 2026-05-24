@@ -172,9 +172,14 @@ namespace SharpDX
         public Quaternion(float[] values)
         {
             if (values == null)
+            {
                 throw new ArgumentNullException("values");
+            }
+
             if (values.Length != 4)
+            {
                 throw new ArgumentOutOfRangeException("values", "There must be four and only four input values for Quaternion.");
+            }
 
             X = values[0];
             Y = values[1];
@@ -211,7 +216,9 @@ namespace SharpDX
             {
                 float length = (X * X) + (Y * Y) + (Z * Z);
                 if (MathUtil.IsZero(length))
+                {
                     return 0.0f;
+                }
 
                 return (float)(2.0 * Math.Acos(MathUtil.Clamp(W, -1f, 1f)));
             }
@@ -227,7 +234,9 @@ namespace SharpDX
             {
                 float length = (X * X) + (Y * Y) + (Z * Z);
                 if (MathUtil.IsZero(length))
+                {
                     return Vector3.UnitX;
+                }
 
                 float inv = 1.0f / (float)Math.Sqrt(length);
                 return new Vector3(X * inv, Y * inv, Z * inv);
@@ -1339,7 +1348,9 @@ namespace SharpDX
         public string ToString(string format)
         {
             if (format == null)
+            {
                 return ToString();
+            }
 
             return string.Format(CultureInfo.CurrentCulture, "X:{0} Y:{1} Z:{2} W:{3}", X.ToString(format, CultureInfo.CurrentCulture),
                 Y.ToString(format, CultureInfo.CurrentCulture), Z.ToString(format, CultureInfo.CurrentCulture), W.ToString(format, CultureInfo.CurrentCulture));
@@ -1368,7 +1379,9 @@ namespace SharpDX
         public string ToString(string format, IFormatProvider formatProvider)
         {
             if (format == null)
+            {
                 return ToString(formatProvider);
+            }
 
             return string.Format(formatProvider, "X:{0} Y:{1} Z:{2} W:{3}", X.ToString(format, formatProvider),
                 Y.ToString(format, formatProvider), Z.ToString(format, formatProvider), W.ToString(format, formatProvider));
@@ -1428,7 +1441,9 @@ namespace SharpDX
         public override bool Equals(object value)
         {
             if (!(value is Quaternion))
+            {
                 return false;
+            }
 
             var strongValue = (Quaternion)value;
             return Equals(ref strongValue);

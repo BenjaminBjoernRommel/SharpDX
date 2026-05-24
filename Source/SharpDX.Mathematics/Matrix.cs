@@ -330,9 +330,14 @@ namespace SharpDX
         public Matrix(float[] values)
         {
             if (values == null)
+            {
                 throw new ArgumentNullException("values");
+            }
+
             if (values.Length != 16)
+            {
                 throw new ArgumentOutOfRangeException("values", "There must be sixteen and only sixteen input values for Matrix.");
+            }
 
             M11 = values[0];
             M12 = values[1];
@@ -528,9 +533,14 @@ namespace SharpDX
             get
             {
                 if (row < 0 || row > 3)
+                {
                     throw new ArgumentOutOfRangeException("row", "Rows and columns for matrices run from 0 to 3, inclusive.");
+                }
+
                 if (column < 0 || column > 3)
+                {
                     throw new ArgumentOutOfRangeException("column", "Rows and columns for matrices run from 0 to 3, inclusive.");
+                }
 
                 return this[(row * 4) + column];
             }
@@ -538,9 +548,14 @@ namespace SharpDX
             set
             {
                 if (row < 0 || row > 3)
+                {
                     throw new ArgumentOutOfRangeException("row", "Rows and columns for matrices run from 0 to 3, inclusive.");
+                }
+
                 if (column < 0 || column > 3)
+                {
                     throw new ArgumentOutOfRangeException("column", "Rows and columns for matrices run from 0 to 3, inclusive.");
+                }
 
                 this[(row * 4) + column] = value;
             }
@@ -782,16 +797,29 @@ namespace SharpDX
         public void ExchangeRows(int firstRow, int secondRow)
         {
             if (firstRow < 0)
+            {
                 throw new ArgumentOutOfRangeException("firstRow", "The parameter firstRow must be greater than or equal to zero.");
+            }
+
             if (firstRow > 3)
+            {
                 throw new ArgumentOutOfRangeException("firstRow", "The parameter firstRow must be less than or equal to three.");
+            }
+
             if (secondRow < 0)
+            {
                 throw new ArgumentOutOfRangeException("secondRow", "The parameter secondRow must be greater than or equal to zero.");
+            }
+
             if (secondRow > 3)
+            {
                 throw new ArgumentOutOfRangeException("secondRow", "The parameter secondRow must be less than or equal to three.");
+            }
 
             if (firstRow == secondRow)
+            {
                 return;
+            }
 
             float temp0 = this[secondRow, 0];
             float temp1 = this[secondRow, 1];
@@ -817,16 +845,29 @@ namespace SharpDX
         public void ExchangeColumns(int firstColumn, int secondColumn)
         {
             if (firstColumn < 0)
+            {
                 throw new ArgumentOutOfRangeException("firstColumn", "The parameter firstColumn must be greater than or equal to zero.");
+            }
+
             if (firstColumn > 3)
+            {
                 throw new ArgumentOutOfRangeException("firstColumn", "The parameter firstColumn must be less than or equal to three.");
+            }
+
             if (secondColumn < 0)
+            {
                 throw new ArgumentOutOfRangeException("secondColumn", "The parameter secondColumn must be greater than or equal to zero.");
+            }
+
             if (secondColumn > 3)
+            {
                 throw new ArgumentOutOfRangeException("secondColumn", "The parameter secondColumn must be less than or equal to three.");
+            }
 
             if (firstColumn == secondColumn)
+            {
                 return;
+            }
 
             float temp0 = this[0, secondColumn];
             float temp1 = this[1, secondColumn];
@@ -1104,7 +1145,9 @@ namespace SharpDX
             //Reference: http://rosettacode.org/wiki/Matrix-exponentiation_operator
 
             if (exponent < 0)
+            {
                 throw new ArgumentOutOfRangeException("exponent", "The exponent can not be negative.");
+            }
 
             if (exponent == 0)
             {
@@ -1124,14 +1167,20 @@ namespace SharpDX
             while (true)
             {
                 if ((exponent & 1) != 0)
+                {
                     identity = identity * temp;
+                }
 
                 exponent /= 2;
 
                 if (exponent > 0)
+                {
                     temp *= temp;
+                }
                 else
+                {
                     break;
+                }
             }
 
             result = identity;
@@ -1547,7 +1596,9 @@ namespace SharpDX
             for (int r = 0; r < rowcount; ++r)
             {
                 if (columncount <= lead)
+                {
                     return;
+                }
 
                 int i = r;
 
@@ -1561,7 +1612,9 @@ namespace SharpDX
                         lead++;
 
                         if (lead == columncount)
+                        {
                             return;
+                        }
                     }
                 }
 
@@ -1629,7 +1682,9 @@ namespace SharpDX
             for (int r = 0; r < rowcount; ++r)
             {
                 if (columncount <= lead)
+                {
                     return;
+                }
 
                 int i = r;
 
@@ -1643,7 +1698,9 @@ namespace SharpDX
                         lead++;
 
                         if (lead == columncount)
+                        {
                             return;
+                        }
                     }
                 }
 
@@ -1707,7 +1764,9 @@ namespace SharpDX
             for (int r = 0; r < rowcount; ++r)
             {
                 if (columncount <= lead)
+                {
                     return;
+                }
 
                 int i = r;
 
@@ -1721,7 +1780,9 @@ namespace SharpDX
                         lead++;
 
                         if (lead == columncount)
+                        {
                             return;
+                        }
                     }
                 }
 
@@ -1818,7 +1879,9 @@ namespace SharpDX
             for (int r = 0; r < rowcount; r++)
             {
                 if (columncount <= lead)
+                {
                     break;
+                }
 
                 int i = r;
 
@@ -1832,7 +1895,9 @@ namespace SharpDX
                         lead++;
 
                         if (columncount == lead)
+                        {
                             break;
+                        }
                     }
                 }
 
@@ -1855,7 +1920,10 @@ namespace SharpDX
                     if (j != r)
                     {
                         float sub = matrix[j, lead];
-                        for (int k = 0; k < columncount; k++) matrix[j, k] -= (sub * matrix[r, k]);
+                        for (int k = 0; k < columncount; k++)
+                        {
+                            matrix[j, k] -= (sub * matrix[r, k]);
+                        }
                     }
                 }
 
@@ -1904,9 +1972,13 @@ namespace SharpDX
 
             float lengthSq = difference.LengthSquared();
             if (MathUtil.IsZero(lengthSq))
+            {
                 difference = -cameraForwardVector;
+            }
             else
+            {
                 difference *= (float)(1.0 / Math.Sqrt(lengthSq));
+            }
 
             Vector3.Cross(ref cameraUpVector, ref difference, out crossed);
             crossed.Normalize();
@@ -1961,9 +2033,13 @@ namespace SharpDX
 
             float lengthSq = difference.LengthSquared();
             if (MathUtil.IsZero(lengthSq))
+            {
                 difference = -cameraForwardVector;
+            }
             else
+            {
                 difference *= (float)(1.0 / Math.Sqrt(lengthSq));
+            }
 
             Vector3.Cross(ref cameraUpVector, ref difference, out crossed);
             crossed.Normalize();
@@ -2841,7 +2917,9 @@ namespace SharpDX
             float rr1 = rv0 * sina + rv1 * cosa;
 
             if (rr0 < MINIMAL_SKEW_ANGLE)
+            {
                 throw new ArgumentException("illegal skew angle");
+            }
 
             float d = (rr1 / rr0) - (rv1 / rv0);
 
@@ -3197,7 +3275,9 @@ namespace SharpDX
         public string ToString(string format)
         {
             if (format == null)
+            {
                 return ToString();
+            }
 
             return string.Format(format, CultureInfo.CurrentCulture, "[M11:{0} M12:{1} M13:{2} M14:{3}] [M21:{4} M22:{5} M23:{6} M24:{7}] [M31:{8} M32:{9} M33:{10} M34:{11}] [M41:{12} M42:{13} M43:{14} M44:{15}]",
                 M11.ToString(format, CultureInfo.CurrentCulture), M12.ToString(format, CultureInfo.CurrentCulture), M13.ToString(format, CultureInfo.CurrentCulture), M14.ToString(format, CultureInfo.CurrentCulture),
@@ -3233,7 +3313,9 @@ namespace SharpDX
         public string ToString(string format, IFormatProvider formatProvider)
         {
             if (format == null)
+            {
                 return ToString(formatProvider);
+            }
 
             return string.Format(formatProvider, "[M11:{0} M12:{1} M13:{2} M14:{3}] [M21:{4} M22:{5} M23:{6} M24:{7}] [M31:{8} M32:{9} M33:{10} M34:{11}] [M41:{12} M42:{13} M43:{14} M44:{15}]",
                 M11.ToString(format, formatProvider), M12.ToString(format, formatProvider), M13.ToString(format, formatProvider), M14.ToString(format, formatProvider),
@@ -3322,7 +3404,9 @@ namespace SharpDX
         public override bool Equals(object value)
         {
             if (!(value is Matrix))
+            {
                 return false;
+            }
 
             var strongValue = (Matrix)value;
             return Equals(ref strongValue);

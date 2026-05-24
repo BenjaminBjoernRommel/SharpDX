@@ -98,10 +98,14 @@ namespace SharpDX
             unsafe
             {
                 if (userBuffer == null)
+                {
                     throw new ArgumentNullException("userBuffer");
+                }
 
                 if (index < 0 || index > userBuffer.Length)
+                {
                     throw new ArgumentException("Index is out of range [0, userBuffer.Length-1]", "index");
+                }
 
                 DataStream stream;
 
@@ -225,7 +229,9 @@ namespace SharpDX
             }
 
             if (_gCHandle.IsAllocated)
+            {
                 _gCHandle.Free();
+            }
 
             unsafe
             {
@@ -262,7 +268,9 @@ namespace SharpDX
             unsafe
             {
                 if (!_canRead)
+                {
                     throw new NotSupportedException();
+                }
 
                 byte* from = _buffer + _position;
                 T result = default(T);
@@ -275,7 +283,9 @@ namespace SharpDX
         public unsafe override int ReadByte()
         {
             if (_position >= Length)
+            {
                 return -1;
+            }
 
             return _buffer[_position++];
         }
@@ -330,7 +340,9 @@ namespace SharpDX
             unsafe
             {
                 if (!_canRead)
+                {
                     throw new NotSupportedException();
+                }
 
                 byte* from = _buffer + _position;
                 var result = new T[count];
@@ -358,7 +370,9 @@ namespace SharpDX
             unsafe
             {
                 if (!_canRead)
+                {
                     throw new NotSupportedException();
+                }
 
                 var oldPosition = _position;
                 _position = (byte*)Utilities.Read((IntPtr)(_buffer + _position), buffer, offset, count) - _buffer;
@@ -390,9 +404,14 @@ namespace SharpDX
             }
 
             if (targetPosition < 0)
+            {
                 throw new InvalidOperationException("Cannot seek beyond the beginning of the stream.");
+            }
+
             if (targetPosition > _size)
+            {
                 throw new InvalidOperationException("Cannot seek beyond the end of the stream.");
+            }
 
             _position = targetPosition;
             return _position;
@@ -422,7 +441,10 @@ namespace SharpDX
         public void Write<T>(T value) where T : struct
         {
             if (!_canWrite)
+            {
                 throw new NotSupportedException();
+            }
+
             unsafe
             {
                 _position = (byte*) Utilities.WriteAndPosition((IntPtr)(_buffer + _position), ref value) - _buffer;
@@ -492,7 +514,9 @@ namespace SharpDX
             unsafe
             {
                 if (!_canWrite)
+                {
                     throw new NotSupportedException();
+                }
 
                 System.Diagnostics.Debug.Assert(_canWrite);
                 System.Diagnostics.Debug.Assert(source != IntPtr.Zero);
@@ -524,7 +548,9 @@ namespace SharpDX
             unsafe
             {
                 if (!_canWrite)
+                {
                     throw new NotSupportedException();
+                }
 
                 _position = (byte*) Utilities.Write((IntPtr)(_buffer + _position), data, offset, count) - _buffer;
             }

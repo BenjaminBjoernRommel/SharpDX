@@ -43,15 +43,21 @@ namespace SharpDX.Win32
         {
             base.NativePointerUpdated(oldNativePointer);
             if (NativePointer != IntPtr.Zero)
+            {
                 nativePropertyBag = (IPropertyBag2)Marshal.GetObjectForIUnknown(NativePointer);
+            }
             else
+            {
                 nativePropertyBag = null;
+            }
         }
 
         private void CheckIfInitialized()
         {
             if (nativePropertyBag == null)
+            {
                 throw new InvalidOperationException("This instance is not bound to an unmanaged IPropertyBag2");
+            }
         }
 
         /// <summary>
@@ -102,7 +108,10 @@ namespace SharpDX.Win32
             // Gets the property
             var result = nativePropertyBag.Read(1, ref propbag2, IntPtr.Zero, out value, out error);
             if (result.Failure || error.Failure)
+            {
                 throw new InvalidOperationException(string.Format(System.Globalization.CultureInfo.InvariantCulture, "Property with name [{0}] is not valid for this instance", name));
+            }
+
             propbag2.Dispose();
             return value;
         }

@@ -112,7 +112,9 @@ namespace SharpDX.IO
         public override void Flush()
         {
             if (!NativeFile.FlushFileBuffers(handle))
+            {
                 throw new IOException("Unable to flush stream", MarshalGetLastWin32Error());
+            }
         }
 
         /// <inheritdoc/>
@@ -120,7 +122,10 @@ namespace SharpDX.IO
         {
             long newPosition;
             if (!NativeFile.SetFilePointerEx(handle, offset, out newPosition, origin))
+            {
                 throw new IOException("Unable to seek to this position", MarshalGetLastWin32Error());
+            }
+
             position = newPosition;
             return position;
         }
@@ -130,9 +135,14 @@ namespace SharpDX.IO
         {
             long newPosition;
             if (!NativeFile.SetFilePointerEx(handle, value, out newPosition, SeekOrigin.Begin))
+            {
                 throw new IOException("Unable to seek to this position", MarshalGetLastWin32Error());
+            }
+
             if (!NativeFile.SetEndOfFile(handle))
+            {
                 throw new IOException("Unable to set the new length", MarshalGetLastWin32Error());
+            }
 
             if (position < value)
             {
@@ -148,12 +158,16 @@ namespace SharpDX.IO
         public override int Read(byte[] buffer, int offset, int count)
         {
             if (buffer == null)
+            {
                 throw new ArgumentNullException("buffer");
+            }
 
             unsafe
             {
                 fixed (void* pbuffer = buffer)
+                {
                     return Read((IntPtr) pbuffer, offset, count);
+                }
             }
         }
 
@@ -168,7 +182,9 @@ namespace SharpDX.IO
         public int Read(IntPtr buffer, int offset, int count)
         {
             if (buffer == IntPtr.Zero)
+            {
                 throw new ArgumentNullException("buffer");
+            }
 
             int numberOfBytesRead;
             unsafe
@@ -176,7 +192,9 @@ namespace SharpDX.IO
                 void* pbuffer = (byte*) buffer + offset;
                 {
                     if (!NativeFile.ReadFile(handle, (IntPtr)pbuffer, count, out numberOfBytesRead, IntPtr.Zero))
+                    {
                         throw new IOException("Unable to read from file", MarshalGetLastWin32Error());
+                    }
                 }
                 position += numberOfBytesRead;
             }
@@ -187,12 +205,16 @@ namespace SharpDX.IO
         public override void Write(byte[] buffer, int offset, int count)
         {
             if (buffer == null)
+            {
                 throw new ArgumentNullException("buffer");
+            }
 
             unsafe
             {
                 fixed (void* pbuffer = buffer)
+                {
                     Write((IntPtr)pbuffer, offset, count);
+                }
             }
         }
 
@@ -205,7 +227,9 @@ namespace SharpDX.IO
         public void Write(IntPtr buffer, int offset, int count)
         {
             if (buffer == IntPtr.Zero)
+            {
                 throw new ArgumentNullException("buffer");
+            }
 
             int numberOfBytesWritten;
             unsafe
@@ -213,7 +237,9 @@ namespace SharpDX.IO
                 void* pbuffer = (byte*) buffer + offset;
                 {
                     if (!NativeFile.WriteFile(handle, (IntPtr)pbuffer, count, out numberOfBytesWritten, IntPtr.Zero))
+                    {
                         throw new IOException("Unable to write to file", MarshalGetLastWin32Error());
+                    }
                 }
                 position += numberOfBytesWritten;
             }
@@ -253,7 +279,10 @@ namespace SharpDX.IO
             {
                 long length;
                 if (!NativeFile.GetFileSizeEx(handle, out length))
+                {
                     throw new IOException("Unable to get file length", MarshalGetLastWin32Error());
+                }
+
                 return length;
             }
         }

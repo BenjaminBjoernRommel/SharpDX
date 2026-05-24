@@ -76,7 +76,9 @@ namespace SharpDX
         public override bool Equals(object obj)
         {
             if (!(obj is Size2F))
+            {
                 return false;
+            }
 
             return Equals((Size2F)obj);
         }

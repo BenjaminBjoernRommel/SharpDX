@@ -62,11 +62,19 @@ namespace SharpDX.DirectWrite
             internal unsafe void __MarshalFree()
             {
                 if (GlyphIndices != IntPtr.Zero)
+                {
                     Marshal.FreeHGlobal(GlyphIndices);
+                }
+
                 if (GlyphAdvances != IntPtr.Zero)
+                {
                     Marshal.FreeHGlobal(GlyphAdvances);
+                }
+
                 if (GlyphOffsets != IntPtr.Zero)
+                {
                     Marshal.FreeHGlobal(GlyphOffsets);
+                }
             }
         }
 
@@ -81,28 +89,37 @@ namespace SharpDX.DirectWrite
             this.FontFace = (@ref.FontFace == IntPtr.Zero) ? null : new FontFace(@ref.FontFace);
             // If FontFace != null, adds a reference to it
             if (FontFace != null)
+            {
                 ((IUnknown) this.FontFace).AddReference();
+            }
+
             this.FontSize= @ref.FontEmSize;
             this.GlyphCount = @ref.GlyphCount;
             if (@ref.GlyphIndices != IntPtr.Zero)
             {
                 Indices = new short[GlyphCount];
                 if (GlyphCount > 0)
+                {
                     Utilities.Read(@ref.GlyphIndices, Indices, 0, GlyphCount);
+                }
             }
 
             if (@ref.GlyphAdvances != IntPtr.Zero)
             {
                 Advances = new float[GlyphCount];
                 if (GlyphCount > 0)
+                {
                     Utilities.Read(@ref.GlyphAdvances, Advances, 0, GlyphCount);
+                }
             }
 
             if (@ref.GlyphOffsets != IntPtr.Zero)
             {
                 Offsets = new GlyphOffset[GlyphCount];
                 if (GlyphCount > 0)
+                {
                     Utilities.Read(@ref.GlyphOffsets, Offsets, 0, GlyphCount);
+                }
             }
             this.IsSideways = @ref.IsSideways;
             this.BidiLevel = @ref.BidiLevel;
@@ -122,31 +139,45 @@ namespace SharpDX.DirectWrite
                 @ref.GlyphCount = this.Indices.Length;
                 @ref.GlyphIndices = Marshal.AllocHGlobal(this.Indices.Length*sizeof (short));
                 if (this.Indices.Length > 0)
+                {
                     Utilities.Write(@ref.GlyphIndices, Indices, 0, this.Indices.Length);
+                }
             }
 
             if (this.Advances != null)
             {
                 if (@ref.GlyphCount >= 0 && @ref.GlyphCount != this.Advances.Length)
+                {
                     throw new InvalidOperationException(string.Format(System.Globalization.CultureInfo.InvariantCulture, "Invalid length for array Advances [{0}] and Indices [{1}]. Indices, Advances and Offsets array must have same size - or may be null", this.Advances.Length, @ref.GlyphCount));
+                }
+
                 @ref.GlyphCount = this.Advances.Length;
                 @ref.GlyphAdvances = Marshal.AllocHGlobal(this.Advances.Length * sizeof(float));
                 if (this.Advances.Length > 0)
+                {
                     Utilities.Write(@ref.GlyphAdvances, Advances, 0, this.Advances.Length);
+                }
             } 
 
             if (this.Offsets != null)
             {
                 if (@ref.GlyphCount >= 0 && @ref.GlyphCount != this.Offsets.Length)
+                {
                     throw new InvalidOperationException( string.Format(System.Globalization.CultureInfo.InvariantCulture, "Invalid length for array Offsets [{0}]. Indices, Advances and Offsets array must have same size (Current is [{1}]- or may be null", this.Offsets.Length, @ref.GlyphCount));
+                }
+
                 @ref.GlyphCount = this.Offsets.Length;
                 @ref.GlyphOffsets = Marshal.AllocHGlobal(this.Offsets.Length * sizeof(GlyphOffset));
                 if (this.Offsets.Length > 0)
+                {
                     Utilities.Write(@ref.GlyphOffsets, Offsets, 0, this.Offsets.Length);
+                }
             }
 
             if (@ref.GlyphCount < 0)
+            {
                 @ref.GlyphCount = 0;
+            }
 
             // Update GlyphCount only for debug purpose
             this.GlyphCount = @ref.GlyphCount;

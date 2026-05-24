@@ -41,7 +41,10 @@ namespace SharpDX.DXGI
                     Output output;
                     var result = GetOutput(outputs.Count, out output);
                     if (result == ResultCode.NotFound || output == null)
+                    {
                         break;
+                    }
+
                     outputs.Add(output);
                 } while (true);
                 return outputs.ToArray();
@@ -149,7 +152,10 @@ namespace SharpDX.DXGI
                 Output output;
                 var result = GetOutput(nbOutputs, out output);
                 if (result == ResultCode.NotFound || output == null)
+                {
                     break;
+                }
+
                 output.Dispose();
                 nbOutputs++;
             } while (true);

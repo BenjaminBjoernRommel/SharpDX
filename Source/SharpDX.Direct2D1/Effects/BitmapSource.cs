@@ -45,7 +45,10 @@ namespace SharpDX.Direct2D1.Effects
             get
             {
                 if (wicBitmapSource == null)
+                {
                     wicBitmapSource = GetComObjectValue<WIC.BitmapSource>((int)BitmapSourceProperties.WicBitmapSource);
+                }
+
                 return wicBitmapSource;
             }
             set

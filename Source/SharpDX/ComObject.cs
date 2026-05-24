@@ -246,13 +246,21 @@ namespace SharpDX
 
         int IUnknown.AddReference()
         {
-            if (NativePointer == IntPtr.Zero) throw new InvalidOperationException("COM Object pointer is null");
+            if (NativePointer == IntPtr.Zero)
+            {
+                throw new InvalidOperationException("COM Object pointer is null");
+            }
+
             return Marshal.AddRef(NativePointer);            
         }
 
         int IUnknown.Release()
         {
-            if (NativePointer == IntPtr.Zero) throw new InvalidOperationException("COM Object pointer is null");
+            if (NativePointer == IntPtr.Zero)
+            {
+                throw new InvalidOperationException("COM Object pointer is null");
+            }
+
             return Marshal.Release(NativePointer);
         }
 
@@ -280,11 +288,15 @@ namespace SharpDX
 
                 // Release the object
                 if (disposing || Configuration.EnableReleaseOnFinalizer)
+                {
                     ((IUnknown)this).Release();
+                }
 
                 // Untrack the object
                 if (Configuration.EnableObjectTracking)
+                {
                     ObjectTracker.UnTrack(this);
+                }
 
                 // Set pointer to null (using protected members in order to avoid NativePointerUpdat* callbacks.
                 _nativePointer = (void*)0;
@@ -296,13 +308,17 @@ namespace SharpDX
         protected override void NativePointerUpdating()
         {
             if (Configuration.EnableObjectTracking)
+            {
                 ObjectTracker.UnTrack(this);
+            }
         }
 
         protected override void NativePointerUpdated(IntPtr oldNativePointer)
         {
             if (Configuration.EnableObjectTracking)
+            {
                 ObjectTracker.Track(this);
+            }
         }
     }
 }

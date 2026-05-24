@@ -50,7 +50,9 @@ namespace SharpDX.Direct2D1
         {
             var bindingAttr = Utilities.GetCustomAttribute<PropertyBindingAttribute>(propertyInfo, true);
             if (bindingAttr == null)
+            {
                 return null;
+            }
 
             var binding = new PropertyBinding {Attribute = bindingAttr};
             var propType = propertyInfo.PropertyType;

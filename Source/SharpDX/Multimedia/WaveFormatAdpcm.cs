@@ -49,17 +49,38 @@ namespace SharpDX.Multimedia
             if (blockAlign == 0)
             {
                 if (rate <= 11025)
+                {
                     blockAlign = 256;
+                }
                 else if (rate <= 22050)
+                {
                     blockAlign = 512;
+                }
                 else
+                {
                     blockAlign = 1024;
+                }
             }
 
-            if (rate <= 0) throw new ArgumentOutOfRangeException("rate", "Must be > 0");
-            if (channels <= 0) throw new ArgumentOutOfRangeException("channels", "Must be > 0");
-            if (blockAlign <= 0) throw new ArgumentOutOfRangeException("blockAlign", "Must be > 0");
-            if (blockAlign > Int16.MaxValue) throw new ArgumentOutOfRangeException("blockAlign", "Must be < 32767");
+            if (rate <= 0)
+            {
+                throw new ArgumentOutOfRangeException("rate", "Must be > 0");
+            }
+
+            if (channels <= 0)
+            {
+                throw new ArgumentOutOfRangeException("channels", "Must be > 0");
+            }
+
+            if (blockAlign <= 0)
+            {
+                throw new ArgumentOutOfRangeException("blockAlign", "Must be > 0");
+            }
+
+            if (blockAlign > Int16.MaxValue)
+            {
+                throw new ArgumentOutOfRangeException("blockAlign", "Must be < 32767");
+            }
 
             waveFormatTag = WaveFormatEncoding.Adpcm;
             this.blockAlign = (short)blockAlign;
@@ -126,31 +147,41 @@ namespace SharpDX.Multimedia
             this.Coefficients1 = new short[@ref.numberOfCoefficients];
             this.Coefficients2 = new short[@ref.numberOfCoefficients];
             if (@ref.numberOfCoefficients > 7)
+            {
                 throw new InvalidOperationException("Unable to read Adpcm format. Too may coefficients (max 7)");
-            fixed(short* pCoefs = &@ref.coefficients)
+            }
+
+            fixed (short* pCoefs = &@ref.coefficients)
+            {
                 for (int i = 0; i < @ref.numberOfCoefficients; i++)
                 {
                     this.Coefficients1[i] = pCoefs[i*2];
                     this.Coefficients2[i] = pCoefs[i*2+1];
                 }
+            }
+
             this.extraSize = (short)(sizeof(int) + sizeof(int) * @ref.numberOfCoefficients);
         }
         // Method to marshal from managed struct tot native
         private unsafe void __MarshalTo(ref __Native @ref)
         {
             if (Coefficients1.Length > 7)
+            {
                 throw new InvalidOperationException("Unable to encode Adpcm format. Too may coefficients (max 7)");
+            }
 
             this.extraSize = (short)(sizeof(int) + sizeof(int) * Coefficients1.Length);
             this.__MarshalTo(ref @ref.waveFormat);
             @ref.samplesPerBlock = this.SamplesPerBlock;
             @ref.numberOfCoefficients = (ushort)this.Coefficients1.Length;
             fixed (short* pCoefs = &@ref.coefficients)
+            {
                 for (int i = 0; i < @ref.numberOfCoefficients; i++)
                 {
                     pCoefs[i*2] = this.Coefficients1[i];
                     pCoefs[i*2+1] = this.Coefficients2[i];
                 }
+            }
         }
     }
 }

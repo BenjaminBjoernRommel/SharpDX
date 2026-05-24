@@ -137,7 +137,10 @@ namespace SharpDX
         public override bool Equals(object obj)
         {
             if (!(obj is Result))
+            {
                 return false;
+            }
+
             return Equals((Result) obj);
         }
 

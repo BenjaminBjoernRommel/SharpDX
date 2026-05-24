@@ -96,7 +96,10 @@ namespace SharpDX.WIC
         public void WritePixels(int lineCount, IntPtr buffer, int rowStride, int totalSizeInBytes = 0)
         {
             if (totalSizeInBytes == 0)
+            {
                 totalSizeInBytes = lineCount * rowStride;
+            }
+
             WritePixels(lineCount, rowStride, totalSizeInBytes, buffer);
         }
 
@@ -115,7 +118,9 @@ namespace SharpDX.WIC
         public unsafe void WritePixels<T>(int lineCount, int stride, T[] pixelBuffer) where T : struct
         {
             if ((lineCount * stride) > (Utilities.SizeOf<T>() * pixelBuffer.Length))
+            {
                 throw new ArgumentException("lineCount * stride must be <= to sizeof(pixelBuffer)");
+            }
 
             WritePixels(lineCount, stride, lineCount * stride, (IntPtr)Interop.Fixed(pixelBuffer));
         }

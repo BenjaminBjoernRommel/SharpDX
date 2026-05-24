@@ -171,9 +171,14 @@ namespace SharpDX
         public Color4(float[] values)
         {
             if (values == null)
+            {
                 throw new ArgumentNullException("values");
+            }
+
             if (values.Length != 4)
+            {
                 throw new ArgumentOutOfRangeException("values", "There must be four and only four input values for Color4.");
+            }
 
             Red = values[0];
             Green = values[1];
@@ -925,7 +930,9 @@ namespace SharpDX
         public string ToString(string format, IFormatProvider formatProvider)
         {
             if (format == null)
+            {
                 return ToString(formatProvider);
+            }
 
             return string.Format(formatProvider,
                                  toStringFormat,
@@ -989,7 +996,9 @@ namespace SharpDX
         public override bool Equals(object value)
         {
             if (!(value is Color4))
+            {
                 return false;
+            }
 
             var strongValue = (Color4)value;
             return Equals(ref strongValue);

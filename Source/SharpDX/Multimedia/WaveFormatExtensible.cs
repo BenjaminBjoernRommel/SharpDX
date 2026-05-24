@@ -66,7 +66,10 @@ namespace SharpDX.Multimedia
             wValidBitsPerSample = (short)bits;
             int dwChannelMask = 0;
             for (int n = 0; n < channels; n++)
+            {
                 dwChannelMask |= (1 << n);
+            }
+
             ChannelMask = (Speakers)dwChannelMask;
 
             // KSDATAFORMAT_SUBTYPE_IEEE_FLOAT // AudioMediaSubtypes.MEDIASUBTYPE_IEEE_FLOAT

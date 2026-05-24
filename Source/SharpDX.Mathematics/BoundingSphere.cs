@@ -270,7 +270,9 @@ namespace SharpDX
                 Vector3.DistanceSquared(ref center, ref points[i], out distance);
 
                 if (distance > radius)
+                {
                     radius = distance;
+                }
             }
 
             //Find the real distance from the DistanceSquared.
@@ -432,7 +434,9 @@ namespace SharpDX
         public string ToString(string format)
         {
             if (format == null)
+            {
                 return ToString();
+            }
 
             return string.Format(CultureInfo.CurrentCulture, "Center:{0} Radius:{1}", Center.ToString(format, CultureInfo.CurrentCulture),
                 Radius.ToString(format, CultureInfo.CurrentCulture));
@@ -461,7 +465,9 @@ namespace SharpDX
         public string ToString(string format, IFormatProvider formatProvider)
         {
             if (format == null)
+            {
                 return ToString(formatProvider);
+            }
 
             return string.Format(formatProvider, "Center:{0} Radius:{1}", Center.ToString(format, formatProvider),
                 Radius.ToString(format, formatProvider));
@@ -517,7 +523,9 @@ namespace SharpDX
         public override bool Equals(object value)
         {
             if (!(value is BoundingSphere))
+            {
                 return false;
+            }
 
             var strongValue = (BoundingSphere)value;
             return Equals(ref strongValue);

@@ -76,7 +76,10 @@ namespace SharpDX.MediaFoundation
             {
                 // If the nextSourceReader is not null
                 if (nextSourceReader != null)
+                {
                     nextSourceReader.Dispose();
+                }
+
                 nextSourceReader = new SourceReader(value);
                 Initialize(nextSourceReader);
             }
@@ -159,7 +162,9 @@ namespace SharpDX.MediaFoundation
                 if (nextSourceReader != null)
                 {
                     if (sourceReader != null)
+                    {
                         sourceReader.Dispose();
+                    }
 
                     sourceReader = nextSourceReader;
                     nextSourceReader = null;
@@ -185,7 +190,9 @@ namespace SharpDX.MediaFoundation
                 using (currentSample = sourceReader.ReadSample(SourceReaderIndex.FirstAudioStream, SourceReaderControlFlags.None, out streamIndex, out flags, out time))
                 {
                     if ((flags & SourceReaderFlags.Endofstream) != 0)
+                    {
                         break;
+                    }
 
                     CheckIfDisposed();
 
@@ -205,7 +212,9 @@ namespace SharpDX.MediaFoundation
 
                         // In case a Dispose occurred while decoding
                         if (currentBuffer == null)
+                        {
                             break;
+                        }
 
                         currentBuffer.Unlock();
                     }
@@ -236,7 +245,9 @@ namespace SharpDX.MediaFoundation
         private void CheckIfDisposed()
         {
             if (IsDisposed)
+            {
                 throw new InvalidOperationException("This instance is disposed while enumerating the samples.");
+            }
         }
 
         protected override void Dispose(bool disposeManagedResources)
@@ -269,7 +280,9 @@ namespace SharpDX.MediaFoundation
             {
                 var majorType = mediaType.Get(MediaTypeAttributeKeys.MajorType);
                 if (majorType != MediaTypeGuids.Audio)
+                {
                     throw new InvalidOperationException("Input stream doesn't contain an audio stream.");
+                }
             }
 
             // Set the type on the source reader to use PCM

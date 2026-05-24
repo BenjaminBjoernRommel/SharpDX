@@ -83,14 +83,18 @@ namespace SharpDX.Diagnostics
                 if (Configuration.UseThreadStaticObjectTracking)
                 {
                     if (threadStaticObjectReferences == null)
+                    {
                         threadStaticObjectReferences = new Dictionary<IntPtr, List<ObjectReference>>(EqualityComparer.DefaultIntPtr);
+                    }
 
                     objectReferences = threadStaticObjectReferences;
                 }
                 else
                 {
                     if (processGlobalObjectReferences == null)
+                    {
                         processGlobalObjectReferences = new Dictionary<IntPtr, List<ObjectReference>>(EqualityComparer.DefaultIntPtr);
+                    }
 
                     objectReferences = processGlobalObjectReferences;
                 }
@@ -179,7 +183,10 @@ namespace SharpDX.Diagnostics
         public static void Track(ComObject comObject)
         {
             if (comObject == null || comObject.NativePointer == IntPtr.Zero)
+            {
                 return;
+            }
+
             lock (ObjectReferences)
             {
                 List<ObjectReference> referenceList;
@@ -209,7 +216,9 @@ namespace SharpDX.Diagnostics
                 List<ObjectReference> referenceList;
                 // Object is already tracked
                 if (ObjectReferences.TryGetValue(comObjectPtr, out referenceList))
+                {
                     return new List<ObjectReference>(referenceList);
+                }
             }
             return new List<ObjectReference>();
         }
@@ -230,7 +239,9 @@ namespace SharpDX.Diagnostics
                     foreach (var objectReference in referenceList)
                     {
                         if (ReferenceEquals(objectReference.Object.Target, comObject))
+                        {
                             return objectReference;
+                        }
                     }
                 }
             }            
@@ -244,7 +255,9 @@ namespace SharpDX.Diagnostics
         public static void UnTrack(ComObject comObject)
         {
             if (comObject == null || comObject.NativePointer == IntPtr.Zero)
+            {
                 return;
+            }
 
             lock (ObjectReferences)
             {
@@ -256,13 +269,19 @@ namespace SharpDX.Diagnostics
                     {
                         var objectReference = referenceList[i];
                         if (ReferenceEquals(objectReference.Object.Target, comObject))
+                        {
                             referenceList.RemoveAt(i);
+                        }
                         else if (!objectReference.IsAlive)
+                        {
                             referenceList.RemoveAt(i);
+                        }
                     }
                     // Remove empty list
                     if (referenceList.Count == 0)
+                    {
                         ObjectReferences.Remove(comObject.NativePointer);
+                    }
 
                     // Fire UnTracked event
                     OnUnTracked(comObject);
@@ -283,7 +302,9 @@ namespace SharpDX.Diagnostics
                     foreach (var objectReference in referenceList)
                     {
                         if (objectReference.IsAlive)
+                        {
                             activeObjects.Add(objectReference);
+                        }
                     }
                 }
             }
@@ -316,7 +337,9 @@ namespace SharpDX.Diagnostics
                             countPerType[targetType] = 0;
                         }
                         else
+                        {
                             countPerType[targetType] = typeCount + 1;
+                        }
                     }
                 }
                 count++;

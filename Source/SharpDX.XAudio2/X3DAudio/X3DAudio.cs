@@ -175,7 +175,10 @@ namespace SharpDX.X3DAudio
         /// <unmanaged-short>X3DAudioCalculate</unmanaged-short>	
         public unsafe void Calculate(Listener listener, Emitter emitter, CalculateFlags flags, DspSettings settings)
         {
-            if (settings == null) throw new ArgumentNullException("settings");
+            if (settings == null)
+            {
+                throw new ArgumentNullException("settings");
+            }
 
             DspSettings.__Native settingsNative;
             settingsNative.SrcChannelCount = settings.SourceChannelCount;

@@ -41,7 +41,11 @@ namespace SharpDX.XAPO
         /// <param name="device">The device.</param>
         protected AudioProcessorParamNative(SharpDX.XAudio2.XAudio2 device) : base(IntPtr.Zero)
         {
-            if (device == null) throw new ArgumentNullException("device");
+            if (device == null)
+            {
+                throw new ArgumentNullException("device");
+            }
+
             this.device = device;
         }
 

@@ -212,7 +212,9 @@ namespace SharpDX
         public override bool Equals(object obj)
         {
             if (!(obj is Half3))
+            {
                 return false;
+            }
 
             return this.Equals((Half3)obj);
         }

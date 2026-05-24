@@ -114,7 +114,9 @@ namespace SharpDX.Direct2D1.Effects
                 if (kernelMatrix.Length > 0)
                 {
                     fixed (void* pKernelMatrix = kernelMatrix)
+                    {
                         GetValue((int)ConvoleMatrixProperties.KernelMatrix, PropertyType.Blob, (IntPtr)pKernelMatrix, sizeof(float) * kernelMatrix.Length);
+                    }
                 }
 
                 return kernelMatrix;
@@ -128,7 +130,9 @@ namespace SharpDX.Direct2D1.Effects
                 kernelMatrix = value;
 
                 fixed (void* pKernelMatrix = kernelMatrix)
+                {
                     SetValue((int)ConvoleMatrixProperties.KernelMatrix, PropertyType.Blob, (IntPtr)pKernelMatrix, sizeof(float) * kernelMatrix.Length);
+                }
             }
         }
 

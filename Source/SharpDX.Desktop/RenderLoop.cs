@@ -78,10 +78,13 @@ namespace SharpDX.Windows
             }
             set
             {
-                if(control == value) return;
+                if(control == value)
+                {
+                    return;
+                }
 
                 // Remove any previous control
-                if(control != null && !switchControl)
+                if (control != null && !switchControl)
                 {
                     isControlAlive = false;
                     control.Disposed -= ControlDisposed;
@@ -205,8 +208,15 @@ namespace SharpDX.Windows
         /// renderCallback</exception>
         public static void Run(Control form, RenderCallback renderCallback, bool useApplicationDoEvents = false)
         {
-            if(form == null) throw new ArgumentNullException("form");
-            if(renderCallback == null) throw new ArgumentNullException("renderCallback");
+            if(form == null)
+            {
+                throw new ArgumentNullException("form");
+            }
+
+            if (renderCallback == null)
+            {
+                throw new ArgumentNullException("renderCallback");
+            }
 
             form.Show();
             using (var renderLoop = new RenderLoop(form) { UseApplicationDoEvents = useApplicationDoEvents })

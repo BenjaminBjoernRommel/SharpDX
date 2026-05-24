@@ -271,7 +271,9 @@ namespace SharpDX.Multimedia
         public unsafe static WaveFormat MarshalFrom(byte[] rawdata)
         {
             fixed (void* pRawData = rawdata)
+            {
                 return MarshalFrom((IntPtr)pRawData);
+            }
         }
 
         /// <summary>
@@ -281,7 +283,10 @@ namespace SharpDX.Multimedia
         /// <returns>WaveFormat structure</returns>
         public unsafe static WaveFormat MarshalFrom(IntPtr pointer)
         {
-            if (pointer == IntPtr.Zero) return null;
+            if (pointer == IntPtr.Zero)
+            {
+                return null;
+            }
 
             var pcmWaveFormat = *(__PcmNative*)pointer;
             var encoding = pcmWaveFormat.waveFormatTag;
@@ -326,7 +331,11 @@ namespace SharpDX.Multimedia
         /// <returns>IntPtr to WaveFormat structure (needs to be freed by callee)</returns>
         public static IntPtr MarshalToPtr(WaveFormat format)
         {
-            if (format == null) return IntPtr.Zero;
+            if (format == null)
+            {
+                return IntPtr.Zero;
+            }
+
             return format.MarshalToPtr();
         }
 
@@ -338,7 +347,10 @@ namespace SharpDX.Multimedia
         {
             int formatChunkLength = br.ReadInt32();
             if (formatChunkLength < 16)
+            {
                 throw new SharpDXException("Invalid WaveFormat Structure");
+            }
+
             this.waveFormatTag = (WaveFormatEncoding)br.ReadUInt16();
             this.channels = br.ReadInt16();
             this.sampleRate = br.ReadInt32();
@@ -390,7 +402,9 @@ namespace SharpDX.Multimedia
         public override bool Equals(object obj)
         {
             if (!(obj is WaveFormat))
-            return false;
+            {
+                return false;
+            }
 
             WaveFormat other = (WaveFormat)obj;
             return waveFormatTag == other.waveFormatTag &&

@@ -124,10 +124,15 @@ namespace SharpDX
         public Int4(int[] values)
         {
             if (values == null)
+            {
                 throw new ArgumentNullException("values");
+            }
+
             if (values.Length != 4)
+            {
                 throw new ArgumentOutOfRangeException("values",
                                                       "There must be four and only four input values for Int4.");
+            }
 
             X = values[0];
             Y = values[1];
@@ -568,7 +573,9 @@ namespace SharpDX
         public string ToString(string format)
         {
             if (format == null)
+            {
                 return ToString();
+            }
 
             return string.Format(CultureInfo.CurrentCulture, "X:{0} Y:{1} Z:{2} W:{3}",
                                  X.ToString(format, CultureInfo.CurrentCulture),
@@ -600,7 +607,9 @@ namespace SharpDX
         public string ToString(string format, IFormatProvider formatProvider)
         {
             if (format == null)
+            {
                 ToString(formatProvider);
+            }
 
             return string.Format(formatProvider, "X:{0} Y:{1} Z:{2} W:{3}", X.ToString(format, formatProvider),
                                  Y.ToString(format, formatProvider), Z.ToString(format, formatProvider),
@@ -661,7 +670,9 @@ namespace SharpDX
         public override bool Equals(object value)
         {
             if (!(value is Int4))
+            {
                 return false;
+            }
 
             var strongValue = (Int4)value;
             return Equals(ref strongValue);

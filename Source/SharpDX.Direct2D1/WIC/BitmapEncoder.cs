@@ -66,7 +66,9 @@ namespace SharpDX.WIC
             this.factory = factory;
             factory.CreateEncoder(containerFormatGuid, null, this);
             if (stream != null)
+            {
                 Initialize(stream);
+            }
         }
 
         /// <summary>
@@ -81,7 +83,9 @@ namespace SharpDX.WIC
             this.factory = factory;
             factory.CreateEncoder(containerFormatGuid, null, this);
             if (stream != null)
+            {
                 Initialize(stream);
+            }
         }
 
         /// <summary>
@@ -97,7 +101,9 @@ namespace SharpDX.WIC
             this.factory = factory;
             factory.CreateEncoder(containerFormatGuid, guidVendorRef, this);
             if (stream != null)
+            {
                 Initialize(stream);
+            }
         }
 
         /// <summary>
@@ -113,7 +119,9 @@ namespace SharpDX.WIC
             this.factory = factory;
             factory.CreateEncoder(containerFormatGuid, guidVendorRef, this);
             if (stream != null)
+            {
                 Initialize(stream);
+            }
         }
 
         /// <summary>
@@ -125,7 +133,10 @@ namespace SharpDX.WIC
         public void Initialize(IStream stream)
         {
             if (this.internalWICStream != null)
+            {
                 throw new InvalidOperationException("This instance is already initialized with an existing stream");
+            }
+
             Initialize(stream, SharpDX.WIC.BitmapEncoderCacheOption.NoCache);
         }
 
@@ -138,7 +149,10 @@ namespace SharpDX.WIC
         public void Initialize(System.IO.Stream stream)
         {
             if (this.internalWICStream != null)
+            {
                 throw new InvalidOperationException("This instance is already initialized with an existing stream");
+            }
+
             this.internalWICStream = new WICStream(factory, stream);
             Initialize(this.internalWICStream, SharpDX.WIC.BitmapEncoderCacheOption.NoCache);
         }
@@ -160,7 +174,10 @@ namespace SharpDX.WIC
             if (disposing)
             {
                 if (this.internalWICStream != null)
+                {
                     internalWICStream.Dispose();
+                }
+
                 internalWICStream = null;
             }
         }

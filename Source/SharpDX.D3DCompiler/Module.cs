@@ -37,13 +37,18 @@ namespace SharpDX.D3DCompiler
         /// <param name="bytecode">The source data of the module.</param>
         public Module(ShaderBytecode bytecode)
         {
-            if (bytecode == null) throw new ArgumentNullException("bytecode");
+            if (bytecode == null)
+            {
+                throw new ArgumentNullException("bytecode");
+            }
 
             var data = bytecode.Data;
             unsafe
             {
                 fixed (void* dataPtr = &data[0])
+                {
                     D3D.LoadModule(new IntPtr(dataPtr), new PointerSize(data.Length), this);
+                }
             }
         }
     }

@@ -122,9 +122,14 @@ namespace SharpDX
         public Vector2(float[] values)
         {
             if (values == null)
+            {
                 throw new ArgumentNullException("values");
+            }
+
             if (values.Length != 2)
+            {
                 throw new ArgumentOutOfRangeException("values", "There must be two and only two input values for Vector2.");
+            }
 
             X = values[0];
             Y = values[1];
@@ -907,11 +912,19 @@ namespace SharpDX
             //q5 = ...
 
             if (source == null)
+            {
                 throw new ArgumentNullException("source");
+            }
+
             if (destination == null)
+            {
                 throw new ArgumentNullException("destination");
+            }
+
             if (destination.Length < source.Length)
+            {
                 throw new ArgumentOutOfRangeException("destination", "The destination array must be of same length or larger length than the source array.");
+            }
 
             for (int i = 0; i < source.Length; ++i)
             {
@@ -954,11 +967,19 @@ namespace SharpDX
             //q5 = ...
 
             if (source == null)
+            {
                 throw new ArgumentNullException("source");
+            }
+
             if (destination == null)
+            {
                 throw new ArgumentNullException("destination");
+            }
+
             if (destination.Length < source.Length)
+            {
                 throw new ArgumentOutOfRangeException("destination", "The destination array must be of same length or larger length than the source array.");
+            }
 
             for (int i = 0; i < source.Length; ++i)
             {
@@ -1019,11 +1040,19 @@ namespace SharpDX
         public static void Transform(Vector2[] source, ref Quaternion rotation, Vector2[] destination)
         {
             if (source == null)
+            {
                 throw new ArgumentNullException("source");
+            }
+
             if (destination == null)
+            {
                 throw new ArgumentNullException("destination");
+            }
+
             if (destination.Length < source.Length)
+            {
                 throw new ArgumentOutOfRangeException("destination", "The destination array must be of same length or larger length than the source array.");
+            }
 
             float x = rotation.X + rotation.X;
             float y = rotation.Y + rotation.Y;
@@ -1086,11 +1115,19 @@ namespace SharpDX
         public static void Transform(Vector2[] source, ref Matrix transform, Vector4[] destination)
         {
             if (source == null)
+            {
                 throw new ArgumentNullException("source");
+            }
+
             if (destination == null)
+            {
                 throw new ArgumentNullException("destination");
+            }
+
             if (destination.Length < source.Length)
+            {
                 throw new ArgumentOutOfRangeException("destination", "The destination array must be of same length or larger length than the source array.");
+            }
 
             for (int i = 0; i < source.Length; ++i)
             {
@@ -1161,11 +1198,19 @@ namespace SharpDX
         public static void TransformCoordinate(Vector2[] source, ref Matrix transform, Vector2[] destination)
         {
             if (source == null)
+            {
                 throw new ArgumentNullException("source");
+            }
+
             if (destination == null)
+            {
                 throw new ArgumentNullException("destination");
+            }
+
             if (destination.Length < source.Length)
+            {
                 throw new ArgumentOutOfRangeException("destination", "The destination array must be of same length or larger length than the source array.");
+            }
 
             for (int i = 0; i < source.Length; ++i)
             {
@@ -1232,11 +1277,19 @@ namespace SharpDX
         public static void TransformNormal(Vector2[] source, ref Matrix transform, Vector2[] destination)
         {
             if (source == null)
+            {
                 throw new ArgumentNullException("source");
+            }
+
             if (destination == null)
+            {
                 throw new ArgumentNullException("destination");
+            }
+
             if (destination.Length < source.Length)
+            {
                 throw new ArgumentOutOfRangeException("destination", "The destination array must be of same length or larger length than the source array.");
+            }
 
             for (int i = 0; i < source.Length; ++i)
             {
@@ -1461,7 +1514,9 @@ namespace SharpDX
         public string ToString(string format)
         {
             if (format == null)
+            {
                 return ToString();
+            }
 
             return string.Format(CultureInfo.CurrentCulture, "X:{0} Y:{1}", X.ToString(format, CultureInfo.CurrentCulture), Y.ToString(format, CultureInfo.CurrentCulture));
         }
@@ -1489,7 +1544,9 @@ namespace SharpDX
         public string ToString(string format, IFormatProvider formatProvider)
         {
             if (format == null)
+            {
                 ToString(formatProvider);
+            }
 
             return string.Format(formatProvider, "X:{0} Y:{1}", X.ToString(format, formatProvider), Y.ToString(format, formatProvider));
         }
@@ -1544,7 +1601,9 @@ namespace SharpDX
         public override bool Equals(object value)
         {
             if (!(value is Vector2))
+            {
                 return false;
+            }
 
             var strongValue = (Vector2)value;
             return Equals(ref strongValue);

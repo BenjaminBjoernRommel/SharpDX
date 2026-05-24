@@ -94,7 +94,9 @@ namespace SharpDX
         public string ToString(string format)
         {
             if (format == null)
+            {
                 return ToString();
+            }
 
             return string.Format(CultureInfo.CurrentCulture, "{0}", _size.ToString(format));
         }
@@ -131,7 +133,11 @@ namespace SharpDX
         /// </returns>
         public override bool Equals(object value)
         {
-            if(ReferenceEquals(null, value)) return false;
+            if(ReferenceEquals(null, value))
+            {
+                return false;
+            }
+
             return value is PointerSize && Equals((PointerSize)value);
         }
 

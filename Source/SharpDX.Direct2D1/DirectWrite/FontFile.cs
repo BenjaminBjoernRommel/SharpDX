@@ -71,8 +71,10 @@ namespace SharpDX.DirectWrite
             get
             {
                 if (fontLoaderShadow != null)
+                {
                     return (FontFileLoader)fontLoaderShadow.Callback;
-                
+                }
+
                 SharpDX.DirectWrite.FontFileLoader __output__; 
                 GetLoader(out __output__); 
                 return __output__;

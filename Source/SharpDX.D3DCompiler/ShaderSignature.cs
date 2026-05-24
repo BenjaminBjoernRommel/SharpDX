@@ -115,8 +115,13 @@ namespace SharpDX.D3DCompiler
         {
             Blob shaderSignature;
             fixed (void* ptr = shaderBytecode)
-            if (D3D.GetInputAndOutputSignatureBlob((IntPtr)ptr, shaderBytecode.Length, out shaderSignature).Failure)
-                return null;
+            {
+                if (D3D.GetInputAndOutputSignatureBlob((IntPtr)ptr, shaderBytecode.Length, out shaderSignature).Failure)
+                {
+                    return null;
+                }
+            }
+
             return new ShaderSignature(shaderSignature);
         }
 
@@ -132,8 +137,13 @@ namespace SharpDX.D3DCompiler
         {
             Blob shaderSignature;
             fixed (void* ptr = shaderBytecode)
-            if (D3D.GetInputSignatureBlob((IntPtr)ptr, shaderBytecode.Length, out shaderSignature).Failure)
-                return null;
+            {
+                if (D3D.GetInputSignatureBlob((IntPtr)ptr, shaderBytecode.Length, out shaderSignature).Failure)
+                {
+                    return null;
+                }
+            }
+
             return new ShaderSignature(shaderSignature);
         }
 
@@ -150,8 +160,13 @@ namespace SharpDX.D3DCompiler
         {
             Blob shaderSignature;
             fixed (void* ptr = shaderBytecode)
-            if (D3D.GetOutputSignatureBlob((IntPtr)ptr, shaderBytecode.Length, out shaderSignature).Failure)
-                return null;
+            {
+                if (D3D.GetOutputSignatureBlob((IntPtr)ptr, shaderBytecode.Length, out shaderSignature).Failure)
+                {
+                    return null;
+                }
+            }
+
             return new ShaderSignature(shaderSignature);
         }
 

@@ -154,7 +154,10 @@ namespace SharpDX.MediaFoundation
                 int length = GetBlobSize(guidKey);
                 var buffer = new byte[length];
                 fixed (void *pBuffer = buffer)
+                {
                     GetBlob(guidKey, (IntPtr)pBuffer, buffer.Length, IntPtr.Zero);
+                }
+
                 return (T)(object)buffer;
             }
 
@@ -264,7 +267,10 @@ namespace SharpDX.MediaFoundation
             {
                 var arrayValue = ((byte[])(object)value);
                 fixed (void* pBuffer = arrayValue)
+                {
                     SetBlob(guidKey, (IntPtr)pBuffer, arrayValue.Length);
+                }
+
                 return;
             }
 

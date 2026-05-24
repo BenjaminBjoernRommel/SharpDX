@@ -44,7 +44,10 @@ namespace SharpDX.Win32
                 int countRead = Math.Min(numberOfBytesToRead, tempBuffer.Length);
                 int count = sourceStream.Read(tempBuffer, 0, countRead);
                 if (count == 0)
+                {
                     return totalRead;
+                }
+
                 Utilities.Write(new IntPtr(totalRead + (byte*)buffer), tempBuffer, 0, count);
                 numberOfBytesToRead -= count;
                 totalRead += count;
@@ -87,7 +90,10 @@ namespace SharpDX.Win32
                     int countCopy = (int)Math.Min(numberOfBytesToCopy, tempBuffer.Length);
                     int count = sourceStream.Read(tempBuffer, 0, countCopy);
                     if (count == 0)
+                    {
                         break;
+                    }
+
                     streamDest.Write((IntPtr)pBuffer, count);
                     numberOfBytesToCopy -= count;
                     bytesWritten += count;
@@ -120,7 +126,9 @@ namespace SharpDX.Win32
         {
             long length = sourceStream.Length;
             if (length == 0)
+            {
                 length = 0x7fffffff;
+            }
 
             return new StorageStatistics
                 {

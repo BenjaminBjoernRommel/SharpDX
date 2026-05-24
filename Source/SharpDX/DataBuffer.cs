@@ -53,10 +53,14 @@ namespace SharpDX
             unsafe
             {
                 if (userBuffer == null)
+                {
                     throw new ArgumentNullException("userBuffer");
+                }
 
                 if (index < 0 || index > userBuffer.Length)
+                {
                     throw new ArgumentException("Index is out of range [0, userBuffer.Length-1]", "index");
+                }
 
                 DataBuffer buffer;
 
@@ -172,7 +176,9 @@ namespace SharpDX
             }
 
             if (_gCHandle.IsAllocated)
+            {
                 _gCHandle.Free();
+            }
 
             unsafe
             {

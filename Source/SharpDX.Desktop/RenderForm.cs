@@ -247,7 +247,9 @@ namespace SharpDX.Windows
         private void OnPauseRendering(EventArgs e)
         {
             if (PauseRendering != null)
+            {
                 PauseRendering(this, e);
+            }
         }
 
         /// <summary>
@@ -257,7 +259,9 @@ namespace SharpDX.Windows
         private void OnResumeRendering(EventArgs e)
         {
             if (ResumeRendering != null)
+            {
                 ResumeRendering(this, e);
+            }
         }
 
         /// <summary>
@@ -267,13 +271,17 @@ namespace SharpDX.Windows
         private void OnUserResized(EventArgs e)
         {
             if (UserResized != null)
+            {
                 UserResized(this, e);
+            }
         }
 
         private void OnMonitorChanged(EventArgs e)
         {
             if (MonitorChanged != null)
+            {
                 MonitorChanged(this, e);
+            }
         }
 
         /// <summary>
@@ -283,7 +291,9 @@ namespace SharpDX.Windows
         private void OnAppActivated(EventArgs e)
         {
             if (AppActivated != null)
+            {
                 AppActivated(this, e);
+            }
         }
 
         /// <summary>
@@ -293,7 +303,9 @@ namespace SharpDX.Windows
         private void OnAppDeactivated(EventArgs e)
         {
             if (AppDeactivated != null)
+            {
                 AppDeactivated(this, e);
+            }
         }
 
         /// <summary>
@@ -303,7 +315,9 @@ namespace SharpDX.Windows
         private void OnSystemSuspend(EventArgs e)
         {
             if (SystemSuspend != null)
+            {
                 SystemSuspend(this, e);
+            }
         }
 
         /// <summary>
@@ -313,7 +327,9 @@ namespace SharpDX.Windows
         private void OnSystemResume(EventArgs e)
         {
             if (SystemResume != null)
+            {
                 SystemResume(this, e);
+            }
         }
 
         /// <summary>
@@ -323,7 +339,9 @@ namespace SharpDX.Windows
         private void OnScreensaver(CancelEventArgs e)
         {
             if (Screensaver != null)
+            {
                 Screensaver(this, e);
+            }
         }
 
         protected override void OnClientSizeChanged(EventArgs e)
@@ -369,7 +387,9 @@ namespace SharpDX.Windows
                         else if (wparam == SIZE_MAXIMIZED)
                         {
                             if (previousWindowState == FormWindowState.Minimized)
+                            {
                                 OnResumeRendering(EventArgs.Empty);
+                            }
 
                             previousWindowState = FormWindowState.Maximized;
 
@@ -380,7 +400,9 @@ namespace SharpDX.Windows
                         else if (wparam == SIZE_RESTORED)
                         {
                             if (previousWindowState == FormWindowState.Minimized)
+                            {
                                 OnResumeRendering(EventArgs.Empty);
+                            }
 
                             if (!isUserResizing && (Size != cachedSize || previousWindowState == FormWindowState.Maximized))
                             {
@@ -393,15 +415,22 @@ namespace SharpDX.Windows
                                 }
                             }
                             else
+                            {
                                 previousWindowState = FormWindowState.Normal;
+                            }
                         }
                     }
                     break;
                 case WM_ACTIVATEAPP:
                     if (wparam != 0)
+                    {
                         OnAppActivated(EventArgs.Empty);
+                    }
                     else
+                    {
                         OnAppDeactivated(EventArgs.Empty);
+                    }
+
                     break;
                 case WM_POWERBROADCAST:
                     if (wparam == PBT_APMQUERYSUSPEND)
@@ -444,7 +473,9 @@ namespace SharpDX.Windows
         protected override bool ProcessDialogKey(Keys keyData)
         {
             if (keyData == (Keys.Menu | Keys.Alt) || keyData == Keys.F10)
+            {
                 return true;
+            }
 
             return base.ProcessDialogKey(keyData);
         }

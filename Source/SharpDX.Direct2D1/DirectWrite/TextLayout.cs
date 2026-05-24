@@ -116,7 +116,10 @@ namespace SharpDX.DirectWrite
             }
             finally
             {
-                if (handle.IsAllocated) handle.Free();
+                if (handle.IsAllocated)
+                {
+                    handle.Free();
+                }
             }
         }
 
@@ -158,7 +161,9 @@ namespace SharpDX.DirectWrite
             var drawingEffectPtr = Utilities.GetIUnknownForObject(drawingEffect);
             SetDrawingEffect(drawingEffectPtr, textRange);
             if (drawingEffectPtr != IntPtr.Zero)
+            {
                 Marshal.Release(drawingEffectPtr);
+            }
         }
 
         /// <summary>	

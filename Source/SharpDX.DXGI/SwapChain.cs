@@ -100,7 +100,10 @@ namespace SharpDX.DXGI
                 Output output;
                 GetFullscreenState(out isFullScreen, out output);
                 if (output != null)
+                {
                     output.Dispose();
+                }
+
                 return isFullScreen;
             }
 

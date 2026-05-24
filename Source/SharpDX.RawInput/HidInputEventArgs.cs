@@ -46,7 +46,13 @@ namespace SharpDX.RawInput
             RawData = new byte[Count * DataSize];
             unsafe
             {
-                if (RawData.Length > 0) fixed (void* __to = RawData) fixed (void* __from = &rawInput.Data.Hid.RawData) SharpDX.Utilities.CopyMemory((IntPtr)__to, (IntPtr)__from, RawData.Length *sizeof(byte));
+                if (RawData.Length > 0)
+                {
+                    fixed (void* __to = RawData) fixed (void* __from = &rawInput.Data.Hid.RawData)
+                    {
+                        SharpDX.Utilities.CopyMemory((IntPtr)__to, (IntPtr)__from, RawData.Length *sizeof(byte));
+                    }
+                }
             }
         }
 

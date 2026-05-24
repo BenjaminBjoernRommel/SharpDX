@@ -75,7 +75,9 @@ namespace SharpDX
                     *iidCount = countGuids;
 
                     for (int i = 0; i < countGuids; i++)
+                    {
                         iids[i] = container.Guids[i];
+                    }
                 }
                 catch (Exception exception)
                 {

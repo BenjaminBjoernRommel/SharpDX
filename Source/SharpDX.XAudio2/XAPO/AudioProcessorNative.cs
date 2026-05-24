@@ -58,9 +58,13 @@ namespace SharpDX.XAPO
         public void Initialize(DataStream stream)
         {
             if (stream == null)
+            {
                 Initialize_(IntPtr.Zero, 0);
+            }
             else
-            Initialize_(stream.PositionPointer, (int)(stream.Length - stream.Position));
+            {
+                Initialize_(stream.PositionPointer, (int)(stream.Length - stream.Position));
+            }
         }
 
         /// <summary>	

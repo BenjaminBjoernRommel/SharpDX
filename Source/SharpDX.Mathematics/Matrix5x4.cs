@@ -204,9 +204,14 @@ namespace SharpDX
         public Matrix5x4(float[] values)
         {
             if (values == null)
+            {
                 throw new ArgumentNullException("values");
+            }
+
             if (values.Length != 20)
+            {
                 throw new ArgumentOutOfRangeException("values", "There must be 20 input values for Matrix5x4.");
+            }
 
             M11 = values[0];
             M12 = values[1];
@@ -388,9 +393,14 @@ namespace SharpDX
             get
             {
                 if (row < 0 || row > 4)
+                {
                     throw new ArgumentOutOfRangeException("row", "Rows for matrices run from 0 to 4, inclusive.");
+                }
+
                 if (column < 0 || column > 3)
+                {
                     throw new ArgumentOutOfRangeException("column", "Columns for matrices run from 0 to 3, inclusive.");
+                }
 
                 return this[(row * 4) + column];
             }
@@ -398,9 +408,14 @@ namespace SharpDX
             set
             {
                 if (row < 0 || row > 4)
+                {
                     throw new ArgumentOutOfRangeException("row", "Rows for matrices run from 0 to 4, inclusive.");
+                }
+
                 if (column < 0 || column > 3)
+                {
                     throw new ArgumentOutOfRangeException("column", "Columns for matrices run from 0 to 3, inclusive.");
+                }
 
                 this[(row * 4) + column] = value;
             }
@@ -937,7 +952,9 @@ namespace SharpDX
         public string ToString(string format)
         {
             if (format == null)
+            {
                 return ToString();
+            }
 
             return string.Format(format, CultureInfo.CurrentCulture, "[M11:{0} M12:{1} M13:{2} M14:{3}] [M21:{4} M22:{5} M3:{6} M24:{7}] [M31:{8} M32:{9} M33:{10} M34:{11}] [M41:{12} M42:{13} M43:{14} M44:{15}] [M51:{16} M52:{17} M53:{18} M54:{19}]",
                 M11.ToString(format, CultureInfo.CurrentCulture), M12.ToString(format, CultureInfo.CurrentCulture), M13.ToString(format, CultureInfo.CurrentCulture), M14.ToString(format, CultureInfo.CurrentCulture),
@@ -975,7 +992,9 @@ namespace SharpDX
         public string ToString(string format, IFormatProvider formatProvider)
         {
             if (format == null)
+            {
                 return ToString(formatProvider);
+            }
 
             return string.Format(format, formatProvider, "[M11:{0} M12:{1} M13:{2} M14:{3}] [M21:{4} M22:{5} M3:{6} M24:{7}] [M31:{8} M32:{9} M33:{10} M34:{11}] [M41:{12} M42:{13} M43:{14} M44:{15}] [M51:{16} M52:{17} M53:{18} M54:{19}]",
                 M11.ToString(format, formatProvider), M12.ToString(format, formatProvider), M13.ToString(format, formatProvider), M14.ToString(format, formatProvider),
@@ -1072,7 +1091,9 @@ namespace SharpDX
         public override bool Equals(object value)
         {
             if (!(value is Matrix5x4))
+            {
                 return false;
+            }
 
             var strongValue = (Matrix5x4)value;
             return Equals(ref strongValue);

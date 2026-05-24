@@ -93,7 +93,9 @@ namespace SharpDX.Direct2D1
             lock (registeredEffects)
             {
                 if (registeredEffects.ContainsKey(effectId))
+                {
                     throw new ArgumentException("An effect is already registered with this GUID", "effectFactory");
+                }
 
                 factory = new CustomEffectFactory(() => effectFactory(), typeof(T), effectId);
                 registeredEffects.Add(effectId, factory);
@@ -121,7 +123,9 @@ namespace SharpDX.Direct2D1
             lock (registeredEffects)
             {
                 if (registeredEffects.ContainsKey(effectId))
+                {
                     throw new ArgumentException("An effect is already registered with this GUID", "effectFactory");
+                }
 
                 factory = new CustomEffectFactory(() => new T(), typeof(T), effectId);
                 registeredEffects.Add(effectId, factory);

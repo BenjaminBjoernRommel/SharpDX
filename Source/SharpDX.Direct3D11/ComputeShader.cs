@@ -32,12 +32,17 @@ namespace SharpDX.Direct3D11
         public ComputeShader(Device device, byte[] shaderBytecode, ClassLinkage linkage = null)
             : base(IntPtr.Zero)
         {
-            if (shaderBytecode == null) throw new ArgumentNullException("shaderBytecode", "ShaderBytecode cannot be null");
+            if (shaderBytecode == null)
+            {
+                throw new ArgumentNullException("shaderBytecode", "ShaderBytecode cannot be null");
+            }
 
             unsafe
             {
                 fixed (void *pBuffer = shaderBytecode)
+                {
                     device.CreateComputeShader((IntPtr)pBuffer, shaderBytecode.Length, linkage, this);
+                }
             }
         }
     }

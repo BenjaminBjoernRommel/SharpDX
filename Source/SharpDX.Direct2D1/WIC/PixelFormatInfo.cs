@@ -37,7 +37,9 @@ namespace SharpDX.WIC
                 int actualcount = 0;
                 GetChannelMask(channelIndex, actualcount, null, out actualcount);
                 if (actualcount == 0)
+                {
                     return new byte[0];
+                }
 
                 var temp = new byte[actualcount];
                 GetChannelMask(channelIndex, actualcount, temp, out actualcount);

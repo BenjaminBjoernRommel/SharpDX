@@ -36,7 +36,9 @@ namespace SharpDX.WIC
                 int count = 0;
                 GetPatterns(0, null, out count, out actualCount);
                 if (actualCount == 0)
+                {
                     return new BitmapPattern[0];
+                }
 
                 count = actualCount;
                 var temp = new BitmapPattern[actualCount];

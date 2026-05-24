@@ -33,12 +33,16 @@ namespace SharpDX.DXGI
         {
             comPtr = IntPtr.Zero;
             if (getDebugInterface == null)
+            {
                 return false;
+            }
 
             var guid = typeof(T).GetTypeInfo().GUID;
             var result = getDebugInterface(ref guid, out comPtr);
             if (result.Failure)
+            {
                 return false;
+            }
 
             return comPtr != IntPtr.Zero;
         }

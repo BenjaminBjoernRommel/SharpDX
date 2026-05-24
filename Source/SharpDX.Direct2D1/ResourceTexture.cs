@@ -58,10 +58,14 @@ namespace SharpDX.Direct2D1
             resourceTextureProperties.__MarshalTo(ref resourceTexturePropertiesNative);
 
             if (resourceTextureProperties.Extents == null || resourceTextureProperties.Extents.Length != resourceTextureProperties.Dimensions)
+            {
                 throw new ArgumentException("Extents array must be same size than dimensions", "resourceTextureProperties");
+            }
 
             if (resourceTextureProperties.ExtendModes == null || resourceTextureProperties.ExtendModes.Length != resourceTextureProperties.Dimensions)
+            {
                 throw new ArgumentException("ExtendModes array must be same size than dimensions", "resourceTextureProperties");
+            }
 
             fixed (void* pExtents = resourceTextureProperties.Extents) {
                 fixed (void* pExtendModes = resourceTextureProperties.ExtendModes) {

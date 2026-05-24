@@ -46,7 +46,9 @@ namespace SharpDX
                 values = new ComObject[length];
                 nativeBuffer = Utilities.AllocateMemory(length * Utilities.SizeOf<IntPtr>());
                 for(int i = 0; i < length; i++)
+                {
                     Set(i, array[i]);
+                }
             }
         }
 

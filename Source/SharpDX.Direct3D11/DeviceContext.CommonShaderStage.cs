@@ -249,7 +249,9 @@ namespace SharpDX.Direct3D11
                     var tempPtr = stackalloc IntPtr[numViews];
                     shaderResourceViewsPtr = tempPtr;
                     for (int i = 0; i < numViews; i++)
+                    {
                         shaderResourceViewsPtr[i] = (shaderResourceViews[i] == null) ? IntPtr.Zero : shaderResourceViews[i].NativePointer;
+                    }
                 }
                 SetShaderResources(startSlot, numViews, (IntPtr)shaderResourceViewsPtr);
             }
@@ -305,7 +307,9 @@ namespace SharpDX.Direct3D11
                     var tempPtr = stackalloc IntPtr[numSamplers];
                     samplersPtr = tempPtr;
                     for (int i = 0; i < numSamplers; i++)
+                    {
                         samplersPtr[i] = (samplers[i] == null) ? IntPtr.Zero : samplers[i].NativePointer;
+                    }
                 }
                 SetSamplers(startSlot, numSamplers, (IntPtr)samplersPtr);
             }
@@ -348,7 +352,9 @@ namespace SharpDX.Direct3D11
                     var tempPtr = stackalloc IntPtr[numBuffers];
                     constantBuffersPtr = tempPtr;
                     for (int i = 0; i < numBuffers; i++)
+                    {
                         constantBuffersPtr[i] = (constantBuffers[i] == null) ? IntPtr.Zero : constantBuffers[i].NativePointer;
+                    }
                 }
                 SetConstantBuffers(startSlot, numBuffers, (IntPtr)constantBuffersPtr);
             }

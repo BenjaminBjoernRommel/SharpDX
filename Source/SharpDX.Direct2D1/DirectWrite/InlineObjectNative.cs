@@ -46,8 +46,15 @@ namespace SharpDX.DirectWrite
                             clientDrawingEffectPtr);
             } finally
             {
-                if (handle.IsAllocated) handle.Free();
-                if (clientDrawingEffectPtr != IntPtr.Zero) Marshal.Release(clientDrawingEffectPtr);
+                if (handle.IsAllocated)
+                {
+                    handle.Free();
+                }
+
+                if (clientDrawingEffectPtr != IntPtr.Zero)
+                {
+                    Marshal.Release(clientDrawingEffectPtr);
+                }
             }
         }
 

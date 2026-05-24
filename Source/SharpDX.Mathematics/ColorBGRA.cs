@@ -160,9 +160,14 @@ namespace SharpDX
         public ColorBGRA(float[] values)
         {
             if (values == null)
+            {
                 throw new ArgumentNullException("values");
+            }
+
             if (values.Length != 4)
+            {
                 throw new ArgumentOutOfRangeException("values", "There must be four and only four input values for ColorBGRA.");
+            }
 
             B = ToByte(values[0]);
             G = ToByte(values[1]);
@@ -179,9 +184,14 @@ namespace SharpDX
         public ColorBGRA(byte[] values)
         {
             if (values == null)
+            {
                 throw new ArgumentNullException("values");
+            }
+
             if (values.Length != 4)
+            {
                 throw new ArgumentOutOfRangeException("values", "There must be four and only four input values for ColorBGRA.");
+            }
 
             B = values[0];
             G = values[1];
@@ -302,11 +312,25 @@ namespace SharpDX
 
             max = r; min = r;
 
-            if (g > max) max = g;
-            if (b > max) max = b;
+            if (g > max)
+            {
+                max = g;
+            }
 
-            if (g < min) min = g;
-            if (b < min) min = b;
+            if (b > max)
+            {
+                max = b;
+            }
+
+            if (g < min)
+            {
+                min = g;
+            }
+
+            if (b < min)
+            {
+                min = b;
+            }
 
             return (max + min) / 2;
         }
@@ -318,7 +342,9 @@ namespace SharpDX
         public float GetHue()
         {
             if (R == G && G == B)
+            {
                 return 0; // 0 makes as good an UNDEFINED value as any
+            }
 
             float r = (float)R / 255.0f;
             float g = (float)G / 255.0f;
@@ -330,11 +356,25 @@ namespace SharpDX
 
             max = r; min = r;
 
-            if (g > max) max = g;
-            if (b > max) max = b;
+            if (g > max)
+            {
+                max = g;
+            }
 
-            if (g < min) min = g;
-            if (b < min) min = b;
+            if (b > max)
+            {
+                max = b;
+            }
+
+            if (g < min)
+            {
+                min = g;
+            }
+
+            if (b < min)
+            {
+                min = b;
+            }
 
             delta = max - min;
 
@@ -374,11 +414,25 @@ namespace SharpDX
 
             max = r; min = r;
 
-            if (g > max) max = g;
-            if (b > max) max = b;
+            if (g > max)
+            {
+                max = g;
+            }
 
-            if (g < min) min = g;
-            if (b < min) min = b;
+            if (b > max)
+            {
+                max = b;
+            }
+
+            if (g < min)
+            {
+                min = g;
+            }
+
+            if (b < min)
+            {
+                min = b;
+            }
 
             // if max == min, then there is no color and
             // the saturation is zero.
@@ -1077,7 +1131,9 @@ namespace SharpDX
         public string ToString(string format, IFormatProvider formatProvider)
         {
             if (format == null)
+            {
                 return ToString(formatProvider);
+            }
 
             return string.Format(formatProvider,
                                  toStringFormat,
@@ -1141,7 +1197,9 @@ namespace SharpDX
         public override bool Equals(object value)
         {
             if (!(value is ColorBGRA))
+            {
                 return false;
+            }
 
             var strongValue = (ColorBGRA)value;
             return Equals(ref strongValue);

@@ -146,9 +146,14 @@ namespace SharpDX
         public Plane(float[] values)
         {
             if (values == null)
+            {
                 throw new ArgumentNullException("values");
+            }
+
             if (values.Length != 4)
+            {
                 throw new ArgumentOutOfRangeException("values", "There must be four and only four input values for Plane.");
+            }
 
             Normal.X = values[0];
             Normal.Y = values[1];
@@ -671,7 +676,9 @@ namespace SharpDX
         public static void Transform(Plane[] planes, ref Quaternion rotation)
         {
             if (planes == null)
+            {
                 throw new ArgumentNullException("planes");
+            }
 
             float x2 = rotation.X + rotation.X;
             float y2 = rotation.Y + rotation.Y;
@@ -756,7 +763,9 @@ namespace SharpDX
         public static void Transform(Plane[] planes, ref Matrix transformation)
         {
             if (planes == null)
+            {
                 throw new ArgumentNullException("planes");
+            }
 
             Matrix inverse;
             Matrix.Invert(ref transformation, out inverse);
@@ -913,7 +922,9 @@ namespace SharpDX
         public override bool Equals(object value)
         {
             if (!(value is Plane))
+            {
                 return false;
+            }
 
             var strongValue = (Plane)value;
             return Equals(ref strongValue);

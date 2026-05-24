@@ -68,7 +68,10 @@ namespace SharpDX.Direct3D11
             var sourceRenderTargets = RenderTarget;
             var destRenderTargets = description.RenderTarget;
             for (int i = 0; i < sourceRenderTargets.Length; i++)
+            {
                 destRenderTargets[i] = sourceRenderTargets[i];
+            }
+
             return description;
         }
     }

@@ -102,14 +102,20 @@ namespace SharpDX.Direct2D1
                             FeatureDataDoubles support;
 
                             if (CheckFeatureSupport(Feature.Doubles, new IntPtr(&support), Utilities.SizeOf<FeatureDataDoubles>()).Failure)
+                            {
                                 return false;
+                            }
+
                             return support.DoublePrecisionFloatShaderOps;
                         }
                     case Feature.D3D10XHardwareOptions:
                         {
                             FeatureDataD3D10XHardwareOptions support;
                             if (CheckFeatureSupport(Feature.D3D10XHardwareOptions, new IntPtr(&support), Utilities.SizeOf<FeatureDataD3D10XHardwareOptions>()).Failure)
+                            {
                                 return false;
+                            }
+
                             return support.ComputeShadersPlusRawAndStructuredBuffersViaShader4X;
                         }
                     default:

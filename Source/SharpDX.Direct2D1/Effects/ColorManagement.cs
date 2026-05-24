@@ -48,7 +48,10 @@ namespace SharpDX.Direct2D1.Effects
             get
             {
                 if (sourceContext == null)
+                {
                     sourceContext = GetComObjectValue<ColorContext>((int)ColorManagementProperties.SourceColorContext);
+                }
+
                 return sourceContext;
             }
             set
@@ -81,7 +84,10 @@ namespace SharpDX.Direct2D1.Effects
             get
             {
                 if (destinationContext == null)
+                {
                     destinationContext = GetComObjectValue<ColorContext>((int)ColorManagementProperties.DestinationColorContext);
+                }
+
                 return destinationContext;
             }
             set

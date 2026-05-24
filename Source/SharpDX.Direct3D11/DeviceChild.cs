@@ -42,7 +42,10 @@ namespace SharpDX.Direct3D11
                     byte* pname = stackalloc byte[1024];
                     int size = 1024 - 1;
                     if (GetPrivateData(CommonGuid.DebugObjectName, ref size, new IntPtr(pname)).Failure)
+                    {
                         return string.Empty;
+                    }
+
                     pname[size] = 0;
                     return Marshal.PtrToStringAnsi(new IntPtr(pname));
                 }

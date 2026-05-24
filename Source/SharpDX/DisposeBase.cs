@@ -53,7 +53,9 @@ namespace SharpDX
             {
 	            EventHandler<EventArgs> disposingHandlers = Disposing;
 	            if (disposingHandlers != null)
+                {
                     disposingHandlers(this, DisposeEventArgs.Get(disposing));
+                }
 
                 Dispose(disposing);
                 GC.SuppressFinalize(this);
@@ -62,7 +64,9 @@ namespace SharpDX
 
 	            EventHandler<EventArgs> disposedHandlers = Disposed;
 	            if (disposedHandlers != null)
+                {
                     disposedHandlers(this, DisposeEventArgs.Get(disposing));
+                }
             }
         }
 

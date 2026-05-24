@@ -59,7 +59,9 @@ namespace SharpDX.RawInput
             int deviceCount = 0;
             RawInputFunctions.GetRawInputDeviceList(null, ref deviceCount, Utilities.SizeOf<RawInputDevicelist>());
             if (deviceCount == 0)
+            {
                 return null;
+            }
 
             // Get the raw input device list
             var rawInputDeviceList = new RawInputDevicelist[deviceCount];
@@ -78,7 +80,11 @@ namespace SharpDX.RawInput
                 RawInputFunctions.GetRawInputDeviceInfo(deviceHandle, RawInputDeviceInfoType.DeviceName, (IntPtr)deviceNamePtr, ref countDeviceNameChars);
 
                 var nullCharIndex = 0;
-                while (nullCharIndex <= countDeviceNameChars && deviceNamePtr[nullCharIndex++] != '\0') ;
+                while (nullCharIndex <= countDeviceNameChars && deviceNamePtr[nullCharIndex++] != '\0')
+                {
+                    ;
+                }
+
                 var deviceName = new string(deviceNamePtr, 0, nullCharIndex == 0 ? 0 : nullCharIndex - 1);
 
                 // Get the DeviceInfo
@@ -154,7 +160,9 @@ namespace SharpDX.RawInput
                 RawInputFunctions.GetRawInputData(rawInputMessagePointer, RawInputDataType.Input, IntPtr.Zero, ref sizeOfRawInputData, Utilities.SizeOf<RawInputHeader>());
 
                 if (sizeOfRawInputData == 0)
+                {
                     return;
+                }
 
                 // Get the RawInput data structure
                 var rawInputDataPtr = stackalloc byte[sizeOfRawInputData];
@@ -166,15 +174,24 @@ namespace SharpDX.RawInput
                 {
                     case DeviceType.HumanInputDevice:
                         if (RawInput != null)
+                        {
                             RawInput(null, new HidInputEventArgs(ref *rawInput, hwnd));
+                        }
+
                         break;
                     case DeviceType.Keyboard:
                         if (KeyboardInput != null)
+                        {
                             KeyboardInput(null, new KeyboardInputEventArgs(ref *rawInput, hwnd));
+                        }
+
                         break;
                     case DeviceType.Mouse:
                         if (MouseInput != null)
+                        {
                             MouseInput(null, new MouseInputEventArgs(ref *rawInput, hwnd));
+                        }
+
                         break;
                 }
             }
@@ -194,7 +211,10 @@ namespace SharpDX.RawInput
             {
                 // Handle only WM_INPUT messages
                 if (m.Msg == WmInput)
+                {
                     HandleMessage(m.LParam, m.HWnd);
+                }
+
                 return false;
             }
         }

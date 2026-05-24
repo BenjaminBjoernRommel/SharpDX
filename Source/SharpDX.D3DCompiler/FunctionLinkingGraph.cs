@@ -94,7 +94,9 @@ namespace SharpDX.D3DCompiler
             if (resultCode.Failure)
             {
                 if (errorBlob != null)
+                {
                     throw new CompilationException(resultCode, Utilities.BlobToString(errorBlob));
+                }
 
                 throw new SharpDXException(resultCode);
             }

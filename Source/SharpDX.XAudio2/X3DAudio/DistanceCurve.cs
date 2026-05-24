@@ -28,7 +28,9 @@ namespace SharpDX.X3DAudio
         public static unsafe IntPtr FromCurvePoints(CurvePoint[] points)
         {
             if (points == null || points.Length == 0)
+            {
                 return IntPtr.Zero;
+            }
 
             var pDistanceCurve = (DistanceCurve*)Marshal.AllocHGlobal(Utilities.SizeOf<DistanceCurve>() + points.Length * Utilities.SizeOf<CurvePoint>());
             var pPoints = (CurvePoint*)&pDistanceCurve[1];
