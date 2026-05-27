@@ -11,7 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Drawing.Common" Version="10.0.1" />
+    <PackageReference Include="System.Drawing.Common" Version="10.0.8" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="10.0.300" />
     <PackageReference Update="Nerdbank.GitVersioning" Version="3.9.50" />
     <PackageReference Update="SharpGenTools.Sdk" Version="1.2.1" />
   </ItemGroup>
