@@ -5,7 +5,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("0359dc30-95e6-4568-9055-27720d130e93")]
     public partial class AnalysisTransform : SharpDX.ComObject
     {
-        public AnalysisTransform(System.IntPtr nativePtr): base (nativePtr)
+        public AnalysisTransform(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -25,7 +25,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void ProcessAnalysisResults(System.IntPtr analysisData, System.Int32 analysisDataCount)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)analysisData, analysisDataCount, (*(void ***)this._nativePointer)[3]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)analysisData, analysisDataCount, (*(void***)this._nativePointer)[3]);
             __result__.CheckError();
         }
     }
@@ -33,7 +33,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("a2296057-ea42-4099-983b-539fb6505426")]
     public partial class Bitmap : SharpDX.Direct2D1.Image
     {
-        public Bitmap(System.IntPtr nativePtr): base (nativePtr)
+        public Bitmap(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -87,7 +87,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Size2F GetSize()
         {
             SharpDX.Size2F __result__;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void ***)this._nativePointer)[4]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void***)this._nativePointer)[4]);
             return __result__;
         }
 
@@ -101,7 +101,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Size2 GetPixelSize()
         {
             SharpDX.Size2 __result__;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void ***)this._nativePointer)[5]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void***)this._nativePointer)[5]);
             return __result__;
         }
 
@@ -115,7 +115,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.PixelFormat GetPixelFormat()
         {
             SharpDX.Direct2D1.PixelFormat __result__;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void ***)this._nativePointer)[6]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void***)this._nativePointer)[6]);
             return __result__;
         }
 
@@ -129,9 +129,9 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1Bitmap::GetDpi</unmanaged-short>
         internal unsafe void GetDpi(out System.Single dpiX, out System.Single dpiY)
         {
-            fixed (void *dpiY_ = &dpiY)
-                fixed (void *dpiX_ = &dpiX)
-                    SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, dpiX_, dpiY_, (*(void ***)this._nativePointer)[7]);
+            fixed (void* dpiY_ = &dpiY)
+            fixed (void* dpiX_ = &dpiX)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, dpiX_, dpiY_, (*(void***)this._nativePointer)[7]);
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace SharpDX.Direct2D1
             bitmap_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Bitmap>(bitmap);
             if (srcRect != null)
                 srcRect_ = srcRect.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, destPoint == null ? (void *)0 : &destPoint_, (void *)bitmap_, srcRect == null ? (void *)0 : &srcRect_, (*(void ***)this._nativePointer)[8]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, destPoint == null ? (void*)0 : &destPoint_, (void*)bitmap_, srcRect == null ? (void*)0 : &srcRect_, (*(void***)this._nativePointer)[8]);
             __result__.CheckError();
         }
 
@@ -186,7 +186,7 @@ namespace SharpDX.Direct2D1
             renderTarget_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.RenderTarget>(renderTarget);
             if (srcRect != null)
                 srcRect_ = srcRect.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, destPoint == null ? (void *)0 : &destPoint_, (void *)renderTarget_, srcRect == null ? (void *)0 : &srcRect_, (*(void ***)this._nativePointer)[9]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, destPoint == null ? (void*)0 : &destPoint_, (void*)renderTarget_, srcRect == null ? (void*)0 : &srcRect_, (*(void***)this._nativePointer)[9]);
             __result__.CheckError();
         }
 
@@ -209,7 +209,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             if (dstRect != null)
                 dstRect_ = dstRect.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, dstRect == null ? (void *)0 : &dstRect_, (void *)srcData, pitch, (*(void ***)this._nativePointer)[10]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, dstRect == null ? (void*)0 : &dstRect_, (void*)srcData, pitch, (*(void***)this._nativePointer)[10]);
             __result__.CheckError();
         }
     }
@@ -217,7 +217,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("a898a84c-3873-4588-b08b-ebbf978df041")]
     public partial class Bitmap1 : SharpDX.Direct2D1.Bitmap
     {
-        public Bitmap1(System.IntPtr nativePtr): base (nativePtr)
+        public Bitmap1(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -282,7 +282,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetColorContext(out SharpDX.Direct2D1.ColorContext colorContext)
         {
             System.IntPtr colorContext_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &colorContext_, (*(void ***)this._nativePointer)[11]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &colorContext_, (*(void***)this._nativePointer)[11]);
             if (colorContext_ != System.IntPtr.Zero)
                 colorContext = new SharpDX.Direct2D1.ColorContext(colorContext_);
             else
@@ -299,7 +299,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.BitmapOptions GetOptions()
         {
             SharpDX.Direct2D1.BitmapOptions __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1BitmapOptions(this._nativePointer, (*(void ***)this._nativePointer)[12]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1BitmapOptions(this._nativePointer, (*(void***)this._nativePointer)[12]);
             return __result__;
         }
 
@@ -318,7 +318,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr dxgiSurface_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &dxgiSurface_, (*(void ***)this._nativePointer)[13]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &dxgiSurface_, (*(void***)this._nativePointer)[13]);
             if (dxgiSurface_ != System.IntPtr.Zero)
                 dxgiSurface = new SharpDX.DXGI.Surface(dxgiSurface_);
             else
@@ -340,10 +340,10 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1Bitmap1::Map</unmanaged-short>
         internal unsafe void Map(SharpDX.Direct2D1.MapOptions options, out SharpDX.Direct2D1.MappedRectangle mappedRect)
         {
-            mappedRect = default (SharpDX.Direct2D1.MappedRectangle);
+            mappedRect = default(SharpDX.Direct2D1.MappedRectangle);
             SharpDX.Result __result__;
-            fixed (void *mappedRect_ = &mappedRect)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)options), mappedRect_, (*(void ***)this._nativePointer)[14]);
+            fixed (void* mappedRect_ = &mappedRect)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)options), mappedRect_, (*(void***)this._nativePointer)[14]);
             __result__.CheckError();
         }
 
@@ -360,7 +360,7 @@ namespace SharpDX.Direct2D1
         public unsafe void Unmap()
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[15]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[15]);
             __result__.CheckError();
         }
     }
@@ -368,7 +368,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd906aa-12e2-11dc-9fed-001143a055f9")]
     public partial class BitmapBrush : SharpDX.Direct2D1.Brush
     {
-        public BitmapBrush(System.IntPtr nativePtr): base (nativePtr)
+        public BitmapBrush(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -447,7 +447,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1BitmapBrush::SetExtendModeX</unmanaged-short>
         internal unsafe void SetExtendModeX(SharpDX.Direct2D1.ExtendMode extendModeX)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked ((System.Int32)extendModeX), (*(void ***)this._nativePointer)[8]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked((System.Int32)extendModeX), (*(void***)this._nativePointer)[8]);
         }
 
         /// <summary>
@@ -462,7 +462,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1BitmapBrush::SetExtendModeY</unmanaged-short>
         internal unsafe void SetExtendModeY(SharpDX.Direct2D1.ExtendMode extendModeY)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked ((System.Int32)extendModeY), (*(void ***)this._nativePointer)[9]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked((System.Int32)extendModeY), (*(void***)this._nativePointer)[9]);
         }
 
         /// <summary>
@@ -477,7 +477,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1BitmapBrush::SetInterpolationMode</unmanaged-short>
         internal unsafe void SetInterpolationMode(SharpDX.Direct2D1.BitmapInterpolationMode interpolationMode)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked ((System.Int32)interpolationMode), (*(void ***)this._nativePointer)[10]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked((System.Int32)interpolationMode), (*(void***)this._nativePointer)[10]);
         }
 
         /// <summary>
@@ -495,7 +495,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr bitmap_ = System.IntPtr.Zero;
             bitmap_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Bitmap>(bitmap);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)bitmap_, (*(void ***)this._nativePointer)[11]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)bitmap_, (*(void***)this._nativePointer)[11]);
         }
 
         /// <summary>
@@ -511,7 +511,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.ExtendMode GetExtendModeX()
         {
             SharpDX.Direct2D1.ExtendMode __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ExtendMode(this._nativePointer, (*(void ***)this._nativePointer)[12]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ExtendMode(this._nativePointer, (*(void***)this._nativePointer)[12]);
             return __result__;
         }
 
@@ -528,7 +528,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.ExtendMode GetExtendModeY()
         {
             SharpDX.Direct2D1.ExtendMode __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ExtendMode(this._nativePointer, (*(void ***)this._nativePointer)[13]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ExtendMode(this._nativePointer, (*(void***)this._nativePointer)[13]);
             return __result__;
         }
 
@@ -545,7 +545,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.BitmapInterpolationMode GetInterpolationMode()
         {
             SharpDX.Direct2D1.BitmapInterpolationMode __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1BitmapInterpolationMode(this._nativePointer, (*(void ***)this._nativePointer)[14]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1BitmapInterpolationMode(this._nativePointer, (*(void***)this._nativePointer)[14]);
             return __result__;
         }
 
@@ -559,7 +559,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetBitmap(out SharpDX.Direct2D1.Bitmap bitmap)
         {
             System.IntPtr bitmap_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &bitmap_, (*(void ***)this._nativePointer)[15]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &bitmap_, (*(void***)this._nativePointer)[15]);
             if (bitmap_ != System.IntPtr.Zero)
                 bitmap = new SharpDX.Direct2D1.Bitmap(bitmap_);
             else
@@ -570,7 +570,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("41343a53-e41a-49a2-91cd-21793bbb62e5")]
     public partial class BitmapBrush1 : SharpDX.Direct2D1.BitmapBrush
     {
-        public BitmapBrush1(System.IntPtr nativePtr): base (nativePtr)
+        public BitmapBrush1(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -596,7 +596,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1BitmapBrush1::SetInterpolationMode1</unmanaged-short>
         internal unsafe void SetInterpolationMode1(SharpDX.Direct2D1.InterpolationMode interpolationMode)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked ((System.Int32)interpolationMode), (*(void ***)this._nativePointer)[16]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked((System.Int32)interpolationMode), (*(void***)this._nativePointer)[16]);
         }
 
         /// <summary>
@@ -609,7 +609,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.InterpolationMode GetInterpolationMode1()
         {
             SharpDX.Direct2D1.InterpolationMode __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1InterpolationMode(this._nativePointer, (*(void ***)this._nativePointer)[17]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1InterpolationMode(this._nativePointer, (*(void***)this._nativePointer)[17]);
             return __result__;
         }
     }
@@ -617,7 +617,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd90695-12e2-11dc-9fed-001143a055f9")]
     public partial class BitmapRenderTarget : SharpDX.Direct2D1.RenderTarget
     {
-        public BitmapRenderTarget(System.IntPtr nativePtr): base (nativePtr)
+        public BitmapRenderTarget(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -655,7 +655,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr bitmap_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &bitmap_, (*(void ***)this._nativePointer)[57]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &bitmap_, (*(void***)this._nativePointer)[57]);
             if (bitmap_ != System.IntPtr.Zero)
                 bitmap = new SharpDX.Direct2D1.Bitmap(bitmap_);
             else
@@ -667,7 +667,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("63ac0b32-ba44-450f-8806-7f4ca1ff2f1b")]
     public partial class BlendTransform : SharpDX.Direct2D1.ConcreteTransform
     {
-        public BlendTransform(System.IntPtr nativePtr): base (nativePtr)
+        public BlendTransform(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -698,8 +698,8 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1BlendTransform::SetDescription</unmanaged-short>
         internal unsafe void SetDescription(ref SharpDX.Direct2D1.BlendDescription description)
         {
-            fixed (void *description_ = &description)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, description_, (*(void ***)this._nativePointer)[6]);
+            fixed (void* description_ = &description)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, description_, (*(void***)this._nativePointer)[6]);
         }
 
         /// <summary>
@@ -711,16 +711,16 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1BlendTransform::GetDescription</unmanaged-short>
         internal unsafe void GetDescription(out SharpDX.Direct2D1.BlendDescription description)
         {
-            description = default (SharpDX.Direct2D1.BlendDescription);
-            fixed (void *description_ = &description)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, description_, (*(void ***)this._nativePointer)[7]);
+            description = default(SharpDX.Direct2D1.BlendDescription);
+            fixed (void* description_ = &description)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, description_, (*(void***)this._nativePointer)[7]);
         }
     }
 
     [System.Runtime.InteropServices.GuidAttribute("4998735c-3a19-473c-9781-656847e3a347")]
     public partial class BorderTransform : SharpDX.Direct2D1.ConcreteTransform
     {
-        public BorderTransform(System.IntPtr nativePtr): base (nativePtr)
+        public BorderTransform(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -761,7 +761,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1BorderTransform::SetExtendModeX</unmanaged-short>
         internal unsafe void SetExtendModeX(SharpDX.Direct2D1.ExtendMode extendMode)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked ((System.Int32)extendMode), (*(void ***)this._nativePointer)[6]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked((System.Int32)extendMode), (*(void***)this._nativePointer)[6]);
         }
 
         /// <summary>
@@ -776,7 +776,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1BorderTransform::SetExtendModeY</unmanaged-short>
         internal unsafe void SetExtendModeY(SharpDX.Direct2D1.ExtendMode extendMode)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked ((System.Int32)extendMode), (*(void ***)this._nativePointer)[7]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked((System.Int32)extendMode), (*(void***)this._nativePointer)[7]);
         }
 
         /// <summary>
@@ -789,7 +789,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.ExtendMode GetExtendModeX()
         {
             SharpDX.Direct2D1.ExtendMode __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ExtendMode(this._nativePointer, (*(void ***)this._nativePointer)[8]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ExtendMode(this._nativePointer, (*(void***)this._nativePointer)[8]);
             return __result__;
         }
 
@@ -803,7 +803,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.ExtendMode GetExtendModeY()
         {
             SharpDX.Direct2D1.ExtendMode __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ExtendMode(this._nativePointer, (*(void ***)this._nativePointer)[9]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ExtendMode(this._nativePointer, (*(void***)this._nativePointer)[9]);
             return __result__;
         }
     }
@@ -811,7 +811,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("90f732e2-5092-4606-a819-8651970baccd")]
     public partial class BoundsAdjustmentTransform : SharpDX.Direct2D1.TransformNodeNative
     {
-        public BoundsAdjustmentTransform(System.IntPtr nativePtr): base (nativePtr)
+        public BoundsAdjustmentTransform(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -842,7 +842,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1BoundsAdjustmentTransform::SetOutputBounds</unmanaged-short>
         internal unsafe void SetOutputBounds(SharpDX.Mathematics.Interop.RawRectangle outputBounds)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &outputBounds, (*(void ***)this._nativePointer)[4]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &outputBounds, (*(void***)this._nativePointer)[4]);
         }
 
         /// <summary>
@@ -854,16 +854,16 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1BoundsAdjustmentTransform::GetOutputBounds</unmanaged-short>
         internal unsafe void GetOutputBounds(out SharpDX.Mathematics.Interop.RawRectangle outputBounds)
         {
-            outputBounds = default (SharpDX.Mathematics.Interop.RawRectangle);
-            fixed (void *outputBounds_ = &outputBounds)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, outputBounds_, (*(void ***)this._nativePointer)[5]);
+            outputBounds = default(SharpDX.Mathematics.Interop.RawRectangle);
+            fixed (void* outputBounds_ = &outputBounds)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, outputBounds_, (*(void***)this._nativePointer)[5]);
         }
     }
 
     [System.Runtime.InteropServices.GuidAttribute("2cd906a8-12e2-11dc-9fed-001143a055f9")]
     public partial class Brush : SharpDX.Direct2D1.Resource
     {
-        public Brush(System.IntPtr nativePtr): base (nativePtr)
+        public Brush(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -909,7 +909,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1Brush::SetOpacity</unmanaged-short>
         internal unsafe void SetOpacity(System.Single opacity)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, opacity, (*(void ***)this._nativePointer)[4]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, opacity, (*(void***)this._nativePointer)[4]);
         }
 
         /// <summary>
@@ -924,8 +924,8 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1Brush::SetTransform</unmanaged-short>
         internal unsafe void SetTransform(ref SharpDX.Mathematics.Interop.RawMatrix3x2 transform)
         {
-            fixed (void *transform_ = &transform)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, transform_, (*(void ***)this._nativePointer)[5]);
+            fixed (void* transform_ = &transform)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, transform_, (*(void***)this._nativePointer)[5]);
         }
 
         /// <summary>
@@ -938,7 +938,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Single GetOpacity()
         {
             System.Single __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallfloat(this._nativePointer, (*(void ***)this._nativePointer)[6]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallfloat(this._nativePointer, (*(void***)this._nativePointer)[6]);
             return __result__;
         }
 
@@ -954,16 +954,16 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1Brush::GetTransform</unmanaged-short>
         internal unsafe void GetTransform(out SharpDX.Mathematics.Interop.RawMatrix3x2 transform)
         {
-            transform = default (SharpDX.Mathematics.Interop.RawMatrix3x2);
-            fixed (void *transform_ = &transform)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, transform_, (*(void ***)this._nativePointer)[7]);
+            transform = default(SharpDX.Mathematics.Interop.RawMatrix3x2);
+            fixed (void* transform_ = &transform)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, transform_, (*(void***)this._nativePointer)[7]);
         }
     }
 
     [System.Runtime.InteropServices.GuidAttribute("1c4820bb-5771-4518-a581-2fe4dd0ec657")]
     public partial class ColorContext : SharpDX.Direct2D1.Resource
     {
-        public ColorContext(System.IntPtr nativePtr): base (nativePtr)
+        public ColorContext(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -1003,7 +1003,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.ColorSpace GetColorSpace()
         {
             SharpDX.Direct2D1.ColorSpace __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ColorSpace(this._nativePointer, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ColorSpace(this._nativePointer, (*(void***)this._nativePointer)[4]);
             return __result__;
         }
 
@@ -1020,7 +1020,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetProfileSize()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[5]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[5]);
             return __result__;
         }
 
@@ -1039,8 +1039,8 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetProfile(System.Byte[] rofileRef, System.Int32 profileSize)
         {
             SharpDX.Result __result__;
-            fixed (void *rofileRef_ = rofileRef)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, rofileRef_, profileSize, (*(void ***)this._nativePointer)[6]);
+            fixed (void* rofileRef_ = rofileRef)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, rofileRef_, profileSize, (*(void***)this._nativePointer)[6]);
             __result__.CheckError();
         }
     }
@@ -1048,7 +1048,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("1ab42875-c57f-4be9-bd85-9cd78d6f55ee")]
     public partial class ColorContext1 : SharpDX.Direct2D1.ColorContext
     {
-        public ColorContext1(System.IntPtr nativePtr): base (nativePtr)
+        public ColorContext1(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -1098,7 +1098,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.ColorContextType GetColorContextType()
         {
             SharpDX.Direct2D1.ColorContextType __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ColorContextType(this._nativePointer, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ColorContextType(this._nativePointer, (*(void***)this._nativePointer)[7]);
             return __result__;
         }
 
@@ -1111,7 +1111,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.DXGI.ColorSpaceType GetDXGIColorSpace()
         {
             SharpDX.DXGI.ColorSpaceType __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDXGIColorSpaceType(this._nativePointer, (*(void ***)this._nativePointer)[8]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDXGIColorSpaceType(this._nativePointer, (*(void***)this._nativePointer)[8]);
             return __result__;
         }
 
@@ -1124,10 +1124,10 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1ColorContext1::GetSimpleColorProfile</unmanaged-short>
         internal unsafe void GetSimpleColorProfile(out SharpDX.Direct2D1.SimpleColorProfile simpleProfile)
         {
-            simpleProfile = default (SharpDX.Direct2D1.SimpleColorProfile);
+            simpleProfile = default(SharpDX.Direct2D1.SimpleColorProfile);
             SharpDX.Result __result__;
-            fixed (void *simpleProfile_ = &simpleProfile)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, simpleProfile_, (*(void ***)this._nativePointer)[9]);
+            fixed (void* simpleProfile_ = &simpleProfile)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, simpleProfile_, (*(void***)this._nativePointer)[9]);
             __result__.CheckError();
         }
     }
@@ -1135,7 +1135,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("b4f34a19-2383-4d76-94f6-ec343657c3dc")]
     public partial class CommandList : SharpDX.Direct2D1.Image
     {
-        public CommandList(System.IntPtr nativePtr): base (nativePtr)
+        public CommandList(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -1161,7 +1161,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr sink_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             sink_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.CommandSink>(sink);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)sink_, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)sink_, (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
         }
 
@@ -1178,7 +1178,7 @@ namespace SharpDX.Direct2D1
         public unsafe void Close()
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[5]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[5]);
             __result__.CheckError();
         }
     }
@@ -1196,7 +1196,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("9eb767fd-4269-4467-b8c2-eb30cb305743")]
     internal partial class CommandSink1Native : SharpDX.Direct2D1.CommandSinkNative, SharpDX.Direct2D1.CommandSink1
     {
-        public CommandSink1Native(System.IntPtr nativePtr): base (nativePtr)
+        public CommandSink1Native(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -1223,7 +1223,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void SetPrimitiveBlend1_(SharpDX.Direct2D1.PrimitiveBlend primitiveBlend)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)primitiveBlend), (*(void ***)this._nativePointer)[28]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)primitiveBlend), (*(void***)this._nativePointer)[28]);
             __result__.CheckError();
         }
     }
@@ -1236,7 +1236,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("3bab440e-417e-47df-a2e2-bc0be6a00916")]
     internal partial class CommandSink2Native : SharpDX.Direct2D1.CommandSink1Native, SharpDX.Direct2D1.CommandSink2
     {
-        public CommandSink2Native(System.IntPtr nativePtr): base (nativePtr)
+        public CommandSink2Native(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -1260,7 +1260,7 @@ namespace SharpDX.Direct2D1
             ink_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Ink>(ink);
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
             inkStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.InkStyle>(inkStyle);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)ink_, (void *)brush_, (void *)inkStyle_, (*(void ***)this._nativePointer)[29]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)ink_, (void*)brush_, (void*)inkStyle_, (*(void***)this._nativePointer)[29]);
             __result__.CheckError();
         }
 
@@ -1277,7 +1277,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr gradientMesh_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             gradientMesh_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.GradientMesh>(gradientMesh);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)gradientMesh_, (*(void ***)this._nativePointer)[30]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)gradientMesh_, (*(void***)this._nativePointer)[30]);
             __result__.CheckError();
         }
 
@@ -1302,7 +1302,7 @@ namespace SharpDX.Direct2D1
                 destinationRectangle_ = destinationRectangle.Value;
             if (sourceRectangle != null)
                 sourceRectangle_ = sourceRectangle.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)gdiMetafile_, destinationRectangle == null ? (void *)0 : &destinationRectangle_, sourceRectangle == null ? (void *)0 : &sourceRectangle_, (*(void ***)this._nativePointer)[31]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)gdiMetafile_, destinationRectangle == null ? (void*)0 : &destinationRectangle_, sourceRectangle == null ? (void*)0 : &sourceRectangle_, (*(void***)this._nativePointer)[31]);
             __result__.CheckError();
         }
     }
@@ -1315,7 +1315,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("18079135-4cf3-4868-bc8e-06067e6d242d")]
     internal partial class CommandSink3Native : SharpDX.Direct2D1.CommandSink2Native, SharpDX.Direct2D1.CommandSink3
     {
-        public CommandSink3Native(System.IntPtr nativePtr): base (nativePtr)
+        public CommandSink3Native(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -1340,7 +1340,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             spriteBatch_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SpriteBatch>(spriteBatch);
             bitmap_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Bitmap>(bitmap);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)spriteBatch_, startIndex, spriteCount, (void *)bitmap_, unchecked ((System.Int32)interpolationMode), unchecked ((System.Int32)spriteOptions), (*(void ***)this._nativePointer)[32]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)spriteBatch_, startIndex, spriteCount, (void*)bitmap_, unchecked((System.Int32)interpolationMode), unchecked((System.Int32)spriteOptions), (*(void***)this._nativePointer)[32]);
             __result__.CheckError();
         }
     }
@@ -1353,7 +1353,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("c78a6519-40d6-4218-b2de-beeeb744bb3e")]
     internal partial class CommandSink4Native : SharpDX.Direct2D1.CommandSink3Native, SharpDX.Direct2D1.CommandSink4
     {
-        public CommandSink4Native(System.IntPtr nativePtr): base (nativePtr)
+        public CommandSink4Native(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -1378,7 +1378,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void SetPrimitiveBlend2_(SharpDX.Direct2D1.PrimitiveBlend primitiveBlend)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)primitiveBlend), (*(void ***)this._nativePointer)[33]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)primitiveBlend), (*(void***)this._nativePointer)[33]);
             __result__.CheckError();
         }
     }
@@ -1386,7 +1386,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("54d7898a-a061-40a7-bec7-e465bcba2c4f")]
     internal partial class CommandSinkNative : SharpDX.ComObject, SharpDX.Direct2D1.CommandSink
     {
-        public CommandSinkNative(System.IntPtr nativePtr): base (nativePtr)
+        public CommandSinkNative(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -1473,7 +1473,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void BeginDraw_()
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[3]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[3]);
             __result__.CheckError();
         }
 
@@ -1490,7 +1490,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void EndDraw_()
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
         }
 
@@ -1505,7 +1505,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void SetAntialiasMode_(SharpDX.Direct2D1.AntialiasMode antialiasMode)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)antialiasMode), (*(void ***)this._nativePointer)[5]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)antialiasMode), (*(void***)this._nativePointer)[5]);
             __result__.CheckError();
         }
 
@@ -1521,7 +1521,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void SetTags_(System.Int64 tag1, System.Int64 tag2)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, tag1, tag2, (*(void ***)this._nativePointer)[6]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, tag1, tag2, (*(void***)this._nativePointer)[6]);
             __result__.CheckError();
         }
 
@@ -1536,7 +1536,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void SetTextAntialiasMode_(SharpDX.Direct2D1.TextAntialiasMode textAntialiasMode)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)textAntialiasMode), (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)textAntialiasMode), (*(void***)this._nativePointer)[7]);
             __result__.CheckError();
         }
 
@@ -1553,7 +1553,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr textRenderingParams_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             textRenderingParams_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DirectWrite.RenderingParams>(textRenderingParams);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)textRenderingParams_, (*(void ***)this._nativePointer)[8]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)textRenderingParams_, (*(void***)this._nativePointer)[8]);
             __result__.CheckError();
         }
 
@@ -1571,8 +1571,8 @@ namespace SharpDX.Direct2D1
         internal unsafe void SetTransform_(ref SharpDX.Mathematics.Interop.RawMatrix3x2 transform)
         {
             SharpDX.Result __result__;
-            fixed (void *transform_ = &transform)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, transform_, (*(void ***)this._nativePointer)[9]);
+            fixed (void* transform_ = &transform)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, transform_, (*(void***)this._nativePointer)[9]);
             __result__.CheckError();
         }
 
@@ -1587,7 +1587,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void SetPrimitiveBlend_(SharpDX.Direct2D1.PrimitiveBlend primitiveBlend)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)primitiveBlend), (*(void ***)this._nativePointer)[10]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)primitiveBlend), (*(void***)this._nativePointer)[10]);
             __result__.CheckError();
         }
 
@@ -1605,7 +1605,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void SetUnitMode_(SharpDX.Direct2D1.UnitMode unitMode)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)unitMode), (*(void ***)this._nativePointer)[11]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)unitMode), (*(void***)this._nativePointer)[11]);
             __result__.CheckError();
         }
 
@@ -1626,7 +1626,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             if (color != null)
                 color_ = color.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, color == null ? (void *)0 : &color_, (*(void ***)this._nativePointer)[12]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, color == null ? (void*)0 : &color_, (*(void***)this._nativePointer)[12]);
             __result__.CheckError();
         }
 
@@ -1647,15 +1647,15 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1CommandSink::DrawGlyphRun</unmanaged-short>
         internal unsafe void DrawGlyphRun_(SharpDX.Mathematics.Interop.RawVector2 baselineOrigin, SharpDX.DirectWrite.GlyphRun glyphRun, SharpDX.DirectWrite.GlyphRunDescription glyphRunDescription, SharpDX.Direct2D1.Brush foregroundBrush, SharpDX.Direct2D1.MeasuringMode measuringMode)
         {
-            SharpDX.DirectWrite.GlyphRun.__Native glyphRun_ = default (SharpDX.DirectWrite.GlyphRun.__Native);
-            SharpDX.DirectWrite.GlyphRunDescription.__Native glyphRunDescription_ = default (SharpDX.DirectWrite.GlyphRunDescription.__Native);
+            SharpDX.DirectWrite.GlyphRun.__Native glyphRun_ = default(SharpDX.DirectWrite.GlyphRun.__Native);
+            SharpDX.DirectWrite.GlyphRunDescription.__Native glyphRunDescription_ = default(SharpDX.DirectWrite.GlyphRunDescription.__Native);
             System.IntPtr foregroundBrush_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             glyphRun.__MarshalTo(ref glyphRun_);
             if (glyphRunDescription != null)
                 glyphRunDescription.__MarshalTo(ref glyphRunDescription_);
             foregroundBrush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(foregroundBrush);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, baselineOrigin, &glyphRun_, glyphRunDescription == null ? (void *)0 : &glyphRunDescription_, (void *)foregroundBrush_, unchecked ((System.Int32)measuringMode), (*(void ***)this._nativePointer)[13]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, baselineOrigin, &glyphRun_, glyphRunDescription == null ? (void*)0 : &glyphRunDescription_, (void*)foregroundBrush_, unchecked((System.Int32)measuringMode), (*(void***)this._nativePointer)[13]);
             glyphRun.__MarshalFree(ref glyphRun_);
             if (glyphRunDescription != null)
                 glyphRunDescription.__MarshalFree(ref glyphRunDescription_);
@@ -1681,7 +1681,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
             strokeStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.StrokeStyle>(strokeStyle);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, point0, point1, (void *)brush_, strokeWidth, (void *)strokeStyle_, (*(void ***)this._nativePointer)[14]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, point0, point1, (void*)brush_, strokeWidth, (void*)strokeStyle_, (*(void***)this._nativePointer)[14]);
             __result__.CheckError();
         }
 
@@ -1709,7 +1709,7 @@ namespace SharpDX.Direct2D1
             geometry_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Geometry>(geometry);
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
             strokeStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.StrokeStyle>(strokeStyle);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)geometry_, (void *)brush_, strokeWidth, (void *)strokeStyle_, (*(void ***)this._nativePointer)[15]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)geometry_, (void*)brush_, strokeWidth, (void*)strokeStyle_, (*(void***)this._nativePointer)[15]);
             __result__.CheckError();
         }
 
@@ -1731,7 +1731,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
             strokeStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.StrokeStyle>(strokeStyle);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &rect, (void *)brush_, strokeWidth, (void *)strokeStyle_, (*(void ***)this._nativePointer)[16]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &rect, (void*)brush_, strokeWidth, (void*)strokeStyle_, (*(void***)this._nativePointer)[16]);
             __result__.CheckError();
         }
 
@@ -1766,7 +1766,7 @@ namespace SharpDX.Direct2D1
                 sourceRectangle_ = sourceRectangle.Value;
             if (erspectiveTransformRef != null)
                 erspectiveTransformRef_ = erspectiveTransformRef.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)bitmap_, destinationRectangle == null ? (void *)0 : &destinationRectangle_, opacity, unchecked ((System.Int32)interpolationMode), sourceRectangle == null ? (void *)0 : &sourceRectangle_, erspectiveTransformRef == null ? (void *)0 : &erspectiveTransformRef_, (*(void ***)this._nativePointer)[17]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)bitmap_, destinationRectangle == null ? (void*)0 : &destinationRectangle_, opacity, unchecked((System.Int32)interpolationMode), sourceRectangle == null ? (void*)0 : &sourceRectangle_, erspectiveTransformRef == null ? (void*)0 : &erspectiveTransformRef_, (*(void***)this._nativePointer)[17]);
             __result__.CheckError();
         }
 
@@ -1796,7 +1796,7 @@ namespace SharpDX.Direct2D1
                 targetOffset_ = targetOffset.Value;
             if (imageRectangle != null)
                 imageRectangle_ = imageRectangle.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)image_, targetOffset == null ? (void *)0 : &targetOffset_, imageRectangle == null ? (void *)0 : &imageRectangle_, unchecked ((System.Int32)interpolationMode), unchecked ((System.Int32)compositeMode), (*(void ***)this._nativePointer)[18]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)image_, targetOffset == null ? (void*)0 : &targetOffset_, imageRectangle == null ? (void*)0 : &imageRectangle_, unchecked((System.Int32)interpolationMode), unchecked((System.Int32)compositeMode), (*(void***)this._nativePointer)[18]);
             __result__.CheckError();
         }
 
@@ -1821,7 +1821,7 @@ namespace SharpDX.Direct2D1
             gdiMetafile_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.GdiMetafile>(gdiMetafile);
             if (targetOffset != null)
                 targetOffset_ = targetOffset.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)gdiMetafile_, targetOffset == null ? (void *)0 : &targetOffset_, (*(void ***)this._nativePointer)[19]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)gdiMetafile_, targetOffset == null ? (void*)0 : &targetOffset_, (*(void***)this._nativePointer)[19]);
             __result__.CheckError();
         }
 
@@ -1841,7 +1841,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             mesh_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Mesh>(mesh);
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)mesh_, (void *)brush_, (*(void ***)this._nativePointer)[20]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)mesh_, (void*)brush_, (*(void***)this._nativePointer)[20]);
             __result__.CheckError();
         }
 
@@ -1872,7 +1872,7 @@ namespace SharpDX.Direct2D1
                 destinationRectangle_ = destinationRectangle.Value;
             if (sourceRectangle != null)
                 sourceRectangle_ = sourceRectangle.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)opacityMask_, (void *)brush_, destinationRectangle == null ? (void *)0 : &destinationRectangle_, sourceRectangle == null ? (void *)0 : &sourceRectangle_, (*(void ***)this._nativePointer)[21]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)opacityMask_, (void*)brush_, destinationRectangle == null ? (void*)0 : &destinationRectangle_, sourceRectangle == null ? (void*)0 : &sourceRectangle_, (*(void***)this._nativePointer)[21]);
             __result__.CheckError();
         }
 
@@ -1898,7 +1898,7 @@ namespace SharpDX.Direct2D1
             geometry_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Geometry>(geometry);
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
             opacityBrush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(opacityBrush);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)geometry_, (void *)brush_, (void *)opacityBrush_, (*(void ***)this._nativePointer)[22]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)geometry_, (void*)brush_, (void*)opacityBrush_, (*(void***)this._nativePointer)[22]);
             __result__.CheckError();
         }
 
@@ -1916,7 +1916,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr brush_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &rect, (void *)brush_, (*(void ***)this._nativePointer)[23]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &rect, (void*)brush_, (*(void***)this._nativePointer)[23]);
             __result__.CheckError();
         }
 
@@ -1935,7 +1935,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void PushAxisAlignedClip_(SharpDX.Mathematics.Interop.RawRectangleF clipRect, SharpDX.Direct2D1.AntialiasMode antialiasMode)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &clipRect, unchecked ((System.Int32)antialiasMode), (*(void ***)this._nativePointer)[24]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &clipRect, unchecked((System.Int32)antialiasMode), (*(void***)this._nativePointer)[24]);
             __result__.CheckError();
         }
 
@@ -1950,12 +1950,12 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1CommandSink::PushLayer</unmanaged-short>
         internal unsafe void PushLayer_(ref SharpDX.Direct2D1.LayerParameters1 layerParameters1, SharpDX.Direct2D1.Layer layer)
         {
-            SharpDX.Direct2D1.LayerParameters1.__Native layerParameters1_ = default (SharpDX.Direct2D1.LayerParameters1.__Native);
+            SharpDX.Direct2D1.LayerParameters1.__Native layerParameters1_ = default(SharpDX.Direct2D1.LayerParameters1.__Native);
             System.IntPtr layer_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             layerParameters1.__MarshalTo(ref layerParameters1_);
             layer_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Layer>(layer);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &layerParameters1_, (void *)layer_, (*(void ***)this._nativePointer)[25]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &layerParameters1_, (void*)layer_, (*(void***)this._nativePointer)[25]);
             layerParameters1.__MarshalFree(ref layerParameters1_);
             __result__.CheckError();
         }
@@ -1970,7 +1970,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void PopAxisAlignedClip_()
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[26]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[26]);
             __result__.CheckError();
         }
 
@@ -1984,7 +1984,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void PopLayer_()
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[27]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[27]);
             __result__.CheckError();
         }
     }
@@ -1992,7 +1992,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("5598b14b-9fd7-48b7-9bdb-8f0964eb38bc")]
     public partial class ComputeInformation : SharpDX.Direct2D1.RenderInformation
     {
-        public ComputeInformation(System.IntPtr nativePtr): base (nativePtr)
+        public ComputeInformation(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -2020,7 +2020,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void SetComputeShaderConstantBuffer(System.IntPtr buffer, System.Int32 bufferCount)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)buffer, bufferCount, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)buffer, bufferCount, (*(void***)this._nativePointer)[7]);
             __result__.CheckError();
         }
 
@@ -2035,7 +2035,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void SetComputeShader(System.Guid shaderId)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &shaderId, (*(void ***)this._nativePointer)[8]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &shaderId, (*(void***)this._nativePointer)[8]);
             __result__.CheckError();
         }
 
@@ -2054,7 +2054,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr resourceTexture_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             resourceTexture_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.ResourceTexture>(resourceTexture);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, textureIndex, (void *)resourceTexture_, (*(void ***)this._nativePointer)[9]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, textureIndex, (void*)resourceTexture_, (*(void***)this._nativePointer)[9]);
             __result__.CheckError();
         }
     }
@@ -2067,7 +2067,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("0d85573c-01e3-4f7d-bfd9-0d60608bf3c3")]
     public partial class ComputeTransformNative : SharpDX.Direct2D1.TransformNative, SharpDX.Direct2D1.ComputeTransform
     {
-        public ComputeTransformNative(System.IntPtr nativePtr): base (nativePtr)
+        public ComputeTransformNative(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -2102,7 +2102,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr computeInfo_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             computeInfo_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.ComputeInformation>(computeInfo);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)computeInfo_, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)computeInfo_, (*(void***)this._nativePointer)[7]);
             __result__.CheckError();
         }
 
@@ -2123,10 +2123,10 @@ namespace SharpDX.Direct2D1
         internal unsafe void CalculateThreadgroups_(SharpDX.Mathematics.Interop.RawRectangle outputRect, out System.Int32 dimensionX, out System.Int32 dimensionY, out System.Int32 dimensionZ)
         {
             SharpDX.Result __result__;
-            fixed (void *dimensionZ_ = &dimensionZ)
-                fixed (void *dimensionY_ = &dimensionY)
-                    fixed (void *dimensionX_ = &dimensionX)
-                        __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &outputRect, dimensionX_, dimensionY_, dimensionZ_, (*(void ***)this._nativePointer)[8]);
+            fixed (void* dimensionZ_ = &dimensionZ)
+            fixed (void* dimensionY_ = &dimensionY)
+            fixed (void* dimensionX_ = &dimensionX)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &outputRect, dimensionX_, dimensionY_, dimensionZ_, (*(void***)this._nativePointer)[8]);
             __result__.CheckError();
         }
     }
@@ -2134,7 +2134,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("1a799d8a-69f7-4e4c-9fed-437ccc6684cc")]
     public partial class ConcreteTransform : SharpDX.Direct2D1.TransformNodeNative
     {
-        public ConcreteTransform(System.IntPtr nativePtr): base (nativePtr)
+        public ConcreteTransform(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -2165,7 +2165,7 @@ namespace SharpDX.Direct2D1
         public unsafe void SetOutputBuffer(SharpDX.Direct2D1.BufferPrecision bufferPrecision, SharpDX.Direct2D1.ChannelDepth channelDepth)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)bufferPrecision), unchecked ((System.Int32)channelDepth), (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)bufferPrecision), unchecked((System.Int32)channelDepth), (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
         }
 
@@ -2178,7 +2178,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1ConcreteTransform::SetCached</unmanaged-short>
         internal unsafe void SetCached(SharpDX.Mathematics.Interop.RawBool isCached)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, isCached, (*(void ***)this._nativePointer)[5]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, isCached, (*(void***)this._nativePointer)[5]);
         }
     }
 
@@ -2190,7 +2190,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("a248fd3f-3e6c-4e63-9f03-7f68ecc91db9")]
     internal partial class CustomEffectNative : SharpDX.ComObject, SharpDX.Direct2D1.CustomEffect
     {
-        public CustomEffectNative(System.IntPtr nativePtr): base (nativePtr)
+        public CustomEffectNative(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -2225,7 +2225,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             effectContext_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.EffectContext>(effectContext);
             transformGraph_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.TransformGraph>(transformGraph);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)effectContext_, (void *)transformGraph_, (*(void ***)this._nativePointer)[3]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)effectContext_, (void*)transformGraph_, (*(void***)this._nativePointer)[3]);
             __result__.CheckError();
         }
 
@@ -2243,7 +2243,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void PrepareForRender_(SharpDX.Direct2D1.ChangeType changeType)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)changeType), (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)changeType), (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
         }
 
@@ -2260,7 +2260,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr transformGraph_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             transformGraph_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.TransformGraph>(transformGraph);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)transformGraph_, (*(void ***)this._nativePointer)[5]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)transformGraph_, (*(void***)this._nativePointer)[5]);
             __result__.CheckError();
         }
     }
@@ -2268,7 +2268,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("47dd575d-ac05-4cdd-8049-9b02cd16f44c")]
     public partial class Device : SharpDX.Direct2D1.Resource
     {
-        public Device(System.IntPtr nativePtr): base (nativePtr)
+        public Device(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -2301,7 +2301,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr deviceContext_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)options), &deviceContext_, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)options), &deviceContext_, (*(void***)this._nativePointer)[4]);
             (deviceContext).NativePointer = deviceContext_;
             __result__.CheckError();
         }
@@ -2331,7 +2331,7 @@ namespace SharpDX.Direct2D1
             documentTarget_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.ComObject>(documentTarget);
             if (rintControlPropertiesRef != null)
                 rintControlPropertiesRef_ = rintControlPropertiesRef.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)wicFactory_, (void *)documentTarget_, rintControlPropertiesRef == null ? (void *)0 : &rintControlPropertiesRef_, &rintControlRef_, (*(void ***)this._nativePointer)[5]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)wicFactory_, (void*)documentTarget_, rintControlPropertiesRef == null ? (void*)0 : &rintControlPropertiesRef_, &rintControlRef_, (*(void***)this._nativePointer)[5]);
             (rintControlRef).NativePointer = rintControlRef_;
             __result__.CheckError();
         }
@@ -2348,7 +2348,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1Device::SetMaximumTextureMemory</unmanaged-short>
         internal unsafe void SetMaximumTextureMemory(System.Int64 maximumInBytes)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, maximumInBytes, (*(void ***)this._nativePointer)[6]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, maximumInBytes, (*(void***)this._nativePointer)[6]);
         }
 
         /// <summary>
@@ -2361,7 +2361,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int64 GetMaximumTextureMemory()
         {
             System.Int64 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCalllong(this._nativePointer, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCalllong(this._nativePointer, (*(void***)this._nativePointer)[7]);
             return __result__;
         }
 
@@ -2374,14 +2374,14 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1Device::ClearResources</unmanaged-short>
         public unsafe void ClearResources(System.Int32 millisecondsSinceUse)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, millisecondsSinceUse, (*(void ***)this._nativePointer)[8]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, millisecondsSinceUse, (*(void***)this._nativePointer)[8]);
         }
     }
 
     [System.Runtime.InteropServices.GuidAttribute("d21768e1-23a4-4823-a14b-7c3eba85d658")]
     public partial class Device1 : SharpDX.Direct2D1.Device
     {
-        public Device1(System.IntPtr nativePtr): base (nativePtr)
+        public Device1(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -2408,7 +2408,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.RenderingPriority GetRenderingPriority()
         {
             SharpDX.Direct2D1.RenderingPriority __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1RenderingPriority(this._nativePointer, (*(void ***)this._nativePointer)[9]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1RenderingPriority(this._nativePointer, (*(void***)this._nativePointer)[9]);
             return __result__;
         }
 
@@ -2424,7 +2424,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1Device1::SetRenderingPriority</unmanaged-short>
         internal unsafe void SetRenderingPriority(SharpDX.Direct2D1.RenderingPriority renderingPriority)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked ((System.Int32)renderingPriority), (*(void ***)this._nativePointer)[10]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked((System.Int32)renderingPriority), (*(void***)this._nativePointer)[10]);
         }
 
         /// <summary>
@@ -2440,7 +2440,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr deviceContext1_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)options), &deviceContext1_, (*(void ***)this._nativePointer)[11]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)options), &deviceContext1_, (*(void***)this._nativePointer)[11]);
             (deviceContext1).NativePointer = deviceContext1_;
             __result__.CheckError();
         }
@@ -2449,7 +2449,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("a44472e1-8dfb-4e60-8492-6e2861c9ca8b")]
     public partial class Device2 : SharpDX.Direct2D1.Device1
     {
-        public Device2(System.IntPtr nativePtr): base (nativePtr)
+        public Device2(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -2482,7 +2482,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr deviceContext2_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)options), &deviceContext2_, (*(void ***)this._nativePointer)[12]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)options), &deviceContext2_, (*(void***)this._nativePointer)[12]);
             (deviceContext2).NativePointer = deviceContext2_;
             __result__.CheckError();
         }
@@ -2498,7 +2498,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr bitmap_ = System.IntPtr.Zero;
             bitmap_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Bitmap>(bitmap);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)bitmap_, (*(void ***)this._nativePointer)[13]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)bitmap_, (*(void***)this._nativePointer)[13]);
         }
 
         /// <summary>
@@ -2513,7 +2513,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr dxgiDevice_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &dxgiDevice_, (*(void ***)this._nativePointer)[14]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &dxgiDevice_, (*(void***)this._nativePointer)[14]);
             if (dxgiDevice_ != System.IntPtr.Zero)
                 dxgiDevice = new SharpDX.DXGI.Device(dxgiDevice_);
             else
@@ -2525,7 +2525,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("852f2087-802c-4037-ab60-ff2e7ee6fc01")]
     public partial class Device3 : SharpDX.Direct2D1.Device2
     {
-        public Device3(System.IntPtr nativePtr): base (nativePtr)
+        public Device3(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -2543,7 +2543,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr deviceContext3_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)options), &deviceContext3_, (*(void ***)this._nativePointer)[15]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)options), &deviceContext3_, (*(void***)this._nativePointer)[15]);
             (deviceContext3).NativePointer = deviceContext3_;
             __result__.CheckError();
         }
@@ -2552,7 +2552,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("d7bdb159-5683-4a46-bc9c-72dc720b858b")]
     public partial class Device4 : SharpDX.Direct2D1.Device3
     {
-        public Device4(System.IntPtr nativePtr): base (nativePtr)
+        public Device4(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -2585,7 +2585,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr deviceContext4_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)options), &deviceContext4_, (*(void ***)this._nativePointer)[16]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)options), &deviceContext4_, (*(void***)this._nativePointer)[16]);
             (deviceContext4).NativePointer = deviceContext4_;
             __result__.CheckError();
         }
@@ -2602,7 +2602,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1Device4::SetMaximumColorGlyphCacheMemory</unmanaged-short>
         internal unsafe void SetMaximumColorGlyphCacheMemory(System.Int64 maximumInBytes)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, maximumInBytes, (*(void ***)this._nativePointer)[17]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, maximumInBytes, (*(void***)this._nativePointer)[17]);
         }
 
         /// <summary>
@@ -2615,7 +2615,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int64 GetMaximumColorGlyphCacheMemory()
         {
             System.Int64 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCalllong(this._nativePointer, (*(void ***)this._nativePointer)[18]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCalllong(this._nativePointer, (*(void***)this._nativePointer)[18]);
             return __result__;
         }
     }
@@ -2623,7 +2623,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("d55ba0a4-6405-4694-aef5-08ee1a4358b4")]
     public partial class Device5 : SharpDX.Direct2D1.Device4
     {
-        public Device5(System.IntPtr nativePtr): base (nativePtr)
+        public Device5(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -2640,7 +2640,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr deviceContext5_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)options), &deviceContext5_, (*(void ***)this._nativePointer)[19]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)options), &deviceContext5_, (*(void***)this._nativePointer)[19]);
             (deviceContext5).NativePointer = deviceContext5_;
             __result__.CheckError();
         }
@@ -2649,7 +2649,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("e8f7fe7a-191c-466d-ad95-975678bda998")]
     public partial class DeviceContext : SharpDX.Direct2D1.RenderTarget
     {
-        public DeviceContext(System.IntPtr nativePtr): base (nativePtr)
+        public DeviceContext(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -2750,11 +2750,11 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1DeviceContext::CreateBitmap</unmanaged-short>
         internal unsafe void CreateBitmap(SharpDX.Size2 size, System.IntPtr sourceData, System.Int32 pitch, SharpDX.Direct2D1.BitmapProperties1 bitmapProperties, SharpDX.Direct2D1.Bitmap1 bitmap)
         {
-            SharpDX.Direct2D1.BitmapProperties1.__Native bitmapProperties_ = default (SharpDX.Direct2D1.BitmapProperties1.__Native);
+            SharpDX.Direct2D1.BitmapProperties1.__Native bitmapProperties_ = default(SharpDX.Direct2D1.BitmapProperties1.__Native);
             System.IntPtr bitmap_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             bitmapProperties.__MarshalTo(ref bitmapProperties_);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, size, (void *)sourceData, pitch, &bitmapProperties_, &bitmap_, (*(void ***)this._nativePointer)[57]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, size, (void*)sourceData, pitch, &bitmapProperties_, &bitmap_, (*(void***)this._nativePointer)[57]);
             (bitmap).NativePointer = bitmap_;
             bitmapProperties.__MarshalFree(ref bitmapProperties_);
             __result__.CheckError();
@@ -2776,13 +2776,13 @@ namespace SharpDX.Direct2D1
         internal unsafe void CreateBitmapFromWicBitmap(SharpDX.WIC.BitmapSource wicBitmapSource, SharpDX.Direct2D1.BitmapProperties1 bitmapProperties, out SharpDX.Direct2D1.Bitmap1 bitmap)
         {
             System.IntPtr wicBitmapSource_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.BitmapProperties1.__Native bitmapProperties_ = default (SharpDX.Direct2D1.BitmapProperties1.__Native);
+            SharpDX.Direct2D1.BitmapProperties1.__Native bitmapProperties_ = default(SharpDX.Direct2D1.BitmapProperties1.__Native);
             System.IntPtr bitmap_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             wicBitmapSource_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.WIC.BitmapSource>(wicBitmapSource);
             if (bitmapProperties != null)
                 bitmapProperties.__MarshalTo(ref bitmapProperties_);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)wicBitmapSource_, bitmapProperties == null ? (void *)0 : &bitmapProperties_, &bitmap_, (*(void ***)this._nativePointer)[58]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)wicBitmapSource_, bitmapProperties == null ? (void*)0 : &bitmapProperties_, &bitmap_, (*(void***)this._nativePointer)[58]);
             if (bitmap_ != System.IntPtr.Zero)
                 bitmap = new SharpDX.Direct2D1.Bitmap1(bitmap_);
             else
@@ -2810,8 +2810,8 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr colorContext_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (void *rofileRef_ = rofileRef)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)space), rofileRef_, profileSize, &colorContext_, (*(void ***)this._nativePointer)[59]);
+            fixed (void* rofileRef_ = rofileRef)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)space), rofileRef_, profileSize, &colorContext_, (*(void***)this._nativePointer)[59]);
             (colorContext).NativePointer = colorContext_;
             __result__.CheckError();
         }
@@ -2832,8 +2832,8 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr colorContext_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (char *filename_ = filename)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)filename_, &colorContext_, (*(void ***)this._nativePointer)[60]);
+            fixed (char* filename_ = filename)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)filename_, &colorContext_, (*(void***)this._nativePointer)[60]);
             (colorContext).NativePointer = colorContext_;
             __result__.CheckError();
         }
@@ -2856,7 +2856,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr colorContext_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             wicColorContext_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.WIC.ColorContext>(wicColorContext);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)wicColorContext_, &colorContext_, (*(void ***)this._nativePointer)[61]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)wicColorContext_, &colorContext_, (*(void***)this._nativePointer)[61]);
             (colorContext).NativePointer = colorContext_;
             __result__.CheckError();
         }
@@ -2878,13 +2878,13 @@ namespace SharpDX.Direct2D1
         internal unsafe void CreateBitmapFromDxgiSurface(SharpDX.DXGI.Surface surface, SharpDX.Direct2D1.BitmapProperties1 bitmapProperties, SharpDX.Direct2D1.Bitmap1 bitmap)
         {
             System.IntPtr surface_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.BitmapProperties1.__Native bitmapProperties_ = default (SharpDX.Direct2D1.BitmapProperties1.__Native);
+            SharpDX.Direct2D1.BitmapProperties1.__Native bitmapProperties_ = default(SharpDX.Direct2D1.BitmapProperties1.__Native);
             System.IntPtr bitmap_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             surface_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DXGI.Surface>(surface);
             if (bitmapProperties != null)
                 bitmapProperties.__MarshalTo(ref bitmapProperties_);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)surface_, bitmapProperties == null ? (void *)0 : &bitmapProperties_, &bitmap_, (*(void ***)this._nativePointer)[62]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)surface_, bitmapProperties == null ? (void*)0 : &bitmapProperties_, &bitmap_, (*(void***)this._nativePointer)[62]);
             (bitmap).NativePointer = bitmap_;
             if (bitmapProperties != null)
                 bitmapProperties.__MarshalFree(ref bitmapProperties_);
@@ -2907,7 +2907,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr effect_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &effectId, &effect_, (*(void ***)this._nativePointer)[63]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &effectId, &effect_, (*(void***)this._nativePointer)[63]);
             (effect).NativePointer = effect_;
             __result__.CheckError();
         }
@@ -2940,8 +2940,8 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr gradientStopCollection1_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (void *straightAlphaGradientStops_ = straightAlphaGradientStops)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, straightAlphaGradientStops_, straightAlphaGradientStopsCount, unchecked ((System.Int32)preInterpolationSpace), unchecked ((System.Int32)postInterpolationSpace), unchecked ((System.Int32)bufferPrecision), unchecked ((System.Int32)extendMode), unchecked ((System.Int32)colorInterpolationMode), &gradientStopCollection1_, (*(void ***)this._nativePointer)[64]);
+            fixed (void* straightAlphaGradientStops_ = straightAlphaGradientStops)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, straightAlphaGradientStops_, straightAlphaGradientStopsCount, unchecked((System.Int32)preInterpolationSpace), unchecked((System.Int32)postInterpolationSpace), unchecked((System.Int32)bufferPrecision), unchecked((System.Int32)extendMode), unchecked((System.Int32)colorInterpolationMode), &gradientStopCollection1_, (*(void***)this._nativePointer)[64]);
             (gradientStopCollection1).NativePointer = gradientStopCollection1_;
             __result__.CheckError();
         }
@@ -2973,8 +2973,8 @@ namespace SharpDX.Direct2D1
             image_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Image>(image);
             if (brushProperties != null)
                 brushProperties_ = brushProperties.Value;
-            fixed (void *imageBrushProperties_ = &imageBrushProperties)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)image_, imageBrushProperties_, brushProperties == null ? (void *)0 : &brushProperties_, &imageBrush_, (*(void ***)this._nativePointer)[65]);
+            fixed (void* imageBrushProperties_ = &imageBrushProperties)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)image_, imageBrushProperties_, brushProperties == null ? (void*)0 : &brushProperties_, &imageBrush_, (*(void***)this._nativePointer)[65]);
             (imageBrush).NativePointer = imageBrush_;
             __result__.CheckError();
         }
@@ -3002,7 +3002,7 @@ namespace SharpDX.Direct2D1
                 bitmapBrushProperties_ = bitmapBrushProperties.Value;
             if (brushProperties != null)
                 brushProperties_ = brushProperties.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)bitmap_, bitmapBrushProperties == null ? (void *)0 : &bitmapBrushProperties_, brushProperties == null ? (void *)0 : &brushProperties_, &bitmapBrush_, (*(void ***)this._nativePointer)[66]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)bitmap_, bitmapBrushProperties == null ? (void*)0 : &bitmapBrushProperties_, brushProperties == null ? (void*)0 : &brushProperties_, &bitmapBrush_, (*(void***)this._nativePointer)[66]);
             (bitmapBrush).NativePointer = bitmapBrush_;
             __result__.CheckError();
         }
@@ -3022,7 +3022,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr commandList_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &commandList_, (*(void ***)this._nativePointer)[67]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &commandList_, (*(void***)this._nativePointer)[67]);
             (commandList).NativePointer = commandList_;
             __result__.CheckError();
         }
@@ -3042,7 +3042,7 @@ namespace SharpDX.Direct2D1
         public unsafe SharpDX.Mathematics.Interop.RawBool IsDxgiFormatSupported(SharpDX.DXGI.Format format)
         {
             SharpDX.Mathematics.Interop.RawBool __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXMathematicsInteropRawBool(this._nativePointer, unchecked ((System.Int32)format), (*(void ***)this._nativePointer)[68]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXMathematicsInteropRawBool(this._nativePointer, unchecked((System.Int32)format), (*(void***)this._nativePointer)[68]);
             return __result__;
         }
 
@@ -3057,7 +3057,7 @@ namespace SharpDX.Direct2D1
         public unsafe SharpDX.Mathematics.Interop.RawBool IsBufferPrecisionSupported(SharpDX.Direct2D1.BufferPrecision bufferPrecision)
         {
             SharpDX.Mathematics.Interop.RawBool __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXMathematicsInteropRawBool(this._nativePointer, unchecked ((System.Int32)bufferPrecision), (*(void ***)this._nativePointer)[69]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXMathematicsInteropRawBool(this._nativePointer, unchecked((System.Int32)bufferPrecision), (*(void***)this._nativePointer)[69]);
             return __result__;
         }
 
@@ -3078,7 +3078,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Mathematics.Interop.RawRectangleF localBounds;
             SharpDX.Result __result__;
             image_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Image>(image);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)image_, &localBounds, (*(void ***)this._nativePointer)[70]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)image_, &localBounds, (*(void***)this._nativePointer)[70]);
             __result__.CheckError();
             return localBounds;
         }
@@ -3101,7 +3101,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Mathematics.Interop.RawRectangleF worldBounds;
             SharpDX.Result __result__;
             image_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Image>(image);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)image_, &worldBounds, (*(void ***)this._nativePointer)[71]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)image_, &worldBounds, (*(void***)this._nativePointer)[71]);
             __result__.CheckError();
             return worldBounds;
         }
@@ -3121,11 +3121,11 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1DeviceContext::GetGlyphRunWorldBounds</unmanaged-short>
         public unsafe SharpDX.Mathematics.Interop.RawRectangleF GetGlyphRunWorldBounds(SharpDX.Mathematics.Interop.RawVector2 baselineOrigin, SharpDX.DirectWrite.GlyphRun glyphRun, SharpDX.Direct2D1.MeasuringMode measuringMode)
         {
-            SharpDX.DirectWrite.GlyphRun.__Native glyphRun_ = default (SharpDX.DirectWrite.GlyphRun.__Native);
+            SharpDX.DirectWrite.GlyphRun.__Native glyphRun_ = default(SharpDX.DirectWrite.GlyphRun.__Native);
             SharpDX.Mathematics.Interop.RawRectangleF bounds;
             SharpDX.Result __result__;
             glyphRun.__MarshalTo(ref glyphRun_);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, baselineOrigin, &glyphRun_, unchecked ((System.Int32)measuringMode), &bounds, (*(void ***)this._nativePointer)[72]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, baselineOrigin, &glyphRun_, unchecked((System.Int32)measuringMode), &bounds, (*(void***)this._nativePointer)[72]);
             glyphRun.__MarshalFree(ref glyphRun_);
             __result__.CheckError();
             return bounds;
@@ -3144,7 +3144,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetDevice(out SharpDX.Direct2D1.Device device)
         {
             System.IntPtr device_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &device_, (*(void ***)this._nativePointer)[73]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &device_, (*(void***)this._nativePointer)[73]);
             if (device_ != System.IntPtr.Zero)
                 device = new SharpDX.Direct2D1.Device(device_);
             else
@@ -3178,7 +3178,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr image_ = System.IntPtr.Zero;
             image_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Image>(image);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)image_, (*(void ***)this._nativePointer)[74]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)image_, (*(void***)this._nativePointer)[74]);
         }
 
         /// <summary>
@@ -3194,7 +3194,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetTarget(out SharpDX.Direct2D1.Image image)
         {
             System.IntPtr image_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &image_, (*(void ***)this._nativePointer)[75]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &image_, (*(void***)this._nativePointer)[75]);
             if (image_ != System.IntPtr.Zero)
                 image = new SharpDX.Direct2D1.Image(image_);
             else
@@ -3213,7 +3213,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1DeviceContext::SetRenderingControls</unmanaged-short>
         internal unsafe void SetRenderingControls(SharpDX.Direct2D1.RenderingControls renderingControls)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &renderingControls, (*(void ***)this._nativePointer)[76]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &renderingControls, (*(void***)this._nativePointer)[76]);
         }
 
         /// <summary>
@@ -3225,9 +3225,9 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1DeviceContext::GetRenderingControls</unmanaged-short>
         internal unsafe void GetRenderingControls(out SharpDX.Direct2D1.RenderingControls renderingControls)
         {
-            renderingControls = default (SharpDX.Direct2D1.RenderingControls);
-            fixed (void *renderingControls_ = &renderingControls)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, renderingControls_, (*(void ***)this._nativePointer)[77]);
+            renderingControls = default(SharpDX.Direct2D1.RenderingControls);
+            fixed (void* renderingControls_ = &renderingControls)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, renderingControls_, (*(void***)this._nativePointer)[77]);
         }
 
         /// <summary>
@@ -3243,7 +3243,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1DeviceContext::SetPrimitiveBlend</unmanaged-short>
         internal unsafe void SetPrimitiveBlend(SharpDX.Direct2D1.PrimitiveBlend primitiveBlend)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked ((System.Int32)primitiveBlend), (*(void ***)this._nativePointer)[78]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked((System.Int32)primitiveBlend), (*(void***)this._nativePointer)[78]);
         }
 
         /// <summary>
@@ -3256,7 +3256,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.PrimitiveBlend GetPrimitiveBlend()
         {
             SharpDX.Direct2D1.PrimitiveBlend __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1PrimitiveBlend(this._nativePointer, (*(void ***)this._nativePointer)[79]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1PrimitiveBlend(this._nativePointer, (*(void***)this._nativePointer)[79]);
             return __result__;
         }
 
@@ -3272,7 +3272,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1DeviceContext::SetUnitMode</unmanaged-short>
         internal unsafe void SetUnitMode(SharpDX.Direct2D1.UnitMode unitMode)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked ((System.Int32)unitMode), (*(void ***)this._nativePointer)[80]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked((System.Int32)unitMode), (*(void***)this._nativePointer)[80]);
         }
 
         /// <summary>
@@ -3285,7 +3285,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.UnitMode GetUnitMode()
         {
             SharpDX.Direct2D1.UnitMode __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1UnitMode(this._nativePointer, (*(void ***)this._nativePointer)[81]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1UnitMode(this._nativePointer, (*(void***)this._nativePointer)[81]);
             return __result__;
         }
 
@@ -3305,14 +3305,14 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1DeviceContext::DrawGlyphRun</unmanaged-short>
         public unsafe void DrawGlyphRun(SharpDX.Mathematics.Interop.RawVector2 baselineOrigin, SharpDX.DirectWrite.GlyphRun glyphRun, SharpDX.DirectWrite.GlyphRunDescription glyphRunDescription, SharpDX.Direct2D1.Brush foregroundBrush, SharpDX.Direct2D1.MeasuringMode measuringMode)
         {
-            SharpDX.DirectWrite.GlyphRun.__Native glyphRun_ = default (SharpDX.DirectWrite.GlyphRun.__Native);
-            SharpDX.DirectWrite.GlyphRunDescription.__Native glyphRunDescription_ = default (SharpDX.DirectWrite.GlyphRunDescription.__Native);
+            SharpDX.DirectWrite.GlyphRun.__Native glyphRun_ = default(SharpDX.DirectWrite.GlyphRun.__Native);
+            SharpDX.DirectWrite.GlyphRunDescription.__Native glyphRunDescription_ = default(SharpDX.DirectWrite.GlyphRunDescription.__Native);
             System.IntPtr foregroundBrush_ = System.IntPtr.Zero;
             glyphRun.__MarshalTo(ref glyphRun_);
             if (glyphRunDescription != null)
                 glyphRunDescription.__MarshalTo(ref glyphRunDescription_);
             foregroundBrush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(foregroundBrush);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, baselineOrigin, &glyphRun_, glyphRunDescription == null ? (void *)0 : &glyphRunDescription_, (void *)foregroundBrush_, unchecked ((System.Int32)measuringMode), (*(void ***)this._nativePointer)[82]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, baselineOrigin, &glyphRun_, glyphRunDescription == null ? (void*)0 : &glyphRunDescription_, (void*)foregroundBrush_, unchecked((System.Int32)measuringMode), (*(void***)this._nativePointer)[82]);
             glyphRun.__MarshalFree(ref glyphRun_);
             if (glyphRunDescription != null)
                 glyphRunDescription.__MarshalFree(ref glyphRunDescription_);
@@ -3339,7 +3339,7 @@ namespace SharpDX.Direct2D1
                 targetOffset_ = targetOffset.Value;
             if (imageRectangle != null)
                 imageRectangle_ = imageRectangle.Value;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)image_, targetOffset == null ? (void *)0 : &targetOffset_, imageRectangle == null ? (void *)0 : &imageRectangle_, unchecked ((System.Int32)interpolationMode), unchecked ((System.Int32)compositeMode), (*(void ***)this._nativePointer)[83]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)image_, targetOffset == null ? (void*)0 : &targetOffset_, imageRectangle == null ? (void*)0 : &imageRectangle_, unchecked((System.Int32)interpolationMode), unchecked((System.Int32)compositeMode), (*(void***)this._nativePointer)[83]);
         }
 
         /// <summary>
@@ -3357,7 +3357,7 @@ namespace SharpDX.Direct2D1
             gdiMetafile_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.GdiMetafile>(gdiMetafile);
             if (targetOffset != null)
                 targetOffset_ = targetOffset.Value;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)gdiMetafile_, targetOffset == null ? (void *)0 : &targetOffset_, (*(void ***)this._nativePointer)[84]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)gdiMetafile_, targetOffset == null ? (void*)0 : &targetOffset_, (*(void***)this._nativePointer)[84]);
         }
 
         /// <summary>
@@ -3388,7 +3388,7 @@ namespace SharpDX.Direct2D1
                 sourceRectangle_ = sourceRectangle.Value;
             if (erspectiveTransformRef != null)
                 erspectiveTransformRef_ = erspectiveTransformRef.Value;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)bitmap_, destinationRectangle == null ? (void *)0 : &destinationRectangle_, opacity, unchecked ((System.Int32)interpolationMode), sourceRectangle == null ? (void *)0 : &sourceRectangle_, erspectiveTransformRef == null ? (void *)0 : &erspectiveTransformRef_, (*(void ***)this._nativePointer)[85]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)bitmap_, destinationRectangle == null ? (void*)0 : &destinationRectangle_, opacity, unchecked((System.Int32)interpolationMode), sourceRectangle == null ? (void*)0 : &sourceRectangle_, erspectiveTransformRef == null ? (void*)0 : &erspectiveTransformRef_, (*(void***)this._nativePointer)[85]);
         }
 
         /// <summary>
@@ -3401,11 +3401,11 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1DeviceContext::PushLayer</unmanaged-short>
         public unsafe void PushLayer(ref SharpDX.Direct2D1.LayerParameters1 layerParameters, SharpDX.Direct2D1.Layer layer)
         {
-            SharpDX.Direct2D1.LayerParameters1.__Native layerParameters_ = default (SharpDX.Direct2D1.LayerParameters1.__Native);
+            SharpDX.Direct2D1.LayerParameters1.__Native layerParameters_ = default(SharpDX.Direct2D1.LayerParameters1.__Native);
             System.IntPtr layer_ = System.IntPtr.Zero;
             layerParameters.__MarshalTo(ref layerParameters_);
             layer_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Layer>(layer);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &layerParameters_, (void *)layer_, (*(void ***)this._nativePointer)[86]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &layerParameters_, (void*)layer_, (*(void***)this._nativePointer)[86]);
             layerParameters.__MarshalFree(ref layerParameters_);
         }
 
@@ -3424,7 +3424,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr effect_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             effect_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Effect>(effect);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)effect_, input, &inputRectangle, (*(void ***)this._nativePointer)[87]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)effect_, input, &inputRectangle, (*(void***)this._nativePointer)[87]);
             __result__.CheckError();
         }
 
@@ -3442,7 +3442,7 @@ namespace SharpDX.Direct2D1
             System.Int32 rectangleCount;
             SharpDX.Result __result__;
             effect_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Effect>(effect);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)effect_, &rectangleCount, (*(void ***)this._nativePointer)[88]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)effect_, &rectangleCount, (*(void***)this._nativePointer)[88]);
             __result__.CheckError();
             return rectangleCount;
         }
@@ -3465,8 +3465,8 @@ namespace SharpDX.Direct2D1
             System.IntPtr effect_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             effect_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Effect>(effect);
-            fixed (void *rectangles_ = rectangles)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)effect_, rectangles_, rectanglesCount, (*(void ***)this._nativePointer)[89]);
+            fixed (void* rectangles_ = rectangles)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)effect_, rectangles_, rectanglesCount, (*(void***)this._nativePointer)[89]);
             __result__.CheckError();
         }
 
@@ -3496,9 +3496,9 @@ namespace SharpDX.Direct2D1
                 renderImageRectangle_ = renderImageRectangle.Value;
             for (int i = 0; i < inputDescriptions.Length; ++i)
                 inputDescriptions[i].__MarshalTo(ref (inputDescriptions_)[i]);
-            fixed (void *requiredInputRects_ = requiredInputRects)
-                fixed (void *_inputDescriptions = inputDescriptions_)
-                    __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)renderEffect_, renderImageRectangle == null ? (void *)0 : &renderImageRectangle_, _inputDescriptions, requiredInputRects_, inputCount, (*(void ***)this._nativePointer)[90]);
+            fixed (void* requiredInputRects_ = requiredInputRects)
+            fixed (void* _inputDescriptions = inputDescriptions_)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)renderEffect_, renderImageRectangle == null ? (void*)0 : &renderImageRectangle_, _inputDescriptions, requiredInputRects_, inputCount, (*(void***)this._nativePointer)[90]);
             for (int i = 0; i < inputDescriptions.Length; ++i)
                 inputDescriptions[i].__MarshalFree(ref (inputDescriptions_)[i]);
             __result__.CheckError();
@@ -3526,14 +3526,14 @@ namespace SharpDX.Direct2D1
                 destinationRectangle_ = destinationRectangle.Value;
             if (sourceRectangle != null)
                 sourceRectangle_ = sourceRectangle.Value;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)opacityMask_, (void *)brush_, destinationRectangle == null ? (void *)0 : &destinationRectangle_, sourceRectangle == null ? (void *)0 : &sourceRectangle_, (*(void ***)this._nativePointer)[91]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)opacityMask_, (void*)brush_, destinationRectangle == null ? (void*)0 : &destinationRectangle_, sourceRectangle == null ? (void*)0 : &sourceRectangle_, (*(void***)this._nativePointer)[91]);
         }
     }
 
     [System.Runtime.InteropServices.GuidAttribute("d37f57e4-6908-459f-a199-e72f24f79987")]
     public partial class DeviceContext1 : SharpDX.Direct2D1.DeviceContext
     {
-        public DeviceContext1(System.IntPtr nativePtr): base (nativePtr)
+        public DeviceContext1(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -3557,7 +3557,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr geometryRealization_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             geometry_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Geometry>(geometry);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)geometry_, flatteningTolerance, &geometryRealization_, (*(void ***)this._nativePointer)[92]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)geometry_, flatteningTolerance, &geometryRealization_, (*(void***)this._nativePointer)[92]);
             (geometryRealization).NativePointer = geometryRealization_;
             __result__.CheckError();
         }
@@ -3585,7 +3585,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             geometry_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Geometry>(geometry);
             strokeStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.StrokeStyle>(strokeStyle);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)geometry_, flatteningTolerance, strokeWidth, (void *)strokeStyle_, &geometryRealization_, (*(void ***)this._nativePointer)[93]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)geometry_, flatteningTolerance, strokeWidth, (void*)strokeStyle_, &geometryRealization_, (*(void***)this._nativePointer)[93]);
             (geometryRealization).NativePointer = geometryRealization_;
             __result__.CheckError();
         }
@@ -3607,14 +3607,14 @@ namespace SharpDX.Direct2D1
             System.IntPtr brush_ = System.IntPtr.Zero;
             geometryRealization_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.GeometryRealization>(geometryRealization);
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)geometryRealization_, (void *)brush_, (*(void ***)this._nativePointer)[94]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)geometryRealization_, (void*)brush_, (*(void***)this._nativePointer)[94]);
         }
     }
 
     [System.Runtime.InteropServices.GuidAttribute("394ea6a3-0c34-4321-950b-6ca20f0be6c7")]
     public partial class DeviceContext2 : SharpDX.Direct2D1.DeviceContext1
     {
-        public DeviceContext2(System.IntPtr nativePtr): base (nativePtr)
+        public DeviceContext2(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -3632,7 +3632,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr ink_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &startPoint, &ink_, (*(void ***)this._nativePointer)[95]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &startPoint, &ink_, (*(void***)this._nativePointer)[95]);
             (ink).NativePointer = ink_;
             __result__.CheckError();
         }
@@ -3653,7 +3653,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             if (inkStyleProperties != null)
                 inkStyleProperties_ = inkStyleProperties.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, inkStyleProperties == null ? (void *)0 : &inkStyleProperties_, &inkStyle_, (*(void ***)this._nativePointer)[96]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, inkStyleProperties == null ? (void*)0 : &inkStyleProperties_, &inkStyle_, (*(void***)this._nativePointer)[96]);
             (inkStyle).NativePointer = inkStyle_;
             __result__.CheckError();
         }
@@ -3672,8 +3672,8 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr gradientMesh_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (void *atchesRef_ = atchesRef)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, atchesRef_, patchesCount, &gradientMesh_, (*(void ***)this._nativePointer)[97]);
+            fixed (void* atchesRef_ = atchesRef)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, atchesRef_, patchesCount, &gradientMesh_, (*(void***)this._nativePointer)[97]);
             (gradientMesh).NativePointer = gradientMesh_;
             __result__.CheckError();
         }
@@ -3698,7 +3698,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr imageSource_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             wicBitmapSource_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.WIC.BitmapSource>(wicBitmapSource);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)wicBitmapSource_, unchecked ((System.Int32)loadingOptions), unchecked ((System.Int32)alphaMode), &imageSource_, (*(void ***)this._nativePointer)[98]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)wicBitmapSource_, unchecked((System.Int32)loadingOptions), unchecked((System.Int32)alphaMode), &imageSource_, (*(void***)this._nativePointer)[98]);
             (imageSource).NativePointer = imageSource_;
             __result__.CheckError();
         }
@@ -3720,10 +3720,10 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr lookupTable_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (void *strides_ = strides)
-                fixed (void *data_ = data)
-                    fixed (void *extents_ = extents)
-                        __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)precision), extents_, data_, dataCount, strides_, &lookupTable_, (*(void ***)this._nativePointer)[99]);
+            fixed (void* strides_ = strides)
+            fixed (void* data_ = data)
+            fixed (void* extents_ = extents)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)precision), extents_, data_, dataCount, strides_, &lookupTable_, (*(void***)this._nativePointer)[99]);
             (lookupTable).NativePointer = lookupTable_;
             __result__.CheckError();
         }
@@ -3745,11 +3745,11 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1DeviceContext2::CreateImageSourceFromDxgi</unmanaged-short>
         internal unsafe void CreateImageSourceFromDxgi(SharpDX.DXGI.Surface[] surfaces, System.Int32 surfaceCount, SharpDX.DXGI.ColorSpaceType colorSpace, SharpDX.Direct2D1.ImageSourceFromDxgiOptions options, SharpDX.Direct2D1.ImageSource imageSource)
         {
-            System.IntPtr*surfaces_;
+            System.IntPtr* surfaces_;
             surfaces_ = (System.IntPtr*)0;
             if (surfaces != null)
             {
-                System.IntPtr*_surfaces = stackalloc System.IntPtr[surfaces.Length];
+                System.IntPtr* _surfaces = stackalloc System.IntPtr[surfaces.Length];
                 surfaces_ = _surfaces;
             }
 
@@ -3758,7 +3758,7 @@ namespace SharpDX.Direct2D1
             if (surfaces != null)
                 for (int i = 0; i < surfaces.Length; ++i)
                     (surfaces_)[i] = SharpDX.CppObject.ToCallbackPtr<SharpDX.DXGI.Surface>(surfaces[i]);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)surfaces_, surfaceCount, unchecked ((System.Int32)colorSpace), unchecked ((System.Int32)options), &imageSource_, (*(void ***)this._nativePointer)[100]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)surfaces_, surfaceCount, unchecked((System.Int32)colorSpace), unchecked((System.Int32)options), &imageSource_, (*(void***)this._nativePointer)[100]);
             (imageSource).NativePointer = imageSource_;
             __result__.CheckError();
         }
@@ -3779,11 +3779,11 @@ namespace SharpDX.Direct2D1
         public unsafe void GetGradientMeshWorldBounds(SharpDX.Direct2D1.GradientMesh gradientMesh, out SharpDX.Mathematics.Interop.RawRectangleF boundsRef)
         {
             System.IntPtr gradientMesh_ = System.IntPtr.Zero;
-            boundsRef = default (SharpDX.Mathematics.Interop.RawRectangleF);
+            boundsRef = default(SharpDX.Mathematics.Interop.RawRectangleF);
             SharpDX.Result __result__;
             gradientMesh_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.GradientMesh>(gradientMesh);
-            fixed (void *boundsRef_ = &boundsRef)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)gradientMesh_, boundsRef_, (*(void ***)this._nativePointer)[101]);
+            fixed (void* boundsRef_ = &boundsRef)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)gradientMesh_, boundsRef_, (*(void***)this._nativePointer)[101]);
             __result__.CheckError();
         }
 
@@ -3804,7 +3804,7 @@ namespace SharpDX.Direct2D1
             ink_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Ink>(ink);
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
             inkStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.InkStyle>(inkStyle);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)ink_, (void *)brush_, (void *)inkStyle_, (*(void ***)this._nativePointer)[102]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)ink_, (void*)brush_, (void*)inkStyle_, (*(void***)this._nativePointer)[102]);
         }
 
         /// <summary>
@@ -3818,7 +3818,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr gradientMesh_ = System.IntPtr.Zero;
             gradientMesh_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.GradientMesh>(gradientMesh);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)gradientMesh_, (*(void ***)this._nativePointer)[103]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)gradientMesh_, (*(void***)this._nativePointer)[103]);
         }
 
         /// <summary>
@@ -3840,7 +3840,7 @@ namespace SharpDX.Direct2D1
                 destinationRectangle_ = destinationRectangle.Value;
             if (sourceRectangle != null)
                 sourceRectangle_ = sourceRectangle.Value;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)gdiMetafile_, destinationRectangle == null ? (void *)0 : &destinationRectangle_, sourceRectangle == null ? (void *)0 : &sourceRectangle_, (*(void ***)this._nativePointer)[104]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)gdiMetafile_, destinationRectangle == null ? (void*)0 : &destinationRectangle_, sourceRectangle == null ? (void*)0 : &sourceRectangle_, (*(void***)this._nativePointer)[104]);
         }
 
         /// <summary>
@@ -3859,8 +3859,8 @@ namespace SharpDX.Direct2D1
             System.IntPtr transformedImageSource_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             imageSource_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.ImageSource>(imageSource);
-            fixed (void *ropertiesRef_ = &ropertiesRef)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)imageSource_, ropertiesRef_, &transformedImageSource_, (*(void ***)this._nativePointer)[105]);
+            fixed (void* ropertiesRef_ = &ropertiesRef)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)imageSource_, ropertiesRef_, &transformedImageSource_, (*(void***)this._nativePointer)[105]);
             (transformedImageSource).NativePointer = transformedImageSource_;
             __result__.CheckError();
         }
@@ -3884,7 +3884,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr imageSource_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)(surfaces?.NativePointer ?? System.IntPtr.Zero), surfaceCount, unchecked ((System.Int32)colorSpace), unchecked ((System.Int32)options), &imageSource_, (*(void ***)this._nativePointer)[100]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)(surfaces?.NativePointer ?? System.IntPtr.Zero), surfaceCount, unchecked((System.Int32)colorSpace), unchecked((System.Int32)options), &imageSource_, (*(void***)this._nativePointer)[100]);
             (imageSource).NativePointer = imageSource_;
             __result__.CheckError();
         }
@@ -3907,7 +3907,7 @@ namespace SharpDX.Direct2D1
         private unsafe void CreateImageSourceFromDxgi(System.IntPtr surfaces, System.Int32 surfaceCount, SharpDX.DXGI.ColorSpaceType colorSpace, SharpDX.Direct2D1.ImageSourceFromDxgiOptions options, System.IntPtr imageSource)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)surfaces, surfaceCount, unchecked ((System.Int32)colorSpace), unchecked ((System.Int32)options), (void *)imageSource, (*(void ***)this._nativePointer)[100]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)surfaces, surfaceCount, unchecked((System.Int32)colorSpace), unchecked((System.Int32)options), (void*)imageSource, (*(void***)this._nativePointer)[100]);
             __result__.CheckError();
         }
     }
@@ -3915,7 +3915,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("235a7496-8351-414c-bcd4-6672ab2d8e00")]
     public partial class DeviceContext3 : SharpDX.Direct2D1.DeviceContext2
     {
-        public DeviceContext3(System.IntPtr nativePtr): base (nativePtr)
+        public DeviceContext3(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -3932,7 +3932,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr spriteBatch_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &spriteBatch_, (*(void ***)this._nativePointer)[106]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &spriteBatch_, (*(void***)this._nativePointer)[106]);
             (spriteBatch).NativePointer = spriteBatch_;
             __result__.CheckError();
         }
@@ -3955,14 +3955,14 @@ namespace SharpDX.Direct2D1
             System.IntPtr bitmap_ = System.IntPtr.Zero;
             spriteBatch_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SpriteBatch>(spriteBatch);
             bitmap_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Bitmap>(bitmap);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)spriteBatch_, startIndex, spriteCount, (void *)bitmap_, unchecked ((System.Int32)interpolationMode), unchecked ((System.Int32)spriteOptions), (*(void ***)this._nativePointer)[107]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)spriteBatch_, startIndex, spriteCount, (void*)bitmap_, unchecked((System.Int32)interpolationMode), unchecked((System.Int32)spriteOptions), (*(void***)this._nativePointer)[107]);
         }
     }
 
     [System.Runtime.InteropServices.GuidAttribute("8c427831-3d90-4476-b647-c4fae349e4db")]
     public partial class DeviceContext4 : SharpDX.Direct2D1.DeviceContext3
     {
-        public DeviceContext4(System.IntPtr nativePtr): base (nativePtr)
+        public DeviceContext4(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -3979,7 +3979,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr svgGlyphStyle_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &svgGlyphStyle_, (*(void ***)this._nativePointer)[108]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &svgGlyphStyle_, (*(void***)this._nativePointer)[108]);
             if (svgGlyphStyle_ != System.IntPtr.Zero)
                 svgGlyphStyle = new SharpDX.Direct2D1.SvgGlyphStyle(svgGlyphStyle_);
             else
@@ -4014,8 +4014,8 @@ namespace SharpDX.Direct2D1
             textFormat_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DirectWrite.TextFormat>(textFormat);
             defaultFillBrush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(defaultFillBrush);
             svgGlyphStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SvgGlyphStyle>(svgGlyphStyle);
-            fixed (char *text_ = text)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)text_, stringLength, (void *)textFormat_, &layoutRect, (void *)defaultFillBrush_, (void *)svgGlyphStyle_, colorPaletteIndex, unchecked ((System.Int32)options), unchecked ((System.Int32)measuringMode), (*(void ***)this._nativePointer)[109]);
+            fixed (char* text_ = text)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)text_, stringLength, (void*)textFormat_, &layoutRect, (void*)defaultFillBrush_, (void*)svgGlyphStyle_, colorPaletteIndex, unchecked((System.Int32)options), unchecked((System.Int32)measuringMode), (*(void***)this._nativePointer)[109]);
         }
 
         /// <summary>
@@ -4038,7 +4038,7 @@ namespace SharpDX.Direct2D1
             textLayout_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DirectWrite.TextLayout>(textLayout);
             defaultFillBrush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(defaultFillBrush);
             svgGlyphStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SvgGlyphStyle>(svgGlyphStyle);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, origin, (void *)textLayout_, (void *)defaultFillBrush_, (void *)svgGlyphStyle_, colorPaletteIndex, unchecked ((System.Int32)options), (*(void ***)this._nativePointer)[110]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, origin, (void*)textLayout_, (void*)defaultFillBrush_, (void*)svgGlyphStyle_, colorPaletteIndex, unchecked((System.Int32)options), (*(void***)this._nativePointer)[110]);
         }
 
         /// <summary>
@@ -4054,9 +4054,9 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1DeviceContext4::DrawColorBitmapGlyphRun</unmanaged-short>
         public unsafe void DrawColorBitmapGlyphRun(SharpDX.Direct2D1.GlyphImageFormatS glyphImageFormat, SharpDX.Mathematics.Interop.RawVector2 baselineOrigin, SharpDX.DirectWrite.GlyphRun glyphRun, SharpDX.Direct2D1.MeasuringMode measuringMode, SharpDX.Direct2D1.ColorBitmapGlyphSnapOption bitmapSnapOption)
         {
-            SharpDX.DirectWrite.GlyphRun.__Native glyphRun_ = default (SharpDX.DirectWrite.GlyphRun.__Native);
+            SharpDX.DirectWrite.GlyphRun.__Native glyphRun_ = default(SharpDX.DirectWrite.GlyphRun.__Native);
             glyphRun.__MarshalTo(ref glyphRun_);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, unchecked ((System.Int32)glyphImageFormat), baselineOrigin, &glyphRun_, unchecked ((System.Int32)measuringMode), unchecked ((System.Int32)bitmapSnapOption), (*(void ***)this._nativePointer)[111]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, unchecked((System.Int32)glyphImageFormat), baselineOrigin, &glyphRun_, unchecked((System.Int32)measuringMode), unchecked((System.Int32)bitmapSnapOption), (*(void***)this._nativePointer)[111]);
             glyphRun.__MarshalFree(ref glyphRun_);
         }
 
@@ -4074,13 +4074,13 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1DeviceContext4::DrawSvgGlyphRun</unmanaged-short>
         public unsafe void DrawSvgGlyphRun(SharpDX.Mathematics.Interop.RawVector2 baselineOrigin, SharpDX.DirectWrite.GlyphRun glyphRun, SharpDX.Direct2D1.Brush defaultFillBrush, SharpDX.Direct2D1.SvgGlyphStyle svgGlyphStyle, System.Int32 colorPaletteIndex, SharpDX.Direct2D1.MeasuringMode measuringMode)
         {
-            SharpDX.DirectWrite.GlyphRun.__Native glyphRun_ = default (SharpDX.DirectWrite.GlyphRun.__Native);
+            SharpDX.DirectWrite.GlyphRun.__Native glyphRun_ = default(SharpDX.DirectWrite.GlyphRun.__Native);
             System.IntPtr defaultFillBrush_ = System.IntPtr.Zero;
             System.IntPtr svgGlyphStyle_ = System.IntPtr.Zero;
             glyphRun.__MarshalTo(ref glyphRun_);
             defaultFillBrush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(defaultFillBrush);
             svgGlyphStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SvgGlyphStyle>(svgGlyphStyle);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, baselineOrigin, &glyphRun_, (void *)defaultFillBrush_, (void *)svgGlyphStyle_, colorPaletteIndex, unchecked ((System.Int32)measuringMode), (*(void ***)this._nativePointer)[112]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, baselineOrigin, &glyphRun_, (void*)defaultFillBrush_, (void*)svgGlyphStyle_, colorPaletteIndex, unchecked((System.Int32)measuringMode), (*(void***)this._nativePointer)[112]);
             glyphRun.__MarshalFree(ref glyphRun_);
         }
 
@@ -4106,14 +4106,14 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr fontFace_ = System.IntPtr.Zero;
             SharpDX.Mathematics.Interop.RawMatrix3x2 worldTransform_;
-            glyphTransform = default (SharpDX.Mathematics.Interop.RawMatrix3x2);
+            glyphTransform = default(SharpDX.Mathematics.Interop.RawMatrix3x2);
             System.IntPtr glyphImage_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             fontFace_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DirectWrite.FontFace>(fontFace);
             if (worldTransform != null)
                 worldTransform_ = worldTransform.Value;
-            fixed (void *glyphTransform_ = &glyphTransform)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, unchecked ((System.Int32)glyphImageFormat), glyphOrigin, (void *)fontFace_, fontEmSize, glyphIndex, isSideways, worldTransform == null ? (void *)0 : &worldTransform_, dpiX, dpiY, glyphTransform_, &glyphImage_, (*(void ***)this._nativePointer)[113]);
+            fixed (void* glyphTransform_ = &glyphTransform)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, unchecked((System.Int32)glyphImageFormat), glyphOrigin, (void*)fontFace_, fontEmSize, glyphIndex, isSideways, worldTransform == null ? (void*)0 : &worldTransform_, dpiX, dpiY, glyphTransform_, &glyphImage_, (*(void***)this._nativePointer)[113]);
             if (glyphImage_ != System.IntPtr.Zero)
                 glyphImage = new SharpDX.Direct2D1.Image(glyphImage_);
             else
@@ -4145,7 +4145,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Mathematics.Interop.RawMatrix3x2 worldTransform_;
             System.IntPtr defaultFillBrush_ = System.IntPtr.Zero;
             System.IntPtr svgGlyphStyle_ = System.IntPtr.Zero;
-            glyphTransform = default (SharpDX.Mathematics.Interop.RawMatrix3x2);
+            glyphTransform = default(SharpDX.Mathematics.Interop.RawMatrix3x2);
             System.IntPtr glyphImage_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             fontFace_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DirectWrite.FontFace>(fontFace);
@@ -4153,8 +4153,8 @@ namespace SharpDX.Direct2D1
                 worldTransform_ = worldTransform.Value;
             defaultFillBrush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(defaultFillBrush);
             svgGlyphStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SvgGlyphStyle>(svgGlyphStyle);
-            fixed (void *glyphTransform_ = &glyphTransform)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, glyphOrigin, (void *)fontFace_, fontEmSize, glyphIndex, isSideways, worldTransform == null ? (void *)0 : &worldTransform_, (void *)defaultFillBrush_, (void *)svgGlyphStyle_, colorPaletteIndex, glyphTransform_, &glyphImage_, (*(void ***)this._nativePointer)[114]);
+            fixed (void* glyphTransform_ = &glyphTransform)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, glyphOrigin, (void*)fontFace_, fontEmSize, glyphIndex, isSideways, worldTransform == null ? (void*)0 : &worldTransform_, (void*)defaultFillBrush_, (void*)svgGlyphStyle_, colorPaletteIndex, glyphTransform_, &glyphImage_, (*(void***)this._nativePointer)[114]);
             if (glyphImage_ != System.IntPtr.Zero)
                 glyphImage = new SharpDX.Direct2D1.CommandList(glyphImage_);
             else
@@ -4166,7 +4166,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("7836d248-68cc-4df6-b9e8-de991bf62eb7")]
     public partial class DeviceContext5 : SharpDX.Direct2D1.DeviceContext4
     {
-        public DeviceContext5(System.IntPtr nativePtr): base (nativePtr)
+        public DeviceContext5(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -4186,7 +4186,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr svgDocument_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             inputXmlStream_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Win32.IStream>(inputXmlStream);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, (void *)inputXmlStream_, viewportSize, &svgDocument_, (*(void ***)this._nativePointer)[115]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, (void*)inputXmlStream_, viewportSize, &svgDocument_, (*(void***)this._nativePointer)[115]);
             if (svgDocument_ != System.IntPtr.Zero)
                 svgDocument = new SharpDX.Direct2D1.SvgDocument(svgDocument_);
             else
@@ -4204,7 +4204,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr svgDocument_ = System.IntPtr.Zero;
             svgDocument_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SvgDocument>(svgDocument);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)svgDocument_, (*(void ***)this._nativePointer)[116]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)svgDocument_, (*(void***)this._nativePointer)[116]);
         }
 
         /// <summary>
@@ -4220,7 +4220,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr colorContext_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)colorSpace), &colorContext_, (*(void ***)this._nativePointer)[117]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)colorSpace), &colorContext_, (*(void***)this._nativePointer)[117]);
             (colorContext).NativePointer = colorContext_;
             __result__.CheckError();
         }
@@ -4237,8 +4237,8 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr colorContext_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (void *simpleProfile_ = &simpleProfile)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, simpleProfile_, &colorContext_, (*(void ***)this._nativePointer)[118]);
+            fixed (void* simpleProfile_ = &simpleProfile)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, simpleProfile_, &colorContext_, (*(void***)this._nativePointer)[118]);
             (colorContext).NativePointer = colorContext_;
             __result__.CheckError();
         }
@@ -4247,7 +4247,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("1c51bc64-de61-46fd-9899-63a5d8f03950")]
     public partial class DeviceContextRenderTarget : SharpDX.Direct2D1.RenderTarget
     {
-        public DeviceContextRenderTarget(System.IntPtr nativePtr): base (nativePtr)
+        public DeviceContextRenderTarget(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -4267,7 +4267,7 @@ namespace SharpDX.Direct2D1
         public unsafe void BindDeviceContext(System.IntPtr hDC, SharpDX.Mathematics.Interop.RawRectangle subRectRef)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)hDC, &subRectRef, (*(void ***)this._nativePointer)[57]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)hDC, &subRectRef, (*(void***)this._nativePointer)[57]);
             __result__.CheckError();
         }
     }
@@ -4275,7 +4275,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("693ce632-7f2f-45de-93fe-18d88b37aa21")]
     public partial class DrawInformation : SharpDX.Direct2D1.RenderInformation
     {
-        public DrawInformation(System.IntPtr nativePtr): base (nativePtr)
+        public DrawInformation(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -4292,7 +4292,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void SetPixelShaderConstantBuffer(System.IntPtr buffer, System.Int32 bufferCount)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)buffer, bufferCount, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)buffer, bufferCount, (*(void***)this._nativePointer)[7]);
             __result__.CheckError();
         }
 
@@ -4310,7 +4310,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr resourceTexture_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             resourceTexture_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.ResourceTexture>(resourceTexture);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, textureIndex, (void *)resourceTexture_, (*(void ***)this._nativePointer)[8]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, textureIndex, (void*)resourceTexture_, (*(void***)this._nativePointer)[8]);
             __result__.CheckError();
         }
 
@@ -4326,7 +4326,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void SetVertexShaderConstantBuffer(System.IntPtr buffer, System.Int32 bufferCount)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)buffer, bufferCount, (*(void ***)this._nativePointer)[9]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)buffer, bufferCount, (*(void***)this._nativePointer)[9]);
             __result__.CheckError();
         }
 
@@ -4346,7 +4346,7 @@ namespace SharpDX.Direct2D1
         public unsafe void SetPixelShader(System.Guid shaderId, SharpDX.Direct2D1.PixelOptions pixelOptions)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &shaderId, unchecked ((System.Int32)pixelOptions), (*(void ***)this._nativePointer)[10]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &shaderId, unchecked((System.Int32)pixelOptions), (*(void***)this._nativePointer)[10]);
             __result__.CheckError();
         }
 
@@ -4379,7 +4379,7 @@ namespace SharpDX.Direct2D1
                 vertexRange_ = vertexRange.Value;
             if (vertexShader != null)
                 vertexShader_ = vertexShader.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)vertexBuffer_, unchecked ((System.Int32)vertexOptions), blendDescription == null ? (void *)0 : &blendDescription_, vertexRange == null ? (void *)0 : &vertexRange_, vertexShader == null ? (void *)0 : &vertexShader_, (*(void ***)this._nativePointer)[11]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)vertexBuffer_, unchecked((System.Int32)vertexOptions), blendDescription == null ? (void*)0 : &blendDescription_, vertexRange == null ? (void*)0 : &vertexRange_, vertexShader == null ? (void*)0 : &vertexShader_, (*(void***)this._nativePointer)[11]);
             __result__.CheckError();
         }
     }
@@ -4387,7 +4387,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("28506e39-ebf6-46a1-bb47-fd85565ab957")]
     public partial class DrawingStateBlock : SharpDX.Direct2D1.Resource
     {
-        public DrawingStateBlock(System.IntPtr nativePtr): base (nativePtr)
+        public DrawingStateBlock(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -4435,9 +4435,9 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1DrawingStateBlock::GetDescription</unmanaged-short>
         internal unsafe void GetDescription(out SharpDX.Direct2D1.DrawingStateDescription stateDescription)
         {
-            stateDescription = default (SharpDX.Direct2D1.DrawingStateDescription);
-            fixed (void *stateDescription_ = &stateDescription)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, stateDescription_, (*(void ***)this._nativePointer)[4]);
+            stateDescription = default(SharpDX.Direct2D1.DrawingStateDescription);
+            fixed (void* stateDescription_ = &stateDescription)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, stateDescription_, (*(void***)this._nativePointer)[4]);
         }
 
         /// <summary>
@@ -4449,8 +4449,8 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1DrawingStateBlock::SetDescription</unmanaged-short>
         internal unsafe void SetDescription(ref SharpDX.Direct2D1.DrawingStateDescription stateDescription)
         {
-            fixed (void *stateDescription_ = &stateDescription)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, stateDescription_, (*(void ***)this._nativePointer)[5]);
+            fixed (void* stateDescription_ = &stateDescription)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, stateDescription_, (*(void***)this._nativePointer)[5]);
         }
 
         /// <summary>
@@ -4464,7 +4464,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr textRenderingParams_ = System.IntPtr.Zero;
             textRenderingParams_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DirectWrite.RenderingParams>(textRenderingParams);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)textRenderingParams_, (*(void ***)this._nativePointer)[6]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)textRenderingParams_, (*(void***)this._nativePointer)[6]);
         }
 
         /// <summary>
@@ -4477,7 +4477,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetTextRenderingParams(out SharpDX.DirectWrite.RenderingParams textRenderingParams)
         {
             System.IntPtr textRenderingParams_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &textRenderingParams_, (*(void ***)this._nativePointer)[7]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &textRenderingParams_, (*(void***)this._nativePointer)[7]);
             if (textRenderingParams_ != System.IntPtr.Zero)
                 textRenderingParams = new SharpDX.DirectWrite.RenderingParams(textRenderingParams_);
             else
@@ -4488,7 +4488,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("689f1f85-c72e-4e33-8f19-85754efd5ace")]
     public partial class DrawingStateBlock1 : SharpDX.Direct2D1.DrawingStateBlock
     {
-        public DrawingStateBlock1(System.IntPtr nativePtr): base (nativePtr)
+        public DrawingStateBlock1(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -4519,9 +4519,9 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1DrawingStateBlock1::GetDescription</unmanaged-short>
         internal unsafe void GetDescription(out SharpDX.Direct2D1.DrawingStateDescription1 stateDescription)
         {
-            stateDescription = default (SharpDX.Direct2D1.DrawingStateDescription1);
-            fixed (void *stateDescription_ = &stateDescription)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, stateDescription_, (*(void ***)this._nativePointer)[8]);
+            stateDescription = default(SharpDX.Direct2D1.DrawingStateDescription1);
+            fixed (void* stateDescription_ = &stateDescription)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, stateDescription_, (*(void***)this._nativePointer)[8]);
         }
 
         /// <summary>
@@ -4533,8 +4533,8 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1DrawingStateBlock1::SetDescription</unmanaged-short>
         internal unsafe void SetDescription(ref SharpDX.Direct2D1.DrawingStateDescription1 stateDescription)
         {
-            fixed (void *stateDescription_ = &stateDescription)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, stateDescription_, (*(void ***)this._nativePointer)[9]);
+            fixed (void* stateDescription_ = &stateDescription)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, stateDescription_, (*(void***)this._nativePointer)[9]);
         }
     }
 
@@ -4546,7 +4546,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("36bfdcb6-9739-435d-a30d-a653beff6a6f")]
     public partial class DrawTransformNative : SharpDX.Direct2D1.TransformNative, SharpDX.Direct2D1.DrawTransform
     {
-        public DrawTransformNative(System.IntPtr nativePtr): base (nativePtr)
+        public DrawTransformNative(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -4581,7 +4581,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr drawInfo_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             drawInfo_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.DrawInformation>(drawInfo);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)drawInfo_, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)drawInfo_, (*(void***)this._nativePointer)[7]);
             __result__.CheckError();
         }
     }
@@ -4589,198 +4589,198 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("28211a43-7d89-476f-8181-2d6159b220ad")]
     public partial class Effect : SharpDX.Direct2D1.Properties
     {
-        public Effect(System.IntPtr nativePtr): base (nativePtr)
+        public Effect(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
         public static explicit operator Effect(System.IntPtr nativePtr) => nativePtr == System.IntPtr.Zero ? null : new Effect(nativePtr);
-                ///<summary>Constant ArithmeticComposite</summary>
+        ///<summary>Constant ArithmeticComposite</summary>
         ///<unmanaged>CLSID_D2D1ArithmeticComposite</unmanaged>
         public static readonly System.Guid ArithmeticComposite = new System.Guid("fc151437-049a-4784-a24a-f1c4daf20987");
-                ///<summary>Constant Atlas</summary>
+        ///<summary>Constant Atlas</summary>
         ///<unmanaged>CLSID_D2D1Atlas</unmanaged>
         public static readonly System.Guid Atlas = new System.Guid("913e2be4-fdcf-4fe2-a5f0-2454f14ff408");
-                ///<summary>Constant BitmapSource</summary>
+        ///<summary>Constant BitmapSource</summary>
         ///<unmanaged>CLSID_D2D1BitmapSource</unmanaged>
         public static readonly System.Guid BitmapSource = new System.Guid("5fb6c24d-c6dd-4231-9404-50f4d5c3252d");
-                ///<summary>Constant Blend</summary>
+        ///<summary>Constant Blend</summary>
         ///<unmanaged>CLSID_D2D1Blend</unmanaged>
         public static readonly System.Guid Blend = new System.Guid("81c5b77b-13f8-4cdd-ad20-c890547ac65d");
-                ///<summary>Constant Border</summary>
+        ///<summary>Constant Border</summary>
         ///<unmanaged>CLSID_D2D1Border</unmanaged>
         public static readonly System.Guid Border = new System.Guid("2a2d49c0-4acf-43c7-8c6a-7c4a27874d27");
-                ///<summary>Constant Brightness</summary>
+        ///<summary>Constant Brightness</summary>
         ///<unmanaged>CLSID_D2D1Brightness</unmanaged>
         public static readonly System.Guid Brightness = new System.Guid("8cea8d1e-77b0-4986-b3b9-2f0c0eae7887");
-                ///<summary>Constant ColorManagement</summary>
+        ///<summary>Constant ColorManagement</summary>
         ///<unmanaged>CLSID_D2D1ColorManagement</unmanaged>
         public static readonly System.Guid ColorManagement = new System.Guid("1a28524c-fdd6-4aa4-ae8f-837eb8267b37");
-                ///<summary>Constant ColorMatrix</summary>
+        ///<summary>Constant ColorMatrix</summary>
         ///<unmanaged>CLSID_D2D1ColorMatrix</unmanaged>
         public static readonly System.Guid ColorMatrix = new System.Guid("921f03d6-641c-47df-852d-b4bb6153ae11");
-                ///<summary>Constant Composite</summary>
+        ///<summary>Constant Composite</summary>
         ///<unmanaged>CLSID_D2D1Composite</unmanaged>
         public static readonly System.Guid Composite = new System.Guid("48fc9f51-f6ac-48f1-8b58-3b28ac46f76d");
-                ///<summary>Constant ConvolveMatrix</summary>
+        ///<summary>Constant ConvolveMatrix</summary>
         ///<unmanaged>CLSID_D2D1ConvolveMatrix</unmanaged>
         public static readonly System.Guid ConvolveMatrix = new System.Guid("407f8c08-5533-4331-a341-23cc3877843e");
-                ///<summary>Constant Crop</summary>
+        ///<summary>Constant Crop</summary>
         ///<unmanaged>CLSID_D2D1Crop</unmanaged>
         public static readonly System.Guid Crop = new System.Guid("e23f7110-0e9a-4324-af47-6a2c0c46f35b");
-                ///<summary>Constant DirectionalBlur</summary>
+        ///<summary>Constant DirectionalBlur</summary>
         ///<unmanaged>CLSID_D2D1DirectionalBlur</unmanaged>
         public static readonly System.Guid DirectionalBlur = new System.Guid("174319a6-58e9-49b2-bb63-caf2c811a3db");
-                ///<summary>Constant DiscreteTransfer</summary>
+        ///<summary>Constant DiscreteTransfer</summary>
         ///<unmanaged>CLSID_D2D1DiscreteTransfer</unmanaged>
         public static readonly System.Guid DiscreteTransfer = new System.Guid("90866fcd-488e-454b-af06-e5041b66c36c");
-                ///<summary>Constant DisplacementMap</summary>
+        ///<summary>Constant DisplacementMap</summary>
         ///<unmanaged>CLSID_D2D1DisplacementMap</unmanaged>
         public static readonly System.Guid DisplacementMap = new System.Guid("edc48364-0417-4111-9450-43845fa9f890");
-                ///<summary>Constant DistantDiffuse</summary>
+        ///<summary>Constant DistantDiffuse</summary>
         ///<unmanaged>CLSID_D2D1DistantDiffuse</unmanaged>
         public static readonly System.Guid DistantDiffuse = new System.Guid("3e7efd62-a32d-46d4-a83c-5278889ac954");
-                ///<summary>Constant DistantSpecular</summary>
+        ///<summary>Constant DistantSpecular</summary>
         ///<unmanaged>CLSID_D2D1DistantSpecular</unmanaged>
         public static readonly System.Guid DistantSpecular = new System.Guid("428c1ee5-77b8-4450-8ab5-72219c21abda");
-                ///<summary>Constant DpiCompensation</summary>
+        ///<summary>Constant DpiCompensation</summary>
         ///<unmanaged>CLSID_D2D1DpiCompensation</unmanaged>
         public static readonly System.Guid DpiCompensation = new System.Guid("6c26c5c7-34e0-46fc-9cfd-e5823706e228");
-                ///<summary>Constant Flood</summary>
+        ///<summary>Constant Flood</summary>
         ///<unmanaged>CLSID_D2D1Flood</unmanaged>
         public static readonly System.Guid Flood = new System.Guid("61c23c20-ae69-4d8e-94cf-50078df638f2");
-                ///<summary>Constant GammaTransfer</summary>
+        ///<summary>Constant GammaTransfer</summary>
         ///<unmanaged>CLSID_D2D1GammaTransfer</unmanaged>
         public static readonly System.Guid GammaTransfer = new System.Guid("409444c4-c419-41a0-b0c1-8cd0c0a18e42");
-                ///<summary>Constant GaussianBlur</summary>
+        ///<summary>Constant GaussianBlur</summary>
         ///<unmanaged>CLSID_D2D1GaussianBlur</unmanaged>
         public static readonly System.Guid GaussianBlur = new System.Guid("1feb6d69-2fe6-4ac9-8c58-1d7f93e7a6a5");
-                ///<summary>Constant Scale</summary>
+        ///<summary>Constant Scale</summary>
         ///<unmanaged>CLSID_D2D1Scale</unmanaged>
         public static readonly System.Guid Scale = new System.Guid("9daf9369-3846-4d0e-a44e-0c607934a5d7");
-                ///<summary>Constant Histogram</summary>
+        ///<summary>Constant Histogram</summary>
         ///<unmanaged>CLSID_D2D1Histogram</unmanaged>
         public static readonly System.Guid Histogram = new System.Guid("881db7d0-f7ee-4d4d-a6d2-4697acc66ee8");
-                ///<summary>Constant HueRotation</summary>
+        ///<summary>Constant HueRotation</summary>
         ///<unmanaged>CLSID_D2D1HueRotation</unmanaged>
         public static readonly System.Guid HueRotation = new System.Guid("0f4458ec-4b32-491b-9e85-bd73f44d3eb6");
-                ///<summary>Constant LinearTransfer</summary>
+        ///<summary>Constant LinearTransfer</summary>
         ///<unmanaged>CLSID_D2D1LinearTransfer</unmanaged>
         public static readonly System.Guid LinearTransfer = new System.Guid("ad47c8fd-63ef-4acc-9b51-67979c036c06");
-                ///<summary>Constant LuminanceToAlpha</summary>
+        ///<summary>Constant LuminanceToAlpha</summary>
         ///<unmanaged>CLSID_D2D1LuminanceToAlpha</unmanaged>
         public static readonly System.Guid LuminanceToAlpha = new System.Guid("41251ab7-0beb-46f8-9da7-59e93fcce5de");
-                ///<summary>Constant Morphology</summary>
+        ///<summary>Constant Morphology</summary>
         ///<unmanaged>CLSID_D2D1Morphology</unmanaged>
         public static readonly System.Guid Morphology = new System.Guid("eae6c40d-626a-4c2d-bfcb-391001abe202");
-                ///<summary>Constant OpacityMetadata</summary>
+        ///<summary>Constant OpacityMetadata</summary>
         ///<unmanaged>CLSID_D2D1OpacityMetadata</unmanaged>
         public static readonly System.Guid OpacityMetadata = new System.Guid("6c53006a-4450-4199-aa5b-ad1656fece5e");
-                ///<summary>Constant PointDiffuse</summary>
+        ///<summary>Constant PointDiffuse</summary>
         ///<unmanaged>CLSID_D2D1PointDiffuse</unmanaged>
         public static readonly System.Guid PointDiffuse = new System.Guid("b9e303c3-c08c-4f91-8b7b-38656bc48c20");
-                ///<summary>Constant PointSpecular</summary>
+        ///<summary>Constant PointSpecular</summary>
         ///<unmanaged>CLSID_D2D1PointSpecular</unmanaged>
         public static readonly System.Guid PointSpecular = new System.Guid("09c3ca26-3ae2-4f09-9ebc-ed3865d53f22");
-                ///<summary>Constant Premultiply</summary>
+        ///<summary>Constant Premultiply</summary>
         ///<unmanaged>CLSID_D2D1Premultiply</unmanaged>
         public static readonly System.Guid Premultiply = new System.Guid("06eab419-deed-4018-80d2-3e1d471adeb2");
-                ///<summary>Constant Saturation</summary>
+        ///<summary>Constant Saturation</summary>
         ///<unmanaged>CLSID_D2D1Saturation</unmanaged>
         public static readonly System.Guid Saturation = new System.Guid("5cb2d9cf-327d-459f-a0ce-40c0b2086bf7");
-                ///<summary>Constant Shadow</summary>
+        ///<summary>Constant Shadow</summary>
         ///<unmanaged>CLSID_D2D1Shadow</unmanaged>
         public static readonly System.Guid Shadow = new System.Guid("c67ea361-1863-4e69-89db-695d3e9a5b6b");
-                ///<summary>Constant SpotDiffuse</summary>
+        ///<summary>Constant SpotDiffuse</summary>
         ///<unmanaged>CLSID_D2D1SpotDiffuse</unmanaged>
         public static readonly System.Guid SpotDiffuse = new System.Guid("818a1105-7932-44f4-aa86-08ae7b2f2c93");
-                ///<summary>Constant SpotSpecular</summary>
+        ///<summary>Constant SpotSpecular</summary>
         ///<unmanaged>CLSID_D2D1SpotSpecular</unmanaged>
         public static readonly System.Guid SpotSpecular = new System.Guid("edae421e-7654-4a37-9db8-71acc1beb3c1");
-                ///<summary>Constant TableTransfer</summary>
+        ///<summary>Constant TableTransfer</summary>
         ///<unmanaged>CLSID_D2D1TableTransfer</unmanaged>
         public static readonly System.Guid TableTransfer = new System.Guid("5bf818c3-5e43-48cb-b631-868396d6a1d4");
-                ///<summary>Constant Tile</summary>
+        ///<summary>Constant Tile</summary>
         ///<unmanaged>CLSID_D2D1Tile</unmanaged>
         public static readonly System.Guid Tile = new System.Guid("b0784138-3b76-4bc5-b13b-0fa2ad02659f");
-                ///<summary>Constant Turbulence</summary>
+        ///<summary>Constant Turbulence</summary>
         ///<unmanaged>CLSID_D2D1Turbulence</unmanaged>
         public static readonly System.Guid Turbulence = new System.Guid("cf2bb6ae-889a-4ad7-ba29-a2fd732c9fc9");
-                ///<summary>Constant UnPremultiply</summary>
+        ///<summary>Constant UnPremultiply</summary>
         ///<unmanaged>CLSID_D2D1UnPremultiply</unmanaged>
         public static readonly System.Guid UnPremultiply = new System.Guid("fb9ac489-ad8d-41ed-9999-bb6347d110f7");
-                ///<summary>Constant YCbCr</summary>
+        ///<summary>Constant YCbCr</summary>
         ///<unmanaged>CLSID_D2D1YCbCr</unmanaged>
         public static readonly System.Guid YCbCr = new System.Guid("99503cc1-66c7-45c9-a875-8ad8a7914401");
-                ///<summary>Constant Contrast</summary>
+        ///<summary>Constant Contrast</summary>
         ///<unmanaged>CLSID_D2D1Contrast</unmanaged>
         public static readonly System.Guid Contrast = new System.Guid("b648a78a-0ed5-4f80-a94a-8e825aca6b77");
-                ///<summary>Constant RgbToHue</summary>
+        ///<summary>Constant RgbToHue</summary>
         ///<unmanaged>CLSID_D2D1RgbToHue</unmanaged>
         public static readonly System.Guid RgbToHue = new System.Guid("23f3e5ec-91e8-4d3d-ad0a-afadc1004aa1");
-                ///<summary>Constant HueToRgb</summary>
+        ///<summary>Constant HueToRgb</summary>
         ///<unmanaged>CLSID_D2D1HueToRgb</unmanaged>
         public static readonly System.Guid HueToRgb = new System.Guid("7b78a6bd-0141-4def-8a52-6356ee0cbdd5");
-                ///<summary>Constant ChromaKey</summary>
+        ///<summary>Constant ChromaKey</summary>
         ///<unmanaged>CLSID_D2D1ChromaKey</unmanaged>
         public static readonly System.Guid ChromaKey = new System.Guid("74c01f5b-2a0d-408c-88e2-c7a3c7197742");
-                ///<summary>Constant Emboss</summary>
+        ///<summary>Constant Emboss</summary>
         ///<unmanaged>CLSID_D2D1Emboss</unmanaged>
         public static readonly System.Guid Emboss = new System.Guid("b1c5eb2b-0348-43f0-8107-4957cacba2ae");
-                ///<summary>Constant Exposure</summary>
+        ///<summary>Constant Exposure</summary>
         ///<unmanaged>CLSID_D2D1Exposure</unmanaged>
         public static readonly System.Guid Exposure = new System.Guid("b56c8cfa-f634-41ee-bee0-ffa617106004");
-                ///<summary>Constant Grayscale</summary>
+        ///<summary>Constant Grayscale</summary>
         ///<unmanaged>CLSID_D2D1Grayscale</unmanaged>
         public static readonly System.Guid Grayscale = new System.Guid("36dde0eb-3725-42e0-836d-52fb20aee644");
-                ///<summary>Constant Invert</summary>
+        ///<summary>Constant Invert</summary>
         ///<unmanaged>CLSID_D2D1Invert</unmanaged>
         public static readonly System.Guid Invert = new System.Guid("e0c3784d-cb39-4e84-b6fd-6b72f0810263");
-                ///<summary>Constant Posterize</summary>
+        ///<summary>Constant Posterize</summary>
         ///<unmanaged>CLSID_D2D1Posterize</unmanaged>
         public static readonly System.Guid Posterize = new System.Guid("2188945e-33a3-4366-b7bc-086bd02d0884");
-                ///<summary>Constant Sepia</summary>
+        ///<summary>Constant Sepia</summary>
         ///<unmanaged>CLSID_D2D1Sepia</unmanaged>
         public static readonly System.Guid Sepia = new System.Guid("3a1af410-5f1d-4dbe-84df-915da79b7153");
-                ///<summary>Constant Sharpen</summary>
+        ///<summary>Constant Sharpen</summary>
         ///<unmanaged>CLSID_D2D1Sharpen</unmanaged>
         public static readonly System.Guid Sharpen = new System.Guid("c9b887cb-c5ff-4dc5-9779-273dcf417c7d");
-                ///<summary>Constant Straighten</summary>
+        ///<summary>Constant Straighten</summary>
         ///<unmanaged>CLSID_D2D1Straighten</unmanaged>
         public static readonly System.Guid Straighten = new System.Guid("4da47b12-79a3-4fb0-8237-bbc3b2a4de08");
-                ///<summary>Constant TemperatureTint</summary>
+        ///<summary>Constant TemperatureTint</summary>
         ///<unmanaged>CLSID_D2D1TemperatureTint</unmanaged>
         public static readonly System.Guid TemperatureTint = new System.Guid("89176087-8af9-4a08-aeb1-895f38db1766");
-                ///<summary>Constant Vignette</summary>
+        ///<summary>Constant Vignette</summary>
         ///<unmanaged>CLSID_D2D1Vignette</unmanaged>
         public static readonly System.Guid Vignette = new System.Guid("c00c40be-5e67-4ca3-95b4-f4b02c115135");
-                ///<summary>Constant EdgeDetection</summary>
+        ///<summary>Constant EdgeDetection</summary>
         ///<unmanaged>CLSID_D2D1EdgeDetection</unmanaged>
         public static readonly System.Guid EdgeDetection = new System.Guid("eff583ca-cb07-4aa9-ac5d-2cc44c76460f");
-                ///<summary>Constant HighlightsShadows</summary>
+        ///<summary>Constant HighlightsShadows</summary>
         ///<unmanaged>CLSID_D2D1HighlightsShadows</unmanaged>
         public static readonly System.Guid HighlightsShadows = new System.Guid("cadc8384-323f-4c7e-a361-2e2b24df6ee4");
-                ///<summary>Constant LookupTable3D</summary>
+        ///<summary>Constant LookupTable3D</summary>
         ///<unmanaged>CLSID_D2D1LookupTable3D</unmanaged>
         public static readonly System.Guid LookupTable3D = new System.Guid("349e0eda-0088-4a79-9ca3-c7e300202020");
-                ///<summary>Constant Opacity</summary>
+        ///<summary>Constant Opacity</summary>
         ///<unmanaged>CLSID_D2D1Opacity</unmanaged>
         public static readonly System.Guid Opacity = new System.Guid("811d79a4-de28-4454-8094-c64685f8bd4c");
-                ///<summary>Constant AlphaMask</summary>
+        ///<summary>Constant AlphaMask</summary>
         ///<unmanaged>CLSID_D2D1AlphaMask</unmanaged>
         public static readonly System.Guid AlphaMask = new System.Guid("c80ecff0-3fd5-4f05-8328-c5d1724b4f0a");
-                ///<summary>Constant CrossFade</summary>
+        ///<summary>Constant CrossFade</summary>
         ///<unmanaged>CLSID_D2D1CrossFade</unmanaged>
         public static readonly System.Guid CrossFade = new System.Guid("12f575e8-4db1-485f-9a84-03a07dd3829f");
-                ///<summary>Constant Tint</summary>
+        ///<summary>Constant Tint</summary>
         ///<unmanaged>CLSID_D2D1Tint</unmanaged>
         public static readonly System.Guid Tint = new System.Guid("36312b17-f7dd-4014-915d-ffca768cf211");
-                ///<summary>Constant AffineTransform2D</summary>
+        ///<summary>Constant AffineTransform2D</summary>
         ///<unmanaged>CLSID_D2D12DAffineTransform</unmanaged>
         public static readonly System.Guid AffineTransform2D = new System.Guid("6aa97485-6354-4cfc-908c-e4a74f62c96c");
-                ///<summary>Constant PerspectiveTransform3D</summary>
+        ///<summary>Constant PerspectiveTransform3D</summary>
         ///<unmanaged>CLSID_D2D13DPerspectiveTransform</unmanaged>
         public static readonly System.Guid PerspectiveTransform3D = new System.Guid("c2844d0b-3d86-46e7-85ba-526c9240f3fb");
-                ///<summary>Constant Transform3D</summary>
+        ///<summary>Constant Transform3D</summary>
         ///<unmanaged>CLSID_D2D13DTransform</unmanaged>
         public static readonly System.Guid Transform3D = new System.Guid("e8467b04-ec61-4b8a-b5de-d4d73debea5a");
         /// <summary>
@@ -4829,7 +4829,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr input_ = System.IntPtr.Zero;
             input_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Image>(input);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, index, (void *)input_, invalidate, (*(void ***)this._nativePointer)[14]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, index, (void*)input_, invalidate, (*(void***)this._nativePointer)[14]);
         }
 
         /// <summary>
@@ -4846,7 +4846,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void SetInputCount(System.Int32 inputCount)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, inputCount, (*(void ***)this._nativePointer)[15]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, inputCount, (*(void***)this._nativePointer)[15]);
             __result__.CheckError();
         }
 
@@ -4864,7 +4864,7 @@ namespace SharpDX.Direct2D1
         {
             SharpDX.Direct2D1.Image input;
             System.IntPtr input_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, index, &input_, (*(void ***)this._nativePointer)[16]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, index, &input_, (*(void***)this._nativePointer)[16]);
             if (input_ != System.IntPtr.Zero)
                 input = new SharpDX.Direct2D1.Image(input_);
             else
@@ -4882,7 +4882,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetInputCount()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[17]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[17]);
             return __result__;
         }
 
@@ -4899,7 +4899,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetOutput(out SharpDX.Direct2D1.Image outputImage)
         {
             System.IntPtr outputImage_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &outputImage_, (*(void ***)this._nativePointer)[18]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &outputImage_, (*(void***)this._nativePointer)[18]);
             if (outputImage_ != System.IntPtr.Zero)
                 outputImage = new SharpDX.Direct2D1.Image(outputImage_);
             else
@@ -4910,7 +4910,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("3d9f916b-27dc-4ad7-b4f1-64945340f563")]
     public partial class EffectContext : SharpDX.ComObject
     {
-        public EffectContext(System.IntPtr nativePtr): base (nativePtr)
+        public EffectContext(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -4928,9 +4928,9 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1EffectContext::GetDpi</unmanaged-short>
         internal unsafe void GetDpi(out System.Single dpiX, out System.Single dpiY)
         {
-            fixed (void *dpiY_ = &dpiY)
-                fixed (void *dpiX_ = &dpiX)
-                    SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, dpiX_, dpiY_, (*(void ***)this._nativePointer)[3]);
+            fixed (void* dpiY_ = &dpiY)
+            fixed (void* dpiX_ = &dpiX)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, dpiX_, dpiY_, (*(void***)this._nativePointer)[3]);
         }
 
         /// <summary>
@@ -4949,7 +4949,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr effect_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &effectId, &effect_, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &effectId, &effect_, (*(void***)this._nativePointer)[4]);
             (effect).NativePointer = effect_;
             __result__.CheckError();
         }
@@ -4967,8 +4967,8 @@ namespace SharpDX.Direct2D1
         {
             SharpDX.Direct3D.FeatureLevel maximumSupportedFeatureLevel;
             SharpDX.Result __result__;
-            fixed (void *featureLevels_ = featureLevels)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, featureLevels_, featureLevelsCount, &maximumSupportedFeatureLevel, (*(void ***)this._nativePointer)[5]);
+            fixed (void* featureLevels_ = featureLevels)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, featureLevels_, featureLevelsCount, &maximumSupportedFeatureLevel, (*(void***)this._nativePointer)[5]);
             __result__.CheckError();
             return maximumSupportedFeatureLevel;
         }
@@ -4988,7 +4988,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr transformNode_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             effect_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Effect>(effect);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)effect_, &transformNode_, (*(void ***)this._nativePointer)[6]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)effect_, &transformNode_, (*(void***)this._nativePointer)[6]);
             if (transformNode_ != System.IntPtr.Zero)
                 transformNode = new SharpDX.Direct2D1.TransformNodeNative(transformNode_);
             else
@@ -5011,8 +5011,8 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr transform_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (void *blendDescription_ = &blendDescription)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, numInputs, blendDescription_, &transform_, (*(void ***)this._nativePointer)[7]);
+            fixed (void* blendDescription_ = &blendDescription)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, numInputs, blendDescription_, &transform_, (*(void***)this._nativePointer)[7]);
             (transform).NativePointer = transform_;
             __result__.CheckError();
         }
@@ -5031,7 +5031,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr transform_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)extendModeX), unchecked ((System.Int32)extendModeY), &transform_, (*(void ***)this._nativePointer)[8]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)extendModeX), unchecked((System.Int32)extendModeY), &transform_, (*(void***)this._nativePointer)[8]);
             (transform).NativePointer = transform_;
             __result__.CheckError();
         }
@@ -5052,7 +5052,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr transform_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, offset, &transform_, (*(void ***)this._nativePointer)[9]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, offset, &transform_, (*(void***)this._nativePointer)[9]);
             (transform).NativePointer = transform_;
             __result__.CheckError();
         }
@@ -5074,7 +5074,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr transform_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &outputRectangle, &transform_, (*(void ***)this._nativePointer)[10]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &outputRectangle, &transform_, (*(void***)this._nativePointer)[10]);
             (transform).NativePointer = transform_;
             __result__.CheckError();
         }
@@ -5095,8 +5095,8 @@ namespace SharpDX.Direct2D1
         internal unsafe void LoadPixelShader(System.Guid shaderId, System.Byte[] shaderBuffer, System.Int32 shaderBufferCount)
         {
             SharpDX.Result __result__;
-            fixed (void *shaderBuffer_ = shaderBuffer)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &shaderId, shaderBuffer_, shaderBufferCount, (*(void ***)this._nativePointer)[11]);
+            fixed (void* shaderBuffer_ = shaderBuffer)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &shaderId, shaderBuffer_, shaderBufferCount, (*(void***)this._nativePointer)[11]);
             __result__.CheckError();
         }
 
@@ -5116,8 +5116,8 @@ namespace SharpDX.Direct2D1
         internal unsafe void LoadVertexShader(System.Guid resourceId, System.Byte[] shaderBuffer, System.Int32 shaderBufferCount)
         {
             SharpDX.Result __result__;
-            fixed (void *shaderBuffer_ = shaderBuffer)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &resourceId, shaderBuffer_, shaderBufferCount, (*(void ***)this._nativePointer)[12]);
+            fixed (void* shaderBuffer_ = shaderBuffer)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &resourceId, shaderBuffer_, shaderBufferCount, (*(void***)this._nativePointer)[12]);
             __result__.CheckError();
         }
 
@@ -5137,8 +5137,8 @@ namespace SharpDX.Direct2D1
         internal unsafe void LoadComputeShader(System.Guid resourceId, System.Byte[] shaderBuffer, System.Int32 shaderBufferCount)
         {
             SharpDX.Result __result__;
-            fixed (void *shaderBuffer_ = shaderBuffer)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &resourceId, shaderBuffer_, shaderBufferCount, (*(void ***)this._nativePointer)[13]);
+            fixed (void* shaderBuffer_ = shaderBuffer)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &resourceId, shaderBuffer_, shaderBufferCount, (*(void***)this._nativePointer)[13]);
             __result__.CheckError();
         }
 
@@ -5153,7 +5153,7 @@ namespace SharpDX.Direct2D1
         public unsafe SharpDX.Mathematics.Interop.RawBool IsShaderLoaded(System.Guid shaderId)
         {
             SharpDX.Mathematics.Interop.RawBool __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXMathematicsInteropRawBool(this._nativePointer, &shaderId, (*(void ***)this._nativePointer)[14]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXMathematicsInteropRawBool(this._nativePointer, &shaderId, (*(void***)this._nativePointer)[14]);
             return __result__;
         }
 
@@ -5177,9 +5177,9 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             if (resourceId != null)
                 resourceId_ = resourceId.Value;
-            fixed (void *strides_ = strides)
-                fixed (void *data_ = data)
-                    __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, resourceId == null ? (void *)0 : &resourceId_, (void *)resourceTextureProperties, data_, strides_, dataSize, &resourceTexture_, (*(void ***)this._nativePointer)[15]);
+            fixed (void* strides_ = strides)
+            fixed (void* data_ = data)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, resourceId == null ? (void*)0 : &resourceId_, (void*)resourceTextureProperties, data_, strides_, dataSize, &resourceTexture_, (*(void***)this._nativePointer)[15]);
             (resourceTexture).NativePointer = resourceTexture_;
             __result__.CheckError();
         }
@@ -5197,7 +5197,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Direct2D1.ResourceTexture resourceTexture;
             System.IntPtr resourceTexture_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &resourceId, &resourceTexture_, (*(void ***)this._nativePointer)[16]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &resourceId, &resourceTexture_, (*(void***)this._nativePointer)[16]);
             if (resourceTexture_ != System.IntPtr.Zero)
                 resourceTexture = new SharpDX.Direct2D1.ResourceTexture(resourceTexture_);
             else
@@ -5218,14 +5218,14 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1EffectContext::CreateVertexBuffer</unmanaged-short>
         internal unsafe void CreateVertexBuffer(SharpDX.Direct2D1.VertexBufferProperties vertexBufferProperties, System.Guid? resourceId, System.IntPtr customVertexBufferProperties, SharpDX.Direct2D1.VertexBuffer buffer)
         {
-            SharpDX.Direct2D1.VertexBufferProperties.__Native vertexBufferProperties_ = default (SharpDX.Direct2D1.VertexBufferProperties.__Native);
+            SharpDX.Direct2D1.VertexBufferProperties.__Native vertexBufferProperties_ = default(SharpDX.Direct2D1.VertexBufferProperties.__Native);
             System.Guid resourceId_;
             System.IntPtr buffer_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             vertexBufferProperties.__MarshalTo(ref vertexBufferProperties_);
             if (resourceId != null)
                 resourceId_ = resourceId.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &vertexBufferProperties_, resourceId == null ? (void *)0 : &resourceId_, (void *)customVertexBufferProperties, &buffer_, (*(void ***)this._nativePointer)[17]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &vertexBufferProperties_, resourceId == null ? (void*)0 : &resourceId_, (void*)customVertexBufferProperties, &buffer_, (*(void***)this._nativePointer)[17]);
             (buffer).NativePointer = buffer_;
             vertexBufferProperties.__MarshalFree(ref vertexBufferProperties_);
             __result__.CheckError();
@@ -5244,7 +5244,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Direct2D1.VertexBuffer buffer;
             System.IntPtr buffer_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &resourceId, &buffer_, (*(void ***)this._nativePointer)[18]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &resourceId, &buffer_, (*(void***)this._nativePointer)[18]);
             if (buffer_ != System.IntPtr.Zero)
                 buffer = new SharpDX.Direct2D1.VertexBuffer(buffer_);
             else
@@ -5267,8 +5267,8 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr colorContext_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (void *rofileRef_ = rofileRef)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)space), rofileRef_, profileSize, &colorContext_, (*(void ***)this._nativePointer)[19]);
+            fixed (void* rofileRef_ = rofileRef)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)space), rofileRef_, profileSize, &colorContext_, (*(void***)this._nativePointer)[19]);
             (colorContext).NativePointer = colorContext_;
             __result__.CheckError();
         }
@@ -5286,8 +5286,8 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr colorContext_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (char *filename_ = filename)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)filename_, &colorContext_, (*(void ***)this._nativePointer)[20]);
+            fixed (char* filename_ = filename)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)filename_, &colorContext_, (*(void***)this._nativePointer)[20]);
             (colorContext).NativePointer = colorContext_;
             __result__.CheckError();
         }
@@ -5310,7 +5310,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr colorContext_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             wicColorContext_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.WIC.ColorContext>(wicColorContext);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)wicColorContext_, &colorContext_, (*(void ***)this._nativePointer)[21]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)wicColorContext_, &colorContext_, (*(void***)this._nativePointer)[21]);
             (colorContext).NativePointer = colorContext_;
             __result__.CheckError();
         }
@@ -5328,7 +5328,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Result CheckFeatureSupport(SharpDX.Direct2D1.Feature feature, System.IntPtr featureSupportData, System.Int32 featureSupportDataSize)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)feature), (void *)featureSupportData, featureSupportDataSize, (*(void ***)this._nativePointer)[22]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)feature), (void*)featureSupportData, featureSupportDataSize, (*(void***)this._nativePointer)[22]);
             return __result__;
         }
 
@@ -5343,7 +5343,7 @@ namespace SharpDX.Direct2D1
         public unsafe SharpDX.Mathematics.Interop.RawBool IsBufferPrecisionSupported(SharpDX.Direct2D1.BufferPrecision bufferPrecision)
         {
             SharpDX.Mathematics.Interop.RawBool __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXMathematicsInteropRawBool(this._nativePointer, unchecked ((System.Int32)bufferPrecision), (*(void ***)this._nativePointer)[23]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXMathematicsInteropRawBool(this._nativePointer, unchecked((System.Int32)bufferPrecision), (*(void***)this._nativePointer)[23]);
             return __result__;
         }
     }
@@ -5351,7 +5351,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("84ab595a-fc81-4546-bacd-e8ef4d8abe7a")]
     public partial class EffectContext1 : SharpDX.Direct2D1.EffectContext
     {
-        public EffectContext1(System.IntPtr nativePtr): base (nativePtr)
+        public EffectContext1(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -5373,10 +5373,10 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr lookupTable_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (void *strides_ = strides)
-                fixed (void *data_ = data)
-                    fixed (void *extents_ = extents)
-                        __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)precision), extents_, data_, dataCount, strides_, &lookupTable_, (*(void ***)this._nativePointer)[24]);
+            fixed (void* strides_ = strides)
+            fixed (void* data_ = data)
+            fixed (void* extents_ = extents)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)precision), extents_, data_, dataCount, strides_, &lookupTable_, (*(void***)this._nativePointer)[24]);
             if (lookupTable_ != System.IntPtr.Zero)
                 lookupTable = new SharpDX.Direct2D1.LookupTable3D(lookupTable_);
             else
@@ -5388,7 +5388,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("577ad2a0-9fc7-4dda-8b18-dab810140052")]
     public partial class EffectContext2 : SharpDX.Direct2D1.EffectContext1
     {
-        public EffectContext2(System.IntPtr nativePtr): base (nativePtr)
+        public EffectContext2(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -5405,7 +5405,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr colorContext_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)colorSpace), &colorContext_, (*(void ***)this._nativePointer)[25]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)colorSpace), &colorContext_, (*(void***)this._nativePointer)[25]);
             (colorContext).NativePointer = colorContext_;
             __result__.CheckError();
         }
@@ -5422,8 +5422,8 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr colorContext_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (void *simpleProfile_ = &simpleProfile)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, simpleProfile_, &colorContext_, (*(void ***)this._nativePointer)[26]);
+            fixed (void* simpleProfile_ = &simpleProfile)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, simpleProfile_, &colorContext_, (*(void***)this._nativePointer)[26]);
             (colorContext).NativePointer = colorContext_;
             __result__.CheckError();
         }
@@ -5432,7 +5432,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd906a4-12e2-11dc-9fed-001143a055f9")]
     public partial class EllipseGeometry : SharpDX.Direct2D1.Geometry
     {
-        public EllipseGeometry(System.IntPtr nativePtr): base (nativePtr)
+        public EllipseGeometry(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -5461,16 +5461,16 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1EllipseGeometry::GetEllipse</unmanaged-short>
         internal unsafe void GetEllipse(out SharpDX.Direct2D1.Ellipse ellipse)
         {
-            ellipse = default (SharpDX.Direct2D1.Ellipse);
-            fixed (void *ellipse_ = &ellipse)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, ellipse_, (*(void ***)this._nativePointer)[17]);
+            ellipse = default(SharpDX.Direct2D1.Ellipse);
+            fixed (void* ellipse_ = &ellipse)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, ellipse_, (*(void***)this._nativePointer)[17]);
         }
     }
 
     [System.Runtime.InteropServices.GuidAttribute("06152247-6f50-465a-9245-118bfd3b6007")]
     public partial class Factory : SharpDX.ComObject
     {
-        public Factory(System.IntPtr nativePtr): base (nativePtr)
+        public Factory(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -5488,7 +5488,7 @@ namespace SharpDX.Direct2D1
         public unsafe void ReloadSystemMetrics()
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[3]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[3]);
             __result__.CheckError();
         }
 
@@ -5505,9 +5505,9 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1Factory::GetDesktopDpi</unmanaged-short>
         internal unsafe void GetDesktopDpi(out System.Single dpiX, out System.Single dpiY)
         {
-            fixed (void *dpiY_ = &dpiY)
-                fixed (void *dpiX_ = &dpiX)
-                    SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, dpiX_, dpiY_, (*(void ***)this._nativePointer)[4]);
+            fixed (void* dpiY_ = &dpiY)
+            fixed (void* dpiX_ = &dpiX)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, dpiX_, dpiY_, (*(void***)this._nativePointer)[4]);
         }
 
         /// <summary>
@@ -5523,7 +5523,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr rectangleGeometry_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &rectangle, &rectangleGeometry_, (*(void ***)this._nativePointer)[5]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &rectangle, &rectangleGeometry_, (*(void***)this._nativePointer)[5]);
             (rectangleGeometry).NativePointer = rectangleGeometry_;
             __result__.CheckError();
         }
@@ -5541,8 +5541,8 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr roundedRectangleGeometry_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (void *roundedRectangle_ = &roundedRectangle)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, roundedRectangle_, &roundedRectangleGeometry_, (*(void ***)this._nativePointer)[6]);
+            fixed (void* roundedRectangle_ = &roundedRectangle)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, roundedRectangle_, &roundedRectangleGeometry_, (*(void***)this._nativePointer)[6]);
             (roundedRectangleGeometry).NativePointer = roundedRectangleGeometry_;
             __result__.CheckError();
         }
@@ -5560,7 +5560,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr ellipseGeometry_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &ellipse, &ellipseGeometry_, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &ellipse, &ellipseGeometry_, (*(void***)this._nativePointer)[7]);
             (ellipseGeometry).NativePointer = ellipseGeometry_;
             __result__.CheckError();
         }
@@ -5581,11 +5581,11 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1Factory::CreateGeometryGroup</unmanaged-short>
         internal unsafe void CreateGeometryGroup(SharpDX.Direct2D1.FillMode fillMode, SharpDX.Direct2D1.Geometry[] geometries, System.Int32 geometriesCount, SharpDX.Direct2D1.GeometryGroup geometryGroup)
         {
-            System.IntPtr*geometries_;
+            System.IntPtr* geometries_;
             geometries_ = (System.IntPtr*)0;
             if (geometries != null)
             {
-                System.IntPtr*_geometries = stackalloc System.IntPtr[geometries.Length];
+                System.IntPtr* _geometries = stackalloc System.IntPtr[geometries.Length];
                 geometries_ = _geometries;
             }
 
@@ -5594,7 +5594,7 @@ namespace SharpDX.Direct2D1
             if (geometries != null)
                 for (int i = 0; i < geometries.Length; ++i)
                     (geometries_)[i] = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Geometry>(geometries[i]);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)fillMode), (void *)geometries_, geometriesCount, &geometryGroup_, (*(void ***)this._nativePointer)[8]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)fillMode), (void*)geometries_, geometriesCount, &geometryGroup_, (*(void***)this._nativePointer)[8]);
             (geometryGroup).NativePointer = geometryGroup_;
             __result__.CheckError();
         }
@@ -5618,8 +5618,8 @@ namespace SharpDX.Direct2D1
             System.IntPtr transformedGeometry_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             sourceGeometry_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Geometry>(sourceGeometry);
-            fixed (void *transform_ = &transform)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)sourceGeometry_, transform_, &transformedGeometry_, (*(void ***)this._nativePointer)[9]);
+            fixed (void* transform_ = &transform)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)sourceGeometry_, transform_, &transformedGeometry_, (*(void***)this._nativePointer)[9]);
             (transformedGeometry).NativePointer = transformedGeometry_;
             __result__.CheckError();
         }
@@ -5636,7 +5636,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr athGeometryRef_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &athGeometryRef_, (*(void ***)this._nativePointer)[10]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &athGeometryRef_, (*(void***)this._nativePointer)[10]);
             (athGeometryRef).NativePointer = athGeometryRef_;
             __result__.CheckError();
         }
@@ -5656,9 +5656,9 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr strokeStyle_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (void *dashes_ = dashes)
-                fixed (void *strokeStyleProperties_ = &strokeStyleProperties)
-                    __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, strokeStyleProperties_, dashes_, dashesCount, &strokeStyle_, (*(void ***)this._nativePointer)[11]);
+            fixed (void* dashes_ = dashes)
+            fixed (void* strokeStyleProperties_ = &strokeStyleProperties)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, strokeStyleProperties_, dashes_, dashesCount, &strokeStyle_, (*(void***)this._nativePointer)[11]);
             (strokeStyle).NativePointer = strokeStyle_;
             __result__.CheckError();
         }
@@ -5682,7 +5682,7 @@ namespace SharpDX.Direct2D1
             if (drawingStateDescription != null)
                 drawingStateDescription_ = drawingStateDescription.Value;
             textRenderingParams_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DirectWrite.RenderingParams>(textRenderingParams);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, drawingStateDescription == null ? (void *)0 : &drawingStateDescription_, (void *)textRenderingParams_, &drawingStateBlock_, (*(void ***)this._nativePointer)[12]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, drawingStateDescription == null ? (void*)0 : &drawingStateDescription_, (void*)textRenderingParams_, &drawingStateBlock_, (*(void***)this._nativePointer)[12]);
             (drawingStateBlock).NativePointer = drawingStateBlock_;
             __result__.CheckError();
         }
@@ -5706,8 +5706,8 @@ namespace SharpDX.Direct2D1
             System.IntPtr renderTarget_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             target_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.WIC.Bitmap>(target);
-            fixed (void *renderTargetProperties_ = &renderTargetProperties)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)target_, renderTargetProperties_, &renderTarget_, (*(void ***)this._nativePointer)[13]);
+            fixed (void* renderTargetProperties_ = &renderTargetProperties)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)target_, renderTargetProperties_, &renderTarget_, (*(void***)this._nativePointer)[13]);
             (renderTarget).NativePointer = renderTarget_;
             __result__.CheckError();
         }
@@ -5729,9 +5729,9 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr hwndRenderTarget_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (void *hwndRenderTargetProperties_ = &hwndRenderTargetProperties)
-                fixed (void *renderTargetProperties_ = &renderTargetProperties)
-                    __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, renderTargetProperties_, hwndRenderTargetProperties_, &hwndRenderTarget_, (*(void ***)this._nativePointer)[14]);
+            fixed (void* hwndRenderTargetProperties_ = &hwndRenderTargetProperties)
+            fixed (void* renderTargetProperties_ = &renderTargetProperties)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, renderTargetProperties_, hwndRenderTargetProperties_, &hwndRenderTarget_, (*(void***)this._nativePointer)[14]);
             (hwndRenderTarget).NativePointer = hwndRenderTarget_;
             __result__.CheckError();
         }
@@ -5755,8 +5755,8 @@ namespace SharpDX.Direct2D1
             System.IntPtr renderTarget_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             dxgiSurface_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DXGI.Surface>(dxgiSurface);
-            fixed (void *renderTargetProperties_ = &renderTargetProperties)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)dxgiSurface_, renderTargetProperties_, &renderTarget_, (*(void ***)this._nativePointer)[15]);
+            fixed (void* renderTargetProperties_ = &renderTargetProperties)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)dxgiSurface_, renderTargetProperties_, &renderTarget_, (*(void***)this._nativePointer)[15]);
             (renderTarget).NativePointer = renderTarget_;
             __result__.CheckError();
         }
@@ -5777,8 +5777,8 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr dcRenderTarget_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (void *renderTargetProperties_ = &renderTargetProperties)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, renderTargetProperties_, &dcRenderTarget_, (*(void ***)this._nativePointer)[16]);
+            fixed (void* renderTargetProperties_ = &renderTargetProperties)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, renderTargetProperties_, &dcRenderTarget_, (*(void***)this._nativePointer)[16]);
             (dcRenderTarget).NativePointer = dcRenderTarget_;
             __result__.CheckError();
         }
@@ -5801,7 +5801,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr geometryGroup_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)fillMode), (void *)(geometries?.NativePointer ?? System.IntPtr.Zero), geometriesCount, &geometryGroup_, (*(void ***)this._nativePointer)[8]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)fillMode), (void*)(geometries?.NativePointer ?? System.IntPtr.Zero), geometriesCount, &geometryGroup_, (*(void***)this._nativePointer)[8]);
             (geometryGroup).NativePointer = geometryGroup_;
             __result__.CheckError();
         }
@@ -5823,7 +5823,7 @@ namespace SharpDX.Direct2D1
         private unsafe void CreateGeometryGroup(SharpDX.Direct2D1.FillMode fillMode, System.IntPtr geometries, System.Int32 geometriesCount, System.IntPtr geometryGroup)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)fillMode), (void *)geometries, geometriesCount, (void *)geometryGroup, (*(void ***)this._nativePointer)[8]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)fillMode), (void*)geometries, geometriesCount, (void*)geometryGroup, (*(void***)this._nativePointer)[8]);
             __result__.CheckError();
         }
     }
@@ -5831,7 +5831,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("bb12d362-daee-4b9a-aa1d-14ba401cfa1f")]
     public partial class Factory1 : SharpDX.Direct2D1.Factory
     {
-        public Factory1(System.IntPtr nativePtr): base (nativePtr)
+        public Factory1(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -5854,7 +5854,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr d2dDevice_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             dxgiDevice_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DXGI.Device>(dxgiDevice);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)dxgiDevice_, &d2dDevice_, (*(void ***)this._nativePointer)[17]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)dxgiDevice_, &d2dDevice_, (*(void***)this._nativePointer)[17]);
             (d2dDevice).NativePointer = d2dDevice_;
             __result__.CheckError();
         }
@@ -5877,9 +5877,9 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr strokeStyle_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (void *dashes_ = dashes)
-                fixed (void *strokeStyleProperties_ = &strokeStyleProperties)
-                    __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, strokeStyleProperties_, dashes_, dashesCount, &strokeStyle_, (*(void ***)this._nativePointer)[18]);
+            fixed (void* dashes_ = dashes)
+            fixed (void* strokeStyleProperties_ = &strokeStyleProperties)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, strokeStyleProperties_, dashes_, dashesCount, &strokeStyle_, (*(void***)this._nativePointer)[18]);
             (strokeStyle).NativePointer = strokeStyle_;
             __result__.CheckError();
         }
@@ -5896,7 +5896,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr athGeometryRef_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &athGeometryRef_, (*(void ***)this._nativePointer)[19]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &athGeometryRef_, (*(void***)this._nativePointer)[19]);
             (athGeometryRef).NativePointer = athGeometryRef_;
             __result__.CheckError();
         }
@@ -5920,7 +5920,7 @@ namespace SharpDX.Direct2D1
             if (drawingStateDescription != null)
                 drawingStateDescription_ = drawingStateDescription.Value;
             textRenderingParams_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DirectWrite.RenderingParams>(textRenderingParams);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, drawingStateDescription == null ? (void *)0 : &drawingStateDescription_, (void *)textRenderingParams_, &drawingStateBlock_, (*(void ***)this._nativePointer)[20]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, drawingStateDescription == null ? (void*)0 : &drawingStateDescription_, (void*)textRenderingParams_, &drawingStateBlock_, (*(void***)this._nativePointer)[20]);
             (drawingStateBlock).NativePointer = drawingStateBlock_;
             __result__.CheckError();
         }
@@ -5940,7 +5940,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr metafile_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             metafileStream_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Win32.IStream>(metafileStream);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)metafileStream_, &metafile_, (*(void ***)this._nativePointer)[21]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)metafileStream_, &metafile_, (*(void***)this._nativePointer)[21]);
             if (metafile_ != System.IntPtr.Zero)
                 metafile = new SharpDX.Direct2D1.GdiMetafile(metafile_);
             else
@@ -5973,8 +5973,8 @@ namespace SharpDX.Direct2D1
                 for (int i = 0; i < bindings.Length; ++i)
                     if (bindings != null)
                         bindings[i].__MarshalTo(ref (bindings_)[i]);
-            fixed (void *_bindings = bindings_)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &classId, (void *)ropertyXmlRef_, _bindings, bindingsCount, effectFactory, (*(void ***)this._nativePointer)[22]);
+            fixed (void* _bindings = bindings_)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &classId, (void*)ropertyXmlRef_, _bindings, bindingsCount, effectFactory, (*(void***)this._nativePointer)[22]);
             if (bindings != null)
                 for (int i = 0; i < bindings.Length; ++i)
                     if (bindings != null)
@@ -6005,9 +6005,9 @@ namespace SharpDX.Direct2D1
                 for (int i = 0; i < bindings.Length; ++i)
                     if (bindings != null)
                         bindings[i].__MarshalTo(ref (bindings_)[i]);
-            fixed (void *_bindings = bindings_)
-                fixed (char *ropertyXmlRef_ = ropertyXmlRef)
-                    __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &classId, (void *)ropertyXmlRef_, _bindings, bindingsCount, effectFactory, (*(void ***)this._nativePointer)[23]);
+            fixed (void* _bindings = bindings_)
+            fixed (char* ropertyXmlRef_ = ropertyXmlRef)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &classId, (void*)ropertyXmlRef_, _bindings, bindingsCount, effectFactory, (*(void***)this._nativePointer)[23]);
             if (bindings != null)
                 for (int i = 0; i < bindings.Length; ++i)
                     if (bindings != null)
@@ -6029,7 +6029,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void UnregisterEffect(System.Guid classId)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &classId, (*(void ***)this._nativePointer)[24]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &classId, (*(void***)this._nativePointer)[24]);
             __result__.CheckError();
         }
 
@@ -6050,10 +6050,10 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetRegisteredEffects(System.Guid[] effects, System.Int32 effectsCount, out System.Int32 effectsReturned, out System.Int32 effectsRegistered)
         {
             SharpDX.Result __result__;
-            fixed (void *effectsRegistered_ = &effectsRegistered)
-                fixed (void *effectsReturned_ = &effectsReturned)
-                    fixed (void *effects_ = effects)
-                        __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, effects_, effectsCount, effectsReturned_, effectsRegistered_, (*(void ***)this._nativePointer)[25]);
+            fixed (void* effectsRegistered_ = &effectsRegistered)
+            fixed (void* effectsReturned_ = &effectsReturned)
+            fixed (void* effects_ = effects)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, effects_, effectsCount, effectsReturned_, effectsRegistered_, (*(void***)this._nativePointer)[25]);
             __result__.CheckError();
         }
 
@@ -6073,7 +6073,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Direct2D1.Properties ropertiesRef;
             System.IntPtr ropertiesRef_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &effectId, &ropertiesRef_, (*(void ***)this._nativePointer)[26]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &effectId, &ropertiesRef_, (*(void***)this._nativePointer)[26]);
             if (ropertiesRef_ != System.IntPtr.Zero)
                 ropertiesRef = new SharpDX.Direct2D1.Properties(ropertiesRef_);
             else
@@ -6086,7 +6086,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("94f81a73-9212-4376-9c58-b16a3a0d3992")]
     public partial class Factory2 : SharpDX.Direct2D1.Factory1
     {
-        public Factory2(System.IntPtr nativePtr): base (nativePtr)
+        public Factory2(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -6109,7 +6109,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr d2dDevice1_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             dxgiDevice_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DXGI.Device>(dxgiDevice);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)dxgiDevice_, &d2dDevice1_, (*(void ***)this._nativePointer)[27]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)dxgiDevice_, &d2dDevice1_, (*(void***)this._nativePointer)[27]);
             (d2dDevice1).NativePointer = d2dDevice1_;
             __result__.CheckError();
         }
@@ -6118,7 +6118,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("0869759f-4f00-413f-b03e-2bda45404d0f")]
     public partial class Factory3 : SharpDX.Direct2D1.Factory2
     {
-        public Factory3(System.IntPtr nativePtr): base (nativePtr)
+        public Factory3(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -6138,7 +6138,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr d2dDevice2_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             dxgiDevice_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DXGI.Device>(dxgiDevice);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)dxgiDevice_, &d2dDevice2_, (*(void ***)this._nativePointer)[28]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)dxgiDevice_, &d2dDevice2_, (*(void***)this._nativePointer)[28]);
             (d2dDevice2).NativePointer = d2dDevice2_;
             __result__.CheckError();
         }
@@ -6147,7 +6147,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("bd4ec2d2-0662-4bee-ba8e-6f29f032e096")]
     public partial class Factory4 : SharpDX.Direct2D1.Factory3
     {
-        public Factory4(System.IntPtr nativePtr): base (nativePtr)
+        public Factory4(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -6167,7 +6167,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr d2dDevice3_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             dxgiDevice_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DXGI.Device>(dxgiDevice);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)dxgiDevice_, &d2dDevice3_, (*(void ***)this._nativePointer)[29]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)dxgiDevice_, &d2dDevice3_, (*(void***)this._nativePointer)[29]);
             (d2dDevice3).NativePointer = d2dDevice3_;
             __result__.CheckError();
         }
@@ -6176,7 +6176,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("c4349994-838e-4b0f-8cab-44997d9eeacc")]
     public partial class Factory5 : SharpDX.Direct2D1.Factory4
     {
-        public Factory5(System.IntPtr nativePtr): base (nativePtr)
+        public Factory5(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -6196,7 +6196,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr d2dDevice4_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             dxgiDevice_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DXGI.Device>(dxgiDevice);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)dxgiDevice_, &d2dDevice4_, (*(void ***)this._nativePointer)[30]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)dxgiDevice_, &d2dDevice4_, (*(void***)this._nativePointer)[30]);
             (d2dDevice4).NativePointer = d2dDevice4_;
             __result__.CheckError();
         }
@@ -6205,7 +6205,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("f9976f46-f642-44c1-97ca-da32ea2a2635")]
     public partial class Factory6 : SharpDX.Direct2D1.Factory5
     {
-        public Factory6(System.IntPtr nativePtr): base (nativePtr)
+        public Factory6(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -6228,7 +6228,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr d2dDevice5_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             dxgiDevice_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DXGI.Device>(dxgiDevice);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)dxgiDevice_, &d2dDevice5_, (*(void ***)this._nativePointer)[31]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)dxgiDevice_, &d2dDevice5_, (*(void***)this._nativePointer)[31]);
             (d2dDevice5).NativePointer = d2dDevice5_;
             __result__.CheckError();
         }
@@ -6237,7 +6237,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("e0db51c3-6f77-4bae-b3d5-e47509b35838")]
     public partial class GdiInteropRenderTarget : SharpDX.ComObject
     {
-        public GdiInteropRenderTarget(System.IntPtr nativePtr): base (nativePtr)
+        public GdiInteropRenderTarget(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -6257,7 +6257,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr hdc;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)mode), &hdc, (*(void ***)this._nativePointer)[3]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)mode), &hdc, (*(void***)this._nativePointer)[3]);
             __result__.CheckError();
             return hdc;
         }
@@ -6279,7 +6279,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             if (update != null)
                 update_ = update.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, update == null ? (void *)0 : &update_, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, update == null ? (void*)0 : &update_, (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
         }
     }
@@ -6287,7 +6287,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2f543dc3-cfc1-4211-864f-cfd91c6f3395")]
     public partial class GdiMetafile : SharpDX.Direct2D1.Resource
     {
-        public GdiMetafile(System.IntPtr nativePtr): base (nativePtr)
+        public GdiMetafile(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -6320,7 +6320,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr sink_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             sink_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.GdiMetafileSink>(sink);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)sink_, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)sink_, (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
         }
 
@@ -6334,10 +6334,10 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1GdiMetafile::GetBounds</unmanaged-short>
         internal unsafe void GetBounds(out SharpDX.Mathematics.Interop.RawRectangleF bounds)
         {
-            bounds = default (SharpDX.Mathematics.Interop.RawRectangleF);
+            bounds = default(SharpDX.Mathematics.Interop.RawRectangleF);
             SharpDX.Result __result__;
-            fixed (void *bounds_ = &bounds)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, bounds_, (*(void ***)this._nativePointer)[5]);
+            fixed (void* bounds_ = &bounds)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, bounds_, (*(void***)this._nativePointer)[5]);
             __result__.CheckError();
         }
     }
@@ -6345,7 +6345,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2e69f9e8-dd3f-4bf9-95ba-c04f49d788df")]
     public partial class GdiMetafile1 : SharpDX.Direct2D1.GdiMetafile
     {
-        public GdiMetafile1(System.IntPtr nativePtr): base (nativePtr)
+        public GdiMetafile1(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -6377,9 +6377,9 @@ namespace SharpDX.Direct2D1
         public unsafe void GetDpi(out System.Single dpiX, out System.Single dpiY)
         {
             SharpDX.Result __result__;
-            fixed (void *dpiY_ = &dpiY)
-                fixed (void *dpiX_ = &dpiX)
-                    __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, dpiX_, dpiY_, (*(void ***)this._nativePointer)[6]);
+            fixed (void* dpiY_ = &dpiY)
+            fixed (void* dpiX_ = &dpiX)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, dpiX_, dpiY_, (*(void***)this._nativePointer)[6]);
             __result__.CheckError();
         }
 
@@ -6393,10 +6393,10 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1GdiMetafile1::GetSourceBounds</unmanaged-short>
         internal unsafe void GetSourceBounds(out SharpDX.Mathematics.Interop.RawRectangleF bounds)
         {
-            bounds = default (SharpDX.Mathematics.Interop.RawRectangleF);
+            bounds = default(SharpDX.Mathematics.Interop.RawRectangleF);
             SharpDX.Result __result__;
-            fixed (void *bounds_ = &bounds)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, bounds_, (*(void ***)this._nativePointer)[7]);
+            fixed (void* bounds_ = &bounds)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, bounds_, (*(void***)this._nativePointer)[7]);
             __result__.CheckError();
         }
     }
@@ -6414,7 +6414,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("fd0ecb6b-91e6-411e-8655-395e760f91b4")]
     internal partial class GdiMetafileSink1Native : SharpDX.Direct2D1.GdiMetafileSinkNative, SharpDX.Direct2D1.GdiMetafileSink1
     {
-        public GdiMetafileSink1Native(System.IntPtr nativePtr): base (nativePtr)
+        public GdiMetafileSink1Native(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -6436,7 +6436,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void ProcessRecord_(System.Int32 recordType, System.IntPtr recordData, System.Int32 recordDataSize, System.Int32 flags)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, recordType, (void *)recordData, recordDataSize, flags, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, recordType, (void*)recordData, recordDataSize, flags, (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
         }
     }
@@ -6444,7 +6444,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("82237326-8111-4f7c-bcf4-b5c1175564fe")]
     internal partial class GdiMetafileSinkNative : SharpDX.ComObject, SharpDX.Direct2D1.GdiMetafileSink
     {
-        public GdiMetafileSinkNative(System.IntPtr nativePtr): base (nativePtr)
+        public GdiMetafileSinkNative(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -6462,7 +6462,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void ProcessRecord_(System.Int32 recordType, System.IntPtr recordData, System.Int32 recordDataSize)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, recordType, (void *)recordData, recordDataSize, (*(void ***)this._nativePointer)[3]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, recordType, (void*)recordData, recordDataSize, (*(void***)this._nativePointer)[3]);
             __result__.CheckError();
         }
     }
@@ -6470,7 +6470,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd906a1-12e2-11dc-9fed-001143a055f9")]
     public partial class Geometry : SharpDX.Direct2D1.Resource
     {
-        public Geometry(System.IntPtr nativePtr): base (nativePtr)
+        public Geometry(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -6490,7 +6490,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             if (worldTransform != null)
                 worldTransform_ = worldTransform.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, worldTransform == null ? (void *)0 : &worldTransform_, &bounds, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, worldTransform == null ? (void*)0 : &worldTransform_, &bounds, (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
             return bounds;
         }
@@ -6515,7 +6515,7 @@ namespace SharpDX.Direct2D1
             strokeStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.StrokeStyle>(strokeStyle);
             if (worldTransform != null)
                 worldTransform_ = worldTransform.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, strokeWidth, (void *)strokeStyle_, worldTransform == null ? (void *)0 : &worldTransform_, flatteningTolerance, &bounds, (*(void ***)this._nativePointer)[5]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, strokeWidth, (void*)strokeStyle_, worldTransform == null ? (void*)0 : &worldTransform_, flatteningTolerance, &bounds, (*(void***)this._nativePointer)[5]);
             __result__.CheckError();
             return bounds;
         }
@@ -6541,7 +6541,7 @@ namespace SharpDX.Direct2D1
             strokeStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.StrokeStyle>(strokeStyle);
             if (worldTransform != null)
                 worldTransform_ = worldTransform.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, point, strokeWidth, (void *)strokeStyle_, worldTransform == null ? (void *)0 : &worldTransform_, flatteningTolerance, &contains, (*(void ***)this._nativePointer)[6]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, point, strokeWidth, (void*)strokeStyle_, worldTransform == null ? (void*)0 : &worldTransform_, flatteningTolerance, &contains, (*(void***)this._nativePointer)[6]);
             __result__.CheckError();
             return contains;
         }
@@ -6563,7 +6563,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             if (worldTransform != null)
                 worldTransform_ = worldTransform.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, point, worldTransform == null ? (void *)0 : &worldTransform_, flatteningTolerance, &contains, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, point, worldTransform == null ? (void*)0 : &worldTransform_, flatteningTolerance, &contains, (*(void***)this._nativePointer)[7]);
             __result__.CheckError();
             return contains;
         }
@@ -6590,7 +6590,7 @@ namespace SharpDX.Direct2D1
             inputGeometry_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Geometry>(inputGeometry);
             if (inputGeometryTransform != null)
                 inputGeometryTransform_ = inputGeometryTransform.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)inputGeometry_, inputGeometryTransform == null ? (void *)0 : &inputGeometryTransform_, flatteningTolerance, &relation, (*(void ***)this._nativePointer)[8]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)inputGeometry_, inputGeometryTransform == null ? (void*)0 : &inputGeometryTransform_, flatteningTolerance, &relation, (*(void***)this._nativePointer)[8]);
             __result__.CheckError();
             return relation;
         }
@@ -6614,7 +6614,7 @@ namespace SharpDX.Direct2D1
             if (worldTransform != null)
                 worldTransform_ = worldTransform.Value;
             geometrySink_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SimplifiedGeometrySink>(geometrySink);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)simplificationOption), worldTransform == null ? (void *)0 : &worldTransform_, flatteningTolerance, (void *)geometrySink_, (*(void ***)this._nativePointer)[9]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)simplificationOption), worldTransform == null ? (void*)0 : &worldTransform_, flatteningTolerance, (void*)geometrySink_, (*(void***)this._nativePointer)[9]);
             __result__.CheckError();
         }
 
@@ -6636,7 +6636,7 @@ namespace SharpDX.Direct2D1
             if (worldTransform != null)
                 worldTransform_ = worldTransform.Value;
             tessellationSink_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.TessellationSink>(tessellationSink);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, worldTransform == null ? (void *)0 : &worldTransform_, flatteningTolerance, (void *)tessellationSink_, (*(void ***)this._nativePointer)[10]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, worldTransform == null ? (void*)0 : &worldTransform_, flatteningTolerance, (void*)tessellationSink_, (*(void***)this._nativePointer)[10]);
             __result__.CheckError();
         }
 
@@ -6662,7 +6662,7 @@ namespace SharpDX.Direct2D1
             if (inputGeometryTransform != null)
                 inputGeometryTransform_ = inputGeometryTransform.Value;
             geometrySink_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SimplifiedGeometrySink>(geometrySink);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)inputGeometry_, unchecked ((System.Int32)combineMode), inputGeometryTransform == null ? (void *)0 : &inputGeometryTransform_, flatteningTolerance, (void *)geometrySink_, (*(void ***)this._nativePointer)[11]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)inputGeometry_, unchecked((System.Int32)combineMode), inputGeometryTransform == null ? (void*)0 : &inputGeometryTransform_, flatteningTolerance, (void*)geometrySink_, (*(void***)this._nativePointer)[11]);
             __result__.CheckError();
         }
 
@@ -6684,7 +6684,7 @@ namespace SharpDX.Direct2D1
             if (worldTransform != null)
                 worldTransform_ = worldTransform.Value;
             geometrySink_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SimplifiedGeometrySink>(geometrySink);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, worldTransform == null ? (void *)0 : &worldTransform_, flatteningTolerance, (void *)geometrySink_, (*(void ***)this._nativePointer)[12]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, worldTransform == null ? (void*)0 : &worldTransform_, flatteningTolerance, (void*)geometrySink_, (*(void***)this._nativePointer)[12]);
             __result__.CheckError();
         }
 
@@ -6704,7 +6704,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             if (worldTransform != null)
                 worldTransform_ = worldTransform.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, worldTransform == null ? (void *)0 : &worldTransform_, flatteningTolerance, &area, (*(void ***)this._nativePointer)[13]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, worldTransform == null ? (void*)0 : &worldTransform_, flatteningTolerance, &area, (*(void***)this._nativePointer)[13]);
             __result__.CheckError();
             return area;
         }
@@ -6725,7 +6725,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             if (worldTransform != null)
                 worldTransform_ = worldTransform.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, worldTransform == null ? (void *)0 : &worldTransform_, flatteningTolerance, &length, (*(void ***)this._nativePointer)[14]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, worldTransform == null ? (void*)0 : &worldTransform_, flatteningTolerance, &length, (*(void***)this._nativePointer)[14]);
             __result__.CheckError();
             return length;
         }
@@ -6745,12 +6745,12 @@ namespace SharpDX.Direct2D1
         {
             SharpDX.Mathematics.Interop.RawMatrix3x2 worldTransform_;
             SharpDX.Mathematics.Interop.RawVector2 ointRef;
-            unitTangentVector = default (SharpDX.Mathematics.Interop.RawVector2);
+            unitTangentVector = default(SharpDX.Mathematics.Interop.RawVector2);
             SharpDX.Result __result__;
             if (worldTransform != null)
                 worldTransform_ = worldTransform.Value;
-            fixed (void *unitTangentVector_ = &unitTangentVector)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, length, worldTransform == null ? (void *)0 : &worldTransform_, flatteningTolerance, &ointRef, unitTangentVector_, (*(void ***)this._nativePointer)[15]);
+            fixed (void* unitTangentVector_ = &unitTangentVector)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, length, worldTransform == null ? (void*)0 : &worldTransform_, flatteningTolerance, &ointRef, unitTangentVector_, (*(void***)this._nativePointer)[15]);
             __result__.CheckError();
             return ointRef;
         }
@@ -6777,7 +6777,7 @@ namespace SharpDX.Direct2D1
             if (worldTransform != null)
                 worldTransform_ = worldTransform.Value;
             geometrySink_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SimplifiedGeometrySink>(geometrySink);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, strokeWidth, (void *)strokeStyle_, worldTransform == null ? (void *)0 : &worldTransform_, flatteningTolerance, (void *)geometrySink_, (*(void ***)this._nativePointer)[16]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, strokeWidth, (void*)strokeStyle_, worldTransform == null ? (void*)0 : &worldTransform_, flatteningTolerance, (void*)geometrySink_, (*(void***)this._nativePointer)[16]);
             __result__.CheckError();
         }
     }
@@ -6785,7 +6785,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd906a6-12e2-11dc-9fed-001143a055f9")]
     public partial class GeometryGroup : SharpDX.Direct2D1.Geometry
     {
-        public GeometryGroup(System.IntPtr nativePtr): base (nativePtr)
+        public GeometryGroup(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -6822,7 +6822,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.FillMode GetFillMode()
         {
             SharpDX.Direct2D1.FillMode __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1FillMode(this._nativePointer, (*(void ***)this._nativePointer)[17]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1FillMode(this._nativePointer, (*(void***)this._nativePointer)[17]);
             return __result__;
         }
 
@@ -6836,7 +6836,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetSourceGeometryCount()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[18]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[18]);
             return __result__;
         }
 
@@ -6853,14 +6853,14 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1GeometryGroup::GetSourceGeometries</unmanaged-short>
         internal unsafe void GetSourceGeometries(SharpDX.Direct2D1.Geometry[] geometries, System.Int32 geometriesCount)
         {
-            System.IntPtr*geometries_;
+            System.IntPtr* geometries_;
             geometries_ = (System.IntPtr*)0;
             {
-                System.IntPtr*_geometries = stackalloc System.IntPtr[geometries.Length];
+                System.IntPtr* _geometries = stackalloc System.IntPtr[geometries.Length];
                 geometries_ = _geometries;
             }
 
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)geometries_, geometriesCount, (*(void ***)this._nativePointer)[19]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)geometries_, geometriesCount, (*(void***)this._nativePointer)[19]);
             for (int i = 0; i < geometries.Length; ++i)
                 if ((geometries_)[i] != System.IntPtr.Zero)
                     geometries[i] = new SharpDX.Direct2D1.Geometry((geometries_)[i]);
@@ -6872,7 +6872,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("a16907d7-bc02-4801-99e8-8cf7f485f774")]
     public partial class GeometryRealization : SharpDX.Direct2D1.Resource
     {
-        public GeometryRealization(System.IntPtr nativePtr): base (nativePtr)
+        public GeometryRealization(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -6887,7 +6887,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd9069f-12e2-11dc-9fed-001143a055f9")]
     internal partial class GeometrySinkNative : SharpDX.Direct2D1.SimplifiedGeometrySinkNative, SharpDX.Direct2D1.GeometrySink
     {
-        public GeometrySinkNative(System.IntPtr nativePtr): base (nativePtr)
+        public GeometrySinkNative(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -6901,7 +6901,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1GeometrySink::AddLine</unmanaged-short>
         internal unsafe void AddLine_(SharpDX.Mathematics.Interop.RawVector2 point)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, point, (*(void ***)this._nativePointer)[10]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, point, (*(void***)this._nativePointer)[10]);
         }
 
         /// <summary>
@@ -6913,8 +6913,8 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1GeometrySink::AddBezier</unmanaged-short>
         internal unsafe void AddBezier_(ref SharpDX.Direct2D1.BezierSegment bezier)
         {
-            fixed (void *bezier_ = &bezier)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, bezier_, (*(void ***)this._nativePointer)[11]);
+            fixed (void* bezier_ = &bezier)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, bezier_, (*(void***)this._nativePointer)[11]);
         }
 
         /// <summary>
@@ -6926,7 +6926,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1GeometrySink::AddQuadraticBezier</unmanaged-short>
         internal unsafe void AddQuadraticBezier_(SharpDX.Direct2D1.QuadraticBezierSegment bezier)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &bezier, (*(void ***)this._nativePointer)[12]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &bezier, (*(void***)this._nativePointer)[12]);
         }
 
         /// <summary>
@@ -6939,8 +6939,8 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1GeometrySink::AddQuadraticBeziers</unmanaged-short>
         internal unsafe void AddQuadraticBeziers_(SharpDX.Direct2D1.QuadraticBezierSegment[] beziers, System.Int32 beziersCount)
         {
-            fixed (void *beziers_ = beziers)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, beziers_, beziersCount, (*(void ***)this._nativePointer)[13]);
+            fixed (void* beziers_ = beziers)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, beziers_, beziersCount, (*(void***)this._nativePointer)[13]);
         }
 
         /// <summary>
@@ -6955,15 +6955,15 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1GeometrySink::AddArc</unmanaged-short>
         internal unsafe void AddArc_(ref SharpDX.Direct2D1.ArcSegment arc)
         {
-            fixed (void *arc_ = &arc)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, arc_, (*(void ***)this._nativePointer)[14]);
+            fixed (void* arc_ = &arc)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, arc_, (*(void***)this._nativePointer)[14]);
         }
     }
 
     [System.Runtime.InteropServices.GuidAttribute("f292e401-c050-4cde-83d7-04962d3b23c2")]
     public partial class GradientMesh : SharpDX.Direct2D1.Resource
     {
-        public GradientMesh(System.IntPtr nativePtr): base (nativePtr)
+        public GradientMesh(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -6989,7 +6989,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetPatchCount()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[4]);
             return __result__;
         }
 
@@ -7006,8 +7006,8 @@ namespace SharpDX.Direct2D1
         public unsafe void GetPatches(System.Int32 startIndex, SharpDX.Direct2D1.GradientMeshPatch[] atchesRef, System.Int32 patchesCount)
         {
             SharpDX.Result __result__;
-            fixed (void *atchesRef_ = atchesRef)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, startIndex, atchesRef_, patchesCount, (*(void ***)this._nativePointer)[5]);
+            fixed (void* atchesRef_ = atchesRef)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, startIndex, atchesRef_, patchesCount, (*(void***)this._nativePointer)[5]);
             __result__.CheckError();
         }
     }
@@ -7015,7 +7015,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd906a7-12e2-11dc-9fed-001143a055f9")]
     public partial class GradientStopCollection : SharpDX.Direct2D1.Resource
     {
-        public GradientStopCollection(System.IntPtr nativePtr): base (nativePtr)
+        public GradientStopCollection(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -7063,7 +7063,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetGradientStopCount()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[4]);
             return __result__;
         }
 
@@ -7080,8 +7080,8 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1GradientStopCollection::GetGradientStops</unmanaged-short>
         public unsafe void GetGradientStops(SharpDX.Direct2D1.GradientStop[] gradientStops, System.Int32 gradientStopsCount)
         {
-            fixed (void *gradientStops_ = gradientStops)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, gradientStops_, gradientStopsCount, (*(void ***)this._nativePointer)[5]);
+            fixed (void* gradientStops_ = gradientStops)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, gradientStops_, gradientStopsCount, (*(void***)this._nativePointer)[5]);
         }
 
         /// <summary>
@@ -7094,7 +7094,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.Gamma GetColorInterpolationGamma()
         {
             SharpDX.Direct2D1.Gamma __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1Gamma(this._nativePointer, (*(void ***)this._nativePointer)[6]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1Gamma(this._nativePointer, (*(void***)this._nativePointer)[6]);
             return __result__;
         }
 
@@ -7108,7 +7108,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.ExtendMode GetExtendMode()
         {
             SharpDX.Direct2D1.ExtendMode __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ExtendMode(this._nativePointer, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ExtendMode(this._nativePointer, (*(void***)this._nativePointer)[7]);
             return __result__;
         }
     }
@@ -7116,7 +7116,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("ae1572f4-5dd0-4777-998b-9279472ae63b")]
     public partial class GradientStopCollection1 : SharpDX.Direct2D1.GradientStopCollection
     {
-        public GradientStopCollection1(System.IntPtr nativePtr): base (nativePtr)
+        public GradientStopCollection1(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -7187,8 +7187,8 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1GradientStopCollection1::GetGradientStops1</unmanaged-short>
         public unsafe void GetGradientStops1(SharpDX.Direct2D1.GradientStop[] gradientStops, System.Int32 gradientStopsCount)
         {
-            fixed (void *gradientStops_ = gradientStops)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, gradientStops_, gradientStopsCount, (*(void ***)this._nativePointer)[8]);
+            fixed (void* gradientStops_ = gradientStops)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, gradientStops_, gradientStopsCount, (*(void***)this._nativePointer)[8]);
         }
 
         /// <summary>
@@ -7204,7 +7204,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.ColorSpace GetPreInterpolationSpace()
         {
             SharpDX.Direct2D1.ColorSpace __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ColorSpace(this._nativePointer, (*(void ***)this._nativePointer)[9]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ColorSpace(this._nativePointer, (*(void***)this._nativePointer)[9]);
             return __result__;
         }
 
@@ -7221,7 +7221,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.ColorSpace GetPostInterpolationSpace()
         {
             SharpDX.Direct2D1.ColorSpace __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ColorSpace(this._nativePointer, (*(void ***)this._nativePointer)[10]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ColorSpace(this._nativePointer, (*(void***)this._nativePointer)[10]);
             return __result__;
         }
 
@@ -7238,7 +7238,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.BufferPrecision GetBufferPrecision()
         {
             SharpDX.Direct2D1.BufferPrecision __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1BufferPrecision(this._nativePointer, (*(void ***)this._nativePointer)[11]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1BufferPrecision(this._nativePointer, (*(void***)this._nativePointer)[11]);
             return __result__;
         }
 
@@ -7252,7 +7252,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.ColorInterpolationMode GetColorInterpolationMode()
         {
             SharpDX.Direct2D1.ColorInterpolationMode __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ColorInterpolationMode(this._nativePointer, (*(void ***)this._nativePointer)[12]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ColorInterpolationMode(this._nativePointer, (*(void***)this._nativePointer)[12]);
             return __result__;
         }
     }
@@ -7260,7 +7260,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("65019f75-8da2-497c-b32c-dfa34e48ede6")]
     public partial class Image : SharpDX.Direct2D1.Resource
     {
-        public Image(System.IntPtr nativePtr): base (nativePtr)
+        public Image(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -7270,7 +7270,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("fe9e984d-3f95-407c-b5db-cb94d4e8f87c")]
     public partial class ImageBrush : SharpDX.Direct2D1.Brush
     {
-        public ImageBrush(System.IntPtr nativePtr): base (nativePtr)
+        public ImageBrush(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -7356,7 +7356,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr image_ = System.IntPtr.Zero;
             image_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Image>(image);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)image_, (*(void ***)this._nativePointer)[8]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)image_, (*(void***)this._nativePointer)[8]);
         }
 
         /// <summary>
@@ -7368,7 +7368,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1ImageBrush::SetExtendModeX</unmanaged-short>
         internal unsafe void SetExtendModeX(SharpDX.Direct2D1.ExtendMode extendModeX)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked ((System.Int32)extendModeX), (*(void ***)this._nativePointer)[9]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked((System.Int32)extendModeX), (*(void***)this._nativePointer)[9]);
         }
 
         /// <summary>
@@ -7380,7 +7380,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1ImageBrush::SetExtendModeY</unmanaged-short>
         internal unsafe void SetExtendModeY(SharpDX.Direct2D1.ExtendMode extendModeY)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked ((System.Int32)extendModeY), (*(void ***)this._nativePointer)[10]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked((System.Int32)extendModeY), (*(void***)this._nativePointer)[10]);
         }
 
         /// <summary>
@@ -7392,7 +7392,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1ImageBrush::SetInterpolationMode</unmanaged-short>
         internal unsafe void SetInterpolationMode(SharpDX.Direct2D1.InterpolationMode interpolationMode)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked ((System.Int32)interpolationMode), (*(void ***)this._nativePointer)[11]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked((System.Int32)interpolationMode), (*(void***)this._nativePointer)[11]);
         }
 
         /// <summary>
@@ -7408,7 +7408,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1ImageBrush::SetSourceRectangle</unmanaged-short>
         internal unsafe void SetSourceRectangle(SharpDX.Mathematics.Interop.RawRectangleF sourceRectangle)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &sourceRectangle, (*(void ***)this._nativePointer)[12]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &sourceRectangle, (*(void***)this._nativePointer)[12]);
         }
 
         /// <summary>
@@ -7421,7 +7421,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetImage(out SharpDX.Direct2D1.Image image)
         {
             System.IntPtr image_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &image_, (*(void ***)this._nativePointer)[13]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &image_, (*(void***)this._nativePointer)[13]);
             if (image_ != System.IntPtr.Zero)
                 image = new SharpDX.Direct2D1.Image(image_);
             else
@@ -7438,7 +7438,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.ExtendMode GetExtendModeX()
         {
             SharpDX.Direct2D1.ExtendMode __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ExtendMode(this._nativePointer, (*(void ***)this._nativePointer)[14]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ExtendMode(this._nativePointer, (*(void***)this._nativePointer)[14]);
             return __result__;
         }
 
@@ -7452,7 +7452,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.ExtendMode GetExtendModeY()
         {
             SharpDX.Direct2D1.ExtendMode __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ExtendMode(this._nativePointer, (*(void ***)this._nativePointer)[15]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1ExtendMode(this._nativePointer, (*(void***)this._nativePointer)[15]);
             return __result__;
         }
 
@@ -7466,7 +7466,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.InterpolationMode GetInterpolationMode()
         {
             SharpDX.Direct2D1.InterpolationMode __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1InterpolationMode(this._nativePointer, (*(void ***)this._nativePointer)[16]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1InterpolationMode(this._nativePointer, (*(void***)this._nativePointer)[16]);
             return __result__;
         }
 
@@ -7479,16 +7479,16 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1ImageBrush::GetSourceRectangle</unmanaged-short>
         internal unsafe void GetSourceRectangle(out SharpDX.Mathematics.Interop.RawRectangleF sourceRectangle)
         {
-            sourceRectangle = default (SharpDX.Mathematics.Interop.RawRectangleF);
-            fixed (void *sourceRectangle_ = &sourceRectangle)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, sourceRectangle_, (*(void ***)this._nativePointer)[17]);
+            sourceRectangle = default(SharpDX.Mathematics.Interop.RawRectangleF);
+            fixed (void* sourceRectangle_ = &sourceRectangle)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, sourceRectangle_, (*(void***)this._nativePointer)[17]);
         }
     }
 
     [System.Runtime.InteropServices.GuidAttribute("c9b664e5-74a1-4378-9ac2-eefc37a3f4d8")]
     public partial class ImageSource : SharpDX.Direct2D1.Image
     {
-        public ImageSource(System.IntPtr nativePtr): base (nativePtr)
+        public ImageSource(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -7503,7 +7503,7 @@ namespace SharpDX.Direct2D1
         public unsafe void OfferResources()
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
         }
 
@@ -7523,10 +7523,10 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1ImageSource::TryReclaimResources</unmanaged-short>
         public unsafe void TryReclaimResources(out SharpDX.Mathematics.Interop.RawBool resourcesDiscarded)
         {
-            resourcesDiscarded = default (SharpDX.Mathematics.Interop.RawBool);
+            resourcesDiscarded = default(SharpDX.Mathematics.Interop.RawBool);
             SharpDX.Result __result__;
-            fixed (void *resourcesDiscarded_ = &resourcesDiscarded)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, resourcesDiscarded_, (*(void ***)this._nativePointer)[5]);
+            fixed (void* resourcesDiscarded_ = &resourcesDiscarded)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, resourcesDiscarded_, (*(void***)this._nativePointer)[5]);
             __result__.CheckError();
         }
     }
@@ -7534,7 +7534,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("77395441-1c8f-4555-8683-f50dab0fe792")]
     public partial class ImageSourceFromWic : SharpDX.Direct2D1.ImageSource
     {
-        public ImageSourceFromWic(System.IntPtr nativePtr): base (nativePtr)
+        public ImageSourceFromWic(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -7571,7 +7571,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             if (rectangleToFill != null)
                 rectangleToFill_ = rectangleToFill.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, rectangleToFill == null ? (void *)0 : &rectangleToFill_, (*(void ***)this._nativePointer)[6]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, rectangleToFill == null ? (void*)0 : &rectangleToFill_, (*(void***)this._nativePointer)[6]);
             __result__.CheckError();
         }
 
@@ -7592,7 +7592,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             if (rectangleToPreserve != null)
                 rectangleToPreserve_ = rectangleToPreserve.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, rectangleToPreserve == null ? (void *)0 : &rectangleToPreserve_, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, rectangleToPreserve == null ? (void*)0 : &rectangleToPreserve_, (*(void***)this._nativePointer)[7]);
             __result__.CheckError();
         }
 
@@ -7606,7 +7606,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetSource(out SharpDX.WIC.BitmapSource wicBitmapSource)
         {
             System.IntPtr wicBitmapSource_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &wicBitmapSource_, (*(void ***)this._nativePointer)[8]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &wicBitmapSource_, (*(void***)this._nativePointer)[8]);
             if (wicBitmapSource_ != System.IntPtr.Zero)
                 wicBitmapSource = new SharpDX.WIC.BitmapSource(wicBitmapSource_);
             else
@@ -7617,7 +7617,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("b499923b-7029-478f-a8b3-432c7c5f5312")]
     public partial class Ink : SharpDX.Direct2D1.Resource
     {
-        public Ink(System.IntPtr nativePtr): base (nativePtr)
+        public Ink(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -7665,7 +7665,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1Ink::SetStartPoint</unmanaged-short>
         internal unsafe void SetStartPoint(SharpDX.Direct2D1.InkPoint startPoint)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &startPoint, (*(void ***)this._nativePointer)[4]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &startPoint, (*(void***)this._nativePointer)[4]);
         }
 
         /// <summary>
@@ -7678,7 +7678,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.InkPoint GetStartPoint()
         {
             SharpDX.Direct2D1.InkPoint __result__;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void ***)this._nativePointer)[5]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void***)this._nativePointer)[5]);
             return __result__;
         }
 
@@ -7694,8 +7694,8 @@ namespace SharpDX.Direct2D1
         public unsafe void AddSegments(SharpDX.Direct2D1.InkBezierSegment[] segments, System.Int32 segmentsCount)
         {
             SharpDX.Result __result__;
-            fixed (void *segments_ = segments)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, segments_, segmentsCount, (*(void ***)this._nativePointer)[6]);
+            fixed (void* segments_ = segments)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, segments_, segmentsCount, (*(void***)this._nativePointer)[6]);
             __result__.CheckError();
         }
 
@@ -7710,7 +7710,7 @@ namespace SharpDX.Direct2D1
         public unsafe void RemoveSegmentsAtEnd(System.Int32 segmentsCount)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, segmentsCount, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, segmentsCount, (*(void***)this._nativePointer)[7]);
             __result__.CheckError();
         }
 
@@ -7727,8 +7727,8 @@ namespace SharpDX.Direct2D1
         public unsafe void SetSegments(System.Int32 startSegment, SharpDX.Direct2D1.InkBezierSegment[] segments, System.Int32 segmentsCount)
         {
             SharpDX.Result __result__;
-            fixed (void *segments_ = segments)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, startSegment, segments_, segmentsCount, (*(void ***)this._nativePointer)[8]);
+            fixed (void* segments_ = segments)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, startSegment, segments_, segmentsCount, (*(void***)this._nativePointer)[8]);
             __result__.CheckError();
         }
 
@@ -7743,8 +7743,8 @@ namespace SharpDX.Direct2D1
         internal unsafe void SetSegmentAtEnd(ref SharpDX.Direct2D1.InkBezierSegment segment)
         {
             SharpDX.Result __result__;
-            fixed (void *segment_ = &segment)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, segment_, (*(void ***)this._nativePointer)[9]);
+            fixed (void* segment_ = &segment)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, segment_, (*(void***)this._nativePointer)[9]);
             __result__.CheckError();
         }
 
@@ -7758,7 +7758,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetSegmentCount()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[10]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[10]);
             return __result__;
         }
 
@@ -7775,8 +7775,8 @@ namespace SharpDX.Direct2D1
         public unsafe void GetSegments(System.Int32 startSegment, SharpDX.Direct2D1.InkBezierSegment[] segments, System.Int32 segmentsCount)
         {
             SharpDX.Result __result__;
-            fixed (void *segments_ = segments)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, startSegment, segments_, segmentsCount, (*(void ***)this._nativePointer)[11]);
+            fixed (void* segments_ = segments)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, startSegment, segments_, segmentsCount, (*(void***)this._nativePointer)[11]);
             __result__.CheckError();
         }
 
@@ -7801,7 +7801,7 @@ namespace SharpDX.Direct2D1
             if (worldTransform != null)
                 worldTransform_ = worldTransform.Value;
             geometrySink_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SimplifiedGeometrySink>(geometrySink);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)inkStyle_, worldTransform == null ? (void *)0 : &worldTransform_, flatteningTolerance, (void *)geometrySink_, (*(void ***)this._nativePointer)[12]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)inkStyle_, worldTransform == null ? (void*)0 : &worldTransform_, flatteningTolerance, (void*)geometrySink_, (*(void***)this._nativePointer)[12]);
             __result__.CheckError();
         }
 
@@ -7819,13 +7819,13 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr inkStyle_ = System.IntPtr.Zero;
             SharpDX.Mathematics.Interop.RawMatrix3x2 worldTransform_;
-            bounds = default (SharpDX.Mathematics.Interop.RawRectangleF);
+            bounds = default(SharpDX.Mathematics.Interop.RawRectangleF);
             SharpDX.Result __result__;
             inkStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.InkStyle>(inkStyle);
             if (worldTransform != null)
                 worldTransform_ = worldTransform.Value;
-            fixed (void *bounds_ = &bounds)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)inkStyle_, worldTransform == null ? (void *)0 : &worldTransform_, bounds_, (*(void ***)this._nativePointer)[13]);
+            fixed (void* bounds_ = &bounds)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)inkStyle_, worldTransform == null ? (void*)0 : &worldTransform_, bounds_, (*(void***)this._nativePointer)[13]);
             __result__.CheckError();
         }
     }
@@ -7833,7 +7833,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("bae8b344-23fc-4071-8cb5-d05d6f073848")]
     public partial class InkStyle : SharpDX.Direct2D1.Resource
     {
-        public InkStyle(System.IntPtr nativePtr): base (nativePtr)
+        public InkStyle(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -7876,8 +7876,8 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1InkStyle::SetNibTransform</unmanaged-short>
         internal unsafe void SetNibTransform(ref SharpDX.Mathematics.Interop.RawMatrix3x2 transform)
         {
-            fixed (void *transform_ = &transform)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, transform_, (*(void ***)this._nativePointer)[4]);
+            fixed (void* transform_ = &transform)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, transform_, (*(void***)this._nativePointer)[4]);
         }
 
         /// <summary>
@@ -7889,9 +7889,9 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1InkStyle::GetNibTransform</unmanaged-short>
         internal unsafe void GetNibTransform(out SharpDX.Mathematics.Interop.RawMatrix3x2 transform)
         {
-            transform = default (SharpDX.Mathematics.Interop.RawMatrix3x2);
-            fixed (void *transform_ = &transform)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, transform_, (*(void ***)this._nativePointer)[5]);
+            transform = default(SharpDX.Mathematics.Interop.RawMatrix3x2);
+            fixed (void* transform_ = &transform)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, transform_, (*(void***)this._nativePointer)[5]);
         }
 
         /// <summary>
@@ -7903,7 +7903,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1InkStyle::SetNibShape</unmanaged-short>
         internal unsafe void SetNibShape(SharpDX.Direct2D1.InkNibShape nibShape)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked ((System.Int32)nibShape), (*(void ***)this._nativePointer)[6]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked((System.Int32)nibShape), (*(void***)this._nativePointer)[6]);
         }
 
         /// <summary>
@@ -7916,7 +7916,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.InkNibShape GetNibShape()
         {
             SharpDX.Direct2D1.InkNibShape __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1InkNibShape(this._nativePointer, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1InkNibShape(this._nativePointer, (*(void***)this._nativePointer)[7]);
             return __result__;
         }
     }
@@ -7924,7 +7924,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd9069b-12e2-11dc-9fed-001143a055f9")]
     public partial class Layer : SharpDX.Direct2D1.Resource
     {
-        public Layer(System.IntPtr nativePtr): base (nativePtr)
+        public Layer(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -7950,7 +7950,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Size2F GetSize()
         {
             SharpDX.Size2F __result__;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void ***)this._nativePointer)[4]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void***)this._nativePointer)[4]);
             return __result__;
         }
     }
@@ -7958,7 +7958,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd906ab-12e2-11dc-9fed-001143a055f9")]
     public partial class LinearGradientBrush : SharpDX.Direct2D1.Brush
     {
-        public LinearGradientBrush(System.IntPtr nativePtr): base (nativePtr)
+        public LinearGradientBrush(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -8023,7 +8023,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1LinearGradientBrush::SetStartPoint</unmanaged-short>
         internal unsafe void SetStartPoint(SharpDX.Mathematics.Interop.RawVector2 startPoint)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, startPoint, (*(void ***)this._nativePointer)[8]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, startPoint, (*(void***)this._nativePointer)[8]);
         }
 
         /// <summary>
@@ -8038,7 +8038,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1LinearGradientBrush::SetEndPoint</unmanaged-short>
         internal unsafe void SetEndPoint(SharpDX.Mathematics.Interop.RawVector2 endPoint)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, endPoint, (*(void ***)this._nativePointer)[9]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, endPoint, (*(void***)this._nativePointer)[9]);
         }
 
         /// <summary>
@@ -8054,7 +8054,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Mathematics.Interop.RawVector2 GetStartPoint()
         {
             SharpDX.Mathematics.Interop.RawVector2 __result__;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void ***)this._nativePointer)[10]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void***)this._nativePointer)[10]);
             return __result__;
         }
 
@@ -8071,7 +8071,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Mathematics.Interop.RawVector2 GetEndPoint()
         {
             SharpDX.Mathematics.Interop.RawVector2 __result__;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void ***)this._nativePointer)[11]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void***)this._nativePointer)[11]);
             return __result__;
         }
 
@@ -8088,7 +8088,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetGradientStopCollection(out SharpDX.Direct2D1.GradientStopCollection gradientStopCollection)
         {
             System.IntPtr gradientStopCollection_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &gradientStopCollection_, (*(void ***)this._nativePointer)[12]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &gradientStopCollection_, (*(void***)this._nativePointer)[12]);
             if (gradientStopCollection_ != System.IntPtr.Zero)
                 gradientStopCollection = new SharpDX.Direct2D1.GradientStopCollection(gradientStopCollection_);
             else
@@ -8099,7 +8099,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("53dd9855-a3b0-4d5b-82e1-26e25c5e5797")]
     public partial class LookupTable3D : SharpDX.Direct2D1.Resource
     {
-        public LookupTable3D(System.IntPtr nativePtr): base (nativePtr)
+        public LookupTable3D(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -8109,7 +8109,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd906c2-12e2-11dc-9fed-001143a055f9")]
     public partial class Mesh : SharpDX.Direct2D1.Resource
     {
-        public Mesh(System.IntPtr nativePtr): base (nativePtr)
+        public Mesh(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -8126,7 +8126,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr tessellationSink_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &tessellationSink_, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &tessellationSink_, (*(void***)this._nativePointer)[4]);
             if (tessellationSink_ != System.IntPtr.Zero)
                 tessellationSink = new SharpDX.Direct2D1.TessellationSinkNative(tessellationSink_);
             else
@@ -8138,7 +8138,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("31e6e7bc-e0ff-4d46-8c64-a0a8c41c15d3")]
     public partial class Multithread : SharpDX.ComObject
     {
-        public Multithread(System.IntPtr nativePtr): base (nativePtr)
+        public Multithread(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -8164,7 +8164,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Mathematics.Interop.RawBool GetMultithreadProtected()
         {
             SharpDX.Mathematics.Interop.RawBool __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXMathematicsInteropRawBool(this._nativePointer, (*(void ***)this._nativePointer)[3]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXMathematicsInteropRawBool(this._nativePointer, (*(void***)this._nativePointer)[3]);
             return __result__;
         }
 
@@ -8176,7 +8176,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1Multithread::Enter</unmanaged-short>
         public unsafe void Enter()
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (*(void ***)this._nativePointer)[4]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (*(void***)this._nativePointer)[4]);
         }
 
         /// <summary>
@@ -8187,14 +8187,14 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1Multithread::Leave</unmanaged-short>
         public unsafe void Leave()
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (*(void ***)this._nativePointer)[5]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (*(void***)this._nativePointer)[5]);
         }
     }
 
     [System.Runtime.InteropServices.GuidAttribute("3fe6adea-7643-4f53-bd14-a0ce63f24042")]
     public partial class OffsetTransform : SharpDX.Direct2D1.TransformNodeNative
     {
-        public OffsetTransform(System.IntPtr nativePtr): base (nativePtr)
+        public OffsetTransform(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -8220,7 +8220,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1OffsetTransform::SetOffset</unmanaged-short>
         internal unsafe void SetOffset(SharpDX.Mathematics.Interop.RawPoint offset)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, offset, (*(void ***)this._nativePointer)[4]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, offset, (*(void***)this._nativePointer)[4]);
         }
 
         /// <summary>
@@ -8233,7 +8233,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Mathematics.Interop.RawPoint GetOffset()
         {
             SharpDX.Mathematics.Interop.RawPoint __result__;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void ***)this._nativePointer)[5]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void***)this._nativePointer)[5]);
             return __result__;
         }
     }
@@ -8241,7 +8241,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd906a5-12e2-11dc-9fed-001143a055f9")]
     public partial class PathGeometry : SharpDX.Direct2D1.Geometry
     {
-        public PathGeometry(System.IntPtr nativePtr): base (nativePtr)
+        public PathGeometry(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -8291,7 +8291,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Direct2D1.GeometrySink geometrySink;
             System.IntPtr geometrySink_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &geometrySink_, (*(void ***)this._nativePointer)[17]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &geometrySink_, (*(void***)this._nativePointer)[17]);
             if (geometrySink_ != System.IntPtr.Zero)
                 geometrySink = new SharpDX.Direct2D1.GeometrySinkNative(geometrySink_);
             else
@@ -8313,7 +8313,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr geometrySink_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             geometrySink_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.GeometrySink>(geometrySink);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)geometrySink_, (*(void ***)this._nativePointer)[18]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)geometrySink_, (*(void***)this._nativePointer)[18]);
             __result__.CheckError();
         }
 
@@ -8328,8 +8328,8 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetSegmentCount(out System.Int32 count)
         {
             SharpDX.Result __result__;
-            fixed (void *count_ = &count)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, count_, (*(void ***)this._nativePointer)[19]);
+            fixed (void* count_ = &count)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, count_, (*(void***)this._nativePointer)[19]);
             __result__.CheckError();
         }
 
@@ -8344,8 +8344,8 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetFigureCount(out System.Int32 count)
         {
             SharpDX.Result __result__;
-            fixed (void *count_ = &count)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, count_, (*(void ***)this._nativePointer)[20]);
+            fixed (void* count_ = &count)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, count_, (*(void***)this._nativePointer)[20]);
             __result__.CheckError();
         }
     }
@@ -8353,7 +8353,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("62baa2d2-ab54-41b7-b872-787e0106a421")]
     public partial class PathGeometry1 : SharpDX.Direct2D1.PathGeometry
     {
-        public PathGeometry1(System.IntPtr nativePtr): base (nativePtr)
+        public PathGeometry1(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -8373,12 +8373,12 @@ namespace SharpDX.Direct2D1
         public unsafe void ComputePointAndSegmentAtLength(System.Single length, System.Int32 startSegment, SharpDX.Mathematics.Interop.RawMatrix3x2? worldTransform, System.Single flatteningTolerance, out SharpDX.Direct2D1.PointDescription ointDescriptionRef)
         {
             SharpDX.Mathematics.Interop.RawMatrix3x2 worldTransform_;
-            ointDescriptionRef = default (SharpDX.Direct2D1.PointDescription);
+            ointDescriptionRef = default(SharpDX.Direct2D1.PointDescription);
             SharpDX.Result __result__;
             if (worldTransform != null)
                 worldTransform_ = worldTransform.Value;
-            fixed (void *ointDescriptionRef_ = &ointDescriptionRef)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, length, startSegment, worldTransform == null ? (void *)0 : &worldTransform_, flatteningTolerance, ointDescriptionRef_, (*(void ***)this._nativePointer)[21]);
+            fixed (void* ointDescriptionRef_ = &ointDescriptionRef)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, length, startSegment, worldTransform == null ? (void*)0 : &worldTransform_, flatteningTolerance, ointDescriptionRef_, (*(void***)this._nativePointer)[21]);
             __result__.CheckError();
         }
     }
@@ -8386,7 +8386,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2c1d867d-c290-41c8-ae7e-34a98702e9a5")]
     public partial class PrintControl : SharpDX.ComObject
     {
-        public PrintControl(System.IntPtr nativePtr): base (nativePtr)
+        public PrintControl(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -8410,9 +8410,9 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             commandList_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.CommandList>(commandList);
             agePrintTicketStreamRef_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Win32.IStream>(agePrintTicketStreamRef);
-            fixed (void *tag2_ = &tag2)
-                fixed (void *tag1_ = &tag1)
-                    __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, (void *)commandList_, pageSize, (void *)agePrintTicketStreamRef_, tag1_, tag2_, (*(void ***)this._nativePointer)[3]);
+            fixed (void* tag2_ = &tag2)
+            fixed (void* tag1_ = &tag1)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, (void*)commandList_, pageSize, (void*)agePrintTicketStreamRef_, tag1_, tag2_, (*(void***)this._nativePointer)[3]);
             __result__.CheckError();
         }
 
@@ -8426,7 +8426,7 @@ namespace SharpDX.Direct2D1
         public unsafe void Close()
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
         }
     }
@@ -8434,7 +8434,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("483473d7-cd46-4f9d-9d3a-3112aa80159d")]
     public partial class Properties : SharpDX.ComObject
     {
-        public Properties(System.IntPtr nativePtr): base (nativePtr)
+        public Properties(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -8466,7 +8466,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetPropertyCount()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[3]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[3]);
             return __result__;
         }
 
@@ -8483,7 +8483,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetPropertyName(System.Int32 index, System.IntPtr name, System.Int32 nameCount)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, index, (void *)name, nameCount, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, index, (void*)name, nameCount, (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
         }
 
@@ -8501,7 +8501,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetPropertyNameLength(System.Int32 index)
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, index, (*(void ***)this._nativePointer)[5]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, index, (*(void***)this._nativePointer)[5]);
             return __result__;
         }
 
@@ -8519,7 +8519,7 @@ namespace SharpDX.Direct2D1
         public unsafe SharpDX.Direct2D1.PropertyType GetTypeInfo(System.Int32 index)
         {
             SharpDX.Direct2D1.PropertyType __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1PropertyType(this._nativePointer, index, (*(void ***)this._nativePointer)[6]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1PropertyType(this._nativePointer, index, (*(void***)this._nativePointer)[6]);
             return __result__;
         }
 
@@ -8537,8 +8537,8 @@ namespace SharpDX.Direct2D1
         public unsafe System.Int32 GetPropertyIndex(System.String name)
         {
             System.Int32 __result__;
-            fixed (char *name_ = name)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)name_, (*(void ***)this._nativePointer)[7]);
+            fixed (char* name_ = name)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)name_, (*(void***)this._nativePointer)[7]);
             return __result__;
         }
 
@@ -8556,8 +8556,8 @@ namespace SharpDX.Direct2D1
         public unsafe void SetValueByName(System.String name, SharpDX.Direct2D1.PropertyType type, System.IntPtr data, System.Int32 dataSize)
         {
             SharpDX.Result __result__;
-            fixed (char *name_ = name)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)name_, unchecked ((System.Int32)type), (void *)data, dataSize, (*(void ***)this._nativePointer)[8]);
+            fixed (char* name_ = name)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)name_, unchecked((System.Int32)type), (void*)data, dataSize, (*(void***)this._nativePointer)[8]);
             __result__.CheckError();
         }
 
@@ -8578,7 +8578,7 @@ namespace SharpDX.Direct2D1
         public unsafe void SetValue(System.Int32 index, SharpDX.Direct2D1.PropertyType type, System.IntPtr data, System.Int32 dataSize)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, index, unchecked ((System.Int32)type), (void *)data, dataSize, (*(void ***)this._nativePointer)[9]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, index, unchecked((System.Int32)type), (void*)data, dataSize, (*(void***)this._nativePointer)[9]);
             __result__.CheckError();
         }
 
@@ -8599,8 +8599,8 @@ namespace SharpDX.Direct2D1
         public unsafe void GetValueByName(System.String name, SharpDX.Direct2D1.PropertyType type, System.IntPtr data, System.Int32 dataSize)
         {
             SharpDX.Result __result__;
-            fixed (char *name_ = name)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)name_, unchecked ((System.Int32)type), (void *)data, dataSize, (*(void ***)this._nativePointer)[10]);
+            fixed (char* name_ = name)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)name_, unchecked((System.Int32)type), (void*)data, dataSize, (*(void***)this._nativePointer)[10]);
             __result__.CheckError();
         }
 
@@ -8621,7 +8621,7 @@ namespace SharpDX.Direct2D1
         public unsafe void GetValue(System.Int32 index, SharpDX.Direct2D1.PropertyType type, System.IntPtr data, System.Int32 dataSize)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, index, unchecked ((System.Int32)type), (void *)data, dataSize, (*(void ***)this._nativePointer)[11]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, index, unchecked((System.Int32)type), (void*)data, dataSize, (*(void***)this._nativePointer)[11]);
             __result__.CheckError();
         }
 
@@ -8639,7 +8639,7 @@ namespace SharpDX.Direct2D1
         public unsafe System.Int32 GetValueSize(System.Int32 index)
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, index, (*(void ***)this._nativePointer)[12]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, index, (*(void***)this._nativePointer)[12]);
             return __result__;
         }
 
@@ -8659,7 +8659,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Direct2D1.Properties subProperties;
             System.IntPtr subProperties_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, index, &subProperties_, (*(void ***)this._nativePointer)[13]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, index, &subProperties_, (*(void***)this._nativePointer)[13]);
             if (subProperties_ != System.IntPtr.Zero)
                 subProperties = new SharpDX.Direct2D1.Properties(subProperties_);
             else
@@ -8672,7 +8672,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd906ac-12e2-11dc-9fed-001143a055f9")]
     public partial class RadialGradientBrush : SharpDX.Direct2D1.Brush
     {
-        public RadialGradientBrush(System.IntPtr nativePtr): base (nativePtr)
+        public RadialGradientBrush(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -8752,7 +8752,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RadialGradientBrush::SetCenter</unmanaged-short>
         internal unsafe void SetCenter(SharpDX.Mathematics.Interop.RawVector2 center)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, center, (*(void ***)this._nativePointer)[8]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, center, (*(void***)this._nativePointer)[8]);
         }
 
         /// <summary>
@@ -8764,7 +8764,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RadialGradientBrush::SetGradientOriginOffset</unmanaged-short>
         internal unsafe void SetGradientOriginOffset(SharpDX.Mathematics.Interop.RawVector2 gradientOriginOffset)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, gradientOriginOffset, (*(void ***)this._nativePointer)[9]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, gradientOriginOffset, (*(void***)this._nativePointer)[9]);
         }
 
         /// <summary>
@@ -8776,7 +8776,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RadialGradientBrush::SetRadiusX</unmanaged-short>
         internal unsafe void SetRadiusX(System.Single radiusX)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, radiusX, (*(void ***)this._nativePointer)[10]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, radiusX, (*(void***)this._nativePointer)[10]);
         }
 
         /// <summary>
@@ -8788,7 +8788,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RadialGradientBrush::SetRadiusY</unmanaged-short>
         internal unsafe void SetRadiusY(System.Single radiusY)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, radiusY, (*(void ***)this._nativePointer)[11]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, radiusY, (*(void***)this._nativePointer)[11]);
         }
 
         /// <summary>
@@ -8801,7 +8801,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Mathematics.Interop.RawVector2 GetCenter()
         {
             SharpDX.Mathematics.Interop.RawVector2 __result__;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void ***)this._nativePointer)[12]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void***)this._nativePointer)[12]);
             return __result__;
         }
 
@@ -8815,7 +8815,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Mathematics.Interop.RawVector2 GetGradientOriginOffset()
         {
             SharpDX.Mathematics.Interop.RawVector2 __result__;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void ***)this._nativePointer)[13]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void***)this._nativePointer)[13]);
             return __result__;
         }
 
@@ -8829,7 +8829,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Single GetRadiusX()
         {
             System.Single __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallfloat(this._nativePointer, (*(void ***)this._nativePointer)[14]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallfloat(this._nativePointer, (*(void***)this._nativePointer)[14]);
             return __result__;
         }
 
@@ -8843,7 +8843,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Single GetRadiusY()
         {
             System.Single __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallfloat(this._nativePointer, (*(void ***)this._nativePointer)[15]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallfloat(this._nativePointer, (*(void***)this._nativePointer)[15]);
             return __result__;
         }
 
@@ -8860,7 +8860,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetGradientStopCollection(out SharpDX.Direct2D1.GradientStopCollection gradientStopCollection)
         {
             System.IntPtr gradientStopCollection_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &gradientStopCollection_, (*(void ***)this._nativePointer)[16]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &gradientStopCollection_, (*(void***)this._nativePointer)[16]);
             if (gradientStopCollection_ != System.IntPtr.Zero)
                 gradientStopCollection = new SharpDX.Direct2D1.GradientStopCollection(gradientStopCollection_);
             else
@@ -8871,7 +8871,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd906a2-12e2-11dc-9fed-001143a055f9")]
     public partial class RectangleGeometry : SharpDX.Direct2D1.Geometry
     {
-        public RectangleGeometry(System.IntPtr nativePtr): base (nativePtr)
+        public RectangleGeometry(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -8900,16 +8900,16 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RectangleGeometry::GetRect</unmanaged-short>
         internal unsafe void GetRectangle(out SharpDX.Mathematics.Interop.RawRectangleF rect)
         {
-            rect = default (SharpDX.Mathematics.Interop.RawRectangleF);
-            fixed (void *rect_ = &rect)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, rect_, (*(void ***)this._nativePointer)[17]);
+            rect = default(SharpDX.Mathematics.Interop.RawRectangleF);
+            fixed (void* rect_ = &rect)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, rect_, (*(void***)this._nativePointer)[17]);
         }
     }
 
     [System.Runtime.InteropServices.GuidAttribute("519ae1bd-d19a-420d-b849-364f594776b7")]
     public partial class RenderInformation : SharpDX.ComObject
     {
-        public RenderInformation(System.IntPtr nativePtr): base (nativePtr)
+        public RenderInformation(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -8954,7 +8954,7 @@ namespace SharpDX.Direct2D1
         public unsafe void SetInputDescription(System.Int32 inputIndex, SharpDX.Direct2D1.InputDescription inputDescription)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, inputIndex, inputDescription, (*(void ***)this._nativePointer)[3]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, inputIndex, inputDescription, (*(void***)this._nativePointer)[3]);
             __result__.CheckError();
         }
 
@@ -8973,7 +8973,7 @@ namespace SharpDX.Direct2D1
         public unsafe void SetOutputBuffer(SharpDX.Direct2D1.BufferPrecision bufferPrecision, SharpDX.Direct2D1.ChannelDepth channelDepth)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)bufferPrecision), unchecked ((System.Int32)channelDepth), (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)bufferPrecision), unchecked((System.Int32)channelDepth), (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
         }
 
@@ -8986,7 +8986,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RenderInfo::SetCached</unmanaged-short>
         internal unsafe void SetCached(SharpDX.Mathematics.Interop.RawBool isCached)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, isCached, (*(void ***)this._nativePointer)[5]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, isCached, (*(void***)this._nativePointer)[5]);
         }
 
         /// <summary>
@@ -9001,14 +9001,14 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RenderInfo::SetInstructionCountHint</unmanaged-short>
         internal unsafe void SetInstructionCountHint(System.Int32 instructionCount)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, instructionCount, (*(void ***)this._nativePointer)[6]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, instructionCount, (*(void***)this._nativePointer)[6]);
         }
     }
 
     [System.Runtime.InteropServices.GuidAttribute("2cd90694-12e2-11dc-9fed-001143a055f9")]
     public partial class RenderTarget : SharpDX.Direct2D1.Resource
     {
-        public RenderTarget(System.IntPtr nativePtr): base (nativePtr)
+        public RenderTarget(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -9137,7 +9137,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr bitmap_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, size, (void *)srcData, pitch, &bitmapProperties, &bitmap_, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, size, (void*)srcData, pitch, &bitmapProperties, &bitmap_, (*(void***)this._nativePointer)[4]);
             (bitmap).NativePointer = bitmap_;
             __result__.CheckError();
         }
@@ -9164,7 +9164,7 @@ namespace SharpDX.Direct2D1
             wicBitmapSource_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.WIC.BitmapSource>(wicBitmapSource);
             if (bitmapProperties != null)
                 bitmapProperties_ = bitmapProperties.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)wicBitmapSource_, bitmapProperties == null ? (void *)0 : &bitmapProperties_, &bitmap_, (*(void ***)this._nativePointer)[5]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)wicBitmapSource_, bitmapProperties == null ? (void*)0 : &bitmapProperties_, &bitmap_, (*(void***)this._nativePointer)[5]);
             if (bitmap_ != System.IntPtr.Zero)
                 bitmap = new SharpDX.Direct2D1.Bitmap(bitmap_);
             else
@@ -9193,7 +9193,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             if (bitmapProperties != null)
                 bitmapProperties_ = bitmapProperties.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &riid, (void *)data, bitmapProperties == null ? (void *)0 : &bitmapProperties_, &bitmap_, (*(void ***)this._nativePointer)[6]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &riid, (void*)data, bitmapProperties == null ? (void*)0 : &bitmapProperties_, &bitmap_, (*(void***)this._nativePointer)[6]);
             (bitmap).NativePointer = bitmap_;
             __result__.CheckError();
         }
@@ -9221,7 +9221,7 @@ namespace SharpDX.Direct2D1
                 bitmapBrushProperties_ = bitmapBrushProperties.Value;
             if (brushProperties != null)
                 brushProperties_ = brushProperties.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)bitmap_, bitmapBrushProperties == null ? (void *)0 : &bitmapBrushProperties_, brushProperties == null ? (void *)0 : &brushProperties_, &bitmapBrush_, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)bitmap_, bitmapBrushProperties == null ? (void*)0 : &bitmapBrushProperties_, brushProperties == null ? (void*)0 : &brushProperties_, &bitmapBrush_, (*(void***)this._nativePointer)[7]);
             (bitmapBrush).NativePointer = bitmapBrush_;
             __result__.CheckError();
         }
@@ -9243,7 +9243,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             if (brushProperties != null)
                 brushProperties_ = brushProperties.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &color, brushProperties == null ? (void *)0 : &brushProperties_, &solidColorBrush_, (*(void ***)this._nativePointer)[8]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &color, brushProperties == null ? (void*)0 : &brushProperties_, &solidColorBrush_, (*(void***)this._nativePointer)[8]);
             (solidColorBrush).NativePointer = solidColorBrush_;
             __result__.CheckError();
         }
@@ -9264,8 +9264,8 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr gradientStopCollection_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (void *gradientStops_ = gradientStops)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, gradientStops_, gradientStopsCount, unchecked ((System.Int32)colorInterpolationGamma), unchecked ((System.Int32)extendMode), &gradientStopCollection_, (*(void ***)this._nativePointer)[9]);
+            fixed (void* gradientStops_ = gradientStops)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, gradientStops_, gradientStopsCount, unchecked((System.Int32)colorInterpolationGamma), unchecked((System.Int32)extendMode), &gradientStopCollection_, (*(void***)this._nativePointer)[9]);
             (gradientStopCollection).NativePointer = gradientStopCollection_;
             __result__.CheckError();
         }
@@ -9290,7 +9290,7 @@ namespace SharpDX.Direct2D1
             if (brushProperties != null)
                 brushProperties_ = brushProperties.Value;
             gradientStopCollection_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.GradientStopCollection>(gradientStopCollection);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &linearGradientBrushProperties, brushProperties == null ? (void *)0 : &brushProperties_, (void *)gradientStopCollection_, &linearGradientBrush_, (*(void ***)this._nativePointer)[10]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &linearGradientBrushProperties, brushProperties == null ? (void*)0 : &brushProperties_, (void*)gradientStopCollection_, &linearGradientBrush_, (*(void***)this._nativePointer)[10]);
             (linearGradientBrush).NativePointer = linearGradientBrush_;
             __result__.CheckError();
         }
@@ -9315,8 +9315,8 @@ namespace SharpDX.Direct2D1
             if (brushProperties != null)
                 brushProperties_ = brushProperties.Value;
             gradientStopCollection_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.GradientStopCollection>(gradientStopCollection);
-            fixed (void *radialGradientBrushProperties_ = &radialGradientBrushProperties)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, radialGradientBrushProperties_, brushProperties == null ? (void *)0 : &brushProperties_, (void *)gradientStopCollection_, &radialGradientBrush_, (*(void ***)this._nativePointer)[11]);
+            fixed (void* radialGradientBrushProperties_ = &radialGradientBrushProperties)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, radialGradientBrushProperties_, brushProperties == null ? (void*)0 : &brushProperties_, (void*)gradientStopCollection_, &radialGradientBrush_, (*(void***)this._nativePointer)[11]);
             (radialGradientBrush).NativePointer = radialGradientBrush_;
             __result__.CheckError();
         }
@@ -9349,7 +9349,7 @@ namespace SharpDX.Direct2D1
                 desiredPixelSize_ = desiredPixelSize.Value;
             if (desiredFormat != null)
                 desiredFormat_ = desiredFormat.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, desiredSize == null ? (void *)0 : &desiredSize_, desiredPixelSize == null ? (void *)0 : &desiredPixelSize_, desiredFormat == null ? (void *)0 : &desiredFormat_, unchecked ((System.Int32)options), &bitmapRenderTarget_, (*(void ***)this._nativePointer)[12]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, desiredSize == null ? (void*)0 : &desiredSize_, desiredPixelSize == null ? (void*)0 : &desiredPixelSize_, desiredFormat == null ? (void*)0 : &desiredFormat_, unchecked((System.Int32)options), &bitmapRenderTarget_, (*(void***)this._nativePointer)[12]);
             (bitmapRenderTarget).NativePointer = bitmapRenderTarget_;
             __result__.CheckError();
         }
@@ -9373,7 +9373,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             if (size != null)
                 size_ = size.Value;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, size == null ? (void *)0 : &size_, &layer_, (*(void ***)this._nativePointer)[13]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, size == null ? (void*)0 : &size_, &layer_, (*(void***)this._nativePointer)[13]);
             (layer).NativePointer = layer_;
             __result__.CheckError();
         }
@@ -9393,7 +9393,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr mesh_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &mesh_, (*(void ***)this._nativePointer)[14]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &mesh_, (*(void***)this._nativePointer)[14]);
             (mesh).NativePointer = mesh_;
             __result__.CheckError();
         }
@@ -9418,7 +9418,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr strokeStyle_ = System.IntPtr.Zero;
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
             strokeStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.StrokeStyle>(strokeStyle);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, point0, point1, (void *)brush_, strokeWidth, (void *)strokeStyle_, (*(void ***)this._nativePointer)[15]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, point0, point1, (void*)brush_, strokeWidth, (void*)strokeStyle_, (*(void***)this._nativePointer)[15]);
         }
 
         public unsafe void DrawLine(Engine.Mathematics.LinearAlgebra.Vector2 point0, Engine.Mathematics.LinearAlgebra.Vector2 point1, SharpDX.Direct2D1.Brush brush, System.Single strokeWidth, SharpDX.Direct2D1.StrokeStyle strokeStyle)
@@ -9449,7 +9449,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr strokeStyle_ = System.IntPtr.Zero;
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
             strokeStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.StrokeStyle>(strokeStyle);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &rect, (void *)brush_, strokeWidth, (void *)strokeStyle_, (*(void ***)this._nativePointer)[16]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &rect, (void*)brush_, strokeWidth, (void*)strokeStyle_, (*(void***)this._nativePointer)[16]);
         }
 
         /// <summary>
@@ -9467,7 +9467,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr brush_ = System.IntPtr.Zero;
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &rect, (void *)brush_, (*(void ***)this._nativePointer)[17]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &rect, (void*)brush_, (*(void***)this._nativePointer)[17]);
         }
 
         /// <summary>
@@ -9489,8 +9489,8 @@ namespace SharpDX.Direct2D1
             System.IntPtr strokeStyle_ = System.IntPtr.Zero;
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
             strokeStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.StrokeStyle>(strokeStyle);
-            fixed (void *roundedRect_ = &roundedRect)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, roundedRect_, (void *)brush_, strokeWidth, (void *)strokeStyle_, (*(void ***)this._nativePointer)[18]);
+            fixed (void* roundedRect_ = &roundedRect)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, roundedRect_, (void*)brush_, strokeWidth, (void*)strokeStyle_, (*(void***)this._nativePointer)[18]);
         }
 
         /// <summary>
@@ -9508,8 +9508,8 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr brush_ = System.IntPtr.Zero;
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
-            fixed (void *roundedRect_ = &roundedRect)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, roundedRect_, (void *)brush_, (*(void ***)this._nativePointer)[19]);
+            fixed (void* roundedRect_ = &roundedRect)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, roundedRect_, (void*)brush_, (*(void***)this._nativePointer)[19]);
         }
 
         /// <summary>
@@ -9531,7 +9531,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr strokeStyle_ = System.IntPtr.Zero;
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
             strokeStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.StrokeStyle>(strokeStyle);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &ellipse, (void *)brush_, strokeWidth, (void *)strokeStyle_, (*(void ***)this._nativePointer)[20]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &ellipse, (void*)brush_, strokeWidth, (void*)strokeStyle_, (*(void***)this._nativePointer)[20]);
         }
 
         /// <summary>
@@ -9549,7 +9549,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr brush_ = System.IntPtr.Zero;
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &ellipse, (void *)brush_, (*(void ***)this._nativePointer)[21]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &ellipse, (void*)brush_, (*(void***)this._nativePointer)[21]);
         }
 
         /// <summary>
@@ -9573,7 +9573,7 @@ namespace SharpDX.Direct2D1
             geometry_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Geometry>(geometry);
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
             strokeStyle_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.StrokeStyle>(strokeStyle);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)geometry_, (void *)brush_, strokeWidth, (void *)strokeStyle_, (*(void ***)this._nativePointer)[22]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)geometry_, (void*)brush_, strokeWidth, (void*)strokeStyle_, (*(void***)this._nativePointer)[22]);
         }
 
         /// <summary>
@@ -9597,7 +9597,7 @@ namespace SharpDX.Direct2D1
             geometry_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Geometry>(geometry);
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
             opacityBrush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(opacityBrush);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)geometry_, (void *)brush_, (void *)opacityBrush_, (*(void ***)this._nativePointer)[23]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)geometry_, (void*)brush_, (void*)opacityBrush_, (*(void***)this._nativePointer)[23]);
         }
 
         /// <summary>
@@ -9617,7 +9617,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr brush_ = System.IntPtr.Zero;
             mesh_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Mesh>(mesh);
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)mesh_, (void *)brush_, (*(void ***)this._nativePointer)[24]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)mesh_, (void*)brush_, (*(void***)this._nativePointer)[24]);
         }
 
         /// <summary>
@@ -9646,7 +9646,7 @@ namespace SharpDX.Direct2D1
                 destinationRectangle_ = destinationRectangle.Value;
             if (sourceRectangle != null)
                 sourceRectangle_ = sourceRectangle.Value;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)opacityMask_, (void *)brush_, unchecked ((System.Int32)content), destinationRectangle == null ? (void *)0 : &destinationRectangle_, sourceRectangle == null ? (void *)0 : &sourceRectangle_, (*(void ***)this._nativePointer)[25]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)opacityMask_, (void*)brush_, unchecked((System.Int32)content), destinationRectangle == null ? (void*)0 : &destinationRectangle_, sourceRectangle == null ? (void*)0 : &sourceRectangle_, (*(void***)this._nativePointer)[25]);
         }
 
         /// <summary>
@@ -9673,7 +9673,7 @@ namespace SharpDX.Direct2D1
                 destinationRectangle_ = destinationRectangle.Value;
             if (sourceRectangle != null)
                 sourceRectangle_ = sourceRectangle.Value;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)bitmap_, destinationRectangle == null ? (void *)0 : &destinationRectangle_, opacity, unchecked ((System.Int32)interpolationMode), sourceRectangle == null ? (void *)0 : &sourceRectangle_, (*(void ***)this._nativePointer)[26]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)bitmap_, destinationRectangle == null ? (void*)0 : &destinationRectangle_, opacity, unchecked((System.Int32)interpolationMode), sourceRectangle == null ? (void*)0 : &sourceRectangle_, (*(void***)this._nativePointer)[26]);
         }
 
         /// <summary>
@@ -9698,8 +9698,8 @@ namespace SharpDX.Direct2D1
             System.IntPtr defaultFillBrush_ = System.IntPtr.Zero;
             textFormat_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DirectWrite.TextFormat>(textFormat);
             defaultFillBrush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(defaultFillBrush);
-            fixed (char *text_ = text)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)text_, stringLength, (void *)textFormat_, &layoutRect, (void *)defaultFillBrush_, unchecked ((System.Int32)options), unchecked ((System.Int32)measuringMode), (*(void ***)this._nativePointer)[27]);
+            fixed (char* text_ = text)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)text_, stringLength, (void*)textFormat_, &layoutRect, (void*)defaultFillBrush_, unchecked((System.Int32)options), unchecked((System.Int32)measuringMode), (*(void***)this._nativePointer)[27]);
         }
 
         /// <summary>
@@ -9721,7 +9721,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr defaultFillBrush_ = System.IntPtr.Zero;
             textLayout_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DirectWrite.TextLayout>(textLayout);
             defaultFillBrush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(defaultFillBrush);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, origin, (void *)textLayout_, (void *)defaultFillBrush_, unchecked ((System.Int32)options), (*(void ***)this._nativePointer)[28]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, origin, (void*)textLayout_, (void*)defaultFillBrush_, unchecked((System.Int32)options), (*(void***)this._nativePointer)[28]);
         }
 
         /// <summary>
@@ -9739,11 +9739,11 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RenderTarget::DrawGlyphRun</unmanaged-short>
         public unsafe void DrawGlyphRun(SharpDX.Mathematics.Interop.RawVector2 baselineOrigin, SharpDX.DirectWrite.GlyphRun glyphRun, SharpDX.Direct2D1.Brush foregroundBrush, SharpDX.Direct2D1.MeasuringMode measuringMode)
         {
-            SharpDX.DirectWrite.GlyphRun.__Native glyphRun_ = default (SharpDX.DirectWrite.GlyphRun.__Native);
+            SharpDX.DirectWrite.GlyphRun.__Native glyphRun_ = default(SharpDX.DirectWrite.GlyphRun.__Native);
             System.IntPtr foregroundBrush_ = System.IntPtr.Zero;
             glyphRun.__MarshalTo(ref glyphRun_);
             foregroundBrush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(foregroundBrush);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, baselineOrigin, &glyphRun_, (void *)foregroundBrush_, unchecked ((System.Int32)measuringMode), (*(void ***)this._nativePointer)[29]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, baselineOrigin, &glyphRun_, (void*)foregroundBrush_, unchecked((System.Int32)measuringMode), (*(void***)this._nativePointer)[29]);
             glyphRun.__MarshalFree(ref glyphRun_);
         }
 
@@ -9756,8 +9756,8 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RenderTarget::SetTransform</unmanaged-short>
         internal unsafe void SetTransform(ref SharpDX.Mathematics.Interop.RawMatrix3x2 transform)
         {
-            fixed (void *transform_ = &transform)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, transform_, (*(void ***)this._nativePointer)[30]);
+            fixed (void* transform_ = &transform)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, transform_, (*(void***)this._nativePointer)[30]);
         }
 
         /// <summary>
@@ -9769,9 +9769,9 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RenderTarget::GetTransform</unmanaged-short>
         internal unsafe void GetTransform(out SharpDX.Mathematics.Interop.RawMatrix3x2 transform)
         {
-            transform = default (SharpDX.Mathematics.Interop.RawMatrix3x2);
-            fixed (void *transform_ = &transform)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, transform_, (*(void ***)this._nativePointer)[31]);
+            transform = default(SharpDX.Mathematics.Interop.RawMatrix3x2);
+            fixed (void* transform_ = &transform)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, transform_, (*(void***)this._nativePointer)[31]);
         }
 
         /// <summary>
@@ -9786,7 +9786,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RenderTarget::SetAntialiasMode</unmanaged-short>
         internal unsafe void SetAntialiasMode(SharpDX.Direct2D1.AntialiasMode antialiasMode)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked ((System.Int32)antialiasMode), (*(void ***)this._nativePointer)[32]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked((System.Int32)antialiasMode), (*(void***)this._nativePointer)[32]);
         }
 
         /// <summary>
@@ -9799,7 +9799,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.AntialiasMode GetAntialiasMode()
         {
             SharpDX.Direct2D1.AntialiasMode __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1AntialiasMode(this._nativePointer, (*(void ***)this._nativePointer)[33]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1AntialiasMode(this._nativePointer, (*(void***)this._nativePointer)[33]);
             return __result__;
         }
 
@@ -9812,7 +9812,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RenderTarget::SetTextAntialiasMode</unmanaged-short>
         internal unsafe void SetTextAntialiasMode(SharpDX.Direct2D1.TextAntialiasMode textAntialiasMode)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked ((System.Int32)textAntialiasMode), (*(void ***)this._nativePointer)[34]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked((System.Int32)textAntialiasMode), (*(void***)this._nativePointer)[34]);
         }
 
         /// <summary>
@@ -9825,7 +9825,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.TextAntialiasMode GetTextAntialiasMode()
         {
             SharpDX.Direct2D1.TextAntialiasMode __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1TextAntialiasMode(this._nativePointer, (*(void ***)this._nativePointer)[35]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1TextAntialiasMode(this._nativePointer, (*(void***)this._nativePointer)[35]);
             return __result__;
         }
 
@@ -9843,7 +9843,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr textRenderingParams_ = System.IntPtr.Zero;
             textRenderingParams_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.DirectWrite.RenderingParams>(textRenderingParams);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)textRenderingParams_, (*(void ***)this._nativePointer)[36]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)textRenderingParams_, (*(void***)this._nativePointer)[36]);
         }
 
         /// <summary>
@@ -9859,7 +9859,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetTextRenderingParams(out SharpDX.DirectWrite.RenderingParams textRenderingParams)
         {
             System.IntPtr textRenderingParams_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &textRenderingParams_, (*(void ***)this._nativePointer)[37]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &textRenderingParams_, (*(void***)this._nativePointer)[37]);
             if (textRenderingParams_ != System.IntPtr.Zero)
                 textRenderingParams = new SharpDX.DirectWrite.RenderingParams(textRenderingParams_);
             else
@@ -9879,7 +9879,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RenderTarget::SetTags</unmanaged-short>
         public unsafe void SetTags(System.Int64 tag1, System.Int64 tag2)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, tag1, tag2, (*(void ***)this._nativePointer)[38]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, tag1, tag2, (*(void***)this._nativePointer)[38]);
         }
 
         /// <summary>
@@ -9895,9 +9895,9 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RenderTarget::GetTags</unmanaged-short>
         public unsafe void GetTags(out System.Int64 tag1, out System.Int64 tag2)
         {
-            fixed (void *tag2_ = &tag2)
-                fixed (void *tag1_ = &tag1)
-                    SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, tag1_, tag2_, (*(void ***)this._nativePointer)[39]);
+            fixed (void* tag2_ = &tag2)
+            fixed (void* tag1_ = &tag1)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, tag1_, tag2_, (*(void***)this._nativePointer)[39]);
         }
 
         /// <summary>
@@ -9914,11 +9914,11 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RenderTarget::PushLayer</unmanaged-short>
         public unsafe void PushLayer(ref SharpDX.Direct2D1.LayerParameters layerParameters, SharpDX.Direct2D1.Layer layer)
         {
-            SharpDX.Direct2D1.LayerParameters.__Native layerParameters_ = default (SharpDX.Direct2D1.LayerParameters.__Native);
+            SharpDX.Direct2D1.LayerParameters.__Native layerParameters_ = default(SharpDX.Direct2D1.LayerParameters.__Native);
             System.IntPtr layer_ = System.IntPtr.Zero;
             layerParameters.__MarshalTo(ref layerParameters_);
             layer_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Layer>(layer);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &layerParameters_, (void *)layer_, (*(void ***)this._nativePointer)[40]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &layerParameters_, (void*)layer_, (*(void***)this._nativePointer)[40]);
             layerParameters.__MarshalFree(ref layerParameters_);
         }
 
@@ -9933,7 +9933,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RenderTarget::PopLayer</unmanaged-short>
         public unsafe void PopLayer()
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (*(void ***)this._nativePointer)[41]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (*(void***)this._nativePointer)[41]);
         }
 
         /// <summary>
@@ -9951,9 +9951,9 @@ namespace SharpDX.Direct2D1
         public unsafe void Flush(out System.Int64 tag1, out System.Int64 tag2)
         {
             SharpDX.Result __result__;
-            fixed (void *tag2_ = &tag2)
-                fixed (void *tag1_ = &tag1)
-                    __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, tag1_, tag2_, (*(void ***)this._nativePointer)[42]);
+            fixed (void* tag2_ = &tag2)
+            fixed (void* tag1_ = &tag1)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, tag1_, tag2_, (*(void***)this._nativePointer)[42]);
             __result__.CheckError();
         }
 
@@ -9968,7 +9968,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr drawingStateBlock_ = System.IntPtr.Zero;
             drawingStateBlock_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.DrawingStateBlock>(drawingStateBlock);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)drawingStateBlock_, (*(void ***)this._nativePointer)[43]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)drawingStateBlock_, (*(void***)this._nativePointer)[43]);
         }
 
         /// <summary>
@@ -9982,7 +9982,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr drawingStateBlock_ = System.IntPtr.Zero;
             drawingStateBlock_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.DrawingStateBlock>(drawingStateBlock);
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void *)drawingStateBlock_, (*(void ***)this._nativePointer)[44]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (void*)drawingStateBlock_, (*(void***)this._nativePointer)[44]);
         }
 
         /// <summary>
@@ -9998,7 +9998,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RenderTarget::PushAxisAlignedClip</unmanaged-short>
         public unsafe void PushAxisAlignedClip(SharpDX.Mathematics.Interop.RawRectangleF clipRect, SharpDX.Direct2D1.AntialiasMode antialiasMode)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &clipRect, unchecked ((System.Int32)antialiasMode), (*(void ***)this._nativePointer)[45]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &clipRect, unchecked((System.Int32)antialiasMode), (*(void***)this._nativePointer)[45]);
         }
 
         /// <summary>
@@ -10012,7 +10012,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RenderTarget::PopAxisAlignedClip</unmanaged-short>
         public unsafe void PopAxisAlignedClip()
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (*(void ***)this._nativePointer)[46]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (*(void***)this._nativePointer)[46]);
         }
 
         /// <summary>
@@ -10030,7 +10030,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Mathematics.Interop.RawColor4 clearColor_;
             if (clearColor != null)
                 clearColor_ = clearColor.Value;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, clearColor == null ? (void *)0 : &clearColor_, (*(void ***)this._nativePointer)[47]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, clearColor == null ? (void*)0 : &clearColor_, (*(void***)this._nativePointer)[47]);
         }
 
         /// <summary>
@@ -10045,7 +10045,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RenderTarget::BeginDraw</unmanaged-short>
         public unsafe void BeginDraw()
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (*(void ***)this._nativePointer)[48]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (*(void***)this._nativePointer)[48]);
         }
 
         /// <summary>
@@ -10064,9 +10064,9 @@ namespace SharpDX.Direct2D1
         public unsafe SharpDX.Result TryEndDraw(out System.Int64 tag1, out System.Int64 tag2)
         {
             SharpDX.Result __result__;
-            fixed (void *tag2_ = &tag2)
-                fixed (void *tag1_ = &tag1)
-                    __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, tag1_, tag2_, (*(void ***)this._nativePointer)[49]);
+            fixed (void* tag2_ = &tag2)
+            fixed (void* tag1_ = &tag1)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, tag1_, tag2_, (*(void***)this._nativePointer)[49]);
             return __result__;
         }
 
@@ -10080,7 +10080,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.PixelFormat GetPixelFormat()
         {
             SharpDX.Direct2D1.PixelFormat __result__;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void ***)this._nativePointer)[50]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void***)this._nativePointer)[50]);
             return __result__;
         }
 
@@ -10097,7 +10097,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RenderTarget::SetDpi</unmanaged-short>
         internal unsafe void SetDpi(System.Single dpiX, System.Single dpiY)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, dpiX, dpiY, (*(void ***)this._nativePointer)[51]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, dpiX, dpiY, (*(void***)this._nativePointer)[51]);
         }
 
         /// <summary>
@@ -10113,9 +10113,9 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RenderTarget::GetDpi</unmanaged-short>
         internal unsafe void GetDpi(out System.Single dpiX, out System.Single dpiY)
         {
-            fixed (void *dpiY_ = &dpiY)
-                fixed (void *dpiX_ = &dpiX)
-                    SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, dpiX_, dpiY_, (*(void ***)this._nativePointer)[52]);
+            fixed (void* dpiY_ = &dpiY)
+            fixed (void* dpiX_ = &dpiX)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, dpiX_, dpiY_, (*(void***)this._nativePointer)[52]);
         }
 
         /// <summary>
@@ -10128,7 +10128,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Size2F GetSize()
         {
             SharpDX.Size2F __result__;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void ***)this._nativePointer)[53]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void***)this._nativePointer)[53]);
             return __result__;
         }
 
@@ -10142,7 +10142,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Size2 GetPixelSize()
         {
             SharpDX.Size2 __result__;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void ***)this._nativePointer)[54]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void***)this._nativePointer)[54]);
             return __result__;
         }
 
@@ -10159,7 +10159,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetMaximumBitmapSize()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[55]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[55]);
             return __result__;
         }
 
@@ -10177,8 +10177,8 @@ namespace SharpDX.Direct2D1
         public unsafe SharpDX.Mathematics.Interop.RawBool IsSupported(ref SharpDX.Direct2D1.RenderTargetProperties renderTargetProperties)
         {
             SharpDX.Mathematics.Interop.RawBool __result__;
-            fixed (void *renderTargetProperties_ = &renderTargetProperties)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXMathematicsInteropRawBool(this._nativePointer, renderTargetProperties_, (*(void ***)this._nativePointer)[56]);
+            fixed (void* renderTargetProperties_ = &renderTargetProperties)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXMathematicsInteropRawBool(this._nativePointer, renderTargetProperties_, (*(void***)this._nativePointer)[56]);
             return __result__;
         }
     }
@@ -10186,7 +10186,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd90691-12e2-11dc-9fed-001143a055f9")]
     public partial class Resource : SharpDX.ComObject
     {
-        public Resource(System.IntPtr nativePtr): base (nativePtr)
+        public Resource(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -10216,7 +10216,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetFactory(out SharpDX.Direct2D1.Factory factory)
         {
             System.IntPtr factory_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &factory_, (*(void ***)this._nativePointer)[3]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &factory_, (*(void***)this._nativePointer)[3]);
             if (factory_ != System.IntPtr.Zero)
                 factory = new SharpDX.Direct2D1.Factory(factory_);
             else
@@ -10227,7 +10227,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("688d15c3-02b0-438d-b13a-d1b44c32c39a")]
     public partial class ResourceTexture : SharpDX.ComObject
     {
-        public ResourceTexture(System.IntPtr nativePtr): base (nativePtr)
+        public ResourceTexture(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -10251,11 +10251,11 @@ namespace SharpDX.Direct2D1
         public unsafe void Update(System.Int32[] minimumExtents, System.Int32[] maximimumExtents, System.Int32[] strides, System.Int32 dimensions, System.Byte[] data, System.Int32 dataCount)
         {
             SharpDX.Result __result__;
-            fixed (void *data_ = data)
-                fixed (void *strides_ = strides)
-                    fixed (void *maximimumExtents_ = maximimumExtents)
-                        fixed (void *minimumExtents_ = minimumExtents)
-                            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, minimumExtents_, maximimumExtents_, strides_, dimensions, data_, dataCount, (*(void ***)this._nativePointer)[3]);
+            fixed (void* data_ = data)
+            fixed (void* strides_ = strides)
+            fixed (void* maximimumExtents_ = maximimumExtents)
+            fixed (void* minimumExtents_ = minimumExtents)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, minimumExtents_, maximimumExtents_, strides_, dimensions, data_, dataCount, (*(void***)this._nativePointer)[3]);
             __result__.CheckError();
         }
     }
@@ -10263,7 +10263,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd906a3-12e2-11dc-9fed-001143a055f9")]
     public partial class RoundedRectangleGeometry : SharpDX.Direct2D1.Geometry
     {
-        public RoundedRectangleGeometry(System.IntPtr nativePtr): base (nativePtr)
+        public RoundedRectangleGeometry(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -10292,9 +10292,9 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1RoundedRectangleGeometry::GetRoundedRect</unmanaged-short>
         internal unsafe void GetRoundedRect(out SharpDX.Direct2D1.RoundedRectangle roundedRect)
         {
-            roundedRect = default (SharpDX.Direct2D1.RoundedRectangle);
-            fixed (void *roundedRect_ = &roundedRect)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, roundedRect_, (*(void ***)this._nativePointer)[17]);
+            roundedRect = default(SharpDX.Direct2D1.RoundedRectangle);
+            fixed (void* roundedRect_ = &roundedRect)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, roundedRect_, (*(void***)this._nativePointer)[17]);
         }
     }
 
@@ -10306,7 +10306,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd9069e-12e2-11dc-9fed-001143a055f9")]
     internal partial class SimplifiedGeometrySinkNative : SharpDX.ComObject, SharpDX.Direct2D1.SimplifiedGeometrySink
     {
-        public SimplifiedGeometrySinkNative(System.IntPtr nativePtr): base (nativePtr)
+        public SimplifiedGeometrySinkNative(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -10351,7 +10351,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1SimplifiedGeometrySink::SetFillMode</unmanaged-short>
         internal unsafe void SetFillMode_(SharpDX.Direct2D1.FillMode fillMode)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked ((System.Int32)fillMode), (*(void ***)this._nativePointer)[3]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked((System.Int32)fillMode), (*(void***)this._nativePointer)[3]);
         }
 
         /// <summary>
@@ -10366,7 +10366,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1SimplifiedGeometrySink::SetSegmentFlags</unmanaged-short>
         internal unsafe void SetSegmentFlags_(SharpDX.Direct2D1.PathSegment vertexFlags)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked ((System.Int32)vertexFlags), (*(void ***)this._nativePointer)[4]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked((System.Int32)vertexFlags), (*(void***)this._nativePointer)[4]);
         }
 
         /// <summary>
@@ -10382,7 +10382,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1SimplifiedGeometrySink::BeginFigure</unmanaged-short>
         internal unsafe void BeginFigure_(SharpDX.Mathematics.Interop.RawVector2 startPoint, SharpDX.Direct2D1.FigureBegin figureBegin)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, startPoint, unchecked ((System.Int32)figureBegin), (*(void ***)this._nativePointer)[5]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid0(this._nativePointer, startPoint, unchecked((System.Int32)figureBegin), (*(void***)this._nativePointer)[5]);
         }
 
         /// <summary>
@@ -10395,8 +10395,8 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1SimplifiedGeometrySink::AddLines</unmanaged-short>
         internal unsafe void AddLines_(SharpDX.Mathematics.Interop.RawVector2[] ointsRef, System.Int32 pointsCount)
         {
-            fixed (void *ointsRef_ = ointsRef)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, ointsRef_, pointsCount, (*(void ***)this._nativePointer)[6]);
+            fixed (void* ointsRef_ = ointsRef)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, ointsRef_, pointsCount, (*(void***)this._nativePointer)[6]);
         }
 
         /// <summary>
@@ -10409,8 +10409,8 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1SimplifiedGeometrySink::AddBeziers</unmanaged-short>
         internal unsafe void AddBeziers_(SharpDX.Direct2D1.BezierSegment[] beziers, System.Int32 beziersCount)
         {
-            fixed (void *beziers_ = beziers)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, beziers_, beziersCount, (*(void ***)this._nativePointer)[7]);
+            fixed (void* beziers_ = beziers)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, beziers_, beziersCount, (*(void***)this._nativePointer)[7]);
         }
 
         /// <summary>
@@ -10425,7 +10425,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1SimplifiedGeometrySink::EndFigure</unmanaged-short>
         internal unsafe void EndFigure_(SharpDX.Direct2D1.FigureEnd figureEnd)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked ((System.Int32)figureEnd), (*(void ***)this._nativePointer)[8]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, unchecked((System.Int32)figureEnd), (*(void***)this._nativePointer)[8]);
         }
 
         /// <summary>
@@ -10441,7 +10441,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void Close_()
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[9]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[9]);
             __result__.CheckError();
         }
     }
@@ -10449,7 +10449,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd906a9-12e2-11dc-9fed-001143a055f9")]
     public partial class SolidColorBrush : SharpDX.Direct2D1.Brush
     {
-        public SolidColorBrush(System.IntPtr nativePtr): base (nativePtr)
+        public SolidColorBrush(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -10478,7 +10478,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1SolidColorBrush::SetColor</unmanaged-short>
         internal unsafe void SetColor(SharpDX.Mathematics.Interop.RawColor4 color)
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &color, (*(void ***)this._nativePointer)[8]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &color, (*(void***)this._nativePointer)[8]);
         }
 
         /// <summary>
@@ -10491,7 +10491,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Mathematics.Interop.RawColor4 GetColor()
         {
             SharpDX.Mathematics.Interop.RawColor4 __result__;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void ***)this._nativePointer)[9]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void***)this._nativePointer)[9]);
             return __result__;
         }
     }
@@ -10504,7 +10504,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("db1800dd-0c34-4cf9-be90-31cc0a5653e1")]
     public partial class SourceTransformNative : SharpDX.Direct2D1.TransformNative, SharpDX.Direct2D1.SourceTransform
     {
-        public SourceTransformNative(System.IntPtr nativePtr): base (nativePtr)
+        public SourceTransformNative(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -10539,7 +10539,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr renderInfo_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             renderInfo_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.RenderInformation>(renderInfo);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)renderInfo_, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)renderInfo_, (*(void***)this._nativePointer)[7]);
             __result__.CheckError();
         }
 
@@ -10562,7 +10562,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr target_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             target_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Bitmap1>(target);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, (void *)target_, &drawRect, targetOrigin, (*(void ***)this._nativePointer)[8]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, (void*)target_, &drawRect, targetOrigin, (*(void***)this._nativePointer)[8]);
             __result__.CheckError();
         }
     }
@@ -10570,7 +10570,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("4dc583bf-3a10-438a-8722-e9765224f1f1")]
     public partial class SpriteBatch : SharpDX.Direct2D1.Resource
     {
-        public SpriteBatch(System.IntPtr nativePtr): base (nativePtr)
+        public SpriteBatch(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -10608,11 +10608,11 @@ namespace SharpDX.Direct2D1
         public unsafe void AddSprites(System.Int32 spriteCount, SharpDX.Mathematics.Interop.RawRectangleF[] destinationRectangles, SharpDX.Mathematics.Interop.RawRectangle[] sourceRectangles, SharpDX.Mathematics.Interop.RawColor4[] colors, SharpDX.Mathematics.Interop.RawMatrix3x2[] transforms, System.Int32 destinationRectanglesStride, System.Int32 sourceRectanglesStride, System.Int32 colorsStride, System.Int32 transformsStride)
         {
             SharpDX.Result __result__;
-            fixed (void *transforms_ = transforms)
-                fixed (void *colors_ = colors)
-                    fixed (void *sourceRectangles_ = sourceRectangles)
-                        fixed (void *destinationRectangles_ = destinationRectangles)
-                            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, spriteCount, destinationRectangles_, sourceRectangles_, colors_, transforms_, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride, (*(void ***)this._nativePointer)[4]);
+            fixed (void* transforms_ = transforms)
+            fixed (void* colors_ = colors)
+            fixed (void* sourceRectangles_ = sourceRectangles)
+            fixed (void* destinationRectangles_ = destinationRectangles)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, spriteCount, destinationRectangles_, sourceRectangles_, colors_, transforms_, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride, (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
         }
 
@@ -10636,11 +10636,11 @@ namespace SharpDX.Direct2D1
         public unsafe void SetSprites(System.Int32 startIndex, System.Int32 spriteCount, SharpDX.Mathematics.Interop.RawRectangleF[] destinationRectangles, SharpDX.Mathematics.Interop.RawRectangle[] sourceRectangles, SharpDX.Mathematics.Interop.RawColor4[] colors, SharpDX.Mathematics.Interop.RawMatrix3x2[] transforms, System.Int32 destinationRectanglesStride, System.Int32 sourceRectanglesStride, System.Int32 colorsStride, System.Int32 transformsStride)
         {
             SharpDX.Result __result__;
-            fixed (void *transforms_ = transforms)
-                fixed (void *colors_ = colors)
-                    fixed (void *sourceRectangles_ = sourceRectangles)
-                        fixed (void *destinationRectangles_ = destinationRectangles)
-                            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, startIndex, spriteCount, destinationRectangles_, sourceRectangles_, colors_, transforms_, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride, (*(void ***)this._nativePointer)[5]);
+            fixed (void* transforms_ = transforms)
+            fixed (void* colors_ = colors)
+            fixed (void* sourceRectangles_ = sourceRectangles)
+            fixed (void* destinationRectangles_ = destinationRectangles)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, startIndex, spriteCount, destinationRectangles_, sourceRectangles_, colors_, transforms_, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride, (*(void***)this._nativePointer)[5]);
             __result__.CheckError();
         }
 
@@ -10660,11 +10660,11 @@ namespace SharpDX.Direct2D1
         public unsafe void GetSprites(System.Int32 startIndex, System.Int32 spriteCount, SharpDX.Mathematics.Interop.RawRectangleF[] destinationRectangles, SharpDX.Mathematics.Interop.RawRectangle[] sourceRectangles, SharpDX.Mathematics.Interop.RawColor4[] colors, SharpDX.Mathematics.Interop.RawMatrix3x2[] transforms)
         {
             SharpDX.Result __result__;
-            fixed (void *transforms_ = transforms)
-                fixed (void *colors_ = colors)
-                    fixed (void *sourceRectangles_ = sourceRectangles)
-                        fixed (void *destinationRectangles_ = destinationRectangles)
-                            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, startIndex, spriteCount, destinationRectangles_, sourceRectangles_, colors_, transforms_, (*(void ***)this._nativePointer)[6]);
+            fixed (void* transforms_ = transforms)
+            fixed (void* colors_ = colors)
+            fixed (void* sourceRectangles_ = sourceRectangles)
+            fixed (void* destinationRectangles_ = destinationRectangles)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, startIndex, spriteCount, destinationRectangles_, sourceRectangles_, colors_, transforms_, (*(void***)this._nativePointer)[6]);
             __result__.CheckError();
         }
 
@@ -10678,7 +10678,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetSpriteCount()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[7]);
             return __result__;
         }
 
@@ -10690,14 +10690,14 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1SpriteBatch::Clear</unmanaged-short>
         public unsafe void Clear()
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (*(void ***)this._nativePointer)[8]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (*(void***)this._nativePointer)[8]);
         }
     }
 
     [System.Runtime.InteropServices.GuidAttribute("2cd9069d-12e2-11dc-9fed-001143a055f9")]
     public partial class StrokeStyle : SharpDX.Direct2D1.Resource
     {
-        public StrokeStyle(System.IntPtr nativePtr): base (nativePtr)
+        public StrokeStyle(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -10803,7 +10803,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.CapStyle GetStartCap()
         {
             SharpDX.Direct2D1.CapStyle __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1CapStyle(this._nativePointer, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1CapStyle(this._nativePointer, (*(void***)this._nativePointer)[4]);
             return __result__;
         }
 
@@ -10817,7 +10817,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.CapStyle GetEndCap()
         {
             SharpDX.Direct2D1.CapStyle __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1CapStyle(this._nativePointer, (*(void ***)this._nativePointer)[5]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1CapStyle(this._nativePointer, (*(void***)this._nativePointer)[5]);
             return __result__;
         }
 
@@ -10831,7 +10831,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.CapStyle GetDashCap()
         {
             SharpDX.Direct2D1.CapStyle __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1CapStyle(this._nativePointer, (*(void ***)this._nativePointer)[6]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1CapStyle(this._nativePointer, (*(void***)this._nativePointer)[6]);
             return __result__;
         }
 
@@ -10845,7 +10845,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Single GetMiterLimit()
         {
             System.Single __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallfloat(this._nativePointer, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallfloat(this._nativePointer, (*(void***)this._nativePointer)[7]);
             return __result__;
         }
 
@@ -10859,7 +10859,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.LineJoin GetLineJoin()
         {
             SharpDX.Direct2D1.LineJoin __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1LineJoin(this._nativePointer, (*(void ***)this._nativePointer)[8]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1LineJoin(this._nativePointer, (*(void***)this._nativePointer)[8]);
             return __result__;
         }
 
@@ -10873,7 +10873,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Single GetDashOffset()
         {
             System.Single __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallfloat(this._nativePointer, (*(void ***)this._nativePointer)[9]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallfloat(this._nativePointer, (*(void***)this._nativePointer)[9]);
             return __result__;
         }
 
@@ -10890,7 +10890,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.DashStyle GetDashStyle()
         {
             SharpDX.Direct2D1.DashStyle __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1DashStyle(this._nativePointer, (*(void ***)this._nativePointer)[10]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1DashStyle(this._nativePointer, (*(void***)this._nativePointer)[10]);
             return __result__;
         }
 
@@ -10904,7 +10904,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetDashesCount()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[11]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[11]);
             return __result__;
         }
 
@@ -10921,15 +10921,15 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1StrokeStyle::GetDashes</unmanaged-short>
         public unsafe void GetDashes(System.Single[] dashes, System.Int32 dashesCount)
         {
-            fixed (void *dashes_ = dashes)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, dashes_, dashesCount, (*(void ***)this._nativePointer)[12]);
+            fixed (void* dashes_ = dashes)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, dashes_, dashesCount, (*(void***)this._nativePointer)[12]);
         }
     }
 
     [System.Runtime.InteropServices.GuidAttribute("10a72a66-e91c-43f4-993f-ddf4b82b0b4a")]
     public partial class StrokeStyle1 : SharpDX.Direct2D1.StrokeStyle
     {
-        public StrokeStyle1(System.IntPtr nativePtr): base (nativePtr)
+        public StrokeStyle1(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -10955,7 +10955,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.StrokeTransformType GetStrokeTransformType()
         {
             SharpDX.Direct2D1.StrokeTransformType __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1StrokeTransformType(this._nativePointer, (*(void ***)this._nativePointer)[13]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1StrokeTransformType(this._nativePointer, (*(void***)this._nativePointer)[13]);
             return __result__;
         }
     }
@@ -10963,7 +10963,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("c9cdb0dd-f8c9-4e70-b7c2-301c80292c5e")]
     public partial class SvgAttribute : SharpDX.Direct2D1.Resource
     {
-        public SvgAttribute(System.IntPtr nativePtr): base (nativePtr)
+        public SvgAttribute(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -10991,7 +10991,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetElement(out SharpDX.Direct2D1.SvgElement element)
         {
             System.IntPtr element_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &element_, (*(void ***)this._nativePointer)[4]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &element_, (*(void***)this._nativePointer)[4]);
             if (element_ != System.IntPtr.Zero)
                 element = new SharpDX.Direct2D1.SvgElement(element_);
             else
@@ -11009,7 +11009,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr attribute_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &attribute_, (*(void ***)this._nativePointer)[5]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &attribute_, (*(void***)this._nativePointer)[5]);
             if (attribute_ != System.IntPtr.Zero)
                 attribute = new SharpDX.Direct2D1.SvgAttribute(attribute_);
             else
@@ -11021,7 +11021,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("86b88e4d-afa4-4d7b-88e4-68a51c4a0aec")]
     public partial class SvgDocument : SharpDX.Direct2D1.Resource
     {
-        public SvgDocument(System.IntPtr nativePtr): base (nativePtr)
+        public SvgDocument(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -11063,7 +11063,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void SetViewportSize(SharpDX.Size2F viewportSize)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, viewportSize, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, viewportSize, (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
         }
 
@@ -11076,7 +11076,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Size2F GetViewportSize()
         {
             SharpDX.Size2F __result__;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void ***)this._nativePointer)[5]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoidPtr(this._nativePointer, &__result__, (*(void***)this._nativePointer)[5]);
             return __result__;
         }
 
@@ -11092,7 +11092,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr root_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             root_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SvgElement>(root);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)root_, (*(void ***)this._nativePointer)[6]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)root_, (*(void***)this._nativePointer)[6]);
             __result__.CheckError();
         }
 
@@ -11105,7 +11105,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetRoot(out SharpDX.Direct2D1.SvgElement root)
         {
             System.IntPtr root_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &root_, (*(void ***)this._nativePointer)[7]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &root_, (*(void***)this._nativePointer)[7]);
             if (root_ != System.IntPtr.Zero)
                 root = new SharpDX.Direct2D1.SvgElement(root_);
             else
@@ -11124,8 +11124,8 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr svgElement_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (char *id_ = id)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)id_, &svgElement_, (*(void ***)this._nativePointer)[8]);
+            fixed (char* id_ = id)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)id_, &svgElement_, (*(void***)this._nativePointer)[8]);
             if (svgElement_ != System.IntPtr.Zero)
                 svgElement = new SharpDX.Direct2D1.SvgElement(svgElement_);
             else
@@ -11148,7 +11148,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             outputXmlStream_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Win32.IStream>(outputXmlStream);
             subtree_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SvgElement>(subtree);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)outputXmlStream_, (void *)subtree_, (*(void ***)this._nativePointer)[9]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)outputXmlStream_, (void*)subtree_, (*(void***)this._nativePointer)[9]);
             __result__.CheckError();
         }
 
@@ -11166,7 +11166,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr subtree_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             inputXmlStream_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Win32.IStream>(inputXmlStream);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)inputXmlStream_, &subtree_, (*(void ***)this._nativePointer)[10]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)inputXmlStream_, &subtree_, (*(void***)this._nativePointer)[10]);
             if (subtree_ != System.IntPtr.Zero)
                 subtree = new SharpDX.Direct2D1.SvgElement(subtree_);
             else
@@ -11191,8 +11191,8 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             if (color != null)
                 color_ = color.Value;
-            fixed (char *id_ = id)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)paintType), color == null ? (void *)0 : &color_, (void *)id_, &aintRef_, (*(void ***)this._nativePointer)[11]);
+            fixed (char* id_ = id)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)paintType), color == null ? (void*)0 : &color_, (void*)id_, &aintRef_, (*(void***)this._nativePointer)[11]);
             if (aintRef_ != System.IntPtr.Zero)
                 aintRef = new SharpDX.Direct2D1.SvgPaint(aintRef_);
             else
@@ -11213,8 +11213,8 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr strokeDashArray_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (void *dashes_ = dashes)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, dashes_, dashesCount, &strokeDashArray_, (*(void ***)this._nativePointer)[12]);
+            fixed (void* dashes_ = dashes)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, dashes_, dashesCount, &strokeDashArray_, (*(void***)this._nativePointer)[12]);
             if (strokeDashArray_ != System.IntPtr.Zero)
                 strokeDashArray = new SharpDX.Direct2D1.SvgStrokeDashArray(strokeDashArray_);
             else
@@ -11235,8 +11235,8 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr ointCollectionRef_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (void *ointsRef_ = ointsRef)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, ointsRef_, pointsCount, &ointCollectionRef_, (*(void ***)this._nativePointer)[13]);
+            fixed (void* ointsRef_ = ointsRef)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, ointsRef_, pointsCount, &ointCollectionRef_, (*(void***)this._nativePointer)[13]);
             if (ointCollectionRef_ != System.IntPtr.Zero)
                 ointCollectionRef = new SharpDX.Direct2D1.SvgPointCollection(ointCollectionRef_);
             else
@@ -11259,9 +11259,9 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr athDataRef_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (void *commands_ = commands)
-                fixed (void *segmentData_ = segmentData)
-                    __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, segmentData_, segmentDataCount, commands_, commandsCount, &athDataRef_, (*(void ***)this._nativePointer)[14]);
+            fixed (void* commands_ = commands)
+            fixed (void* segmentData_ = segmentData)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, segmentData_, segmentDataCount, commands_, commandsCount, &athDataRef_, (*(void***)this._nativePointer)[14]);
             if (athDataRef_ != System.IntPtr.Zero)
                 athDataRef = new SharpDX.Direct2D1.SvgPathData(athDataRef_);
             else
@@ -11273,7 +11273,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("ac7b67a6-183e-49c1-a823-0ebe40b0db29")]
     public partial class SvgElement : SharpDX.Direct2D1.Resource
     {
-        public SvgElement(System.IntPtr nativePtr): base (nativePtr)
+        public SvgElement(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -11383,7 +11383,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetDocument(out SharpDX.Direct2D1.SvgDocument document)
         {
             System.IntPtr document_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &document_, (*(void ***)this._nativePointer)[4]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &document_, (*(void***)this._nativePointer)[4]);
             if (document_ != System.IntPtr.Zero)
                 document = new SharpDX.Direct2D1.SvgDocument(document_);
             else
@@ -11401,7 +11401,7 @@ namespace SharpDX.Direct2D1
         public unsafe void GetTagName(System.IntPtr name, System.Int32 nameCount)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)name, nameCount, (*(void ***)this._nativePointer)[5]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)name, nameCount, (*(void***)this._nativePointer)[5]);
             __result__.CheckError();
         }
 
@@ -11414,7 +11414,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetTagNameLength()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[6]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[6]);
             return __result__;
         }
 
@@ -11427,7 +11427,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Mathematics.Interop.RawBool IsTextContent_()
         {
             SharpDX.Mathematics.Interop.RawBool __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXMathematicsInteropRawBool(this._nativePointer, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXMathematicsInteropRawBool(this._nativePointer, (*(void***)this._nativePointer)[7]);
             return __result__;
         }
 
@@ -11440,7 +11440,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetParent(out SharpDX.Direct2D1.SvgElement arentRef)
         {
             System.IntPtr arentRef_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &arentRef_, (*(void ***)this._nativePointer)[8]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &arentRef_, (*(void***)this._nativePointer)[8]);
             if (arentRef_ != System.IntPtr.Zero)
                 arentRef = new SharpDX.Direct2D1.SvgElement(arentRef_);
             else
@@ -11456,7 +11456,7 @@ namespace SharpDX.Direct2D1
         public unsafe SharpDX.Mathematics.Interop.RawBool HasChildren()
         {
             SharpDX.Mathematics.Interop.RawBool __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXMathematicsInteropRawBool(this._nativePointer, (*(void ***)this._nativePointer)[9]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXMathematicsInteropRawBool(this._nativePointer, (*(void***)this._nativePointer)[9]);
             return __result__;
         }
 
@@ -11469,7 +11469,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetFirstChild(out SharpDX.Direct2D1.SvgElement child)
         {
             System.IntPtr child_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &child_, (*(void ***)this._nativePointer)[10]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &child_, (*(void***)this._nativePointer)[10]);
             if (child_ != System.IntPtr.Zero)
                 child = new SharpDX.Direct2D1.SvgElement(child_);
             else
@@ -11485,7 +11485,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetLastChild(out SharpDX.Direct2D1.SvgElement child)
         {
             System.IntPtr child_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &child_, (*(void ***)this._nativePointer)[11]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &child_, (*(void***)this._nativePointer)[11]);
             if (child_ != System.IntPtr.Zero)
                 child = new SharpDX.Direct2D1.SvgElement(child_);
             else
@@ -11506,7 +11506,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr reviousChildRef_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             referenceChild_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SvgElement>(referenceChild);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)referenceChild_, &reviousChildRef_, (*(void ***)this._nativePointer)[12]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)referenceChild_, &reviousChildRef_, (*(void***)this._nativePointer)[12]);
             if (reviousChildRef_ != System.IntPtr.Zero)
                 reviousChildRef = new SharpDX.Direct2D1.SvgElement(reviousChildRef_);
             else
@@ -11528,7 +11528,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr nextChild_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             referenceChild_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SvgElement>(referenceChild);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)referenceChild_, &nextChild_, (*(void ***)this._nativePointer)[13]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)referenceChild_, &nextChild_, (*(void***)this._nativePointer)[13]);
             if (nextChild_ != System.IntPtr.Zero)
                 nextChild = new SharpDX.Direct2D1.SvgElement(nextChild_);
             else
@@ -11551,7 +11551,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             newChild_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SvgElement>(newChild);
             referenceChild_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SvgElement>(referenceChild);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)newChild_, (void *)referenceChild_, (*(void ***)this._nativePointer)[14]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)newChild_, (void*)referenceChild_, (*(void***)this._nativePointer)[14]);
             __result__.CheckError();
         }
 
@@ -11567,7 +11567,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr newChild_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             newChild_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SvgElement>(newChild);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)newChild_, (*(void ***)this._nativePointer)[15]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)newChild_, (*(void***)this._nativePointer)[15]);
             __result__.CheckError();
         }
 
@@ -11586,7 +11586,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             newChild_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SvgElement>(newChild);
             oldChild_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SvgElement>(oldChild);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)newChild_, (void *)oldChild_, (*(void ***)this._nativePointer)[16]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)newChild_, (void*)oldChild_, (*(void***)this._nativePointer)[16]);
             __result__.CheckError();
         }
 
@@ -11602,7 +11602,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr oldChild_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             oldChild_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SvgElement>(oldChild);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)oldChild_, (*(void ***)this._nativePointer)[17]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)oldChild_, (*(void***)this._nativePointer)[17]);
             __result__.CheckError();
         }
 
@@ -11618,8 +11618,8 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr newChild_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            fixed (char *tagName_ = tagName)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)tagName_, &newChild_, (*(void ***)this._nativePointer)[18]);
+            fixed (char* tagName_ = tagName)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)tagName_, &newChild_, (*(void***)this._nativePointer)[18]);
             if (newChild_ != System.IntPtr.Zero)
                 newChild = new SharpDX.Direct2D1.SvgElement(newChild_);
             else
@@ -11637,11 +11637,11 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1SvgElement::IsAttributeSpecified</unmanaged-short>
         public unsafe SharpDX.Mathematics.Interop.RawBool IsAttributeSpecified(System.String name, out SharpDX.Mathematics.Interop.RawBool inherited)
         {
-            inherited = default (SharpDX.Mathematics.Interop.RawBool);
+            inherited = default(SharpDX.Mathematics.Interop.RawBool);
             SharpDX.Mathematics.Interop.RawBool __result__;
-            fixed (void *inherited_ = &inherited)
-                fixed (char *name_ = name)
-                    __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXMathematicsInteropRawBool(this._nativePointer, (void *)name_, inherited_, (*(void ***)this._nativePointer)[19]);
+            fixed (void* inherited_ = &inherited)
+            fixed (char* name_ = name)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXMathematicsInteropRawBool(this._nativePointer, (void*)name_, inherited_, (*(void***)this._nativePointer)[19]);
             return __result__;
         }
 
@@ -11654,7 +11654,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetSpecifiedAttributeCount()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[20]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[20]);
             return __result__;
         }
 
@@ -11670,10 +11670,10 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1SvgElement::GetSpecifiedAttributeName</unmanaged-short>
         public unsafe void GetSpecifiedAttributeName(System.Int32 index, System.IntPtr name, System.Int32 nameCount, out SharpDX.Mathematics.Interop.RawBool inherited)
         {
-            inherited = default (SharpDX.Mathematics.Interop.RawBool);
+            inherited = default(SharpDX.Mathematics.Interop.RawBool);
             SharpDX.Result __result__;
-            fixed (void *inherited_ = &inherited)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, index, (void *)name, nameCount, inherited_, (*(void ***)this._nativePointer)[21]);
+            fixed (void* inherited_ = &inherited)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, index, (void*)name, nameCount, inherited_, (*(void***)this._nativePointer)[21]);
             __result__.CheckError();
         }
 
@@ -11688,11 +11688,11 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1SvgElement::GetSpecifiedAttributeNameLength</unmanaged-short>
         public unsafe void GetSpecifiedAttributeNameLength(System.Int32 index, out System.Int32 nameLength, out SharpDX.Mathematics.Interop.RawBool inherited)
         {
-            inherited = default (SharpDX.Mathematics.Interop.RawBool);
+            inherited = default(SharpDX.Mathematics.Interop.RawBool);
             SharpDX.Result __result__;
-            fixed (void *inherited_ = &inherited)
-                fixed (void *nameLength_ = &nameLength)
-                    __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, index, nameLength_, inherited_, (*(void ***)this._nativePointer)[22]);
+            fixed (void* inherited_ = &inherited)
+            fixed (void* nameLength_ = &nameLength)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, index, nameLength_, inherited_, (*(void***)this._nativePointer)[22]);
             __result__.CheckError();
         }
 
@@ -11706,8 +11706,8 @@ namespace SharpDX.Direct2D1
         public unsafe void RemoveAttribute(System.String name)
         {
             SharpDX.Result __result__;
-            fixed (char *name_ = name)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)name_, (*(void ***)this._nativePointer)[23]);
+            fixed (char* name_ = name)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)name_, (*(void***)this._nativePointer)[23]);
             __result__.CheckError();
         }
 
@@ -11722,8 +11722,8 @@ namespace SharpDX.Direct2D1
         public unsafe void SetTextValue(System.String name, System.Int32 nameCount)
         {
             SharpDX.Result __result__;
-            fixed (char *name_ = name)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)name_, nameCount, (*(void ***)this._nativePointer)[24]);
+            fixed (char* name_ = name)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)name_, nameCount, (*(void***)this._nativePointer)[24]);
             __result__.CheckError();
         }
 
@@ -11738,7 +11738,7 @@ namespace SharpDX.Direct2D1
         public unsafe void GetTextValue(System.IntPtr name, System.Int32 nameCount)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)name, nameCount, (*(void ***)this._nativePointer)[25]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)name, nameCount, (*(void***)this._nativePointer)[25]);
             __result__.CheckError();
         }
 
@@ -11751,7 +11751,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetTextValueLength()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[26]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[26]);
             return __result__;
         }
 
@@ -11768,8 +11768,8 @@ namespace SharpDX.Direct2D1
             System.IntPtr value_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             value_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.SvgAttribute>(value);
-            fixed (char *name_ = name)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)name_, (void *)value_, (*(void ***)this._nativePointer)[27]);
+            fixed (char* name_ = name)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)name_, (void*)value_, (*(void***)this._nativePointer)[27]);
             __result__.CheckError();
         }
 
@@ -11786,8 +11786,8 @@ namespace SharpDX.Direct2D1
         public unsafe void SetAttributeValue(System.String name, SharpDX.Direct2D1.SvgAttributePodType type, System.IntPtr value, System.Int32 valueSizeInBytes)
         {
             SharpDX.Result __result__;
-            fixed (char *name_ = name)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)name_, unchecked ((System.Int32)type), (void *)value, valueSizeInBytes, (*(void ***)this._nativePointer)[28]);
+            fixed (char* name_ = name)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)name_, unchecked((System.Int32)type), (void*)value, valueSizeInBytes, (*(void***)this._nativePointer)[28]);
             __result__.CheckError();
         }
 
@@ -11803,9 +11803,9 @@ namespace SharpDX.Direct2D1
         public unsafe void SetAttributeValue(System.String name, SharpDX.Direct2D1.SvgAttributeStringType type, System.String value)
         {
             SharpDX.Result __result__;
-            fixed (char *value_ = value)
-                fixed (char *name_ = name)
-                    __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)name_, unchecked ((System.Int32)type), (void *)value_, (*(void ***)this._nativePointer)[29]);
+            fixed (char* value_ = value)
+            fixed (char* name_ = name)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)name_, unchecked((System.Int32)type), (void*)value_, (*(void***)this._nativePointer)[29]);
             __result__.CheckError();
         }
 
@@ -11821,9 +11821,9 @@ namespace SharpDX.Direct2D1
         public unsafe void GetAttributeValue(System.String name, System.Guid riid, out System.IntPtr value)
         {
             SharpDX.Result __result__;
-            fixed (void *value_ = &value)
-                fixed (char *name_ = name)
-                    __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)name_, &riid, value_, (*(void ***)this._nativePointer)[30]);
+            fixed (void* value_ = &value)
+            fixed (char* name_ = name)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)name_, &riid, value_, (*(void***)this._nativePointer)[30]);
             __result__.CheckError();
         }
 
@@ -11840,8 +11840,8 @@ namespace SharpDX.Direct2D1
         public unsafe void GetAttributeValue(System.String name, SharpDX.Direct2D1.SvgAttributePodType type, System.IntPtr value, System.Int32 valueSizeInBytes)
         {
             SharpDX.Result __result__;
-            fixed (char *name_ = name)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)name_, unchecked ((System.Int32)type), (void *)value, valueSizeInBytes, (*(void ***)this._nativePointer)[31]);
+            fixed (char* name_ = name)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)name_, unchecked((System.Int32)type), (void*)value, valueSizeInBytes, (*(void***)this._nativePointer)[31]);
             __result__.CheckError();
         }
 
@@ -11858,8 +11858,8 @@ namespace SharpDX.Direct2D1
         public unsafe void GetAttributeValue(System.String name, SharpDX.Direct2D1.SvgAttributeStringType type, System.IntPtr value, System.Int32 valueCount)
         {
             SharpDX.Result __result__;
-            fixed (char *name_ = name)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)name_, unchecked ((System.Int32)type), (void *)value, valueCount, (*(void ***)this._nativePointer)[32]);
+            fixed (char* name_ = name)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)name_, unchecked((System.Int32)type), (void*)value, valueCount, (*(void***)this._nativePointer)[32]);
             __result__.CheckError();
         }
 
@@ -11875,9 +11875,9 @@ namespace SharpDX.Direct2D1
         public unsafe void GetAttributeValueLength(System.String name, SharpDX.Direct2D1.SvgAttributeStringType type, out System.Int32 valueLength)
         {
             SharpDX.Result __result__;
-            fixed (void *valueLength_ = &valueLength)
-                fixed (char *name_ = name)
-                    __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)name_, unchecked ((System.Int32)type), valueLength_, (*(void ***)this._nativePointer)[33]);
+            fixed (void* valueLength_ = &valueLength)
+            fixed (char* name_ = name)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)name_, unchecked((System.Int32)type), valueLength_, (*(void***)this._nativePointer)[33]);
             __result__.CheckError();
         }
     }
@@ -11885,7 +11885,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("af671749-d241-4db8-8e41-dcc2e5c1a438")]
     public partial class SvgGlyphStyle : SharpDX.Direct2D1.Resource
     {
-        public SvgGlyphStyle(System.IntPtr nativePtr): base (nativePtr)
+        public SvgGlyphStyle(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -11931,7 +11931,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr brush_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)brush_, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)brush_, (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
         }
 
@@ -11945,7 +11945,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetFill(out SharpDX.Direct2D1.Brush brush)
         {
             System.IntPtr brush_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &brush_, (*(void ***)this._nativePointer)[5]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &brush_, (*(void***)this._nativePointer)[5]);
             if (brush_ != System.IntPtr.Zero)
                 brush = new SharpDX.Direct2D1.Brush(brush_);
             else
@@ -11969,8 +11969,8 @@ namespace SharpDX.Direct2D1
             System.IntPtr brush_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             brush_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.Brush>(brush);
-            fixed (void *dashes_ = dashes)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)brush_, strokeWidth, dashes_, dashesCount, dashOffset, (*(void ***)this._nativePointer)[6]);
+            fixed (void* dashes_ = dashes)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)brush_, strokeWidth, dashes_, dashesCount, dashOffset, (*(void***)this._nativePointer)[6]);
             __result__.CheckError();
         }
 
@@ -11984,7 +11984,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetStrokeDashesCount()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[7]);
             return __result__;
         }
 
@@ -12002,10 +12002,10 @@ namespace SharpDX.Direct2D1
         public unsafe void GetStroke(out SharpDX.Direct2D1.Brush brush, out System.Single strokeWidth, System.Single[] dashes, System.Int32 dashesCount, out System.Single dashOffset)
         {
             System.IntPtr brush_ = System.IntPtr.Zero;
-            fixed (void *dashOffset_ = &dashOffset)
-                fixed (void *dashes_ = dashes)
-                    fixed (void *strokeWidth_ = &strokeWidth)
-                        SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &brush_, strokeWidth_, dashes_, dashesCount, dashOffset_, (*(void ***)this._nativePointer)[8]);
+            fixed (void* dashOffset_ = &dashOffset)
+            fixed (void* dashes_ = dashes)
+            fixed (void* strokeWidth_ = &strokeWidth)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &brush_, strokeWidth_, dashes_, dashesCount, dashOffset_, (*(void***)this._nativePointer)[8]);
             if (brush_ != System.IntPtr.Zero)
                 brush = new SharpDX.Direct2D1.Brush(brush_);
             else
@@ -12016,7 +12016,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("d59bab0a-68a2-455b-a5dc-9eb2854e2490")]
     public partial class SvgPaint : SharpDX.Direct2D1.SvgAttribute
     {
-        public SvgPaint(System.IntPtr nativePtr): base (nativePtr)
+        public SvgPaint(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -12068,7 +12068,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void SetPaintType(SharpDX.Direct2D1.SvgPaintType paintType)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)paintType), (*(void ***)this._nativePointer)[6]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)paintType), (*(void***)this._nativePointer)[6]);
             __result__.CheckError();
         }
 
@@ -12081,7 +12081,7 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Direct2D1.SvgPaintType GetPaintType()
         {
             SharpDX.Direct2D1.SvgPaintType __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1SvgPaintType(this._nativePointer, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1SvgPaintType(this._nativePointer, (*(void***)this._nativePointer)[7]);
             return __result__;
         }
 
@@ -12095,7 +12095,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void SetColor(SharpDX.Mathematics.Interop.RawColor4 color)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &color, (*(void ***)this._nativePointer)[8]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &color, (*(void***)this._nativePointer)[8]);
             __result__.CheckError();
         }
 
@@ -12107,9 +12107,9 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1SvgPaint::GetColor</unmanaged-short>
         internal unsafe void GetColor(out SharpDX.Mathematics.Interop.RawColor4 color)
         {
-            color = default (SharpDX.Mathematics.Interop.RawColor4);
-            fixed (void *color_ = &color)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, color_, (*(void ***)this._nativePointer)[9]);
+            color = default(SharpDX.Mathematics.Interop.RawColor4);
+            fixed (void* color_ = &color)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, color_, (*(void***)this._nativePointer)[9]);
         }
 
         /// <summary>
@@ -12122,8 +12122,8 @@ namespace SharpDX.Direct2D1
         public unsafe void SetId(System.String id)
         {
             SharpDX.Result __result__;
-            fixed (char *id_ = id)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)id_, (*(void ***)this._nativePointer)[10]);
+            fixed (char* id_ = id)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)id_, (*(void***)this._nativePointer)[10]);
             __result__.CheckError();
         }
 
@@ -12138,7 +12138,7 @@ namespace SharpDX.Direct2D1
         public unsafe void GetId(System.IntPtr id, System.Int32 idCount)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)id, idCount, (*(void ***)this._nativePointer)[11]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)id, idCount, (*(void***)this._nativePointer)[11]);
             __result__.CheckError();
         }
 
@@ -12151,7 +12151,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetIdLength()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[12]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[12]);
             return __result__;
         }
     }
@@ -12159,7 +12159,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("c095e4f4-bb98-43d6-9745-4d1b84ec9888")]
     public partial class SvgPathData : SharpDX.Direct2D1.SvgAttribute
     {
-        public SvgPathData(System.IntPtr nativePtr): base (nativePtr)
+        public SvgPathData(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -12194,7 +12194,7 @@ namespace SharpDX.Direct2D1
         public unsafe void RemoveSegmentDataAtEnd(System.Int32 dataCount)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, dataCount, (*(void ***)this._nativePointer)[6]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, dataCount, (*(void***)this._nativePointer)[6]);
             __result__.CheckError();
         }
 
@@ -12210,8 +12210,8 @@ namespace SharpDX.Direct2D1
         public unsafe void UpdateSegmentData(System.Single[] data, System.Int32 dataCount, System.Int32 startIndex)
         {
             SharpDX.Result __result__;
-            fixed (void *data_ = data)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, data_, dataCount, startIndex, (*(void ***)this._nativePointer)[7]);
+            fixed (void* data_ = data)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, data_, dataCount, startIndex, (*(void***)this._nativePointer)[7]);
             __result__.CheckError();
         }
 
@@ -12227,8 +12227,8 @@ namespace SharpDX.Direct2D1
         public unsafe void GetSegmentData(System.Single[] data, System.Int32 dataCount, System.Int32 startIndex)
         {
             SharpDX.Result __result__;
-            fixed (void *data_ = data)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, data_, dataCount, startIndex, (*(void ***)this._nativePointer)[8]);
+            fixed (void* data_ = data)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, data_, dataCount, startIndex, (*(void***)this._nativePointer)[8]);
             __result__.CheckError();
         }
 
@@ -12241,7 +12241,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetSegmentDataCount()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[9]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[9]);
             return __result__;
         }
 
@@ -12255,7 +12255,7 @@ namespace SharpDX.Direct2D1
         public unsafe void RemoveCommandsAtEnd(System.Int32 commandsCount)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, commandsCount, (*(void ***)this._nativePointer)[10]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, commandsCount, (*(void***)this._nativePointer)[10]);
             __result__.CheckError();
         }
 
@@ -12271,8 +12271,8 @@ namespace SharpDX.Direct2D1
         public unsafe void UpdateCommands(SharpDX.Direct2D1.SvgPathCommand[] commands, System.Int32 commandsCount, System.Int32 startIndex)
         {
             SharpDX.Result __result__;
-            fixed (void *commands_ = commands)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, commands_, commandsCount, startIndex, (*(void ***)this._nativePointer)[11]);
+            fixed (void* commands_ = commands)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, commands_, commandsCount, startIndex, (*(void***)this._nativePointer)[11]);
             __result__.CheckError();
         }
 
@@ -12288,8 +12288,8 @@ namespace SharpDX.Direct2D1
         public unsafe void GetCommands(SharpDX.Direct2D1.SvgPathCommand[] commands, System.Int32 commandsCount, System.Int32 startIndex)
         {
             SharpDX.Result __result__;
-            fixed (void *commands_ = commands)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, commands_, commandsCount, startIndex, (*(void ***)this._nativePointer)[12]);
+            fixed (void* commands_ = commands)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, commands_, commandsCount, startIndex, (*(void***)this._nativePointer)[12]);
             __result__.CheckError();
         }
 
@@ -12302,7 +12302,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetCommandsCount()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[13]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[13]);
             return __result__;
         }
 
@@ -12318,7 +12318,7 @@ namespace SharpDX.Direct2D1
         {
             System.IntPtr athGeometryRef_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked ((System.Int32)fillMode), &athGeometryRef_, (*(void ***)this._nativePointer)[14]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, unchecked((System.Int32)fillMode), &athGeometryRef_, (*(void***)this._nativePointer)[14]);
             if (athGeometryRef_ != System.IntPtr.Zero)
                 athGeometryRef = new SharpDX.Direct2D1.PathGeometry1(athGeometryRef_);
             else
@@ -12330,7 +12330,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("9dbe4c0d-3572-4dd9-9825-5530813bb712")]
     public partial class SvgPointCollection : SharpDX.Direct2D1.SvgAttribute
     {
-        public SvgPointCollection(System.IntPtr nativePtr): base (nativePtr)
+        public SvgPointCollection(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -12355,7 +12355,7 @@ namespace SharpDX.Direct2D1
         public unsafe void RemovePointsAtEnd(System.Int32 pointsCount)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, pointsCount, (*(void ***)this._nativePointer)[6]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, pointsCount, (*(void***)this._nativePointer)[6]);
             __result__.CheckError();
         }
 
@@ -12371,8 +12371,8 @@ namespace SharpDX.Direct2D1
         public unsafe void UpdatePoints(SharpDX.Mathematics.Interop.RawVector2[] ointsRef, System.Int32 pointsCount, System.Int32 startIndex)
         {
             SharpDX.Result __result__;
-            fixed (void *ointsRef_ = ointsRef)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, ointsRef_, pointsCount, startIndex, (*(void ***)this._nativePointer)[7]);
+            fixed (void* ointsRef_ = ointsRef)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, ointsRef_, pointsCount, startIndex, (*(void***)this._nativePointer)[7]);
             __result__.CheckError();
         }
 
@@ -12388,8 +12388,8 @@ namespace SharpDX.Direct2D1
         public unsafe void GetPoints(SharpDX.Mathematics.Interop.RawVector2[] ointsRef, System.Int32 pointsCount, System.Int32 startIndex)
         {
             SharpDX.Result __result__;
-            fixed (void *ointsRef_ = ointsRef)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, ointsRef_, pointsCount, startIndex, (*(void ***)this._nativePointer)[8]);
+            fixed (void* ointsRef_ = ointsRef)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, ointsRef_, pointsCount, startIndex, (*(void***)this._nativePointer)[8]);
             __result__.CheckError();
         }
 
@@ -12402,7 +12402,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetPointsCount()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[9]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[9]);
             return __result__;
         }
     }
@@ -12410,7 +12410,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("f1c0ca52-92a3-4f00-b4ce-f35691efd9d9")]
     public partial class SvgStrokeDashArray : SharpDX.Direct2D1.SvgAttribute
     {
-        public SvgStrokeDashArray(System.IntPtr nativePtr): base (nativePtr)
+        public SvgStrokeDashArray(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -12435,7 +12435,7 @@ namespace SharpDX.Direct2D1
         public unsafe void RemoveDashesAtEnd(System.Int32 dashesCount)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, dashesCount, (*(void ***)this._nativePointer)[6]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, dashesCount, (*(void***)this._nativePointer)[6]);
             __result__.CheckError();
         }
 
@@ -12451,8 +12451,8 @@ namespace SharpDX.Direct2D1
         public unsafe void UpdateDashes(SharpDX.Direct2D1.SvgLength[] dashes, System.Int32 dashesCount, System.Int32 startIndex)
         {
             SharpDX.Result __result__;
-            fixed (void *dashes_ = dashes)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, dashes_, dashesCount, startIndex, (*(void ***)this._nativePointer)[7]);
+            fixed (void* dashes_ = dashes)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, dashes_, dashesCount, startIndex, (*(void***)this._nativePointer)[7]);
             __result__.CheckError();
         }
 
@@ -12468,8 +12468,8 @@ namespace SharpDX.Direct2D1
         public unsafe void UpdateDashes(System.Single[] dashes, System.Int32 dashesCount, System.Int32 startIndex)
         {
             SharpDX.Result __result__;
-            fixed (void *dashes_ = dashes)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, dashes_, dashesCount, startIndex, (*(void ***)this._nativePointer)[8]);
+            fixed (void* dashes_ = dashes)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, dashes_, dashesCount, startIndex, (*(void***)this._nativePointer)[8]);
             __result__.CheckError();
         }
 
@@ -12485,8 +12485,8 @@ namespace SharpDX.Direct2D1
         public unsafe void GetDashes(SharpDX.Direct2D1.SvgLength[] dashes, System.Int32 dashesCount, System.Int32 startIndex)
         {
             SharpDX.Result __result__;
-            fixed (void *dashes_ = dashes)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, dashes_, dashesCount, startIndex, (*(void ***)this._nativePointer)[9]);
+            fixed (void* dashes_ = dashes)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, dashes_, dashesCount, startIndex, (*(void***)this._nativePointer)[9]);
             __result__.CheckError();
         }
 
@@ -12502,8 +12502,8 @@ namespace SharpDX.Direct2D1
         public unsafe void GetDashes(System.Single[] dashes, System.Int32 dashesCount, System.Int32 startIndex)
         {
             SharpDX.Result __result__;
-            fixed (void *dashes_ = dashes)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, dashes_, dashesCount, startIndex, (*(void ***)this._nativePointer)[10]);
+            fixed (void* dashes_ = dashes)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, dashes_, dashesCount, startIndex, (*(void***)this._nativePointer)[10]);
             __result__.CheckError();
         }
 
@@ -12516,7 +12516,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetDashesCount()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[11]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[11]);
             return __result__;
         }
     }
@@ -12529,7 +12529,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd906c1-12e2-11dc-9fed-001143a055f9")]
     internal partial class TessellationSinkNative : SharpDX.ComObject, SharpDX.Direct2D1.TessellationSink
     {
-        public TessellationSinkNative(System.IntPtr nativePtr): base (nativePtr)
+        public TessellationSinkNative(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -12544,8 +12544,8 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1TessellationSink::AddTriangles</unmanaged-short>
         internal unsafe void AddTriangles_(SharpDX.Direct2D1.Triangle[] triangles, System.Int32 trianglesCount)
         {
-            fixed (void *triangles_ = triangles)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, triangles_, trianglesCount, (*(void ***)this._nativePointer)[3]);
+            fixed (void* triangles_ = triangles)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, triangles_, trianglesCount, (*(void***)this._nativePointer)[3]);
         }
 
         /// <summary>
@@ -12558,7 +12558,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void Close_()
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
         }
     }
@@ -12571,7 +12571,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd906bb-12e2-11dc-9fed-001143a055f9")]
     public partial class TransformedGeometry : SharpDX.Direct2D1.Geometry
     {
-        public TransformedGeometry(System.IntPtr nativePtr): base (nativePtr)
+        public TransformedGeometry(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -12616,7 +12616,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetSourceGeometry(out SharpDX.Direct2D1.Geometry sourceGeometry)
         {
             System.IntPtr sourceGeometry_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &sourceGeometry_, (*(void ***)this._nativePointer)[17]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &sourceGeometry_, (*(void***)this._nativePointer)[17]);
             if (sourceGeometry_ != System.IntPtr.Zero)
                 sourceGeometry = new SharpDX.Direct2D1.Geometry(sourceGeometry_);
             else
@@ -12632,16 +12632,16 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1TransformedGeometry::GetTransform</unmanaged-short>
         internal unsafe void GetTransform(out SharpDX.Mathematics.Interop.RawMatrix3x2 transform)
         {
-            transform = default (SharpDX.Mathematics.Interop.RawMatrix3x2);
-            fixed (void *transform_ = &transform)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, transform_, (*(void ***)this._nativePointer)[18]);
+            transform = default(SharpDX.Mathematics.Interop.RawMatrix3x2);
+            fixed (void* transform_ = &transform)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, transform_, (*(void***)this._nativePointer)[18]);
         }
     }
 
     [System.Runtime.InteropServices.GuidAttribute("7f1f79e5-2796-416c-8f55-700f911445e5")]
     public partial class TransformedImageSource : SharpDX.Direct2D1.Image
     {
-        public TransformedImageSource(System.IntPtr nativePtr): base (nativePtr)
+        public TransformedImageSource(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -12686,7 +12686,7 @@ namespace SharpDX.Direct2D1
         internal unsafe void GetSource(out SharpDX.Direct2D1.ImageSource imageSource)
         {
             System.IntPtr imageSource_ = System.IntPtr.Zero;
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &imageSource_, (*(void ***)this._nativePointer)[4]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, &imageSource_, (*(void***)this._nativePointer)[4]);
             if (imageSource_ != System.IntPtr.Zero)
                 imageSource = new SharpDX.Direct2D1.ImageSource(imageSource_);
             else
@@ -12702,16 +12702,16 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1TransformedImageSource::GetProperties</unmanaged-short>
         internal unsafe void GetProperties(out SharpDX.Direct2D1.TransformedImageSourceProperties ropertiesRef)
         {
-            ropertiesRef = default (SharpDX.Direct2D1.TransformedImageSourceProperties);
-            fixed (void *ropertiesRef_ = &ropertiesRef)
-                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, ropertiesRef_, (*(void ***)this._nativePointer)[5]);
+            ropertiesRef = default(SharpDX.Direct2D1.TransformedImageSourceProperties);
+            fixed (void* ropertiesRef_ = &ropertiesRef)
+                SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, ropertiesRef_, (*(void***)this._nativePointer)[5]);
         }
     }
 
     [System.Runtime.InteropServices.GuidAttribute("13d29038-c3e6-4034-9081-13b53a417992")]
     public partial class TransformGraph : SharpDX.ComObject
     {
-        public TransformGraph(System.IntPtr nativePtr): base (nativePtr)
+        public TransformGraph(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -12737,7 +12737,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetInputCount()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[3]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[3]);
             return __result__;
         }
 
@@ -12757,7 +12757,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr node_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             node_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.TransformNode>(node);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)node_, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)node_, (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
         }
 
@@ -12780,7 +12780,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr node_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             node_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.TransformNode>(node);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)node_, (*(void ***)this._nativePointer)[5]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)node_, (*(void***)this._nativePointer)[5]);
             __result__.CheckError();
         }
 
@@ -12800,7 +12800,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr node_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             node_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.TransformNode>(node);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)node_, (*(void ***)this._nativePointer)[6]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)node_, (*(void***)this._nativePointer)[6]);
             __result__.CheckError();
         }
 
@@ -12820,7 +12820,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr node_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             node_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.TransformNode>(node);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)node_, (*(void ***)this._nativePointer)[7]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)node_, (*(void***)this._nativePointer)[7]);
             __result__.CheckError();
         }
 
@@ -12844,7 +12844,7 @@ namespace SharpDX.Direct2D1
             SharpDX.Result __result__;
             fromNode_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.TransformNode>(fromNode);
             toNode_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.TransformNode>(toNode);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void *)fromNode_, (void *)toNode_, toNodeInputIndex, (*(void ***)this._nativePointer)[8]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (void*)fromNode_, (void*)toNode_, toNodeInputIndex, (*(void***)this._nativePointer)[8]);
             __result__.CheckError();
         }
 
@@ -12863,7 +12863,7 @@ namespace SharpDX.Direct2D1
             System.IntPtr node_ = System.IntPtr.Zero;
             SharpDX.Result __result__;
             node_ = SharpDX.CppObject.ToCallbackPtr<SharpDX.Direct2D1.TransformNode>(node);
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, toEffectInputIndex, (void *)node_, toNodeInputIndex, (*(void ***)this._nativePointer)[9]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, toEffectInputIndex, (void*)node_, toNodeInputIndex, (*(void***)this._nativePointer)[9]);
             __result__.CheckError();
         }
 
@@ -12878,7 +12878,7 @@ namespace SharpDX.Direct2D1
         /// <unmanaged-short>ID2D1TransformGraph::Clear</unmanaged-short>
         public unsafe void Clear()
         {
-            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (*(void ***)this._nativePointer)[10]);
+            SharpDX.Direct2D1.LocalInterop.CalliStdCallvoid(this._nativePointer, (*(void***)this._nativePointer)[10]);
         }
 
         /// <summary>
@@ -12892,7 +12892,7 @@ namespace SharpDX.Direct2D1
         public unsafe void SetPassthroughGraph(System.Int32 effectInputIndex)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, effectInputIndex, (*(void ***)this._nativePointer)[11]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, effectInputIndex, (*(void***)this._nativePointer)[11]);
             __result__.CheckError();
         }
     }
@@ -12900,7 +12900,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("ef1a287d-342a-4f76-8fdb-da0d6ea9f92b")]
     public partial class TransformNative : SharpDX.Direct2D1.TransformNodeNative, SharpDX.Direct2D1.Transform
     {
-        public TransformNative(System.IntPtr nativePtr): base (nativePtr)
+        public TransformNative(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -12921,8 +12921,8 @@ namespace SharpDX.Direct2D1
         internal unsafe void MapOutputRectToInputRects_(SharpDX.Mathematics.Interop.RawRectangle outputRect, SharpDX.Mathematics.Interop.RawRectangle[] inputRects, System.Int32 inputRectsCount)
         {
             SharpDX.Result __result__;
-            fixed (void *inputRects_ = inputRects)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &outputRect, inputRects_, inputRectsCount, (*(void ***)this._nativePointer)[4]);
+            fixed (void* inputRects_ = inputRects)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &outputRect, inputRects_, inputRectsCount, (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
         }
 
@@ -12943,12 +12943,12 @@ namespace SharpDX.Direct2D1
         internal unsafe SharpDX.Mathematics.Interop.RawRectangle MapInputRectsToOutputRect_(SharpDX.Mathematics.Interop.RawRectangle[] inputRects, SharpDX.Mathematics.Interop.RawRectangle[] inputOpaqueSubRects, System.Int32 inputRectCount, out SharpDX.Mathematics.Interop.RawRectangle outputOpaqueSubRect)
         {
             SharpDX.Mathematics.Interop.RawRectangle outputRect;
-            outputOpaqueSubRect = default (SharpDX.Mathematics.Interop.RawRectangle);
+            outputOpaqueSubRect = default(SharpDX.Mathematics.Interop.RawRectangle);
             SharpDX.Result __result__;
-            fixed (void *outputOpaqueSubRect_ = &outputOpaqueSubRect)
-                fixed (void *inputOpaqueSubRects_ = inputOpaqueSubRects)
-                    fixed (void *inputRects_ = inputRects)
-                        __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, inputRects_, inputOpaqueSubRects_, inputRectCount, &outputRect, outputOpaqueSubRect_, (*(void ***)this._nativePointer)[5]);
+            fixed (void* outputOpaqueSubRect_ = &outputOpaqueSubRect)
+            fixed (void* inputOpaqueSubRects_ = inputOpaqueSubRects)
+            fixed (void* inputRects_ = inputRects)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, inputRects_, inputOpaqueSubRects_, inputRectCount, &outputRect, outputOpaqueSubRect_, (*(void***)this._nativePointer)[5]);
             __result__.CheckError();
             return outputRect;
         }
@@ -12970,7 +12970,7 @@ namespace SharpDX.Direct2D1
         {
             SharpDX.Mathematics.Interop.RawRectangle invalidOutputRect;
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, inputIndex, invalidInputRect, &invalidOutputRect, (*(void ***)this._nativePointer)[6]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint0(this._nativePointer, inputIndex, invalidInputRect, &invalidOutputRect, (*(void***)this._nativePointer)[6]);
             __result__.CheckError();
             return invalidOutputRect;
         }
@@ -12984,7 +12984,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("b2efe1e7-729f-4102-949f-505fa21bf666")]
     public partial class TransformNodeNative : SharpDX.ComObject, SharpDX.Direct2D1.TransformNode
     {
-        public TransformNodeNative(System.IntPtr nativePtr): base (nativePtr)
+        public TransformNodeNative(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -13010,7 +13010,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.Int32 GetInputCount_()
         {
             System.Int32 __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[3]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[3]);
             return __result__;
         }
     }
@@ -13018,7 +13018,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("9b8b1336-00a5-4668-92b7-ced5d8bf9b7b")]
     public partial class VertexBuffer : SharpDX.ComObject
     {
-        public VertexBuffer(System.IntPtr nativePtr): base (nativePtr)
+        public VertexBuffer(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -13038,8 +13038,8 @@ namespace SharpDX.Direct2D1
         public unsafe void Map(System.Byte[] data, System.Int32 bufferSize)
         {
             SharpDX.Result __result__;
-            fixed (void *data_ = data)
-                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, data_, bufferSize, (*(void ***)this._nativePointer)[3]);
+            fixed (void* data_ = data)
+                __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, data_, bufferSize, (*(void***)this._nativePointer)[3]);
             __result__.CheckError();
         }
 
@@ -13056,7 +13056,7 @@ namespace SharpDX.Direct2D1
         public unsafe void Unmap()
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void ***)this._nativePointer)[4]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, (*(void***)this._nativePointer)[4]);
             __result__.CheckError();
         }
     }
@@ -13064,7 +13064,7 @@ namespace SharpDX.Direct2D1
     [System.Runtime.InteropServices.GuidAttribute("2cd90698-12e2-11dc-9fed-001143a055f9")]
     public partial class WindowRenderTarget : SharpDX.Direct2D1.RenderTarget
     {
-        public WindowRenderTarget(System.IntPtr nativePtr): base (nativePtr)
+        public WindowRenderTarget(System.IntPtr nativePtr) : base(nativePtr)
         {
         }
 
@@ -13093,7 +13093,7 @@ namespace SharpDX.Direct2D1
         public unsafe SharpDX.Direct2D1.WindowState CheckWindowState()
         {
             SharpDX.Direct2D1.WindowState __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1WindowState(this._nativePointer, (*(void ***)this._nativePointer)[57]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSharpDXDirect2D1WindowState(this._nativePointer, (*(void***)this._nativePointer)[57]);
             return __result__;
         }
 
@@ -13111,7 +13111,7 @@ namespace SharpDX.Direct2D1
         public unsafe void Resize(SharpDX.Size2 ixelSizeRef)
         {
             SharpDX.Result __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &ixelSizeRef, (*(void ***)this._nativePointer)[58]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallint(this._nativePointer, &ixelSizeRef, (*(void***)this._nativePointer)[58]);
             __result__.CheckError();
         }
 
@@ -13125,7 +13125,7 @@ namespace SharpDX.Direct2D1
         internal unsafe System.IntPtr GetHwnd()
         {
             System.IntPtr __result__;
-            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSystemIntPtr(this._nativePointer, (*(void ***)this._nativePointer)[59]);
+            __result__ = SharpDX.Direct2D1.LocalInterop.CalliStdCallSystemIntPtr(this._nativePointer, (*(void***)this._nativePointer)[59]);
             return __result__;
         }
     }

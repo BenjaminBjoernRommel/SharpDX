@@ -17,10 +17,10 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-using System;
 using SharpDX.DirectWrite;
 using SharpDX.DXGI;
 using SharpDX.Mathematics.Interop;
+using System;
 
 namespace SharpDX.Direct2D1
 {
@@ -51,7 +51,7 @@ namespace SharpDX.Direct2D1
         /// <param name="factory">an instance of <see cref = "SharpDX.Direct2D1.Factory" /></param>
         /// <param name="dxgiSurface">The DXGI surface to bind this render target to</param>
         /// <param name="properties">The rendering mode, pixel format, remoting options, DPI information, and the minimum DirectX support required for hardware rendering. For information about supported pixel formats, see  {{Supported Pixel  Formats and Alpha Modes}}.</param>
-        public RenderTarget(Factory factory, Surface dxgiSurface,  RenderTargetProperties properties)
+        public RenderTarget(Factory factory, Surface dxgiSurface, RenderTargetProperties properties)
             : base(IntPtr.Zero)
         {
             factory.CreateDxgiSurfaceRenderTarget(dxgiSurface, ref properties, this);
